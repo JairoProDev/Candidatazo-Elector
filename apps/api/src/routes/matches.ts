@@ -67,12 +67,12 @@ export const matchRoutes: FastifyPluginAsync = async (app) => {
     if (!match) {
       return reply.status(404).send({
         success: false,
-        error: "No hay match calculado. Completa el test de DNA primero.",
+        error: "No hay match calculado. Completa el test de ADN primero.",
         statusCode: 404,
       });
     }
 
-    // Get user's DNA test for comparison
+    // Get user's ADN test for comparison
     const dnaTest = await prisma.dnaTest.findFirst({
       where: { userId, status: "COMPLETED" },
       orderBy: { completedAt: "desc" },

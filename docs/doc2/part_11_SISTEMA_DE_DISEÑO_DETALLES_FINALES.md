@@ -13,7 +13,7 @@ CARACTERÍSTICAS:
 
 ICONOS CLAVE:
 🏠 Home
-🧬 DNA (helix)
+🧬 ADN (helix)
 🎯 Target (matching)
 ✓ Check (verificado)
 ✗ X (falso)
@@ -192,7 +192,7 @@ ESTE DISEÑO LOGRA:
 PARA IMPLEMENTAR:
 Paso 1: Crear design tokens (colores, tipografía en código)
 Paso 1-2: Componentes base (buttons, cards, inputs)
-Paso  2: Pantallas core (onboarding, DNA test, match)
+Paso  2: Pantallas core (onboarding, ADN test, match)
 Paso 3: Features secundarias (fact-check, community)
 Paso 3-4: Polish (animaciones, microinteracciones)
 ¿Necesitas que profundice en alguna sección específica? ¿O pasamos a la arquitectura técnica (stack, base de datos, APIs)?

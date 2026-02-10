@@ -51,7 +51,7 @@ export async function getCandidate(slug: string) {
   return apiFetch<{ success: boolean; data: CandidateDetailFromAPI }>(`/candidates/${slug}`);
 }
 
-// ==================== DNA Test ====================
+// ==================== ADN Test ====================
 
 export async function getDnaQuestions() {
   return apiFetch<{ success: boolean; data: DnaQuestionFromAPI[] }>("/dna/questions");

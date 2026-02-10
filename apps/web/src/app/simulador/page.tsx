@@ -53,40 +53,40 @@ const CANDIDATES: Candidate[] = [
       style: "Habla de forma calculada, mezcla tecnicismos con apelaciones emocionales. Frecuentemente menciona el legado de su padre.",
     },
     greeting:
-      "Buenas tardes. Soy Keiko Fujimori, lideresa de Fuerza Popular. Estoy aqui para responder sus preguntas sobre mi plan de gobierno para el Peru. Adelante.",
+      "Buenas tardes. Soy Keiko Fujimori, lideresa de Fuerza Popular. Estoy aquí para responder sus preguntas sobre mi plan de gobierno para el Perú. Adelante.",
     genericResponses: [
-      "Mire, lo que el Peru necesita es orden y mano firme. Mi padre demostro que se puede pacificar el pais y reactivar la economia. Yo voy a continuar con esa vision, pero con las lecciones aprendidas. Fuerza Popular tiene un plan integral para cada peruano.",
+      "Mire, lo que el Perú necesita es orden y mano firme. Mi padre demostro que se puede pacificar el pais y reactivar la economia. Yo voy a continuar con esa vision, pero con las lecciones aprendidas. Fuerza Popular tiene un plan integral para cada peruano.",
       "Le agradezco la pregunta. Como lideresa de Fuerza Popular, mi compromiso es con cada familia peruana. Hemos recorrido el pais entero, hemos escuchado a la gente, y nuestro plan de gobierno refleja esas necesidades reales.",
-      "Es una pregunta importante. Dejeme decirle que he aprendido mucho en estos anos. El Peru necesita una lideresa que conozca los problemas del pais de primera mano, y yo he estado en cada rincon del Peru escuchando a la gente.",
+      "Es una pregunta importante. Dejeme decirle que he aprendido mucho en estos anos. El Perú necesita una lideresa que conozca los problemas del pais de primera mano, y yo he estado en cada rincon del Perú escuchando a la gente.",
     ],
     topicResponses: {
       economia: [
-        "La economia peruana necesita reactivarse con urgencia. Mi plan contempla reducir el IGV al 15%, destrabar inversiones por mas de 20 mil millones de dolares y crear un programa de empleo masivo llamado 'Trabaja Peru Ya'. En los 90, mi padre estabilizo la economia cuando estaba en ruinas, y nosotros vamos a repetir ese exito.",
-        "Vamos a impulsar la inversion privada con seguridad juridica. El Peru tiene un potencial enorme en mineria, agroindustria y turismo. Necesitamos un gobierno que de confianza a los inversionistas, no que los ahuyente con discursos radicales.",
+        "La economia peruana necesita reactivarse con urgencia. Mi plan contempla reducir el IGV al 15%, destrabar inversiones por mas de 20 mil millones de dolares y crear un programa de empleo masivo llamado 'Trabaja Perú Ya'. En los 90, mi padre estabilizo la economia cuando estaba en ruinas, y nosotros vamos a repetir ese exito.",
+        "Vamos a impulsar la inversion privada con seguridad juridica. El Perú tiene un potencial enorme en mineria, agroindustria y turismo. Necesitamos un gobierno que de confianza a los inversionistas, no que los ahuyente con discursos radicales.",
       ],
       seguridad: [
         "La seguridad es mi prioridad numero uno. Vamos a implementar el plan 'Mano Dura': mas policias en las calles, cadena perpetua para sicarios, y un estado de emergencia permanente en las zonas mas peligrosas. Mi padre acabo con el terrorismo y yo voy a acabar con la delincuencia.",
-        "Propongo que las Fuerzas Armadas apoyen a la policia en la lucha contra la criminalidad. Necesitamos control territorial, inteligencia operativa y penas mas severas. La poblacion pide mano dura y eso es exactamente lo que vamos a dar.",
+        "Propongo que las Fuerzas Armadas apoyen a la policia en la lucha contra la criminalidad. Necesitamos control territorial, inteligencia operativa y penas mas severas. La población pide mano dura y eso es exactamente lo que vamos a dar.",
       ],
       educacion: [
-        "La educacion es la base del desarrollo. Vamos a implementar el programa 'Escuela Digna' para modernizar la infraestructura educativa en todo el pais. Tambien queremos que la educacion tecnica tenga mas presupuesto, porque el Peru necesita tecnicos calificados, no solo universitarios.",
+        "La educación es la base del desarrollo. Vamos a implementar el programa 'Escuela Digna' para modernizar la infraestructura educativa en todo el pais. Tambien queremos que la educación tecnica tenga mas presupuesto, porque el Perú necesita tecnicos calificados, no solo universitarios.",
         "Hay que cerrar la brecha digital en educacion. Cada escuela debe tener internet y cada alumno acceso a tecnologia. Ademas, los maestros necesitan mejores sueldos, pero condicionados a evaluaciones de desempenho.",
       ],
       corrupcion: [
-        "Nadie me puede hablar de persecucion politica porque yo la he vivido en carne propia. Pero eso no me ha detenido. Mi compromiso es con la transparencia. Vamos a fortalecer la Contraloria y digitalizar todas las compras del Estado para que cada sol se pueda rastrear.",
-        "La corrupcion es un problema sistemico que requiere reformas estructurales. Propongo una reforma integral del sistema de justicia, mayor independencia del Ministerio Publico y penas mas severas para los funcionarios corruptos.",
+        "Nadie me puede hablar de persecución politica porque yo la he vivido en carne propia. Pero eso no me ha detenido. Mi compromiso es con la transparencia. Vamos a fortalecer la Contraloria y digitalizar todas las compras del Estado para que cada sol se pueda rastrear.",
+        "La corrupción es un problema sistemico que requiere reformas estructurales. Propongo una reforma integral del sistema de justicia, mayor independencia del Ministerio Publico y penas mas severas para los funcionarios corruptos.",
       ],
       salud: [
         "La pandemia desnudo las carencias de nuestro sistema de salud. Vamos a construir 500 centros de salud en zonas rurales, equipar hospitales con tecnologia moderna y garantizar el abastecimiento de medicinas. La salud es un derecho, no un privilegio.",
-        "Necesitamos un sistema de salud universal y eficiente. Vamos a unificar SIS y EsSalud en un sistema unico que cubra a todos los peruanos, con atencion de calidad y sin colas interminables.",
+        "Necesitamos un sistema de salud universal y eficiente. Vamos a unificar SIS y EsSalud en un sistema unico que cubra a todos los peruanos, con atención de calidad y sin colas interminables.",
       ],
       mineria: [
         "La mineria es el motor de nuestra economia y debemos impulsarla con responsabilidad ambiental. Vamos a destrabar los proyectos mineros paralizados como Tia Maria y Conga, garantizando que las comunidades reciban beneficios directos.",
-        "El Peru es un pais minero y debemos aprovecharlo. Pero tambien necesitamos agregar valor: no podemos seguir exportando solo concentrados. Vamos a promover la industrializacion de nuestros minerales.",
+        "El Perú es un pais minero y debemos aprovecharlo. Pero tambien necesitamos agregar valor: no podemos seguir exportando solo concentrados. Vamos a promover la industrialización de nuestros minerales.",
       ],
       constitucion: [
-        "No necesitamos una nueva constitucion. La constitucion del 93 nos ha dado estabilidad economica y ha permitido el crecimiento del pais. Lo que necesitamos son reformas puntuales, no aventuras constituyentes que generan incertidumbre.",
-        "La constitucion actual funciona. Lo que falla son las personas que la aplican. Mejoremosla con reformas especificas, pero no la tiremos por la borda. Eso solo beneficia a los radicales.",
+        "No necesitamos una nueva constitucion. La constitución del 93 nos ha dado estabilidad economica y ha permitido el crecimiento del pais. Lo que necesitamos son reformas puntuales, no aventuras constituyentes que generan incertidumbre.",
+        "La constitución actual funciona. Lo que falla son las personas que la aplican. Mejoremosla con reformas especificas, pero no la tiremos por la borda. Eso solo beneficia a los radicales.",
       ],
     },
   },
@@ -94,7 +94,7 @@ const CANDIDATES: Candidate[] = [
     id: "antauro",
     name: "Antauro Humala",
     shortName: "Antauro",
-    party: "Union por el Peru",
+    party: "Union por el Perú",
     initials: "AH",
     color: "#8B0000",
     bgColor: "#FDE8E8",
@@ -102,34 +102,34 @@ const CANDIDATES: Candidate[] = [
       formality: "informal",
       aggressiveness: "agresivo",
       populism: "populista",
-      style: "Habla de forma directa y confrontacional. Usa lenguaje militar. Frecuentemente invoca el etnonacionalismo y la reivindicacion del 'Peru profundo'.",
+      style: "Habla de forma directa y confrontacional. Usa lenguaje militar. Frecuentemente invoca el etnonacionalismo y la reivindicación del 'Perú profundo'.",
     },
     greeting:
-      "Compatriota, soy Antauro Humala. El reservista que no se rinde. Vengo a hablar claro, sin medias tintas, como siempre. Pregunte lo que quiera, que aqui no se tiene miedo a la verdad.",
+      "Compatriota, soy Antauro Humala. El reservista que no se rinde. Vengo a hablar claro, sin medias tintas, como siempre. Pregunte lo que quiera, que aquí no se tiene miedo a la verdad.",
     genericResponses: [
-      "Mira, compatriota, aqui hay que hablar claro. Este sistema esta podrido. Los mismos de siempre se roban el pais mientras el pueblo pasa hambre. Yo vengo del Peru profundo, del pueblo, y voy a gobernar para el pueblo, no para las elites limenas.",
-      "Aqui lo que falta es un gobierno con pantalones. No mas tibios, no mas de lo mismo. El Peru necesita una revolucion etnocacerista que devuelva la dignidad a los peruanos de a pie. Y eso es exactamente lo que vamos a hacer.",
+      "Mira, compatriota, aquí hay que hablar claro. Este sistema esta podrido. Los mismos de siempre se roban el pais mientras el pueblo pasa hambre. Yo vengo del Perú profundo, del pueblo, y voy a gobernar para el pueblo, no para las elites limenas.",
+      "Aquí lo que falta es un gobierno con pantalones. No mas tibios, no mas de lo mismo. El Perú necesita una revolución etnocacerista que devuelva la dignidad a los peruanos de a pie. Y eso es exactamente lo que vamos a hacer.",
       "Compatriota, yo no soy politico de salon. Yo he estado preso por mis ideales, he luchado por este pais. Los que me critican son los mismos que se benefician del sistema corrupto. Pero el pueblo ya desperto.",
     ],
     topicResponses: {
       economia: [
         "La economia tiene que estar al servicio del pueblo, no de las transnacionales. Vamos a nacionalizar los recursos estrategicos: gas, petroleo, minerales. Es inaceptable que Chile y otros paises lucren con nuestras riquezas mientras nuestro pueblo vive en pobreza.",
-        "Hay que acabar con el modelo neoliberal que solo beneficia a los ricos. Vamos a crear un banco nacional de fomento, impulsar la industria nacional y proteger la produccion peruana de la competencia desleal. El Peru para los peruanos.",
+        "Hay que acabar con el modelo neoliberal que solo beneficia a los ricos. Vamos a crear un banco nacional de fomento, impulsar la industria nacional y proteger la producción peruana de la competencia desleal. El Perú para los peruanos.",
       ],
       seguridad: [
         "La inseguridad se combate con mano de hierro. Voy a militarizar las zonas criticas, implementar el servicio militar obligatorio y aplicar la pena de muerte para violadores y narcotraficantes. Nada de derechos humanos para los criminales.",
         "Hay que limpiar este pais de la delincuencia. Propongo rondas urbanas, como las rondas campesinas pero en las ciudades. El pueblo organizado vigilando su propio barrio, con apoyo del Ejercito. Asi se acaba la inseguridad.",
       ],
       educacion: [
-        "La educacion tiene que ser gratuita y de calidad, desde inicial hasta la universidad. Vamos a triplicar el presupuesto en educacion y crear escuelas tecnicas militares en cada provincia. La juventud necesita disciplina y conocimiento.",
-        "Hay que descolonizar la educacion. Nuestros jovenes deben aprender la verdadera historia del Peru, no la version que cuentan los colonizadores. Educacion bilingue obligatoria y revalorizacion de nuestras lenguas originarias.",
+        "La educación tiene que ser gratuita y de calidad, desde inicial hasta la universidad. Vamos a triplicar el presupuesto en educación y crear escuelas tecnicas militares en cada provincia. La juventud necesita disciplina y conocimiento.",
+        "Hay que descolonizar la educacion. Nuestros jovenes deben aprender la verdadera historia del Perú, no la version que cuentan los colonizadores. Educación bilingue obligatoria y revalorización de nuestras lenguas originarias.",
       ],
       corrupcion: [
-        "A los corruptos hay que fusilarlos. Asi de simple. Pena de muerte para todo funcionario que robe al Estado. Confiscacion de bienes. Y que los jueces corruptos vayan presos de por vida. Aqui se acabo la impunidad.",
-        "Yo propongo que los presos por corrupcion trabajen en obras publicas. Que paguen su deuda con el pueblo con su sudor. Y todo funcionario debe declarar su patrimonio antes y despues de cada cargo. Cero tolerancia.",
+        "A los corruptos hay que fusilarlos. Asi de simple. Pena de muerte para todo funcionario que robe al Estado. Confiscación de bienes. Y que los jueces corruptos vayan presos de por vida. Aquí se acabo la impunidad.",
+        "Yo propongo que los presos por corrupción trabajen en obras publicas. Que paguen su deuda con el pueblo con su sudor. Y todo funcionario debe declarar su patrimonio antes y despues de cada cargo. Cero tolerancia.",
       ],
       salud: [
-        "La salud es un derecho del pueblo, no un negocio. Vamos a nacionalizar las clinicas privadas si es necesario y garantizar atencion gratuita para todos. Los hospitales militares se abriran al pueblo.",
+        "La salud es un derecho del pueblo, no un negocio. Vamos a nacionalizar las clinicas privadas si es necesario y garantizar atención gratuita para todos. Los hospitales militares se abriran al pueblo.",
         "El sistema de salud esta colapsado porque los gobiernos neoliberales lo han desmantelado. Vamos a construir hospitales en cada provincia, con medicos militares si es necesario. La salud del pueblo no puede esperar.",
       ],
       mineria: [
@@ -137,8 +137,8 @@ const CANDIDATES: Candidate[] = [
         "La mineria ilegal hay que combatirla con el Ejercito, pero la gran mineria tambien tiene que pagar lo justo. Propongo que el 50% de las ganancias mineras se queden en las comunidades donde se extrae. Es lo minimo.",
       ],
       constitucion: [
-        "Necesitamos una nueva constitucion, escrita por el pueblo, no por los abogados de las transnacionales. Una constitucion etnonacionalista que reconozca al Peru profundo y devuelva los recursos al pueblo.",
-        "La constitucion del 93 es una constitucion fujimorista, hecha para beneficiar a los de arriba. Hay que cambiarla de raiz. Asamblea constituyente con representacion de todas las naciones originarias del Peru.",
+        "Necesitamos una nueva constitucion, escrita por el pueblo, no por los abogados de las transnacionales. Una constitución etnonacionalista que reconozca al Perú profundo y devuelva los recursos al pueblo.",
+        "La constitución del 93 es una constitución fujimorista, hecha para beneficiar a los de arriba. Hay que cambiarla de raiz. Asamblea constituyente con representación de todas las naciones originarias del Perú.",
       ],
     },
   },
@@ -157,31 +157,31 @@ const CANDIDATES: Candidate[] = [
       style: "Habla de forma simple y directa, con acento norteno. Frecuentemente menciona su origen humilde y su exito empresarial. Usa frases motivacionales.",
     },
     greeting:
-      "Hola, como estan todos! Soy Cesar Acuna, el cholo que empezo sin nada y que ahora quiere devolverle al Peru todo lo que le dio. Como digo yo: plata como cancha para la educacion! Pregunten nomas.",
+      "Hola, como estan todos! Soy Cesar Acuna, el cholo que empezo sin nada y que ahora quiere devolverle al Perú todo lo que le dio. Como digo yo: plata como cancha para la educacion! Pregunten nomas.",
     genericResponses: [
       "Miren, yo soy un hombre que empezo de abajo. Vendi periodicos, lustré zapatos, y ahora tengo universidades. Si yo pude salir adelante, todos los peruanos pueden. Solo necesitan oportunidades, y eso es lo que voy a dar.",
-      "Yo no soy politico de escritorio. Yo he sido alcalde, gobernador, y he demostrado que se puede hacer obra. En La Libertad la gente me quiere porque he cumplido. Y ahora quiero hacer lo mismo por todo el Peru.",
-      "Como siempre digo: el que quiere, puede. Y yo quiero un Peru mejor para todos. Con trabajo, con educacion, con oportunidades. Eso es lo que le ofrezco al pueblo peruano, y tengo la experiencia para cumplir.",
+      "Yo no soy politico de escritorio. Yo he sido alcalde, gobernador, y he demostrado que se puede hacer obra. En La Libertad la gente me quiere porque he cumplido. Y ahora quiero hacer lo mismo por todo el Perú.",
+      "Como siempre digo: el que quiere, puede. Y yo quiero un Perú mejor para todos. Con trabajo, con educacion, con oportunidades. Eso es lo que le ofrezco al pueblo peruano, y tengo la experiencia para cumplir.",
     ],
     topicResponses: {
       economia: [
         "La economia se reactiva con trabajo, pues! Voy a crear un millon de empleos en mi primer ano. Como? Con obra publica, con apoyo a los emprendedores, con creditos blandos para las mypes. Yo soy empresario, yo se como generar riqueza.",
-        "Plata como cancha para los emprendedores! Vamos a crear un fondo de 5 mil millones para prestamos a pequenos empresarios con tasas bajas. El Peru es un pais de emprendedores y hay que apoyarlos, no ponerles trabas.",
+        "Plata como cancha para los emprendedores! Vamos a crear un fondo de 5 mil millones para prestamos a pequenos empresarios con tasas bajas. El Perú es un pais de emprendedores y hay que apoyarlos, no ponerles trabas.",
       ],
       seguridad: [
         "Mas policias, mejor pagados, mejor equipados. Asi de simple. Tambien hay que poner camaras de vigilancia en todas las ciudades y crear un sistema de patrullaje inteligente. En La Libertad redujimos la delincuencia con tecnologia.",
-        "La seguridad se combate con prevencion y con fuerza. Mas programas para los jovenes, mas deporte, mas educacion tecnica. Pero tambien mano dura con los delincuentes. Las dos cosas van juntas.",
+        "La seguridad se combate con prevención y con fuerza. Mas programas para los jovenes, mas deporte, mas educación tecnica. Pero tambien mano dura con los delincuentes. Las dos cosas van juntas.",
       ],
       educacion: [
-        "La educacion es mi pasion! Yo he creado universidades, colegios, institutos. Se lo que se necesita. Vamos a dar becas completas para los mejores alumnos de colegios publicos, internet gratis en todas las escuelas y tablets para cada estudiante.",
-        "Plata como cancha para la educacion! Hay que duplicar el sueldo de los profesores, modernizar las escuelas y crear mas institutos tecnicos. El Peru necesita tecnicos, ingenieros, gente que trabaje con sus manos. Eso saca adelante al pais.",
+        "La educación es mi pasion! Yo he creado universidades, colegios, institutos. Se lo que se necesita. Vamos a dar becas completas para los mejores alumnos de colegios publicos, internet gratis en todas las escuelas y tablets para cada estudiante.",
+        "Plata como cancha para la educacion! Hay que duplicar el sueldo de los profesores, modernizar las escuelas y crear mas institutos tecnicos. El Perú necesita tecnicos, ingenieros, gente que trabaje con sus manos. Eso saca adelante al pais.",
       ],
       corrupcion: [
-        "La corrupcion se combate con transparencia. Hay que digitalizar todo el Estado, que cada compra se pueda ver por internet, que cada obra tenga seguimiento ciudadano. Como empresario, yo se manejar presupuestos con eficiencia.",
-        "Miren, yo he sido acusado de muchas cosas, pero sigo aqui, dando la cara. Los que realmente roban son los que nunca los descubren. Vamos a poner sistemas anticorrupcion con tecnologia de punta.",
+        "La corrupción se combate con transparencia. Hay que digitalizar todo el Estado, que cada compra se pueda ver por internet, que cada obra tenga seguimiento ciudadano. Como empresario, yo se manejar presupuestos con eficiencia.",
+        "Miren, yo he sido acusado de muchas cosas, pero sigo aquí, dando la cara. Los que realmente roban son los que nunca los descubren. Vamos a poner sistemas anticorrupción con tecnologia de punta.",
       ],
       salud: [
-        "Plata como cancha para la salud! Hay que construir hospitales modernos en cada provincia, y que funcionen bien, con medicinas y doctores. Yo como gobernador mejore los hospitales de La Libertad y voy a hacer lo mismo en todo el Peru.",
+        "Plata como cancha para la salud! Hay que construir hospitales modernos en cada provincia, y que funcionen bien, con medicinas y doctores. Yo como gobernador mejore los hospitales de La Libertad y voy a hacer lo mismo en todo el Perú.",
         "La salud es lo primero. Vamos a hacer que el SIS funcione de verdad, sin colas, sin falta de medicinas. Y vamos a traer medicos especialistas a las zonas rurales con buenos sueldos e incentivos.",
       ],
       mineria: [
@@ -198,7 +198,7 @@ const CANDIDATES: Candidate[] = [
     id: "urresti",
     name: "Daniel Urresti",
     shortName: "Urresti",
-    party: "Podemos Peru",
+    party: "Podemos Perú",
     initials: "DU",
     color: "#4A148C",
     bgColor: "#F3E5F5",
@@ -206,14 +206,14 @@ const CANDIDATES: Candidate[] = [
       formality: "informal",
       aggressiveness: "agresivo",
       populism: "populista",
-      style: "Habla de forma directa, casi militar. Es confrontacional con sus rivales. Proyecta imagen de hombre de accion y mano dura.",
+      style: "Habla de forma directa, casi militar. Es confrontacional con sus rivales. Proyecta imagen de hombre de acción y mano dura.",
     },
     greeting:
       "Que tal, soy Daniel Urresti. Ex ministro del Interior, militar de carrera. Yo no ando con rodeos. Lo que este pais necesita es orden y autoridad. Pregunten directamente, que yo respondo directamente.",
     genericResponses: [
-      "Mira, yo soy un hombre de accion, no de discursos. Como ministro del Interior reduje la criminalidad. Tengo experiencia real, no promesas vacias. El Peru necesita a alguien que ya haya demostrado que puede resolver los problemas.",
-      "Los politicos tradicionales han fracasado. El Peru necesita un lider con experiencia militar y de gestion. Yo he combatido el terrorismo, he enfrentado la delincuencia, y no le tengo miedo a nadie. Eso es lo que se necesita.",
-      "Aqui hay que hablar claro: el pais esta en crisis y se necesita a alguien que ponga orden. Yo tengo el caracter y la experiencia para hacerlo. No vengo a hacer amigos, vengo a salvar al Peru.",
+      "Mira, yo soy un hombre de accion, no de discursos. Como ministro del Interior reduje la criminalidad. Tengo experiencia real, no promesas vacias. El Perú necesita a alguien que ya haya demostrado que puede resolver los problemas.",
+      "Los politicos tradicionales han fracasado. El Perú necesita un lider con experiencia militar y de gestion. Yo he combatido el terrorismo, he enfrentado la delincuencia, y no le tengo miedo a nadie. Eso es lo que se necesita.",
+      "Aquí hay que hablar claro: el pais esta en crisis y se necesita a alguien que ponga orden. Yo tengo el caracter y la experiencia para hacerlo. No vengo a hacer amigos, vengo a salvar al Perú.",
     ],
     topicResponses: {
       economia: [
@@ -225,24 +225,24 @@ const CANDIDATES: Candidate[] = [
         "Hay que meter a los delincuentes presos, asi de simple. Cadena perpetua para extorsionadores, pena maxima para sicarios. Y las carceles tienen que ser carceles, no hoteles. El criminal tiene que tenerle miedo al Estado, no al reves.",
       ],
       educacion: [
-        "La educacion necesita disciplina. Propongo incluir valores civicos y militares en la curricula escolar. Los jovenes de hoy necesitan estructura, respeto y conocimiento practico, no teorias abstractas.",
+        "La educación necesita disciplina. Propongo incluir valores civicos y militares en la curricula escolar. Los jovenes de hoy necesitan estructura, respeto y conocimiento practico, no teorias abstractas.",
         "Hay que mejorar la infraestructura educativa y pagar bien a los maestros, pero tambien exigirles resultados. Evaluaciones estrictas y meritocracia. El que no da la talla, fuera. Asi funciona en el Ejercito y funciona bien.",
       ],
       corrupcion: [
-        "A los corruptos hay que meterlos presos, sin contemplaciones. Yo propongo un sistema de control interno en cada ministerio, con personal especializado y proteccion para los denunciantes. Que nadie se atreva a robar sabiendo que lo van a descubrir.",
-        "La corrupcion se combate con investigacion y castigo ejemplar. Hay que fortalecer la Procuraduria y darle dientes a la Contraloria. Y los funcionarios corruptos deben devolver hasta el ultimo centavo. Tolerancia cero.",
+        "A los corruptos hay que meterlos presos, sin contemplaciones. Yo propongo un sistema de control interno en cada ministerio, con personal especializado y protección para los denunciantes. Que nadie se atreva a robar sabiendo que lo van a descubrir.",
+        "La corrupción se combate con investigación y castigo ejemplar. Hay que fortalecer la Procuraduria y darle dientes a la Contraloria. Y los funcionarios corruptos deben devolver hasta el ultimo centavo. Tolerancia cero.",
       ],
       salud: [
-        "El sistema de salud necesita una gestion tipo militar: eficiente, sin desperdicios, con logistica impecable. Hospitales que funcionen como maquinas bien aceitadas, con abastecimiento constante y personal comprometido.",
+        "El sistema de salud necesita una gestion tipo militar: eficiente, sin desperdicios, con logistica impecable. Hospitales que funcionen como maquínas bien aceitadas, con abastecimiento constante y personal comprometido.",
         "Hay que reformar el sistema de salud de raiz. Un solo sistema integrado, bien gestionado, con presupuesto suficiente. Y hay que llevar salud a las zonas mas alejadas con brigadas medicas, como hacemos en el Ejercito.",
       ],
       mineria: [
-        "La mineria es clave para el Peru. Hay que impulsarla con seguridad juridica y control ambiental estricto. No podemos permitir que grupos antimineros paralicen el desarrollo del pais. Orden y progreso, esa es la formula.",
+        "La mineria es clave para el Perú. Hay que impulsarla con seguridad juridica y control ambiental estricto. No podemos permitir que grupos antimineros paralicen el desarrollo del pais. Orden y progreso, esa es la formula.",
         "Los conflictos mineros se resuelven con dialogo pero tambien con firmeza. El Estado debe garantizar que las inversiones se ejecuten, protegiendo a las comunidades pero sin permitir que unos pocos bloqueen el beneficio de todos.",
       ],
       constitucion: [
-        "No estoy de acuerdo con cambiar la constitucion. Lo que hay que cambiar son a los malos funcionarios. La constitucion nos da las herramientas, el problema es que no se aplican. Mas accion, menos teoria.",
-        "El Peru no necesita una asamblea constituyente, necesita un gobierno que haga cumplir las leyes. Con la constitucion actual se puede gobernar bien, siempre que haya voluntad y mano firme.",
+        "No estoy de acuerdo con cambiar la constitucion. Lo que hay que cambiar son a los malos funcionarios. La constitución nos da las herramientas, el problema es que no se aplican. Mas accion, menos teoria.",
+        "El Perú no necesita una asamblea constituyente, necesita un gobierno que haga cumplir las leyes. Con la constitución actual se puede gobernar bien, siempre que haya voluntad y mano firme.",
       ],
     },
   },
@@ -250,7 +250,7 @@ const CANDIDATES: Candidate[] = [
     id: "mendoza",
     name: "Veronika Mendoza",
     shortName: "Veronika",
-    party: "Nuevo Peru",
+    party: "Nuevo Perú",
     initials: "VM",
     color: "#E91E63",
     bgColor: "#FCE4EC",
@@ -261,40 +261,40 @@ const CANDIDATES: Candidate[] = [
       style: "Habla de forma articulada y academica. Enfatiza derechos sociales, igualdad de genero y medio ambiente. Usa un tono empatico y progresista.",
     },
     greeting:
-      "Buenas tardes, companero, companera. Soy Veronika Mendoza, de Nuevo Peru. Creo en un pais mas justo, mas igualitario y mas sostenible. Conversemos sobre como podemos transformar el Peru juntos.",
+      "Buenas tardes, companero, companera. Soy Veronika Mendoza, de Nuevo Perú. Creo en un pais mas justo, mas igualitario y mas sostenible. Conversemos sobre como podemos transformar el Perú juntos.",
     genericResponses: [
-      "Creo firmemente que el Peru necesita un cambio estructural. No mas parches, no mas de lo mismo. Necesitamos un Estado que ponga al centro a las personas, especialmente a quienes han sido historicamente excluidos: mujeres, pueblos originarios, comunidades rurales.",
-      "Nuestro proyecto es construir un Peru donde todos y todas tengamos las mismas oportunidades. Eso implica reformar el modelo economico, fortalecer los servicios publicos y garantizar los derechos de todas las personas sin discriminacion.",
-      "El Peru tiene una riqueza enorme, pero esta mal distribuida. No es justo que unos pocos acumulen tanto mientras millones viven en pobreza. Nuevo Peru propone un modelo mas equitativo, mas solidario, mas humano.",
+      "Creo firmemente que el Perú necesita un cambio estructural. No mas parches, no mas de lo mismo. Necesitamos un Estado que ponga al centro a las personas, especialmente a quienes han sido historicamente excluidos: mujeres, pueblos originarios, comunidades rurales.",
+      "Nuestro proyecto es construir un Perú donde todos y todas tengamos las mismas oportunidades. Eso implica reformar el modelo economico, fortalecer los servicios publicos y garantizar los derechos de todas las personas sin discriminacion.",
+      "El Perú tiene una riqueza enorme, pero esta mal distribuida. No es justo que unos pocos acumulen tanto mientras millones viven en pobreza. Nuevo Perú propone un modelo mas equitativo, mas solidario, mas humano.",
     ],
     topicResponses: {
       economia: [
         "Necesitamos una economia que funcione para todos y todas, no solo para los grandes grupos economicos. Propongo una reforma tributaria progresiva donde los que mas ganan, mas contribuyan. Aumentar la presion tributaria al 20% del PBI para financiar servicios publicos de calidad.",
-        "El modelo neoliberal ha profundizado las desigualdades. Necesitamos un Estado mas activo en la economia: empresas publicas estrategicas, banca de fomento para las mypes, y politicas industriales que diversifiquen nuestra economia. No podemos seguir dependiendo solo de la exportacion de materias primas.",
+        "El modelo neoliberal ha profundizado las desigualdades. Necesitamos un Estado mas activo en la economia: empresas publicas estrategicas, banca de fomento para las mypes, y politicas industriales que diversifiquen nuestra economia. No podemos seguir dependiendo solo de la exportación de materias primas.",
       ],
       seguridad: [
-        "La seguridad ciudadana no se resuelve solo con mas policias y mano dura. Hay que atacar las causas estructurales: pobreza, desempleo, falta de oportunidades. Propongo prevencion con inversion social, programas para jovenes en riesgo y reforma integral de la policia.",
-        "Necesitamos una reforma policial profunda que acabe con la corrupcion dentro de la institucion. Policias mejor formados, mejor pagados y con enfoque de derechos humanos. La seguridad se construye con justicia social.",
+        "La seguridad ciudadana no se resuelve solo con mas policias y mano dura. Hay que atacar las causas estructurales: pobreza, desempleo, falta de oportunidades. Propongo prevención con inversion social, programas para jovenes en riesgo y reforma integral de la policia.",
+        "Necesitamos una reforma policial profunda que acabe con la corrupción dentro de la institucion. Policias mejor formados, mejor pagados y con enfoque de derechos humanos. La seguridad se construye con justicia social.",
       ],
       educacion: [
-        "La educacion es un derecho, no un negocio. Propongo educacion publica gratuita y de calidad en todos los niveles, incluyendo la universidad. Hay que invertir al menos el 6% del PBI en educacion, con enfoque intercultural y de genero.",
-        "Necesitamos una revolucion educativa que forme ciudadanos y ciudadanas criticos, creativos y comprometidos con el bien comun. Educacion bilingue intercultural, educacion sexual integral, y una curricula que valore nuestra diversidad cultural.",
+        "La educación es un derecho, no un negocio. Propongo educación publica gratuita y de calidad en todos los niveles, incluyendo la universidad. Hay que invertir al menos el 6% del PBI en educacion, con enfoque intercultural y de genero.",
+        "Necesitamos una revolución educativa que forme ciudadanos y ciudadanas criticos, creativos y comprometidos con el bien comun. Educación bilingue intercultural, educación sexual integral, y una curricula que valore nuestra diversidad cultural.",
       ],
       corrupcion: [
-        "La corrupcion es un problema estructural que esta vinculado al modelo economico. Cuando el Estado es debil y capturado por intereses privados, la corrupcion prolifera. Hay que fortalecer las instituciones, garantizar su independencia y promover la participacion ciudadana en la fiscalizacion.",
-        "Propongo reformas profundas: financiamiento publico exclusivo para partidos politicos, eliminacion de la inmunidad parlamentaria, y un sistema de justicia verdaderamente independiente. La corrupcion se combate con democracia y transparencia.",
+        "La corrupción es un problema estructural que esta vinculado al modelo economico. Cuando el Estado es debil y capturado por intereses privados, la corrupción prolifera. Hay que fortalecer las instituciones, garantizar su independencia y promover la participación ciudadana en la fiscalizacion.",
+        "Propongo reformas profundas: financiamiento publico exclusivo para partidos politicos, eliminación de la inmunidad parlamentaria, y un sistema de justicia verdaderamente independiente. La corrupción se combate con democracia y transparencia.",
       ],
       salud: [
-        "La salud es un derecho fundamental. Propongo un sistema unico de salud, publico y universal, que garantice atencion de calidad para todos y todas sin importar su condicion economica. Hay que acabar con el negocio de la salud.",
-        "La pandemia demostro que nuestro sistema de salud es un desastre. Necesitamos invertir al menos el 6% del PBI en salud, construir hospitales y postas en zonas rurales, y garantizar que ningun peruano ni peruana muera por falta de atencion medica.",
+        "La salud es un derecho fundamental. Propongo un sistema unico de salud, publico y universal, que garantice atención de calidad para todos y todas sin importar su condición economica. Hay que acabar con el negocio de la salud.",
+        "La pandemia demostro que nuestro sistema de salud es un desastre. Necesitamos invertir al menos el 6% del PBI en salud, construir hospitales y postas en zonas rurales, y garantizar que ningun peruano ni peruana muera por falta de atención medica.",
       ],
       mineria: [
         "La mineria debe ser responsable con el medio ambiente y respetar los derechos de las comunidades. Propongo consulta previa vinculante para todos los proyectos extractivos y un impuesto a las sobreganancias mineras para financiar el desarrollo de las regiones.",
         "No estamos en contra de la mineria, pero si en contra de la mineria irresponsable que contamina rios, destruye ecosistemas y atropella los derechos de las comunidades. El agua vale mas que el oro.",
       ],
       constitucion: [
-        "El Peru necesita una nueva constitucion, elaborada por una asamblea constituyente plurinacional con paridad de genero. Una constitucion que reconozca el Peru como un Estado plurinacional, que garantice derechos sociales y que proteja el medio ambiente.",
-        "La constitucion del 93 fue impuesta por una dictadura y esta hecha a medida de los grandes intereses economicos. Necesitamos una constitucion que ponga al centro los derechos de las personas y la proteccion del medio ambiente, no las ganancias de las corporaciones.",
+        "El Perú necesita una nueva constitucion, elaborada por una asamblea constituyente plurinacional con paridad de genero. Una constitución que reconozca el Perú como un Estado plurinacional, que garantice derechos sociales y que proteja el medio ambiente.",
+        "La constitución del 93 fue impuesta por una dictadura y esta hecha a medida de los grandes intereses economicos. Necesitamos una constitución que ponga al centro los derechos de las personas y la protección del medio ambiente, no las ganancias de las corporaciones.",
       ],
     },
   },
@@ -310,43 +310,43 @@ const CANDIDATES: Candidate[] = [
       formality: "formal",
       aggressiveness: "moderado",
       populism: "tecnocrata",
-      style: "Habla como economista e intelectual. Usa datos, estadisticas y referencias internacionales. Enfatiza la formalizacion y los derechos de propiedad.",
+      style: "Habla como economista e intelectual. Usa datos, estadisticas y referencias internacionales. Enfatiza la formalización y los derechos de propiedad.",
     },
     greeting:
       "Buenas tardes. Soy Hernando de Soto. He dedicado mi vida a estudiar como los paises salen de la pobreza. La clave esta en formalizar la economia y dar derechos de propiedad a los mas pobres. Conversemos.",
     genericResponses: [
-      "El Peru tiene un enorme capital muerto. Millones de peruanos tienen activos informales que no pueden convertir en capital porque el sistema legal no los reconoce. Mi mision es cambiar eso, como lo he propuesto durante decades y como lo han implementado mas de 40 paises siguiendo mis recomendaciones.",
+      "El Perú tiene un enorme capital muerto. Millones de peruanos tienen activos informales que no pueden convertir en capital porque el sistema legal no los reconoce. Mi mision es cambiar eso, como lo he propuesto durante decades y como lo han implementado mas de 40 paises siguiendo mis recomendaciones.",
       "Los peruanos no son pobres por falta de esfuerzo, sino por falta de un marco legal que reconozca sus derechos. Cuando le das titulo de propiedad a una familia, le das acceso al credito, a la inversion, al progreso. Esa es la verdadera revolucion.",
-      "He trabajado con gobiernos de todo el mundo y he visto que la formula funciona: derechos de propiedad, formalizacion, simplificacion burocratica. El Peru puede ser un pais desarrollado si aplicamos estas reformas con decision.",
+      "He trabajado con gobiernos de todo el mundo y he visto que la formula funciona: derechos de propiedad, formalizacion, simplificación burocratica. El Perú puede ser un pais desarrollado si aplicamos estas reformas con decision.",
     ],
     topicResponses: {
       economia: [
-        "El 70% de la economia peruana es informal. Eso significa que millones de peruanos trabajan sin proteccion, sin acceso al credito, sin seguridad juridica. Mi plan es formalizar la economia no con multas y persecucion, sino dando incentivos: titulos de propiedad, simplificacion de tramites, acceso al sistema financiero.",
-        "El Peru tiene mas de 300 mil millones de dolares en capital muerto: propiedades sin titulo, negocios sin registro. Si formalizamos esos activos, podemos generar un boom economico sin precedentes. No necesitamos estatizar nada, necesitamos liberar el potencial de los peruanos.",
+        "El 70% de la economia peruana es informal. Eso significa que millones de peruanos trabajan sin proteccion, sin acceso al credito, sin seguridad juridica. Mi plan es formalizar la economia no con multas y persecucion, sino dando incentivos: titulos de propiedad, simplificación de tramites, acceso al sistema financiero.",
+        "El Perú tiene mas de 300 mil millones de dolares en capital muerto: propiedades sin titulo, negocios sin registro. Si formalizamos esos activos, podemos generar un boom economico sin precedentes. No necesitamos estatizar nada, necesitamos liberar el potencial de los peruanos.",
       ],
       seguridad: [
         "La inseguridad tiene raices economicas. Cuando la gente no tiene oportunidades formales, recurre a la informalidad y a la ilegalidad. Si formalizamos la economia y damos oportunidades reales, la delincuencia se reduce naturalmente. Pero tambien necesitamos un sistema judicial que funcione.",
         "La seguridad requiere un enfoque integral. Necesitamos una policia profesional, un poder judicial eficiente y, sobre todo, una economia formal que ofrezca oportunidades. Los paises mas seguros son los mas formales.",
       ],
       educacion: [
-        "La educacion es fundamental, pero tiene que estar conectada con el mercado laboral. No sirve de nada tener profesionales si no hay empleos formales para ellos. Propongo una educacion tecnica y universitaria alineada con las necesidades productivas del pais.",
-        "Hay que invertir en educacion de calidad, especialmente en zonas rurales. Pero tambien hay que reformar el sistema educativo para que forme emprendedores y profesionales que puedan participar en una economia formal y competitiva.",
+        "La educación es fundamental, pero tiene que estar conectada con el mercado laboral. No sirve de nada tener profesionales si no hay empleos formales para ellos. Propongo una educación tecnica y universitaria alineada con las necesidades productivas del pais.",
+        "Hay que invertir en educación de calidad, especialmente en zonas rurales. Pero tambien hay que reformar el sistema educativo para que forme emprendedores y profesionales que puedan participar en una economia formal y competitiva.",
       ],
       corrupcion: [
-        "La corrupcion florece donde hay burocracia excesiva. Si simplificas los tramites, reduces las oportunidades de corrupcion. Cada tramite innecesario es una oportunidad para que un funcionario pida coima. Hay que digitalizar y simplificar el Estado.",
-        "La mejor herramienta anticorrupcion es la transparencia y la simplificacion. En los paises desarrollados, la corrupcion es menor porque los tramites son simples y digitales. Hay que aplicar la misma formula en el Peru.",
+        "La corrupción florece donde hay burocracia excesiva. Si simplificas los tramites, reduces las oportunidades de corrupcion. Cada tramite innecesario es una oportunidad para que un funcionario pida coima. Hay que digitalizar y simplificar el Estado.",
+        "La mejor herramienta anticorrupción es la transparencia y la simplificacion. En los paises desarrollados, la corrupción es menor porque los tramites son simples y digitales. Hay que aplicar la misma formula en el Perú.",
       ],
       salud: [
         "El sistema de salud necesita eficiencia y competencia. Propongo un sistema mixto con un piso basico universal publico y la posibilidad de que el sector privado compita en calidad y precio. La clave es que el peruano pueda elegir.",
         "Hay que invertir en salud preventiva y en infraestructura, pero tambien hay que permitir que el sector privado participe. La competencia mejora la calidad. Un sistema exclusivamente estatal tiende a la ineficiencia.",
       ],
       mineria: [
-        "La mineria es crucial para el Peru, pero los conflictos se generan porque las comunidades no tienen derechos de propiedad claros sobre la superficie. Si les damos titulos formales, pueden negociar de igual a igual con las empresas mineras. Ese es el camino.",
-        "El problema minero en el Peru no es la mineria en si, sino la falta de derechos de propiedad. Cuando las comunidades son duenas formales de su tierra, pueden negociar mejores condiciones. La formalizacion es la solucion.",
+        "La mineria es crucial para el Perú, pero los conflictos se generan porque las comunidades no tienen derechos de propiedad claros sobre la superficie. Si les damos titulos formales, pueden negociar de igual a igual con las empresas mineras. Ese es el camino.",
+        "El problema minero en el Perú no es la mineria en si, sino la falta de derechos de propiedad. Cuando las comunidades son duenas formales de su tierra, pueden negociar mejores condiciones. La formalización es la solucion.",
       ],
       constitucion: [
-        "La constitucion actual tiene aspectos positivos que han permitido estabilidad economica. No creo en cambiar toda la constitucion, sino en hacer reformas puntuales que fortalezcan los derechos de propiedad y simplifiquen el marco regulatorio.",
-        "Una nueva constitucion es innecesaria y riesgosa. Lo que necesitamos son reformas legales que faciliten la formalizacion, protejan la propiedad y reduzcan la burocracia. El marco constitucional actual permite esas reformas.",
+        "La constitución actual tiene aspectos positivos que han permitido estabilidad economica. No creo en cambiar toda la constitucion, sino en hacer reformas puntuales que fortalezcan los derechos de propiedad y simplifiquen el marco regulatorio.",
+        "Una nueva constitución es innecesaria y riesgosa. Lo que necesitamos son reformas legales que faciliten la formalizacion, protejan la propiedad y reduzcan la burocracia. El marco constitucional actual permite esas reformas.",
       ],
     },
   },
@@ -362,43 +362,43 @@ const CANDIDATES: Candidate[] = [
       formality: "formal",
       aggressiveness: "pacifico",
       populism: "tecnocrata",
-      style: "Habla como tecnócrata moderno. Usa datos y propuestas especificas. Apela a los jovenes y la clase media. Proyecta imagen de renovacion politica.",
+      style: "Habla como tecnócrata moderno. Usa datos y propuestas especificas. Apela a los jovenes y la clase media. Proyecta imagen de renovación politica.",
     },
     greeting:
-      "Hola! Soy Julio Guzman, del Partido Morado. Represento una nueva generacion de politica: tecnica, transparente y con vision de futuro. Estoy aqui para conversar sobre como modernizar el Peru. Adelante con las preguntas.",
+      "Hola! Soy Julio Guzman, del Partido Morado. Represento una nueva generación de politica: tecnica, transparente y con vision de futuro. Estoy aquí para conversar sobre como modernizar el Perú. Adelante con las preguntas.",
     genericResponses: [
-      "Creo en una politica basada en evidencia, no en ideologias extremas. El Peru necesita un centro reformista que combine crecimiento economico con inclusion social. No somos ni de izquierda ni de derecha, somos de lo que funciona.",
-      "El Peru necesita renovacion politica. Llevamos decadas con los mismos actores y los mismos resultados. El Partido Morado representa una nueva forma de hacer politica: tecnica, transparente, moderna y con propuestas basadas en datos.",
-      "Mi vision es la de un Peru moderno, conectado al mundo, con un Estado eficiente que sirva al ciudadano. No necesitamos revoluciones ni mano dura, necesitamos reformas inteligentes y bien ejecutadas.",
+      "Creo en una politica basada en evidencia, no en ideologias extremas. El Perú necesita un centro reformista que combine crecimiento economico con inclusion social. No somos ni de izquierda ni de derecha, somos de lo que funciona.",
+      "El Perú necesita renovación politica. Llevamos decadas con los mismos actores y los mismos resultados. El Partido Morado representa una nueva forma de hacer politica: tecnica, transparente, moderna y con propuestas basadas en datos.",
+      "Mi vision es la de un Perú moderno, conectado al mundo, con un Estado eficiente que sirva al ciudadano. No necesitamos revoluciones ni mano dura, necesitamos reformas inteligentes y bien ejecutadas.",
     ],
     topicResponses: {
       economia: [
-        "Necesitamos una economia competitiva e inclusiva. Propongo reformas para mejorar la productividad: simplificacion regulatoria, inversion en infraestructura digital, y apoyo a la innovacion y el emprendimiento tecnologico. El Peru puede ser un hub tecnologico regional.",
-        "Hay que modernizar la economia peruana. Propongo la creacion de zonas economicas especiales para la industria tecnologica, incentivos tributarios para startups, y un fondo de inversion en innovacion. El futuro es la economia del conocimiento.",
+        "Necesitamos una economia competitiva e inclusiva. Propongo reformas para mejorar la productividad: simplificación regulatoria, inversion en infraestructura digital, y apoyo a la innovación y el emprendimiento tecnologico. El Perú puede ser un hub tecnologico regional.",
+        "Hay que modernizar la economia peruana. Propongo la creación de zonas economicas especiales para la industria tecnologica, incentivos tributarios para startups, y un fondo de inversion en innovacion. El futuro es la economia del conocimiento.",
       ],
       seguridad: [
-        "La seguridad ciudadana requiere un enfoque integral y basado en datos. Propongo un sistema de policia predictiva usando inteligencia artificial, reforma de la carrera policial con mejores sueldos y evaluaciones, y programas de reinsercion para reducir la reincidencia.",
+        "La seguridad ciudadana requiere un enfoque integral y basado en datos. Propongo un sistema de policia predictiva usando inteligencia artificial, reforma de la carrera policial con mejores sueldos y evaluaciones, y programas de reinserción para reducir la reincidencia.",
         "Hay que profesionalizar la lucha contra el crimen. Propongo una policia moderna, con tecnologia de punta, bien pagada y con controles internos estrictos. Tambien necesitamos un sistema penitenciario que realmente rehabilite.",
       ],
       educacion: [
-        "La educacion es la inversion mas rentable que puede hacer un pais. Propongo triplicar la inversion en educacion publica, universalizar la educacion inicial, y crear un programa de becas masivo para estudiantes de alto rendimiento de escuelas publicas.",
-        "Necesitamos una educacion del siglo XXI: programacion, pensamiento critico, creatividad, idiomas. Propongo reformar la curricula, capacitar a los maestros en nuevas metodologias, y conectar todas las escuelas a internet de alta velocidad.",
+        "La educación es la inversion mas rentable que puede hacer un pais. Propongo triplicar la inversion en educación publica, universalizar la educación inicial, y crear un programa de becas masivo para estudiantes de alto rendimiento de escuelas publicas.",
+        "Necesitamos una educación del siglo XXI: programacion, pensamiento critico, creatividad, idiomas. Propongo reformar la curricula, capacitar a los maestros en nuevas metodologias, y conectar todas las escuelas a internet de alta velocidad.",
       ],
       corrupcion: [
-        "La lucha anticorrupcion es central en nuestra propuesta. Propongo gobierno abierto con datos publicos en tiempo real, fiscalizacion ciudadana digital, eliminacion del secreto bancario para funcionarios publicos, y un sistema de proteccion efectiva para denunciantes.",
+        "La lucha anticorrupción es central en nuestra propuesta. Propongo gobierno abierto con datos publicos en tiempo real, fiscalización ciudadana digital, eliminación del secreto bancario para funcionarios publicos, y un sistema de protección efectiva para denunciantes.",
         "Hay que usar la tecnologia para combatir la corrupcion. Blockchain para las compras del Estado, inteligencia artificial para detectar patrones de corrupcion, y total transparencia en el uso de recursos publicos. Cada sol del Estado debe ser rastreable.",
       ],
       salud: [
-        "El sistema de salud necesita una reforma integral basada en evidencia. Propongo un sistema de historia clinica digital universal, telemedicina para zonas rurales, y una red de atencion primaria fortalecida que reduzca la presion sobre los hospitales.",
+        "El sistema de salud necesita una reforma integral basada en evidencia. Propongo un sistema de historia clinica digital universal, telemedicina para zonas rurales, y una red de atención primaria fortalecida que reduzca la presion sobre los hospitales.",
         "Hay que invertir en salud preventiva y en tecnologia medica. Propongo que cada peruano tenga una tarjeta unica de salud digital, acceso a telemedicina, y que se implemente la receta electronica en todo el pais. Modernizar para servir mejor.",
       ],
       mineria: [
         "La mineria debe ser un motor de desarrollo sostenible. Propongo estandares ambientales internacionales, un fondo soberano con parte de las ganancias mineras, y programas de desarrollo alternativo para las comunidades. Mineria si, pero bien hecha.",
-        "Hay que profesionalizar la gestion de conflictos mineros con dialogo temprano, estudios de impacto ambiental rigurosos y distribucion justa de beneficios. La mineria puede ser compatible con el medio ambiente si se hace con los mejores estandares.",
+        "Hay que profesionalizar la gestion de conflictos mineros con dialogo temprano, estudios de impacto ambiental rigurosos y distribución justa de beneficios. La mineria puede ser compatible con el medio ambiente si se hace con los mejores estandares.",
       ],
       constitucion: [
         "No creo en una asamblea constituyente, pero si en reformas constitucionales puntuales y necesarias. Hay que fortalecer la independencia del poder judicial, mejorar el sistema electoral y modernizar el marco regulatorio. Reformas si, aventuras no.",
-        "La constitucion se puede mejorar con reformas especificas aprobadas por el Congreso. Necesitamos fortalecer la descentralizacion, mejorar el equilibrio de poderes y actualizar el capitulo economico para incluir la economia digital.",
+        "La constitución se puede mejorar con reformas especificas aprobadas por el Congreso. Necesitamos fortalecer la descentralizacion, mejorar el equilibrio de poderes y actualizar el capitulo economico para incluir la economia digital.",
       ],
     },
   },
@@ -406,7 +406,7 @@ const CANDIDATES: Candidate[] = [
     id: "forsyth",
     name: "George Forsyth",
     shortName: "George",
-    party: "Somos Peru",
+    party: "Somos Perú",
     initials: "GF",
     color: "#00897B",
     bgColor: "#E0F2F1",
@@ -417,39 +417,39 @@ const CANDIDATES: Candidate[] = [
       style: "Habla de forma cercana y juvenil. Usa referencias deportivas. Se presenta como un outsider que conoce los problemas de la calle. Apela a la juventud.",
     },
     greeting:
-      "Que tal, gente! Soy George Forsyth. Ex futbolista, ex alcalde de La Victoria, y ahora candidato presidencial. Yo conozco la calle, conozco los problemas del barrio. Estoy aqui para escucharlos. Pregunten con confianza.",
+      "Que tal, gente! Soy George Forsyth. Ex futbolista, ex alcalde de La Victoria, y ahora candidato presidencial. Yo conozco la calle, conozco los problemas del barrio. Estoy aquí para escucharlos. Pregunten con confianza.",
     genericResponses: [
       "Mira, yo vengo de la calle, del barrio. Como alcalde de La Victoria recupere Gamarra, ordene el distrito. No soy un politico tradicional, soy alguien que quiere hacer las cosas bien y que tiene la energia para hacerlo.",
-      "Yo no soy un politico de toda la vida. Fui futbolista, fui alcalde, y en cada cosa que he hecho le he puesto garra. El Peru necesita esa misma garra, esa misma entrega. Y yo la tengo.",
+      "Yo no soy un politico de toda la vida. Fui futbolista, fui alcalde, y en cada cosa que he hecho le he puesto garra. El Perú necesita esa misma garra, esa misma entrega. Y yo la tengo.",
       "La gente esta cansada de los mismos de siempre. Yo represento el cambio, la renovacion. Soy joven, tengo energia, y conozco los problemas reales de la gente porque los he vivido y los he enfrentado como alcalde.",
     ],
     topicResponses: {
       economia: [
-        "La economia se reactiva desde lo local. Como alcalde impulse la formalizacion de Gamarra, apoye a los comerciantes, y genere empleo. Hay que hacer lo mismo a nivel nacional: apoyar a las pymes, reducir los tramites y generar oportunidades para los jovenes.",
-        "Hay que impulsar el emprendimiento juvenil. Los jovenes peruanos son creativos e innovadores, pero el Estado les pone trabas. Propongo creditos blandos, capacitacion gratuita y menos burocracia para que puedan echar a andar sus negocios.",
+        "La economia se reactiva desde lo local. Como alcalde impulse la formalización de Gamarra, apoye a los comerciantes, y genere empleo. Hay que hacer lo mismo a nivel nacional: apoyar a las pymes, reducir los tramites y generar oportunidades para los jovenes.",
+        "Hay que impulsar el emprendimiento juvenil. Los jovenes peruanos son creativos e innovadores, pero el Estado les pone trabas. Propongo creditos blandos, capacitación gratuita y menos burocracia para que puedan echar a andar sus negocios.",
       ],
       seguridad: [
-        "La seguridad es lo que mejor conozco. Como alcalde de La Victoria recupere zonas que eran tierra de nadie. Lo hice con patrullaje constante, camaras, iluminacion y trabajo con la comunidad. Ese modelo se puede replicar en todo el Peru.",
-        "Hay que combatir la inseguridad barrio por barrio. Mas serenazgo, mas camaras, mas iluminacion, y sobre todo, mas oportunidades para los jovenes que hoy son captados por las bandas criminales. Prevencion y accion, las dos cosas.",
+        "La seguridad es lo que mejor conozco. Como alcalde de La Victoria recupere zonas que eran tierra de nadie. Lo hice con patrullaje constante, camaras, iluminación y trabajo con la comunidad. Ese modelo se puede replicar en todo el Perú.",
+        "Hay que combatir la inseguridad barrio por barrio. Mas serenazgo, mas camaras, mas iluminacion, y sobre todo, mas oportunidades para los jovenes que hoy son captados por las bandas criminales. Prevención y accion, las dos cosas.",
       ],
       educacion: [
-        "La educacion tiene que preparar a los jovenes para el mundo real. Mas educacion tecnica, mas deporte, mas arte. No todo el mundo tiene que ir a la universidad. Hay que valorar los oficios tecnicos porque el Peru los necesita.",
+        "La educación tiene que preparar a los jovenes para el mundo real. Mas educación tecnica, mas deporte, mas arte. No todo el mundo tiene que ir a la universidad. Hay que valorar los oficios tecnicos porque el Perú los necesita.",
         "Como deportista se lo importante que es la disciplina y el trabajo en equipo. Hay que meter mas deporte en las escuelas, mas actividades extracurriculares, y darles a los jovenes alternativas positivas.",
       ],
       corrupcion: [
-        "Yo entre a la politica para cambiar las cosas, no para robar. Como alcalde fui transparente con los fondos publicos. Hay que exigir lo mismo a todos los funcionarios: declaracion de bienes, auditorias constantes y rendicion de cuentas.",
-        "La corrupcion se combate con ejemplo. Si el presidente es honesto, el mensaje baja a todos los niveles. Propongo un gobierno de puertas abiertas donde cada ciudadano pueda ver como se gasta su plata.",
+        "Yo entre a la politica para cambiar las cosas, no para robar. Como alcalde fui transparente con los fondos publicos. Hay que exigir lo mismo a todos los funcionarios: declaración de bienes, auditorias constantes y rendición de cuentas.",
+        "La corrupción se combate con ejemplo. Si el presidente es honesto, el mensaje baja a todos los niveles. Propongo un gobierno de puertas abiertas donde cada ciudadano pueda ver como se gasta su plata.",
       ],
       salud: [
         "La salud es un tema urgente. Hay que mejorar los centros de salud de los barrios, que son los mas cercanos a la gente. Mejor equipados, con mas personal, y con horarios extendidos. La salud no puede esperar.",
-        "Hay que acercar la salud a la gente. Propongo brigadas medicas en los barrios mas pobres, campanas de salud preventiva, y que los centros de salud funcionen como centros comunitarios donde la gente encuentre atencion integral.",
+        "Hay que acercar la salud a la gente. Propongo brigadas medicas en los barrios mas pobres, campanas de salud preventiva, y que los centros de salud funcionen como centros comunitarios donde la gente encuentre atención integral.",
       ],
       mineria: [
         "La mineria es importante pero tiene que respetar a las comunidades y al medio ambiente. Hay que buscar el dialogo, sentarse con todos en la mesa, y encontrar soluciones que beneficien a todos. No es blanco o negro.",
         "Como en el futbol, en la mineria hay que jugar en equipo: empresas, comunidades y Estado. Si los tres trabajan juntos, todos ganan. Pero si uno quiere ganar solo, pierde todo el equipo.",
       ],
       constitucion: [
-        "Creo que hay que hacer reformas, pero con calma, sin extremismos. El Peru no esta para experimentos. Reformas puntuales que mejoren la vida de la gente: mejor descentralizacion, mas poder a los municipios, mas participacion ciudadana.",
+        "Creo que hay que hacer reformas, pero con calma, sin extremismos. El Perú no esta para experimentos. Reformas puntuales que mejoren la vida de la gente: mejor descentralizacion, mas poder a los municipios, mas participación ciudadana.",
         "No soy de los que dicen que hay que cambiar todo. Hay cosas que funcionan y hay que mantenerlas. Pero tambien hay cosas que mejorar. Hagamoslo con sentido comun, sin ideologias extremas.",
       ],
     },
@@ -461,13 +461,13 @@ const CANDIDATES: Candidate[] = [
 // ---------------------------------------------------------------------------
 
 const SUGGESTED_TOPICS = [
-  { key: "economia", label: "Economia", icon: "💰", question: "Cual es tu plan economico para el Peru?" },
+  { key: "economia", label: "Economia", icon: "💰", question: "Cual es tu plan economico para el Perú?" },
   { key: "seguridad", label: "Seguridad", icon: "🛡️", question: "Como piensas combatir la inseguridad ciudadana?" },
   { key: "educacion", label: "Educacion", icon: "📚", question: "Que propones para mejorar la educacion?" },
   { key: "corrupcion", label: "Corrupcion", icon: "⚖️", question: "Como vas a luchar contra la corrupcion?" },
   { key: "salud", label: "Salud", icon: "🏥", question: "Cual es tu plan para mejorar la salud publica?" },
-  { key: "mineria", label: "Mineria", icon: "⛏️", question: "Cual es tu posicion sobre la mineria?" },
-  { key: "constitucion", label: "Constitucion", icon: "📜", question: "Crees que el Peru necesita una nueva constitucion?" },
+  { key: "mineria", label: "Mineria", icon: "⛏️", question: "Cual es tu posición sobre la mineria?" },
+  { key: "constitucion", label: "Constitucion", icon: "📜", question: "Crees que el Perú necesita una nueva constitucion?" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -561,7 +561,7 @@ function addPersonalityFlavor(
   if (personality.aggressiveness === "agresivo") {
     const suffixes = [
       " Y el que no este de acuerdo, que se ponga a un lado, porque vamos con todo.",
-      " Aqui no hay medias tintas. O estas con el pueblo o estas contra el pueblo.",
+      " Aquí no hay medias tintas. O estas con el pueblo o estas contra el pueblo.",
       " Eso es lo que hay, te guste o no.",
     ];
     suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
@@ -588,7 +588,7 @@ function generateResponse(candidate: Candidate, userMessage: string): string {
   } else {
     baseResponse =
       candidate.genericResponses[
-        Math.floor(Math.random() * candidate.genericResponses.length)
+      Math.floor(Math.random() * candidate.genericResponses.length)
       ];
   }
 
@@ -921,8 +921,8 @@ export default function SimuladorPage() {
               {selectedCandidate.personality.formality === "formal"
                 ? "Formal"
                 : selectedCandidate.personality.formality === "informal"
-                ? "Informal"
-                : "Coloquial"}
+                  ? "Informal"
+                  : "Coloquial"}
             </span>
             <span
               className="text-xs px-2.5 py-1 rounded-full font-medium bg-white/70 text-gray-600"
@@ -930,8 +930,8 @@ export default function SimuladorPage() {
               {selectedCandidate.personality.aggressiveness === "agresivo"
                 ? "Directo"
                 : selectedCandidate.personality.aggressiveness === "moderado"
-                ? "Moderado"
-                : "Conciliador"}
+                  ? "Moderado"
+                  : "Conciliador"}
             </span>
           </div>
         </div>
@@ -946,16 +946,15 @@ export default function SimuladorPage() {
           {/* Date stamp */}
           <div className="text-center">
             <span className="inline-block text-xs text-gray-400 bg-white px-3 py-1 rounded-full shadow-sm">
-              Simulador de Debate - Elecciones Peru 2026
+              Simulador de Debate - Elecciones Perú 2026
             </span>
           </div>
 
           {messages.map((msg) => (
             <div
               key={msg.id}
-              className={`flex ${
-                msg.role === "user" ? "justify-end" : "justify-start"
-              }`}
+              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"
+                }`}
             >
               {msg.role === "assistant" && (
                 <div
@@ -966,21 +965,19 @@ export default function SimuladorPage() {
                 </div>
               )}
               <div
-                className={`max-w-[80%] sm:max-w-[70%] rounded-2xl px-4 py-3 ${
-                  msg.role === "user"
-                    ? "bg-[#D91023] text-white rounded-br-md"
-                    : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md"
-                }`}
+                className={`max-w-[80%] sm:max-w-[70%] rounded-2xl px-4 py-3 ${msg.role === "user"
+                  ? "bg-[#D91023] text-white rounded-br-md"
+                  : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md"
+                  }`}
               >
                 <p className="text-sm leading-relaxed whitespace-pre-wrap">
                   {msg.content}
                 </p>
                 <p
-                  className={`text-[10px] mt-1.5 ${
-                    msg.role === "user"
-                      ? "text-white/60"
-                      : "text-gray-300"
-                  }`}
+                  className={`text-[10px] mt-1.5 ${msg.role === "user"
+                    ? "text-white/60"
+                    : "text-gray-300"
+                    }`}
                 >
                   {msg.timestamp.toLocaleTimeString("es-PE", {
                     hour: "2-digit",

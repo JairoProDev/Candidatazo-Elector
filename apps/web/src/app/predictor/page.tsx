@@ -13,12 +13,12 @@ interface Candidate {
 const INITIAL_CANDIDATES: Candidate[] = [
   { name: "Keiko Fujimori", party: "Fuerza Popular", percentage: 22, color: "#FF6B00" },
   { name: "Antauro Humala", party: "Frente Patriotico", percentage: 15, color: "#8B0000" },
-  { name: "Veronika Mendoza", party: "Juntos por el Peru", percentage: 12, color: "#DC2626" },
+  { name: "Veronika Mendoza", party: "Juntos por el Perú", percentage: 12, color: "#DC2626" },
   { name: "Hernando de Soto", party: "Avanza Pais", percentage: 10, color: "#2563EB" },
   { name: "Cesar Acuna", party: "Alianza para el Progreso", percentage: 8, color: "#7C3AED" },
-  { name: "Daniel Urresti", party: "Podemos Peru", percentage: 8, color: "#0891B2" },
+  { name: "Daniel Urresti", party: "Podemos Perú", percentage: 8, color: "#0891B2" },
   { name: "Julio Guzman", party: "Partido Morado", percentage: 7, color: "#A855F7" },
-  { name: "George Forsyth", party: "Somos Peru", percentage: 6, color: "#059669" },
+  { name: "George Forsyth", party: "Somos Perú", percentage: 6, color: "#059669" },
 ];
 
 const REGIONAL_PREDICTIONS = [
@@ -134,7 +134,7 @@ export default function PredictorPage() {
           </div>
           <div className="card text-center p-4">
             <p className="text-2xl font-extrabold text-success">24h</p>
-            <p className="text-xs text-gray-500 mt-1">Actualizacion continua</p>
+            <p className="text-xs text-gray-500 mt-1">Actualización continua</p>
           </div>
         </div>
 
@@ -177,13 +177,12 @@ export default function PredictorPage() {
                         <button
                           onClick={() => handleVote(candidate.name)}
                           disabled={userVoted !== null}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                            userVoted === candidate.name
-                              ? "bg-primary text-white shadow-card"
-                              : userVoted !== null
-                                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                                : "bg-primary-50 text-primary hover:bg-primary hover:text-white hover:shadow-card"
-                          }`}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${userVoted === candidate.name
+                            ? "bg-primary text-white shadow-card"
+                            : userVoted !== null
+                              ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                              : "bg-primary-50 text-primary hover:bg-primary hover:text-white hover:shadow-card"
+                            }`}
                         >
                           {userVoted === candidate.name ? "Votado" : "Votar"}
                         </button>
@@ -341,10 +340,10 @@ export default function PredictorPage() {
               Quieres saber con quien haces match?
             </h3>
             <p className="text-gray-500 mb-6 text-sm">
-              No basta predecir quien gana. Descubre quien te representa mejor con el DNA Test.
+              No basta predecir quien gana. Descubre quien te representa mejor con el ADN Test.
             </p>
             <Link href="/test" className="btn-primary">
-              Hacer el DNA Test
+              Hacer el ADN Test
             </Link>
           </div>
         </section>

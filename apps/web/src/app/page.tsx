@@ -6,7 +6,7 @@ import Link from "next/link";
    request-time (SSR / ISR).
    ------------------------------------------------------------------ */
 function daysUntilElection(): number {
-  const election = new Date("2026-04-12T00:00:00-05:00"); // Peru time
+  const election = new Date("2026-04-12T00:00:00-05:00"); // Perú time
   const now = new Date();
   const diff = Math.ceil(
     (election.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
@@ -36,7 +36,7 @@ export default function HomePage() {
             {/* Election badge */}
             <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-100 text-primary rounded-full px-5 py-2 text-sm font-semibold mb-8 animate-fade-in">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Elecciones Peru 2026 &mdash; Primera vuelta: 12 de abril
+              Elecciones Perú 2026 &mdash; Primera vuelta: 12 de abril
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-secondary leading-tight mb-6 animate-slide-up">
@@ -44,11 +44,11 @@ export default function HomePage() {
               <span className="bg-gradient-to-r from-primary via-primary-600 to-gold bg-clip-text text-transparent">
                 conocimiento
               </span>
-              ,<br className="hidden sm:block" /> no con intuicion
+              ,<br className="hidden sm:block" /> no con intuición
             </h1>
 
             <p className="text-lg sm:text-xl text-secondary-300 mb-10 max-w-2xl mx-auto animate-slide-up">
-              Descubre tu perfil politico, compara a los 36 candidatos y
+              Descubre tu perfil político, compara a los 36 candidatos y
               verifica lo que dicen &mdash; con inteligencia artificial y datos
               reales.
             </p>
@@ -62,7 +62,7 @@ export default function HomePage() {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
-                Descubrir mi DNA Politico
+                Descubrir mi ADN Politico
               </Link>
               <Link
                 href="/candidatos"
@@ -126,7 +126,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* 1 - DNA Test */}
+            {/* 1 - ADN Test */}
             <FeatureCard
               href="/test"
               iconBg="bg-primary-50"
@@ -134,7 +134,7 @@ export default function HomePage() {
               icon={
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               }
-              title="DNA Politico"
+              title="ADN Politico"
               description="30 preguntas con contexto peruano real. Analisis en 5 dimensiones: economia, social, ambiente, seguridad e instituciones."
               cta="Hacer el test"
               ctaColor="text-primary"
@@ -177,7 +177,7 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
               }
               title="Simulador IA"
-              description="Conversa con versiones IA de los candidatos. Hazles preguntas dificiles y compara sus respuestas en vivo."
+              description="Conversa con versiones IA de los candidatos. Hazles preguntas difíciles y compara sus respuestas en vivo."
               cta="Simular debate"
               ctaColor="text-secondary"
             />
@@ -191,7 +191,7 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
               }
               title="Presidente Ideal"
-              description="Basado en tu DNA politico, construimos el perfil de tu presidente ideal y lo comparamos con los candidatos reales."
+              description="Basado en tu ADN politico, construimos el perfil de tu presidente ideal y lo comparamos con los candidatos reales."
               cta="Descubrir ideal"
               ctaColor="text-primary-600"
             />
@@ -232,12 +232,12 @@ export default function HomePage() {
             <StepCard
               step={1}
               title="Responde el test"
-              description="30 preguntas sobre temas reales del Peru. Cada una con contexto para que entiendas de que se trata."
+              description="30 preguntas sobre temas reales del Perú. Cada una con contexto para que entiendas de que se trata."
             />
             <StepCard
               step={2}
               title="Descubre tu perfil"
-              description="Obten tu DNA politico en 5 dimensiones con visualizaciones claras y tu tribu politica."
+              description="Obten tu ADN politico en 5 dimensiones con visualizaciones claras y tu tribu politica."
             />
             <StepCard
               step={3}
@@ -274,14 +274,14 @@ export default function HomePage() {
               candidate="Candidato A"
               verdict="Falso"
               verdictColor="bg-primary text-white"
-              summary="Segun el INEI, la pobreza actual es 27.5%. Ninguna politica publica ha logrado una reduccion de esa magnitud en 12 meses."
+              summary="Segun el INEI, la pobreza actual es 27.5%. Ninguna politica publica ha logrado una reducción de esa magnitud en 12 meses."
             />
             <FactCheckCard
-              claim="El Peru es el pais con mas biodiversidad del mundo"
+              claim="El Perú es el pais con mas biodiversidad del mundo"
               candidate="Candidato B"
               verdict="Parcial"
               verdictColor="bg-gold text-white"
-              summary="Peru es uno de los 17 paises megadiversos, pero Brasil y Colombia tienen mayor biodiversidad total registrada."
+              summary="Perú es uno de los 17 paises megadiversos, pero Brasil y Colombia tienen mayor biodiversidad total registrada."
             />
             <FactCheckCard
               claim="La inversion extranjera crecio 15% este ano"
@@ -310,7 +310,7 @@ export default function HomePage() {
           CTA BANNER WITH FLAG STRIPE
           ============================================================ */}
       <section className="relative overflow-hidden">
-        {/* Peru flag stripe accent at top */}
+        {/* Perú flag stripe accent at top */}
         <div className="h-2 bg-gradient-to-r from-primary via-white to-primary" />
 
         <div className="bg-secondary py-20">
@@ -350,7 +350,7 @@ export default function HomePage() {
             <ProofItem value="30" label="preguntas en el test" />
             <ProofItem value="5 min" label="para completarlo" />
             <ProofItem value="100%" label="gratuito y sin registro" />
-            <ProofItem value="0" label="afiliacion politica" />
+            <ProofItem value="0" label="afiliación politica" />
           </div>
         </div>
       </section>

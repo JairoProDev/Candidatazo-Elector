@@ -12,7 +12,7 @@ const PRINCIPLES = [
   {
     title: "Datos verificables",
     description:
-      "Toda informacion presentada esta respaldada por fuentes oficiales y verificables. Citamos nuestras fuentes y proporcionamos enlaces para que puedas verificar por tu cuenta.",
+      "Toda información presentada esta respaldada por fuentes oficiales y verificables. Citamos nuestras fuentes y proporcionamos enlaces para que puedas verificar por tu cuenta.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
     ),
@@ -28,13 +28,13 @@ const PRINCIPLES = [
   {
     title: "Sin publicidad politica",
     description:
-      "No aceptamos publicidad de partidos politicos ni de candidatos. Nuestro modelo se basa en la contribucion comunitaria y el apoyo de organizaciones civicas.",
+      "No aceptamos publicidad de partidos politicos ni de candidatos. Nuestro modelo se basa en la contribución comunitaria y el apoyo de organizaciones civicas.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
     ),
   },
   {
-    title: "Proteccion de datos",
+    title: "Protección de datos",
     description:
       "Los datos de los usuarios se manejan con estricta confidencialidad. No vendemos datos personales ni los compartimos con terceros. Las respuestas del test son anonimas.",
     icon: (
@@ -56,7 +56,7 @@ const TEAM_ROLES = [
   { role: "Analisis politico", desc: "Politologos que clasifican posiciones de candidatos" },
   { role: "Fact-checking", desc: "Periodistas que verifican declaraciones de candidatos" },
   { role: "Diseno", desc: "Disenadores que crean una experiencia accesible para todos" },
-  { role: "Datos", desc: "Analistas que recopilan y procesan informacion electoral" },
+  { role: "Datos", desc: "Analistas que recopilan y procesan información electoral" },
 ];
 
 export default function TransparenciaPage() {
@@ -94,8 +94,8 @@ export default function TransparenciaPage() {
             </span>
           </h1>
           <p className="text-lg text-gray-500 leading-relaxed max-w-3xl">
-            Creemos que una plataforma de informacion electoral debe predicar con
-            el ejemplo. Aqui explicamos quienes somos, como trabajamos y como
+            Creemos que una plataforma de información electoral debe predicar con
+            el ejemplo. Aquí explicamos quienes somos, como trabajamos y como
             puedes verificar todo lo que hacemos.
           </p>
         </div>

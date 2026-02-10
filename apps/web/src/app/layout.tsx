@@ -5,18 +5,18 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Candidatazo - Descubre tu candidato ideal | Elecciones Peru 2026",
+    default: "Candidatazo - Descubre tu candidato ideal | Elecciones Perú 2026",
     template: "%s | Candidatazo",
   },
   description:
-    "Plataforma de informacion electoral. Descubre tu perfil politico, compara candidatos con IA y verifica datos en tiempo real. Elecciones Peru 2026.",
+    "Plataforma de información electoral. Descubre tu perfil politico, compara candidatos con IA y verifica datos en tiempo real. Elecciones Perú 2026.",
   keywords: [
     "elecciones peru 2026",
     "candidatos peru",
     "test politico",
     "fact checking",
     "verificador de datos",
-    "DNA politico",
+    "ADN politico",
   ],
   openGraph: {
     type: "website",
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     siteName: "Candidatazo",
     title: "Candidatazo - Tu guia electoral inteligente",
     description:
-      "Descubre tu perfil politico, compara candidatos y verifica datos. Elecciones Peru 2026.",
+      "Descubre tu perfil politico, compara candidatos y verifica datos. Elecciones Perú 2026.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Candidatazo - Elecciones Peru 2026",
+    title: "Candidatazo - Elecciones Perú 2026",
     description:
       "Descubre tu perfil politico con IA. Compara candidatos. Verifica datos.",
   },

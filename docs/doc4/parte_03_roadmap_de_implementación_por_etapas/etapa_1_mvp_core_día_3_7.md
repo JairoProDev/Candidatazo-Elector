@@ -1,5 +1,5 @@
 ### **ETAPA 1: MVP CORE (Día 3-7)**
-**Objetivo:** Political DNA Test + Candidate Matching + Basic Sharing
+**Objetivo:** Political ADN Test + Candidate Matching + Basic Sharing
 
 #### **1.1 - Database Schema & Seed**
 ```bash
@@ -58,7 +58,7 @@ export default function App() {
 }
 ```
 
-#### **1.3 - DNA Test Flow**
+#### **1.3 - ADN Test Flow**
 
 **Questions Data:**
 ```typescript
@@ -275,7 +275,7 @@ export async function generateShareableImage(results: DnaResults) {
   const ShareableCard = () => (
     <View ref={viewRef} style={styles.shareable}>
       <Image source={require('./logo.png')} />
-      <Text>MI DNA POLÍTICO</Text>
+      <Text>MI ADN POLÍTICO</Text>
       <RadarChart data={results.scores} />
       <Text>{results.tribe}</Text>
       <QRCode value={`https://gobapp.pe/join/${results.userId}`} />
@@ -301,7 +301,7 @@ async function shareResults() {
   
   await Sharing.shareAsync(imageUri, {
     mimeType: 'image/png',
-    dialogTitle: 'Compartir mi DNA Político'
+    dialogTitle: 'Compartir mi ADN Político'
   });
 }
 ```

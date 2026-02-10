@@ -1,4 +1,4 @@
-// ==================== DNA Test Types ====================
+// ==================== ADN Test Types ====================
 
 export interface DnaScores {
   economic: number;

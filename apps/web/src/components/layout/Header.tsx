@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/test", label: "DNA Test", description: "Descubre tu perfil politico" },
+  { href: "/test", label: "ADN Test", description: "Descubre tu perfil politico" },
   { href: "/candidatos", label: "Candidatos", description: "Conoce a los 36 candidatos" },
   { href: "/verificador", label: "Verificador", description: "Fact-checking con IA" },
   { href: "/simulador", label: "Simulador IA", description: "Conversa con candidatos IA" },
@@ -35,7 +35,7 @@ export function Header() {
                   Candidatazo
                 </span>
                 <span className="text-[10px] font-medium text-gold-600 tracking-wider uppercase leading-tight hidden sm:block">
-                  Peru 2026
+                  Perú 2026
                 </span>
               </div>
             </Link>
@@ -48,11 +48,10 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      isActive
+                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
                         ? "bg-primary-50 text-primary border border-primary-100"
                         : "text-secondary-400 hover:bg-primary-50 hover:text-primary"
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </Link>
@@ -116,11 +115,10 @@ export function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block px-4 py-3 rounded-lg transition-all ${
-                      isActive
+                    className={`block px-4 py-3 rounded-lg transition-all ${isActive
                         ? "bg-primary-50 text-primary border-l-4 border-primary"
                         : "text-secondary-400 hover:bg-primary-50 hover:text-primary"
-                    }`}
+                      }`}
                   >
                     <span className="font-medium">{link.label}</span>
                     <span className="block text-xs text-gray-400 mt-0.5">

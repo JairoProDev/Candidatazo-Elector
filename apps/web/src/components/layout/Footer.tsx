@@ -34,13 +34,13 @@ export function Footer() {
                     Candidatazo
                   </span>
                   <span className="text-[10px] font-medium text-gold tracking-wider uppercase leading-tight">
-                    Peru 2026
+                    Perú 2026
                   </span>
                 </div>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed max-w-sm mb-6">
-                Plataforma de informacion electoral imparcial para que votes con
-                conocimiento. Sin afiliacion a ningun partido politico.
+                Plataforma de información electoral imparcial para que votes con
+                conocimiento. Sin afiliación a ningun partido politico.
               </p>
 
               {/* Social media links */}
@@ -75,7 +75,7 @@ export function Footer() {
                 Herramientas
               </h3>
               <ul className="space-y-2.5">
-                <FooterLink href="/test" label="DNA Test" />
+                <FooterLink href="/test" label="ADN Test" />
                 <FooterLink href="/candidatos" label="Candidatos" />
                 <FooterLink href="/verificador" label="Verificador" />
                 <FooterLink href="/simulador" label="Simulador IA" />
@@ -118,10 +118,10 @@ export function Footer() {
           {/* ---- Bottom bar ---- */}
           <div className="border-t border-secondary-600 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-xs text-gray-500">
-              2026 Candidatazo. Proyecto de informacion civica.
+              2026 Candidatazo. Proyecto de información civica.
             </p>
             <p className="text-sm font-medium text-gold-400">
-              Hecho con orgullo en Peru
+              Hecho con orgullo en Perú
             </p>
             <p className="text-xs text-gray-500">
               No afiliado a ningun partido politico.

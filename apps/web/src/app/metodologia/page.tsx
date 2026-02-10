@@ -5,11 +5,11 @@ const DIMENSIONS = [
     name: "Economia",
     color: "#D4A017",
     description:
-      "Mide la posicion en el eje intervencionismo estatal vs libre mercado. Incluye politica fiscal, tributaria, comercial, regulacion y rol del Estado en la economia.",
+      "Mide la posición en el eje intervencionismo estatal vs libre mercado. Incluye politica fiscal, tributaria, comercial, regulación y rol del Estado en la economia.",
     examples: [
       "Politica tributaria y fiscal",
       "Rol del Estado en empresas",
-      "Regulacion de mercados",
+      "Regulación de mercados",
       "Programas sociales vs libre competencia",
     ],
   },
@@ -17,7 +17,7 @@ const DIMENSIONS = [
     name: "Social",
     color: "#EC4899",
     description:
-      "Evalua la posicion en temas de derechos civiles, diversidad, genero, migracion y libertades individuales. Va de conservador a progresista.",
+      "Evalua la posición en temas de derechos civiles, diversidad, genero, migración y libertades individuales. Va de conservador a progresista.",
     examples: [
       "Derechos LGBTQ+",
       "Igualdad de genero",
@@ -29,7 +29,7 @@ const DIMENSIONS = [
     name: "Ambiente",
     color: "#10B981",
     description:
-      "Mide la prioridad que se da a la proteccion ambiental vs desarrollo extractivo. Incluye mineria, energia, recursos naturales y cambio climatico.",
+      "Mide la prioridad que se da a la protección ambiental vs desarrollo extractivo. Incluye mineria, energia, recursos naturales y cambio climatico.",
     examples: [
       "Mineria vs medio ambiente",
       "Energias renovables",
@@ -41,7 +41,7 @@ const DIMENSIONS = [
     name: "Seguridad",
     color: "#D91023",
     description:
-      "Evalua la posicion entre garantismo y mano dura. Incluye politica criminal, fuerzas armadas, pena de muerte y derechos de los acusados.",
+      "Evalua la posición entre garantismo y mano dura. Incluye politica criminal, fuerzas armadas, pena de muerte y derechos de los acusados.",
     examples: [
       "Pena de muerte",
       "Fuerzas Armadas en calles",
@@ -53,7 +53,7 @@ const DIMENSIONS = [
     name: "Institucional",
     color: "#7C3AED",
     description:
-      "Mide la posicion respecto a reformas del Estado, constitucion, descentralizacion y equilibrio de poderes. Va de status quo a refundacion.",
+      "Mide la posición respecto a reformas del Estado, constitucion, descentralización y equilibrio de poderes. Va de status quo a refundacion.",
     examples: [
       "Nueva constitucion",
       "Descentralizacion",
@@ -66,21 +66,21 @@ const DIMENSIONS = [
 const METHODOLOGY_STEPS = [
   {
     step: 1,
-    title: "Recopilacion de posiciones",
+    title: "Recopilación de posiciones",
     description:
-      "Analizamos planes de gobierno oficiales inscritos ante el JNE, declaraciones publicas verificables, entrevistas en medios de comunicacion y votaciones legislativas previas de cada candidato.",
+      "Analizamos planes de gobierno oficiales inscritos ante el JNE, declaraciones publicas verificables, entrevistas en medios de comunicación y votaciones legislativas previas de cada candidato.",
   },
   {
     step: 2,
-    title: "Clasificacion en 5 dimensiones",
+    title: "Clasificación en 5 dimensiones",
     description:
-      "Cada posicion se mapea a una de las 5 dimensiones politicas en una escala de 0 a 100. Dos analistas independientes clasifican cada posicion y se promedian los resultados.",
+      "Cada posición se mapea a una de las 5 dimensiones politicas en una escala de 0 a 100. Dos analistas independientes clasifican cada posición y se promedian los resultados.",
   },
   {
     step: 3,
-    title: "Construccion de preguntas",
+    title: "Construcción de preguntas",
     description:
-      "Las 30 preguntas del DNA Test se disenan para cubrir las 5 dimensiones de forma balanceada (6 preguntas por dimension), con contexto peruano real y opciones no binarias.",
+      "Las 30 preguntas del ADN Test se disenan para cubrir las 5 dimensiones de forma balanceada (6 preguntas por dimension), con contexto peruano real y opciones no binarias.",
   },
   {
     step: 4,
@@ -90,7 +90,7 @@ const METHODOLOGY_STEPS = [
   },
   {
     step: 5,
-    title: "Verificacion de datos",
+    title: "Verificación de datos",
     description:
       "Las declaraciones se verifican contra fuentes oficiales (INEI, BCR, MEF, JNE) y fuentes periodisticas de primera linea. Se asigna un veredicto con nivel de confianza.",
   },
@@ -126,7 +126,7 @@ export default function MetodologiaPage() {
           <p className="text-lg text-gray-500 leading-relaxed max-w-3xl">
             Candidatazo utiliza un enfoque riguroso, transparente y basado en datos
             para analizar a los candidatos, clasificar posiciones politicas y
-            verificar declaraciones. Aqui explicamos como funciona todo.
+            verificar declaraciones. Aquí explicamos como funciona todo.
           </p>
         </div>
       </section>
@@ -248,7 +248,7 @@ export default function MetodologiaPage() {
             </h3>
             <p className="text-gray-500 mb-6 text-sm">
               Si tienes dudas sobre nuestra metodologia o quieres sugerir mejoras,
-              contactanos. Creemos en la mejora continua.
+              contáctanos. Creemos en la mejora continua.
             </p>
             <Link href="/transparencia" className="btn-primary">
               Ver nuestro compromiso de transparencia

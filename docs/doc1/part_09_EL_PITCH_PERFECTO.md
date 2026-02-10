@@ -10,7 +10,7 @@ El Airbnb vendió cereales. Nosotros capitalizaremos la democracia."
 Para Medios:
 "Candidatazo: La app que ayudará a 3 millones de peruanos a decidir su voto
 Usando inteligencia artificial y gamificación, Candidatazo está revolucionando cómo los peruanos entienden la política.
-Con features como el 'Political DNA Test' y fact-checking en tiempo real, la startup cusqueña busca activar especialmente a los jóvenes - el 65% de Gen Z que declaró no querer votar por nadie.
+Con features como el 'Political ADN Test' y fact-checking en tiempo real, la startup cusqueña busca activar especialmente a los jóvenes - el 65% de Gen Z que declaró no querer votar por nadie.
 'No somos otra app de noticias', explica Jairo Saul, CEO y co-fundador. 'Somos la plataforma que convierte la política en algo personal, entretenido y accionable. Queremos que los peruanos no solo voten - queremos que participen.'
 Disponible gratis en iOS y Android, Candidatazo ya cuenta con 100K early adopters y proyecta llegar a 3M antes de las elecciones del 12 de abril."
 Para Usuarios:
@@ -24,7 +24,7 @@ Jairo, esto es GIGANTE. Pero necesitamos concretar:
 Preguntas de Ejecución Inmediata:
 Team: ¿Tienes developers? ¿Necesitas contratar? ¿Cuánto puedes invertir en desarrollo?
 Priorización: De todas estas features, ¿cuál es tu top 3 para MVP?
-Mi recomendación: DNA Test + CandidateMatch + Viral Sharing
+Mi recomendación: ADN Test + CandidateMatch + Viral Sharing
 Fundraising: ¿Bootstrapping con Publicadis revenue o buscas inversión externa?
 Timeline Realista: ¿Puedes tener un MVP en 2 semanas?
 Primera Venta: ¿A cuál de los 36 partidos contactamos primero para pilotar ads?

@@ -1,15 +1,15 @@
-# Candidatazo - Plataforma de Informacion Electoral Peru 2026
+# Candidatazo - Plataforma de Información Electoral Perú 2026
 
-Plataforma viral de informacion electoral para las elecciones presidenciales del Peru 2026 (12 de abril). Herramientas imparciales y basadas en datos para que 27M+ de votantes peruanos elijan con conocimiento.
+Plataforma viral de información electoral para las elecciones presidenciales del Perú 2026 (12 de abril). Herramientas imparciales y basadas en datos para que 27M+ de votantes peruanos elijan con conocimiento.
 
 ## Funcionalidades
 
-- **DNA Politico** - Test de 30 preguntas que analiza tu perfil en 5 dimensiones (Economia, Social, Ambiente, Seguridad, Institucional)
+- **ADN Politico** - Test de 30 preguntas que analiza tu perfil en 5 dimensiones (Economia, Social, Ambiente, Seguridad, Institucional)
 - **Match de Candidatos** - Compara tu perfil con 24+ candidatos presidenciales y encuentra tu match
 - **Verificador de Datos** - Fact-checking con IA de las declaraciones de los candidatos
 - **Simulador IA** - Conversa con versiones IA de los candidatos basadas en sus posiciones publicas
 - **Presidente Ideal** - Construye tu presidente ideal con 15 sliders de politicas y compara con candidatos reales
-- **Predictor Electoral** - Predicciones comunitarias con votacion y rankings por region
+- **Predictor Electoral** - Predicciones comunitarias con votación y rankings por region
 - **Academia Civica** - Cursos cortos sobre politica, gobierno y ciudadania
 - **Gamificacion** - Sistema de niveles, XP, logros y tribus politicas
 
@@ -24,7 +24,7 @@ candidatazo/
 │   ├── database/     # Prisma schema + seed data
 │   ├── types/        # Tipos compartidos TypeScript
 │   └── utils/        # Utilidades (scoring, matching, tribes)
-├── docs/             # Documentacion del proyecto
+├── docs/             # Documentación del proyecto
 └── turbo.json        # Turborepo config
 ```
 
@@ -55,7 +55,7 @@ pnpm install
 
 # 3. Configurar variables de entorno
 cp .env.example .env
-# Editar .env con tus credenciales (ver seccion "Configuracion" abajo)
+# Editar .env con tus credenciales (ver sección "Configuracion" abajo)
 
 # 4. Configurar la base de datos (si vas a usar la API)
 cd packages/database
@@ -74,7 +74,7 @@ La web estara en `http://localhost:3000` y la API en `http://localhost:3001`.
 
 ### Variables de entorno requeridas
 
-| Variable | Descripcion | Requerida |
+| Variable | Descripción | Requerida |
 |---|---|---|
 | `DATABASE_URL` | URL de conexion a PostgreSQL | Solo para API |
 | `GEMINI_API_KEY` | API key de Google Gemini | Para IA (opcional) |
@@ -82,7 +82,7 @@ La web estara en `http://localhost:3000` y la API en `http://localhost:3001`.
 
 ### Variables opcionales
 
-| Variable | Descripcion |
+| Variable | Descripción |
 |---|---|
 | `CLERK_PUBLISHABLE_KEY` | Clerk auth (publica) |
 | `CLERK_SECRET_KEY` | Clerk auth (secreta) |
@@ -109,7 +109,7 @@ pnpm dev              # Iniciar web + API en desarrollo
 pnpm dev --filter web # Solo el frontend
 
 # Build
-pnpm build            # Build de produccion de todo
+pnpm build            # Build de producción de todo
 pnpm build --filter web   # Solo build del frontend
 
 # Base de datos
@@ -143,22 +143,22 @@ pnpm typecheck        # Verificar tipos TypeScript
 | Ruta | Pagina |
 |---|---|
 | `/` | Homepage con hero, features, countdown |
-| `/test` | DNA Test - 30 preguntas interactivas |
+| `/test` | ADN Test - 30 preguntas interactivas |
 | `/candidatos` | Grid de 24 candidatos con posiciones |
 | `/candidatos/[slug]` | Perfil detallado de candidato |
 | `/verificador` | Fact-checks con veredictos |
-| `/verificador/[id]` | Detalle de verificacion |
+| `/verificador/[id]` | Detalle de verificación |
 | `/simulador` | Chat IA con candidatos |
 | `/presidente-ideal` | Constructor de presidente ideal |
 | `/predictor` | Predicciones electorales comunitarias |
-| `/academia` | Cursos de educacion civica |
+| `/academia` | Cursos de educación civica |
 | `/metodologia` | Nuestra metodologia |
 | `/transparencia` | Compromiso de transparencia |
 | `/privacidad` | Politica de privacidad |
 
 ## API Endpoints
 
-| Metodo | Ruta | Descripcion |
+| Metodo | Ruta | Descripción |
 |---|---|---|
 | `GET` | `/health` | Health check |
 | `GET` | `/candidates` | Listar candidatos |
@@ -172,7 +172,7 @@ pnpm typecheck        # Verificar tipos TypeScript
 | `GET` | `/factchecks/:id` | Detalle de fact-check |
 | `POST` | `/users/sync` | Crear/sincronizar usuario |
 
-## Diseno
+## Diseño
 
 - **Tema patriotico peruano**: Rojo (#D91023), Dorado (#D4A017), Azul marino (#1A1A2E)
 - **Tipografia**: Inter (sans-serif)
@@ -181,4 +181,4 @@ pnpm typecheck        # Verificar tipos TypeScript
 
 ## Licencia
 
-Proyecto de informacion civica. Sin afiliacion a ningun partido politico.
+Proyecto de información civica. Sin afiliación a ningun partido politico.

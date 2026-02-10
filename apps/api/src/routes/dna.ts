@@ -4,7 +4,7 @@ import { calculateDnaScores, determineTribe, calculateMatchScore } from "@candid
 import type { DnaAnswer, CandidatePositions, DnaScores } from "@candidatazo/types";
 
 export const dnaRoutes: FastifyPluginAsync = async (app) => {
-  // GET /dna/questions - Get all active DNA test questions
+  // GET /dna/questions - Get all active ADN test questions
   app.get("/questions", async (_request, reply) => {
     const questions = await prisma.dnaQuestion.findMany({
       where: { active: true },
@@ -14,7 +14,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
     return reply.send({ success: true, data: questions });
   });
 
-  // POST /dna/start - Start a new DNA test
+  // POST /dna/start - Start a new ADN test
   app.post("/start", async (request, reply) => {
     const { userId } = request.body as { userId?: string };
 

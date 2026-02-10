@@ -95,7 +95,7 @@ Moti:
 ```
 - React Native optimized
 - Beautiful defaults
-- Radar charts (para DNA)
+- Radar charts (para ADN)
 - Customizable
 - Accessible
 ```
@@ -242,7 +242,7 @@ Pricing: $0.15 / 1M input, $0.60 / 1M output
 **Embedding Model: text-embedding-004 (Gemini)**
 ```
 Use cases:
-- Political DNA similarity
+- Political ADN similarity
 - Candidate matching algorithm
 - Semantic search candidates
 - Similar users clustering
@@ -424,7 +424,7 @@ Features:
 
 Use cases:
 - Welcome email
-- DNA test results
+- ADN test results
 - Debate reminders
 - Weekly digest
 - Password reset

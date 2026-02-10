@@ -7,7 +7,7 @@ import type { Dimension } from "@candidatazo/types";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import Link from "next/link";
 
-// DNA Questions - hardcoded for offline-first reliability
+// ADN Questions - hardcoded for offline-first reliability
 const DNA_QUESTIONS: {
   id: string;
   text: string;
@@ -16,432 +16,432 @@ const DNA_QUESTIONS: {
   context: string;
   options: { value: number; label: string }[];
 }[] = [
-  // ECONOMIC (6 questions)
-  {
-    id: "eco_1",
-    text: "El Estado deberia controlar los precios de productos basicos como el gas y los alimentos?",
-    description: "Control de precios vs libre mercado",
-    dimension: "ECONOMIC",
-    context: "En Peru, el precio del balon de gas fluctua entre S/40-60 y afecta directamente a familias de bajos recursos.",
-    options: [
-      { value: -100, label: "Si, el Estado debe fijar precios" },
-      { value: -50, label: "Solo en productos esenciales" },
-      { value: 0, label: "No estoy seguro" },
-      { value: 50, label: "Prefiero incentivos al mercado" },
-      { value: 100, label: "El mercado debe regularse solo" },
-    ],
-  },
-  {
-    id: "eco_2",
-    text: "Que deberia hacer el Estado con las empresas publicas como Petroperu?",
-    description: "Privatizacion vs empresa estatal",
-    dimension: "ECONOMIC",
-    context: "Petroperu acumula perdidas por miles de millones y ha requerido rescates estatales, pero provee combustible a zonas alejadas.",
-    options: [
-      { value: -100, label: "Mantenerla publica y fortalecerla" },
-      { value: -50, label: "Mantenerla pero con reforma profunda" },
-      { value: 0, label: "No tengo una posicion clara" },
-      { value: 50, label: "Privatizar parcialmente" },
-      { value: 100, label: "Privatizar completamente" },
-    ],
-  },
-  {
-    id: "eco_3",
-    text: "Se deberian aumentar los impuestos a los mas ricos para financiar programas sociales?",
-    description: "Politica tributaria",
-    dimension: "ECONOMIC",
-    context: "Peru recauda solo 16.8% del PBI en impuestos, uno de los mas bajos de Latinoamerica. La evasion es alta.",
-    options: [
-      { value: -100, label: "Si, impuestos mucho mas altos a ricos" },
-      { value: -50, label: "Aumentar moderadamente y combatir evasion" },
-      { value: 0, label: "Mantener como esta" },
-      { value: 50, label: "Reducir impuestos para fomentar inversion" },
-      { value: 100, label: "Reducir impuestos drasticamente" },
-    ],
-  },
-  {
-    id: "eco_4",
-    text: "El salario minimo deberia aumentar significativamente?",
-    description: "Politica salarial",
-    dimension: "ECONOMIC",
-    context: "El salario minimo en Peru es S/1,025. El 70% de trabajadores son informales y no les aplica.",
-    options: [
-      { value: -100, label: "Si, a S/1,500 o mas" },
-      { value: -50, label: "Un aumento moderado" },
-      { value: 0, label: "Depende de la economia" },
-      { value: 50, label: "Mejor formalizar antes de subir" },
-      { value: 100, label: "No, el mercado debe definir salarios" },
-    ],
-  },
-  {
-    id: "eco_5",
-    text: "Que opinas del libre comercio y los tratados como el TLC?",
-    description: "Apertura comercial",
-    dimension: "ECONOMIC",
-    context: "Peru tiene TLCs con EE.UU., China, UE y otros. Han impulsado exportaciones pero algunos sectores locales han sufrido.",
-    options: [
-      { value: -100, label: "Renegociar para proteger industria local" },
-      { value: -50, label: "Mantener pero con mas protecciones" },
-      { value: 0, label: "No tengo opinion formada" },
-      { value: 50, label: "Son positivos en general" },
-      { value: 100, label: "Abrir aun mas la economia" },
-    ],
-  },
-  {
-    id: "eco_6",
-    text: "El Estado deberia dar bonos y transferencias directas a las familias pobres?",
-    description: "Programas sociales",
-    dimension: "ECONOMIC",
-    context: "Programas como Juntos y Pension 65 llegan a millones pero hay criticas por clientelismo y filtraciones.",
-    options: [
-      { value: -100, label: "Si, ampliar todos los programas" },
-      { value: -50, label: "Mantener pero mejorar focalizacion" },
-      { value: 0, label: "Depende del programa" },
-      { value: 50, label: "Reemplazar por empleo y capacitacion" },
-      { value: 100, label: "Eliminar, generan dependencia" },
-    ],
-  },
-  // SOCIAL (6 questions)
-  {
-    id: "soc_1",
-    text: "Deberia legalizarse el matrimonio entre personas del mismo sexo en Peru?",
-    description: "Derechos LGBTQ+",
-    dimension: "SOCIAL",
-    context: "Peru es uno de los pocos paises de Sudamerica sin union civil ni matrimonio igualitario.",
-    options: [
-      { value: 100, label: "Si, matrimonio pleno" },
-      { value: 50, label: "Al menos union civil" },
-      { value: 0, label: "No tengo opinion definida" },
-      { value: -50, label: "Prefiero no cambiar la ley" },
-      { value: -100, label: "No, el matrimonio es hombre y mujer" },
-    ],
-  },
-  {
-    id: "soc_2",
-    text: "El enfoque de genero deberia incluirse en el curriculo escolar?",
-    description: "Educacion y genero",
-    dimension: "SOCIAL",
-    context: "El curriculo con enfoque de genero busca igualdad y prevenir violencia. Movimientos como 'Con mis hijos no te metas' se oponen.",
-    options: [
-      { value: 100, label: "Si, es fundamental para la igualdad" },
-      { value: 50, label: "Con ajustes y dialogo con padres" },
-      { value: 0, label: "No estoy seguro" },
-      { value: -50, label: "Solo valores tradicionales" },
-      { value: -100, label: "No, los padres deciden" },
-    ],
-  },
-  {
-    id: "soc_3",
-    text: "Deberia despenalizarse el aborto en caso de violacion?",
-    description: "Derechos reproductivos",
-    dimension: "SOCIAL",
-    context: "En Peru el aborto es ilegal salvo terapeutico. Se estiman 400,000 abortos clandestinos por año.",
-    options: [
-      { value: 100, label: "Si, y ampliar a mas causales" },
-      { value: 50, label: "Solo violacion e inviabilidad fetal" },
-      { value: 0, label: "No tengo posicion clara" },
-      { value: -50, label: "Solo mantener el terapeutico actual" },
-      { value: -100, label: "No, en ningun caso" },
-    ],
-  },
-  {
-    id: "soc_4",
-    text: "Se deberia regular el consumo de marihuana?",
-    description: "Politica de drogas",
-    dimension: "SOCIAL",
-    context: "Peru permite uso medicinal limitado. Uruguay y Colombia han avanzado en regulacion.",
-    options: [
-      { value: 100, label: "Legalizar uso recreativo y medicinal" },
-      { value: 50, label: "Solo medicinal con mas acceso" },
-      { value: 0, label: "No tengo opinion definida" },
-      { value: -50, label: "Mantener como esta" },
-      { value: -100, label: "Endurecer penas" },
-    ],
-  },
-  {
-    id: "soc_5",
-    text: "Que rol deberia tener la religion en las decisiones del gobierno?",
-    description: "Estado laico",
-    dimension: "SOCIAL",
-    context: "Peru tiene un concordato con el Vaticano. La Iglesia Catolica tiene influencia en politicas publicas.",
-    options: [
-      { value: 100, label: "Separacion total Iglesia-Estado" },
-      { value: 50, label: "Respetar tradiciones pero no imponer" },
-      { value: 0, label: "Balance entre ambos" },
-      { value: -50, label: "Los valores religiosos son importantes" },
-      { value: -100, label: "La fe debe guiar las politicas" },
-    ],
-  },
-  {
-    id: "soc_6",
-    text: "Como deberia manejar Peru la inmigracion venezolana?",
-    description: "Politica migratoria",
-    dimension: "SOCIAL",
-    context: "Mas de 1.5 millones de venezolanos viven en Peru. Hay debates sobre su impacto en empleo y seguridad.",
-    options: [
-      { value: 100, label: "Integrarlos con mas derechos" },
-      { value: 50, label: "Regularizar y dar oportunidades" },
-      { value: 0, label: "Depende del caso" },
-      { value: -50, label: "Restringir nueva migracion" },
-      { value: -100, label: "Deportar a quienes no cumplan leyes" },
-    ],
-  },
-  // ENVIRONMENT (6 questions)
-  {
-    id: "env_1",
-    text: "Deberia priorizarse la proteccion ambiental sobre proyectos mineros?",
-    description: "Mineria vs ambiente",
-    dimension: "ENVIRONMENT",
-    context: "La mineria representa el 10% del PBI peruano pero ha causado conflictos como Conga y Tia Maria.",
-    options: [
-      { value: 100, label: "Si, proteger el medio ambiente primero" },
-      { value: 50, label: "Regulacion mas estricta pero permitir mineria" },
-      { value: 0, label: "Buscar equilibrio caso por caso" },
-      { value: -50, label: "La mineria es clave para el desarrollo" },
-      { value: -100, label: "Priorizar la mineria y el empleo" },
-    ],
-  },
-  {
-    id: "env_2",
-    text: "Peru deberia comprometerse a eliminar la deforestacion en la Amazonia?",
-    description: "Deforestacion amazonica",
-    dimension: "ENVIRONMENT",
-    context: "Peru pierde 150,000+ hectareas de bosque por año. La Amazonia peruana es clave para el clima global.",
-    options: [
-      { value: 100, label: "Deforestacion cero inmediata" },
-      { value: 50, label: "Reduccion gradual con alternativas" },
-      { value: 0, label: "No tengo posicion clara" },
-      { value: -50, label: "Permitir uso sostenible del bosque" },
-      { value: -100, label: "El desarrollo necesita esas tierras" },
-    ],
-  },
-  {
-    id: "env_3",
-    text: "El gobierno deberia invertir fuertemente en energia renovable?",
-    description: "Transicion energetica",
-    dimension: "ENVIRONMENT",
-    context: "Peru tiene enorme potencial solar, eolico e hidrico. Actualmente depende mucho de combustibles fosiles.",
-    options: [
-      { value: 100, label: "Si, transicion acelerada" },
-      { value: 50, label: "Invertir pero sin abandonar lo actual" },
-      { value: 0, label: "Depende del costo" },
-      { value: -50, label: "Priorizar lo economico" },
-      { value: -100, label: "No es prioridad ahora" },
-    ],
-  },
-  {
-    id: "env_4",
-    text: "Las comunidades nativas deberian tener poder de veto sobre proyectos en sus territorios?",
-    description: "Consulta previa",
-    dimension: "ENVIRONMENT",
-    context: "La consulta previa existe pero no es vinculante. Comunidades nativas han sido desplazadas por proyectos extractivos.",
-    options: [
-      { value: 100, label: "Si, veto absoluto" },
-      { value: 50, label: "Consulta vinculante con compensacion" },
-      { value: 0, label: "Dialogo equilibrado" },
-      { value: -50, label: "Consulta pero no veto" },
-      { value: -100, label: "El interes nacional prevalece" },
-    ],
-  },
-  {
-    id: "env_5",
-    text: "Deberian prohibirse los plasticos de un solo uso en Peru?",
-    description: "Contaminacion por plasticos",
-    dimension: "ENVIRONMENT",
-    context: "Peru genera 6.8 millones de toneladas de residuos al año. Existe una ley pero con poca implementacion.",
-    options: [
-      { value: 100, label: "Prohibicion total e inmediata" },
-      { value: 50, label: "Prohibicion gradual con alternativas" },
-      { value: 0, label: "No tengo opinion" },
-      { value: -50, label: "Solo incentivar reduccion" },
-      { value: -100, label: "No prohibir, afecta a negocios" },
-    ],
-  },
-  {
-    id: "env_6",
-    text: "El agua deberia ser un derecho constitucional prioritario sobre su uso comercial?",
-    description: "Derecho al agua",
-    dimension: "ENVIRONMENT",
-    context: "Millones de peruanos carecen de agua potable mientras grandes industrias consumen enormes cantidades.",
-    options: [
-      { value: 100, label: "Si, derecho humano sobre todo" },
-      { value: 50, label: "Priorizar consumo humano pero regular" },
-      { value: 0, label: "Balance entre ambos" },
-      { value: -50, label: "El mercado puede asignar mejor" },
-      { value: -100, label: "No limitar el uso productivo" },
-    ],
-  },
-  // SECURITY (6 questions)
-  {
-    id: "sec_1",
-    text: "Deberian endurecerse las penas para delitos violentos?",
-    description: "Severidad penal",
-    dimension: "SECURITY",
-    context: "Peru tiene una tasa de 25 homicidios por 100,000 hab. La percepcion de inseguridad supera el 85%.",
-    options: [
-      { value: 100, label: "Si, penas mucho mas duras" },
-      { value: 50, label: "Endurecer para delitos graves" },
-      { value: 0, label: "Depende del delito" },
-      { value: -50, label: "Mejor prevencion que castigo" },
-      { value: -100, label: "Rehabilitacion sobre todo" },
-    ],
-  },
-  {
-    id: "sec_2",
-    text: "Las Fuerzas Armadas deberian salir a las calles para combatir la delincuencia?",
-    description: "Militarizacion de seguridad",
-    dimension: "SECURITY",
-    context: "Varios candidatos proponen que los militares apoyen a la policia. Criticos advierten riesgos a derechos humanos.",
-    options: [
-      { value: 100, label: "Si, situacion lo amerita" },
-      { value: 50, label: "Solo en zonas criticas y temporal" },
-      { value: 0, label: "No estoy seguro" },
-      { value: -50, label: "Fortalecer policia, no militarizar" },
-      { value: -100, label: "Nunca, riesgo autoritario" },
-    ],
-  },
-  {
-    id: "sec_3",
-    text: "Deberia existir pena de muerte para violadores de menores?",
-    description: "Pena de muerte",
-    dimension: "SECURITY",
-    context: "Peru firmo la Convencion Americana que prohibe reinstaurar pena de muerte. Casos de violacion generan indignacion publica.",
-    options: [
-      { value: 100, label: "Si, pena de muerte" },
-      { value: 50, label: "Cadena perpetua efectiva" },
-      { value: 0, label: "No estoy seguro" },
-      { value: -50, label: "Penas duras pero no muerte" },
-      { value: -100, label: "No, los derechos son inviolables" },
-    ],
-  },
-  {
-    id: "sec_4",
-    text: "Los ciudadanos deberian poder portar armas de fuego para defensa?",
-    description: "Tenencia de armas",
-    dimension: "SECURITY",
-    context: "La legislacion peruana permite armas con licencia estricta. Los asaltos armados han aumentado.",
-    options: [
-      { value: 100, label: "Si, derecho a defensa propia" },
-      { value: 50, label: "Con regulacion estricta" },
-      { value: 0, label: "No estoy seguro" },
-      { value: -50, label: "Restringir mas el acceso" },
-      { value: -100, label: "Prohibir completamente" },
-    ],
-  },
-  {
-    id: "sec_5",
-    text: "Deberia implementarse vigilancia masiva con camaras y reconocimiento facial?",
-    description: "Vigilancia y privacidad",
-    dimension: "SECURITY",
-    context: "Ciudades como Lima instalan cada vez mas camaras. China usa reconocimiento facial masivo.",
-    options: [
-      { value: 100, label: "Si, mas camaras y tecnologia" },
-      { value: 50, label: "Camaras si, reconocimiento facial no" },
-      { value: 0, label: "No tengo posicion" },
-      { value: -50, label: "Limitar vigilancia, proteger privacidad" },
-      { value: -100, label: "No, es vigilancia autoritaria" },
-    ],
-  },
-  {
-    id: "sec_6",
-    text: "Se deberia negociar con el narcotrafico o combatirlo militarmente?",
-    description: "Politica antidrogas",
-    dimension: "SECURITY",
-    context: "Peru es el segundo productor de coca del mundo. El VRAEM concentra la mayor produccion.",
-    options: [
-      { value: 100, label: "Combate militar total" },
-      { value: 50, label: "Combate pero con desarrollo alternativo" },
-      { value: 0, label: "Estrategia integral" },
-      { value: -50, label: "Priorizar desarrollo sobre represion" },
-      { value: -100, label: "Legalizar y regular" },
-    ],
-  },
-  // INSTITUTIONAL (6 questions)
-  {
-    id: "ins_1",
-    text: "Deberia convocarse una Asamblea Constituyente para una nueva Constitucion?",
-    description: "Cambio constitucional",
-    dimension: "INSTITUTIONAL",
-    context: "La Constitucion de 1993 fue promulgada por Fujimori. Sectores piden cambiarla, otros defenderla.",
-    options: [
-      { value: 100, label: "Si, nueva Constitucion" },
-      { value: 50, label: "Reformas profundas pero no nueva" },
-      { value: 0, label: "No tengo posicion clara" },
-      { value: -50, label: "Solo reformas puntuales" },
-      { value: -100, label: "Mantener la actual" },
-    ],
-  },
-  {
-    id: "ins_2",
-    text: "El Congreso deberia volver a tener dos camaras (Senado y Diputados)?",
-    description: "Bicameralidad",
-    dimension: "INSTITUTIONAL",
-    context: "Peru tiene un Congreso unicameral de 130 miembros. La bicameralidad fue eliminada en 1993.",
-    options: [
-      { value: 100, label: "Si, dos camaras mejoran las leyes" },
-      { value: 50, label: "Probablemente si, con reformas" },
-      { value: 0, label: "No tengo opinion" },
-      { value: -50, label: "No, una camara es suficiente" },
-      { value: -100, label: "No, seria mas burocracia" },
-    ],
-  },
-  {
-    id: "ins_3",
-    text: "Deberia eliminarse la inmunidad parlamentaria?",
-    description: "Inmunidad parlamentaria",
-    dimension: "INSTITUTIONAL",
-    context: "Congresistas investigados por corrupcion usan la inmunidad para evitar procesos judiciales.",
-    options: [
-      { value: 100, label: "Si, eliminarla completamente" },
-      { value: 50, label: "Limitarla mucho mas" },
-      { value: 0, label: "Reformarla" },
-      { value: -50, label: "Mantener con ajustes" },
-      { value: -100, label: "Mantener como esta, protege la democracia" },
-    ],
-  },
-  {
-    id: "ins_4",
-    text: "Los partidos politicos deberian recibir financiamiento publico?",
-    description: "Financiamiento politico",
-    dimension: "INSTITUTIONAL",
-    context: "Actualmente los partidos dependen de donaciones privadas, muchas veces de fuentes cuestionables.",
-    options: [
-      { value: 100, label: "Si, financiamiento publico con fiscalizacion" },
-      { value: 50, label: "Mixto: publico y privado regulado" },
-      { value: 0, label: "No estoy seguro" },
-      { value: -50, label: "Solo privado pero regulado" },
-      { value: -100, label: "No, los impuestos no deben ir a partidos" },
-    ],
-  },
-  {
-    id: "ins_5",
-    text: "Deberia ser obligatorio el voto o deberia ser voluntario?",
-    description: "Voto obligatorio",
-    dimension: "INSTITUTIONAL",
-    context: "Peru tiene voto obligatorio con multa de S/88 por no votar. Algunos paises han pasado a voto voluntario.",
-    options: [
-      { value: 100, label: "Mantener obligatorio con sanciones" },
-      { value: 50, label: "Obligatorio pero sin multa" },
-      { value: 0, label: "No tengo posicion" },
-      { value: -50, label: "Transicion a voluntario" },
-      { value: -100, label: "Voluntario inmediatamente" },
-    ],
-  },
-  {
-    id: "ins_6",
-    text: "Deberia descentralizarse mas el poder hacia las regiones?",
-    description: "Descentralizacion",
-    dimension: "INSTITUTIONAL",
-    context: "Lima concentra el 52% del PBI. Las regiones reclaman mas recursos y autonomia.",
-    options: [
-      { value: 100, label: "Si, mucha mas autonomia regional" },
-      { value: 50, label: "Mas recursos pero con fiscalizacion" },
-      { value: 0, label: "Depende de la capacidad" },
-      { value: -50, label: "Primero mejorar gestion regional" },
-      { value: -100, label: "Centralizar mas, hay mucha corrupcion" },
-    ],
-  },
-];
+    // ECONOMIC (6 questions)
+    {
+      id: "eco_1",
+      text: "El Estado deberia controlar los precios de productos basicos como el gas y los alimentos?",
+      description: "Control de precios vs libre mercado",
+      dimension: "ECONOMIC",
+      context: "En Perú, el precio del balon de gas fluctua entre S/40-60 y afecta directamente a familias de bajos recursos.",
+      options: [
+        { value: -100, label: "Si, el Estado debe fijar precios" },
+        { value: -50, label: "Solo en productos esenciales" },
+        { value: 0, label: "No estoy seguro" },
+        { value: 50, label: "Prefiero incentivos al mercado" },
+        { value: 100, label: "El mercado debe regularse solo" },
+      ],
+    },
+    {
+      id: "eco_2",
+      text: "Que deberia hacer el Estado con las empresas publicas como Petroperu?",
+      description: "Privatización vs empresa estatal",
+      dimension: "ECONOMIC",
+      context: "Petroperu acumula perdidas por miles de millones y ha requerido rescates estatales, pero provee combustible a zonas alejadas.",
+      options: [
+        { value: -100, label: "Mantenerla publica y fortalecerla" },
+        { value: -50, label: "Mantenerla pero con reforma profunda" },
+        { value: 0, label: "No tengo una posición clara" },
+        { value: 50, label: "Privatizar parcialmente" },
+        { value: 100, label: "Privatizar completamente" },
+      ],
+    },
+    {
+      id: "eco_3",
+      text: "Se deberian aumentar los impuestos a los mas ricos para financiar programas sociales?",
+      description: "Politica tributaria",
+      dimension: "ECONOMIC",
+      context: "Perú recauda solo 16.8% del PBI en impuestos, uno de los mas bajos de Latinoamerica. La evasion es alta.",
+      options: [
+        { value: -100, label: "Si, impuestos mucho mas altos a ricos" },
+        { value: -50, label: "Aumentar moderadamente y combatir evasion" },
+        { value: 0, label: "Mantener como esta" },
+        { value: 50, label: "Reducir impuestos para fomentar inversion" },
+        { value: 100, label: "Reducir impuestos drasticamente" },
+      ],
+    },
+    {
+      id: "eco_4",
+      text: "El salario minimo deberia aumentar significativamente?",
+      description: "Politica salarial",
+      dimension: "ECONOMIC",
+      context: "El salario minimo en Perú es S/1,025. El 70% de trabajadores son informales y no les aplica.",
+      options: [
+        { value: -100, label: "Si, a S/1,500 o mas" },
+        { value: -50, label: "Un aumento moderado" },
+        { value: 0, label: "Depende de la economia" },
+        { value: 50, label: "Mejor formalizar antes de subir" },
+        { value: 100, label: "No, el mercado debe definir salarios" },
+      ],
+    },
+    {
+      id: "eco_5",
+      text: "Que opinas del libre comercio y los tratados como el TLC?",
+      description: "Apertura comercial",
+      dimension: "ECONOMIC",
+      context: "Perú tiene TLCs con EE.UU., China, UE y otros. Han impulsado exportaciones pero algunos sectores locales han sufrido.",
+      options: [
+        { value: -100, label: "Renegociar para proteger industria local" },
+        { value: -50, label: "Mantener pero con mas protecciones" },
+        { value: 0, label: "No tengo opinion formada" },
+        { value: 50, label: "Son positivos en general" },
+        { value: 100, label: "Abrir aun mas la economia" },
+      ],
+    },
+    {
+      id: "eco_6",
+      text: "El Estado deberia dar bonos y transferencias directas a las familias pobres?",
+      description: "Programas sociales",
+      dimension: "ECONOMIC",
+      context: "Programas como Juntos y Pension 65 llegan a millones pero hay criticas por clientelismo y filtraciones.",
+      options: [
+        { value: -100, label: "Si, ampliar todos los programas" },
+        { value: -50, label: "Mantener pero mejorar focalizacion" },
+        { value: 0, label: "Depende del programa" },
+        { value: 50, label: "Reemplazar por empleo y capacitacion" },
+        { value: 100, label: "Eliminar, generan dependencia" },
+      ],
+    },
+    // SOCIAL (6 questions)
+    {
+      id: "soc_1",
+      text: "Deberia legalizarse el matrimonio entre personas del mismo sexo en Perú?",
+      description: "Derechos LGBTQ+",
+      dimension: "SOCIAL",
+      context: "Perú es uno de los pocos paises de Sudamerica sin union civil ni matrimonio igualitario.",
+      options: [
+        { value: 100, label: "Si, matrimonio pleno" },
+        { value: 50, label: "Al menos union civil" },
+        { value: 0, label: "No tengo opinion definida" },
+        { value: -50, label: "Prefiero no cambiar la ley" },
+        { value: -100, label: "No, el matrimonio es hombre y mujer" },
+      ],
+    },
+    {
+      id: "soc_2",
+      text: "El enfoque de genero deberia incluirse en el curriculo escolar?",
+      description: "Educación y genero",
+      dimension: "SOCIAL",
+      context: "El curriculo con enfoque de genero busca igualdad y prevenir violencia. Movimientos como 'Con mis hijos no te metas' se oponen.",
+      options: [
+        { value: 100, label: "Si, es fundamental para la igualdad" },
+        { value: 50, label: "Con ajustes y dialogo con padres" },
+        { value: 0, label: "No estoy seguro" },
+        { value: -50, label: "Solo valores tradicionales" },
+        { value: -100, label: "No, los padres deciden" },
+      ],
+    },
+    {
+      id: "soc_3",
+      text: "Deberia despenalizarse el aborto en caso de violacion?",
+      description: "Derechos reproductivos",
+      dimension: "SOCIAL",
+      context: "En Perú el aborto es ilegal salvo terapeutico. Se estiman 400,000 abortos clandestinos por año.",
+      options: [
+        { value: 100, label: "Si, y ampliar a mas causales" },
+        { value: 50, label: "Solo violación e inviabilidad fetal" },
+        { value: 0, label: "No tengo posición clara" },
+        { value: -50, label: "Solo mantener el terapeutico actual" },
+        { value: -100, label: "No, en ningun caso" },
+      ],
+    },
+    {
+      id: "soc_4",
+      text: "Se deberia regular el consumo de marihuana?",
+      description: "Politica de drogas",
+      dimension: "SOCIAL",
+      context: "Perú permite uso medicinal limitado. Uruguay y Colombia han avanzado en regulacion.",
+      options: [
+        { value: 100, label: "Legalizar uso recreativo y medicinal" },
+        { value: 50, label: "Solo medicinal con mas acceso" },
+        { value: 0, label: "No tengo opinion definida" },
+        { value: -50, label: "Mantener como esta" },
+        { value: -100, label: "Endurecer penas" },
+      ],
+    },
+    {
+      id: "soc_5",
+      text: "Que rol deberia tener la religion en las decisiones del gobierno?",
+      description: "Estado laico",
+      dimension: "SOCIAL",
+      context: "Perú tiene un concordato con el Vaticano. La Iglesia Catolica tiene influencia en politicas publicas.",
+      options: [
+        { value: 100, label: "Separación total Iglesia-Estado" },
+        { value: 50, label: "Respetar tradiciones pero no imponer" },
+        { value: 0, label: "Balance entre ambos" },
+        { value: -50, label: "Los valores religiosos son importantes" },
+        { value: -100, label: "La fe debe guiar las politicas" },
+      ],
+    },
+    {
+      id: "soc_6",
+      text: "Como deberia manejar Perú la inmigración venezolana?",
+      description: "Politica migratoria",
+      dimension: "SOCIAL",
+      context: "Mas de 1.5 millones de venezolanos viven en Perú. Hay debates sobre su impacto en empleo y seguridad.",
+      options: [
+        { value: 100, label: "Integrarlos con mas derechos" },
+        { value: 50, label: "Regularizar y dar oportunidades" },
+        { value: 0, label: "Depende del caso" },
+        { value: -50, label: "Restringir nueva migracion" },
+        { value: -100, label: "Deportar a quienes no cumplan leyes" },
+      ],
+    },
+    // ENVIRONMENT (6 questions)
+    {
+      id: "env_1",
+      text: "Deberia priorizarse la protección ambiental sobre proyectos mineros?",
+      description: "Mineria vs ambiente",
+      dimension: "ENVIRONMENT",
+      context: "La mineria representa el 10% del PBI peruano pero ha causado conflictos como Conga y Tia Maria.",
+      options: [
+        { value: 100, label: "Si, proteger el medio ambiente primero" },
+        { value: 50, label: "Regulación mas estricta pero permitir mineria" },
+        { value: 0, label: "Buscar equilibrio caso por caso" },
+        { value: -50, label: "La mineria es clave para el desarrollo" },
+        { value: -100, label: "Priorizar la mineria y el empleo" },
+      ],
+    },
+    {
+      id: "env_2",
+      text: "Perú deberia comprometerse a eliminar la deforestación en la Amazonia?",
+      description: "Deforestación amazonica",
+      dimension: "ENVIRONMENT",
+      context: "Perú pierde 150,000+ hectareas de bosque por año. La Amazonia peruana es clave para el clima global.",
+      options: [
+        { value: 100, label: "Deforestación cero inmediata" },
+        { value: 50, label: "Reducción gradual con alternativas" },
+        { value: 0, label: "No tengo posición clara" },
+        { value: -50, label: "Permitir uso sostenible del bosque" },
+        { value: -100, label: "El desarrollo necesita esas tierras" },
+      ],
+    },
+    {
+      id: "env_3",
+      text: "El gobierno deberia invertir fuertemente en energia renovable?",
+      description: "Transición energetica",
+      dimension: "ENVIRONMENT",
+      context: "Perú tiene enorme potencial solar, eolico e hidrico. Actualmente depende mucho de combustibles fosiles.",
+      options: [
+        { value: 100, label: "Si, transición acelerada" },
+        { value: 50, label: "Invertir pero sin abandonar lo actual" },
+        { value: 0, label: "Depende del costo" },
+        { value: -50, label: "Priorizar lo economico" },
+        { value: -100, label: "No es prioridad ahora" },
+      ],
+    },
+    {
+      id: "env_4",
+      text: "Las comunidades nativas deberian tener poder de veto sobre proyectos en sus territorios?",
+      description: "Consulta previa",
+      dimension: "ENVIRONMENT",
+      context: "La consulta previa existe pero no es vinculante. Comunidades nativas han sido desplazadas por proyectos extractivos.",
+      options: [
+        { value: 100, label: "Si, veto absoluto" },
+        { value: 50, label: "Consulta vinculante con compensacion" },
+        { value: 0, label: "Dialogo equilibrado" },
+        { value: -50, label: "Consulta pero no veto" },
+        { value: -100, label: "El interes nacional prevalece" },
+      ],
+    },
+    {
+      id: "env_5",
+      text: "Deberian prohibirse los plasticos de un solo uso en Perú?",
+      description: "Contaminación por plasticos",
+      dimension: "ENVIRONMENT",
+      context: "Perú genera 6.8 millones de toneladas de residuos al año. Existe una ley pero con poca implementacion.",
+      options: [
+        { value: 100, label: "Prohibición total e inmediata" },
+        { value: 50, label: "Prohibición gradual con alternativas" },
+        { value: 0, label: "No tengo opinion" },
+        { value: -50, label: "Solo incentivar reduccion" },
+        { value: -100, label: "No prohibir, afecta a negocios" },
+      ],
+    },
+    {
+      id: "env_6",
+      text: "El agua deberia ser un derecho constitucional prioritario sobre su uso comercial?",
+      description: "Derecho al agua",
+      dimension: "ENVIRONMENT",
+      context: "Millones de peruanos carecen de agua potable mientras grandes industrias consumen enormes cantidades.",
+      options: [
+        { value: 100, label: "Si, derecho humano sobre todo" },
+        { value: 50, label: "Priorizar consumo humano pero regular" },
+        { value: 0, label: "Balance entre ambos" },
+        { value: -50, label: "El mercado puede asignar mejor" },
+        { value: -100, label: "No limitar el uso productivo" },
+      ],
+    },
+    // SECURITY (6 questions)
+    {
+      id: "sec_1",
+      text: "Deberian endurecerse las penas para delitos violentos?",
+      description: "Severidad penal",
+      dimension: "SECURITY",
+      context: "Perú tiene una tasa de 25 homicidios por 100,000 hab. La percepción de inseguridad supera el 85%.",
+      options: [
+        { value: 100, label: "Si, penas mucho mas duras" },
+        { value: 50, label: "Endurecer para delitos graves" },
+        { value: 0, label: "Depende del delito" },
+        { value: -50, label: "Mejor prevención que castigo" },
+        { value: -100, label: "Rehabilitación sobre todo" },
+      ],
+    },
+    {
+      id: "sec_2",
+      text: "Las Fuerzas Armadas deberian salir a las calles para combatir la delincuencia?",
+      description: "Militarización de seguridad",
+      dimension: "SECURITY",
+      context: "Varios candidatos proponen que los militares apoyen a la policia. Criticos advierten riesgos a derechos humanos.",
+      options: [
+        { value: 100, label: "Si, situación lo amerita" },
+        { value: 50, label: "Solo en zonas criticas y temporal" },
+        { value: 0, label: "No estoy seguro" },
+        { value: -50, label: "Fortalecer policia, no militarizar" },
+        { value: -100, label: "Nunca, riesgo autoritario" },
+      ],
+    },
+    {
+      id: "sec_3",
+      text: "Deberia existir pena de muerte para violadores de menores?",
+      description: "Pena de muerte",
+      dimension: "SECURITY",
+      context: "Perú firmo la Convención Americana que prohibe reinstaurar pena de muerte. Casos de violación generan indignación publica.",
+      options: [
+        { value: 100, label: "Si, pena de muerte" },
+        { value: 50, label: "Cadena perpetua efectiva" },
+        { value: 0, label: "No estoy seguro" },
+        { value: -50, label: "Penas duras pero no muerte" },
+        { value: -100, label: "No, los derechos son inviolables" },
+      ],
+    },
+    {
+      id: "sec_4",
+      text: "Los ciudadanos deberian poder portar armas de fuego para defensa?",
+      description: "Tenencia de armas",
+      dimension: "SECURITY",
+      context: "La legislación peruana permite armas con licencia estricta. Los asaltos armados han aumentado.",
+      options: [
+        { value: 100, label: "Si, derecho a defensa propia" },
+        { value: 50, label: "Con regulación estricta" },
+        { value: 0, label: "No estoy seguro" },
+        { value: -50, label: "Restringir mas el acceso" },
+        { value: -100, label: "Prohibir completamente" },
+      ],
+    },
+    {
+      id: "sec_5",
+      text: "Deberia implementarse vigilancia masiva con camaras y reconocimiento facial?",
+      description: "Vigilancia y privacidad",
+      dimension: "SECURITY",
+      context: "Ciudades como Lima instalan cada vez mas camaras. China usa reconocimiento facial masivo.",
+      options: [
+        { value: 100, label: "Si, mas camaras y tecnologia" },
+        { value: 50, label: "Camaras si, reconocimiento facial no" },
+        { value: 0, label: "No tengo posicion" },
+        { value: -50, label: "Limitar vigilancia, proteger privacidad" },
+        { value: -100, label: "No, es vigilancia autoritaria" },
+      ],
+    },
+    {
+      id: "sec_6",
+      text: "Se deberia negociar con el narcotrafico o combatirlo militarmente?",
+      description: "Politica antidrogas",
+      dimension: "SECURITY",
+      context: "Perú es el segundo productor de coca del mundo. El VRAEM concentra la mayor produccion.",
+      options: [
+        { value: 100, label: "Combate militar total" },
+        { value: 50, label: "Combate pero con desarrollo alternativo" },
+        { value: 0, label: "Estrategia integral" },
+        { value: -50, label: "Priorizar desarrollo sobre represion" },
+        { value: -100, label: "Legalizar y regular" },
+      ],
+    },
+    // INSTITUTIONAL (6 questions)
+    {
+      id: "ins_1",
+      text: "Deberia convocarse una Asamblea Constituyente para una nueva Constitucion?",
+      description: "Cambio constitucional",
+      dimension: "INSTITUTIONAL",
+      context: "La Constitución de 1993 fue promulgada por Fujimori. Sectores piden cambiarla, otros defenderla.",
+      options: [
+        { value: 100, label: "Si, nueva Constitucion" },
+        { value: 50, label: "Reformas profundas pero no nueva" },
+        { value: 0, label: "No tengo posición clara" },
+        { value: -50, label: "Solo reformas puntuales" },
+        { value: -100, label: "Mantener la actual" },
+      ],
+    },
+    {
+      id: "ins_2",
+      text: "El Congreso deberia volver a tener dos camaras (Senado y Diputados)?",
+      description: "Bicameralidad",
+      dimension: "INSTITUTIONAL",
+      context: "Perú tiene un Congreso unicameral de 130 miembros. La bicameralidad fue eliminada en 1993.",
+      options: [
+        { value: 100, label: "Si, dos camaras mejoran las leyes" },
+        { value: 50, label: "Probablemente si, con reformas" },
+        { value: 0, label: "No tengo opinion" },
+        { value: -50, label: "No, una camara es suficiente" },
+        { value: -100, label: "No, seria mas burocracia" },
+      ],
+    },
+    {
+      id: "ins_3",
+      text: "Deberia eliminarse la inmunidad parlamentaria?",
+      description: "Inmunidad parlamentaria",
+      dimension: "INSTITUTIONAL",
+      context: "Congresistas investigados por corrupción usan la inmunidad para evitar procesos judiciales.",
+      options: [
+        { value: 100, label: "Si, eliminarla completamente" },
+        { value: 50, label: "Limitarla mucho mas" },
+        { value: 0, label: "Reformarla" },
+        { value: -50, label: "Mantener con ajustes" },
+        { value: -100, label: "Mantener como esta, protege la democracia" },
+      ],
+    },
+    {
+      id: "ins_4",
+      text: "Los partidos politicos deberian recibir financiamiento publico?",
+      description: "Financiamiento politico",
+      dimension: "INSTITUTIONAL",
+      context: "Actualmente los partidos dependen de donaciones privadas, muchas veces de fuentes cuestionables.",
+      options: [
+        { value: 100, label: "Si, financiamiento publico con fiscalizacion" },
+        { value: 50, label: "Mixto: publico y privado regulado" },
+        { value: 0, label: "No estoy seguro" },
+        { value: -50, label: "Solo privado pero regulado" },
+        { value: -100, label: "No, los impuestos no deben ir a partidos" },
+      ],
+    },
+    {
+      id: "ins_5",
+      text: "Deberia ser obligatorio el voto o deberia ser voluntario?",
+      description: "Voto obligatorio",
+      dimension: "INSTITUTIONAL",
+      context: "Perú tiene voto obligatorio con multa de S/88 por no votar. Algunos paises han pasado a voto voluntario.",
+      options: [
+        { value: 100, label: "Mantener obligatorio con sanciones" },
+        { value: 50, label: "Obligatorio pero sin multa" },
+        { value: 0, label: "No tengo posicion" },
+        { value: -50, label: "Transición a voluntario" },
+        { value: -100, label: "Voluntario inmediatamente" },
+      ],
+    },
+    {
+      id: "ins_6",
+      text: "Deberia descentralizarse mas el poder hacia las regiones?",
+      description: "Descentralizacion",
+      dimension: "INSTITUTIONAL",
+      context: "Lima concentra el 52% del PBI. Las regiones reclaman mas recursos y autonomia.",
+      options: [
+        { value: 100, label: "Si, mucha mas autonomia regional" },
+        { value: 50, label: "Mas recursos pero con fiscalizacion" },
+        { value: 0, label: "Depende de la capacidad" },
+        { value: -50, label: "Primero mejorar gestion regional" },
+        { value: -100, label: "Centralizar mas, hay mucha corrupcion" },
+      ],
+    },
+  ];
 
 type TestPhase = "intro" | "questions" | "calculating" | "results";
 
@@ -577,11 +577,10 @@ export default function DnaTestPage() {
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(option.value)}
-                  className={`w-full text-left px-5 py-4 rounded-xl border-2 transition-all duration-200 ${
-                    isSelected
-                      ? "border-primary bg-primary-50 text-primary-700 shadow-subtle"
-                      : "border-gray-200 hover:border-gray-300 hover:bg-gray-50 text-gray-700"
-                  }`}
+                  className={`w-full text-left px-5 py-4 rounded-xl border-2 transition-all duration-200 ${isSelected
+                    ? "border-primary bg-primary-50 text-primary-700 shadow-subtle"
+                    : "border-gray-200 hover:border-gray-300 hover:bg-gray-50 text-gray-700"
+                    }`}
                 >
                   <span className="font-medium">{option.label}</span>
                 </button>
@@ -656,12 +655,12 @@ function IntroPhase({ onStart }: { onStart: () => void }) {
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
           Descubre tu{" "}
           <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            DNA Politico
+            ADN Politico
           </span>
         </h1>
 
         <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto leading-relaxed">
-          Responde preguntas sobre temas reales del Peru en 5 dimensiones.
+          Responde preguntas sobre temas reales del Perú en 5 dimensiones.
           Obtendras tu perfil politico y match con candidatos.
         </p>
 
@@ -707,7 +706,7 @@ function CalculatingPhase() {
   return (
     <div className="min-h-[calc(100vh-64px)] flex items-center justify-center">
       <div className="text-center max-w-md mx-auto px-4">
-        {/* Animated DNA helix placeholder */}
+        {/* Animated ADN helix placeholder */}
         <div className="w-24 h-24 mx-auto mb-8 relative">
           <div className="absolute inset-0 rounded-full border-4 border-primary/20 animate-pulse" />
           <div className="absolute inset-2 rounded-full border-4 border-secondary/30 animate-spin" style={{ animationDuration: "3s" }} />
@@ -718,7 +717,7 @@ function CalculatingPhase() {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-800 mb-3">
-          Analizando tu DNA Politico...
+          Analizando tu ADN Politico...
         </h2>
         <p className="text-gray-500">
           Calculando tu perfil en 5 dimensiones y buscando tu match con los candidatos.
@@ -786,7 +785,7 @@ function ResultsPhase({
         {/* Header */}
         <div className="text-center mb-10 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-secondary-50 text-secondary rounded-full px-4 py-1.5 text-sm font-medium mb-4">
-            Tu DNA Politico
+            Tu ADN Politico
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
             Tu tribu:{" "}
@@ -894,7 +893,7 @@ function ResultsPhase({
               onClick={() => {
                 if (navigator.share) {
                   navigator.share({
-                    title: `Mi DNA Politico: ${tribe}`,
+                    title: `Mi ADN Politico: ${tribe}`,
                     text: `Soy ${tribe}! Economia: ${scores.economic}%, Social: ${scores.social}%, Ambiente: ${scores.environment}%. Descubre tu perfil en Candidatazo.`,
                     url: window.location.origin,
                   });

@@ -23,18 +23,18 @@ const FACT_CHECKS: Record<string, {
   "fc-001": {
     id: "fc-001",
     claim: "El 70% de la economia peruana es informal",
-    context: "Debate presidencial sobre economia y empleo. El candidato uso esta estadistica para justificar su propuesta de formalizacion masiva.",
+    context: "Debate presidencial sobre economia y empleo. El candidato uso esta estadistica para justificar su propuesta de formalización masiva.",
     source: "Debate TV - Canal N",
     verdict: "TRUE",
-    explanation: "Segun el INEI (Instituto Nacional de Estadistica e Informatica), el empleo informal en Peru alcanza el 72.7% de la fuerza laboral (2023). Esta cifra es una de las mas altas de America Latina. La informalidad afecta tanto al sector urbano (65%) como rural (95%). Es un problema estructural que lleva decadas sin solucion significativa.",
+    explanation: "Segun el INEI (Instituto Nacional de Estadistica e Informatica), el empleo informal en Perú alcanza el 72.7% de la fuerza laboral (2023). Esta cifra es una de las mas altas de America Latina. La informalidad afecta tanto al sector urbano (65%) como rural (95%). Es un problema estructural que lleva decadas sin solución significativa.",
     candidateName: "Hernando de Soto",
     candidateSlug: "hernando-de-soto",
     candidateParty: "Avanza Pais",
     confidence: 0.95,
     sources: [
-      { title: "INEI - Produccion y Empleo Informal en el Peru 2023", url: "https://www.inei.gob.pe" },
+      { title: "INEI - Producción y Empleo Informal en el Perú 2023", url: "https://www.inei.gob.pe" },
       { title: "OIT - Economia Informal en America Latina", url: "https://www.ilo.org" },
-      { title: "Banco Mundial - Peru Informal Economy Report", url: "https://www.worldbank.org" },
+      { title: "Banco Mundial - Perú Informal Economy Report", url: "https://www.worldbank.org" },
     ],
     publishedAt: "2026-01-15",
     upvotes: 342,
@@ -43,17 +43,17 @@ const FACT_CHECKS: Record<string, {
   "fc-002": {
     id: "fc-002",
     claim: "Durante el gobierno de mi padre, la economia crecio 7% anual",
-    context: "Entrevista en RPP donde la candidata defendia el modelo economico de la Constitucion de 1993.",
+    context: "Entrevista en RPP donde la candidata defendia el modelo economico de la Constitución de 1993.",
     source: "Entrevista RPP Noticias",
     verdict: "HALF_TRUE",
-    explanation: "El crecimiento promedio durante el gobierno de Alberto Fujimori (1990-2000) fue de aproximadamente 4.5% anual. Si bien hubo años excepcionales como 1994 (12.8%) y 1997 (6.9%), tambien hubo años de recesion como 1990 (-5.1%) y 1998 (-0.7%). La cifra de 7% es una exageracion del promedio real, aunque si hubo un periodo de fuerte crecimiento entre 1993-1997.",
+    explanation: "El crecimiento promedio durante el gobierno de Alberto Fujimori (1990-2000) fue de aproximadamente 4.5% anual. Si bien hubo años excepcionales como 1994 (12.8%) y 1997 (6.9%), tambien hubo años de recesion como 1990 (-5.1%) y 1998 (-0.7%). La cifra de 7% es una exageración del promedio real, aunque si hubo un periodo de fuerte crecimiento entre 1993-1997.",
     candidateName: "Keiko Fujimori",
     candidateSlug: "keiko-fujimori",
     candidateParty: "Fuerza Popular",
     confidence: 0.92,
     sources: [
       { title: "BCRP - Series Historicas de PBI 1990-2000", url: "https://www.bcrp.gob.pe" },
-      { title: "Banco Mundial - PIB Peru (datos historicos)", url: "https://data.worldbank.org" },
+      { title: "Banco Mundial - PIB Perú (datos historicos)", url: "https://data.worldbank.org" },
       { title: "FMI - World Economic Outlook Database", url: "https://www.imf.org" },
     ],
     publishedAt: "2026-01-20",
@@ -62,19 +62,19 @@ const FACT_CHECKS: Record<string, {
   },
   "fc-003": {
     id: "fc-003",
-    claim: "El 1% mas rico del Peru tiene tanto como el 90% mas pobre",
+    claim: "El 1% mas rico del Perú tiene tanto como el 90% mas pobre",
     context: "Mitin en Cusco durante campaña sobre desigualdad y justicia social.",
     source: "Mitin politico - Cusco",
     verdict: "MOSTLY_TRUE",
-    explanation: "Segun el informe de Oxfam 'Desigualdad en America Latina', el 1% mas rico de Peru concentra aproximadamente el 30% de la riqueza nacional. El World Inequality Database muestra que el 10% mas rico posee mas del 60% de la riqueza. Si bien la comparacion exacta con el 90% varia segun metodologia, la tendencia de extrema concentracion de riqueza es real y documentada por multiples fuentes internacionales.",
+    explanation: "Segun el informe de Oxfam 'Desigualdad en America Latina', el 1% mas rico de Perú concentra aproximadamente el 30% de la riqueza nacional. El World Inequality Database muestra que el 10% mas rico posee mas del 60% de la riqueza. Si bien la comparación exacta con el 90% varia segun metodologia, la tendencia de extrema concentración de riqueza es real y documentada por multiples fuentes internacionales.",
     candidateName: "Veronika Mendoza",
     candidateSlug: "veronika-mendoza",
-    candidateParty: "Juntos por el Peru",
+    candidateParty: "Juntos por el Perú",
     confidence: 0.78,
     sources: [
       { title: "Oxfam - Desigualdad en America Latina 2024", url: "https://www.oxfam.org" },
       { title: "Credit Suisse - Global Wealth Report 2024", url: "https://www.credit-suisse.com" },
-      { title: "World Inequality Database - Peru", url: "https://wid.world" },
+      { title: "World Inequality Database - Perú", url: "https://wid.world" },
     ],
     publishedAt: "2026-01-25",
     upvotes: 423,
@@ -82,18 +82,18 @@ const FACT_CHECKS: Record<string, {
   },
   "fc-004": {
     id: "fc-004",
-    claim: "El 80% de la riqueza del Peru se va al extranjero",
+    claim: "El 80% de la riqueza del Perú se va al extranjero",
     context: "Discurso nacionalista en plaza de armas sobre soberania economica.",
     source: "Discurso publico",
     verdict: "FALSE",
-    explanation: "Las utilidades repatriadas por empresas extranjeras representan aproximadamente el 5-6% del PBI segun datos del Banco Central de Reserva del Peru. La inversion extranjera directa (IED) genera empleo, tributos y transferencia tecnologica. La cifra del 80% no tiene sustento en ningun indicador economico oficial y exagera enormemente la fuga de capitales real.",
+    explanation: "Las utilidades repatriadas por empresas extranjeras representan aproximadamente el 5-6% del PBI segun datos del Banco Central de Reserva del Perú. La inversion extranjera directa (IED) genera empleo, tributos y transferencia tecnologica. La cifra del 80% no tiene sustento en ningun indicador economico oficial y exagera enormemente la fuga de capitales real.",
     candidateName: "Antauro Humala",
     candidateSlug: "antauro-humala",
     candidateParty: "Frente Patriotico",
     confidence: 0.97,
     sources: [
       { title: "BCRP - Balanza de Pagos 2023", url: "https://www.bcrp.gob.pe" },
-      { title: "ProInversion - Reporte de IED en Peru", url: "https://www.proinversion.gob.pe" },
+      { title: "ProInversion - Reporte de IED en Perú", url: "https://www.proinversion.gob.pe" },
       { title: "UNCTAD - World Investment Report", url: "https://unctad.org" },
     ],
     publishedAt: "2026-02-01",
@@ -102,18 +102,18 @@ const FACT_CHECKS: Record<string, {
   },
   "fc-008": {
     id: "fc-008",
-    claim: "La pobreza se redujo a 11% con el modelo economico de la Constitucion del 93",
-    context: "Debate sobre Constitucion y modelo economico",
+    claim: "La pobreza se redujo a 11% con el modelo economico de la Constitución del 93",
+    context: "Debate sobre Constitución y modelo economico",
     source: "Debate TV",
     verdict: "MISLEADING",
-    explanation: "La pobreza en Peru se redujo de 58% (2004) a 20.2% (2019), pero nunca llego a 11%. Ademas, la reduccion se debio a multiples factores: boom de commodities, politicas sociales de gobiernos de diferente signo, crecimiento global favorable, y no exclusivamente al modelo constitucional. Post-pandemia la pobreza subio a 27.5% (2020) y se ha recuperado parcialmente.",
+    explanation: "La pobreza en Perú se redujo de 58% (2004) a 20.2% (2019), pero nunca llego a 11%. Ademas, la reducción se debio a multiples factores: boom de commodities, politicas sociales de gobiernos de diferente signo, crecimiento global favorable, y no exclusivamente al modelo constitucional. Post-pandemia la pobreza subio a 27.5% (2020) y se ha recuperado parcialmente.",
     candidateName: "Keiko Fujimori",
     candidateSlug: "keiko-fujimori",
     candidateParty: "Fuerza Popular",
     confidence: 0.88,
     sources: [
-      { title: "INEI - Evolucion de la Pobreza Monetaria 2004-2023", url: "https://www.inei.gob.pe" },
-      { title: "Banco Mundial - Peru Overview", url: "https://www.worldbank.org" },
+      { title: "INEI - Evolución de la Pobreza Monetaria 2004-2023", url: "https://www.inei.gob.pe" },
+      { title: "Banco Mundial - Perú Overview", url: "https://www.worldbank.org" },
     ],
     publishedAt: "2026-02-08",
     upvotes: 445,
@@ -299,7 +299,7 @@ export default async function FactCheckDetailPage({ params }: FactCheckPageProps
             <div className="card-flat text-sm">
               <h3 className="font-bold text-gray-700 mb-2">Metodologia</h3>
               <p className="text-gray-500 leading-relaxed">
-                Cada verificacion compara la declaracion con fuentes oficiales
+                Cada verificación compara la declaración con fuentes oficiales
                 (INEI, BCRP, organismos internacionales). El nivel de confianza
                 refleja la solidez de la evidencia disponible.
               </p>

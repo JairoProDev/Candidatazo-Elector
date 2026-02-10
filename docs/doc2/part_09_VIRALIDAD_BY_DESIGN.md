@@ -2,7 +2,7 @@
 9.1 - SHARE MECHANICS
 Share Button Omnipresente:
 UBICACIONES:
-- Después de DNA Test (obvio)
+- Después de ADN Test (obvio)
 - Después de cada fact-check
 - En perfil de candidato
 - En achievements
@@ -39,7 +39,7 @@ Instagram Story Template:
 ━━━━━━━━━━━━━━
 [Candidatazo logo top]
 
-MI DNA POLÍTICO
+MI ADN POLÍTICO
 ━━━━━━━━━━━━━━
 
 [Radar visual grande]
@@ -91,7 +91,7 @@ Lo mejor de @CandidatazoPeru:
 Tweet 5/5:
 A 12 días de las elecciones, todos deberíamos saber con quién pensamos igual
 
-Haz tu DNA Test: [link]
+Haz tu ADN Test: [link]
 
 #Elecciones2026 #VotoInformado
 
@@ -106,7 +106,7 @@ WhatsApp Message Template:
 
 Acabo de descubrir mi perfil político con Candidatazo y es sorprendente:
 
-🧬 MI DNA POLÍTICO:
+🧬 MI ADN POLÍTICO:
 - 73% Liberal (Economía)
 - 85% Ambientalista
 - 62% Progresista (Social)
@@ -161,7 +161,7 @@ Cada usuario tiene:
 - Leaderboard nacional
 
 Viral Loop:
-1. Usuario completa DNA Test
+1. Usuario completa ADN Test
    ↓
 2. Ve resultados increíbles
    ↓
@@ -208,7 +208,7 @@ Display de Network Effects:
 En homepage:
 ┌────────────────────────────┐
 │ 🎉 2.3M USUARIOS YA        │
-│    DESCUBRIERON SU DNA     │
+│    DESCUBRIERON SU ADN     │
 │                            │
 │ ¿Qué esperas?              │
 │ [Empezar ahora →]          │

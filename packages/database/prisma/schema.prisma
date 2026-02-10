@@ -69,7 +69,7 @@ enum AgeRange {
   RANGE_56_PLUS
 }
 
-// ==================== DNA TEST ====================
+// ==================== ADN TEST ====================
 
 model DnaQuestion {
   id          String      @id @default(cuid())

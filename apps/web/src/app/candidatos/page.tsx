@@ -2,7 +2,7 @@ import Link from "next/link";
 import { DIMENSION_CONFIG } from "@candidatazo/types";
 import type { Dimension } from "@candidatazo/types";
 
-// Candidate data - 24 candidates for Peru 2026 elections
+// Candidate data - 24 candidates for Perú 2026 elections
 const CANDIDATES = [
   {
     slug: "keiko-fujimori",
@@ -21,7 +21,7 @@ const CANDIDATES = [
     party: "Frente Patriotico",
     photo: "/candidates/antauro.jpg",
     age: 61,
-    bio: "Exmilitar y lider etnocacerista. Estuvo preso por el Andahuaylazo. Propone nacionalizacion de recursos, pena de muerte y refundacion del Estado.",
+    bio: "Exmilitar y lider etnocacerista. Estuvo preso por el Andahuaylazo. Propone nacionalización de recursos, pena de muerte y refundación del Estado.",
     positions: { economic: 15, social: 20, environment: 40, security: 95, institutional: 90 },
     truthScore: 30,
     promiseCount: 8,
@@ -40,7 +40,7 @@ const CANDIDATES = [
   {
     slug: "daniel-urresti",
     name: "Daniel Urresti",
-    party: "Podemos Peru",
+    party: "Podemos Perú",
     photo: "/candidates/urresti.jpg",
     age: 67,
     bio: "General retirado del Ejercito. Enfocado en seguridad ciudadana y lucha contra el crimen. Propone mano dura y militarizacion.",
@@ -51,10 +51,10 @@ const CANDIDATES = [
   {
     slug: "veronika-mendoza",
     name: "Veronika Mendoza",
-    party: "Juntos por el Peru",
+    party: "Juntos por el Perú",
     photo: "/candidates/mendoza.jpg",
     age: 41,
-    bio: "Excongresista y politologa. Lideresa de la izquierda democratica. Propone nueva Constitucion, derechos sociales y proteccion ambiental.",
+    bio: "Excongresista y politologa. Lideresa de la izquierda democratica. Propone nueva Constitucion, derechos sociales y protección ambiental.",
     positions: { economic: 25, social: 82, environment: 85, security: 30, institutional: 88 },
     truthScore: 55,
     promiseCount: 18,
@@ -76,7 +76,7 @@ const CANDIDATES = [
     party: "Partido Morado",
     photo: "/candidates/guzman.jpg",
     age: 51,
-    bio: "Exfuncionario publico y tecnocrata. Lider del centro-liberal. Propone modernizacion del Estado, educacion y tecnologia.",
+    bio: "Exfuncionario publico y tecnocrata. Lider del centro-liberal. Propone modernización del Estado, educación y tecnologia.",
     positions: { economic: 65, social: 70, environment: 65, security: 40, institutional: 75 },
     truthScore: 50,
     promiseCount: 14,
@@ -84,7 +84,7 @@ const CANDIDATES = [
   {
     slug: "george-forsyth",
     name: "George Forsyth",
-    party: "Somos Peru",
+    party: "Somos Perú",
     photo: "/candidates/forsyth.jpg",
     age: 43,
     bio: "Exfutbolista y exalcalde de La Victoria. Enfocado en seguridad y gestion municipal. Propone orden, tecnologia y trabajo.",
@@ -95,7 +95,7 @@ const CANDIDATES = [
   {
     slug: "rafael-lopez-aliaga",
     name: "Rafael Lopez Aliaga",
-    party: "Renovacion Popular",
+    party: "Renovación Popular",
     photo: "/candidates/rla.jpg",
     age: 62,
     bio: "Empresario y actual alcalde de Lima. Conservador y religioso. Propone libre mercado, valores tradicionales y mano dura contra la delincuencia.",
@@ -106,10 +106,10 @@ const CANDIDATES = [
   {
     slug: "carlos-ananos",
     name: "Carlos Ananos",
-    party: "Peru Moderno",
+    party: "Perú Moderno",
     photo: "/candidates/ananos.jpg",
     age: 56,
-    bio: "Empresario fundador de Kola Real / AJE Group. Propone emprendimiento, innovacion y apoyo a mypes con experiencia empresarial.",
+    bio: "Empresario fundador de Kola Real / AJE Group. Propone emprendimiento, innovación y apoyo a mypes con experiencia empresarial.",
     positions: { economic: 78, social: 50, environment: 45, security: 50, institutional: 45 },
     truthScore: 44,
     promiseCount: 10,
@@ -117,10 +117,10 @@ const CANDIDATES = [
   {
     slug: "pedro-castillo",
     name: "Pedro Castillo",
-    party: "Peru Libre",
+    party: "Perú Libre",
     photo: "/candidates/castillo.jpg",
     age: 55,
-    bio: "Expresidente del Peru (2021-2022). Maestro rural de Cajamarca. Propone nueva constitucion, asamblea constituyente y apoyo al agro.",
+    bio: "Expresidente del Perú (2021-2022). Maestro rural de Cajamarca. Propone nueva constitucion, asamblea constituyente y apoyo al agro.",
     positions: { economic: 18, social: 35, environment: 55, security: 50, institutional: 95 },
     truthScore: 25,
     promiseCount: 8,
@@ -128,7 +128,7 @@ const CANDIDATES = [
   {
     slug: "alberto-otarola",
     name: "Alberto Otarola",
-    party: "Peru Primero",
+    party: "Perú Primero",
     photo: "/candidates/otarola.jpg",
     age: 56,
     bio: "Abogado y exprimer ministro. Enfocado en seguridad nacional, defensa y estabilidad institucional.",
@@ -139,10 +139,10 @@ const CANDIDATES = [
   {
     slug: "yonhy-lescano",
     name: "Yonhy Lescano",
-    party: "Accion Popular",
+    party: "Acción Popular",
     photo: "/candidates/lescano.jpg",
     age: 64,
-    bio: "Excongresista por Puno. Abogado defensor de derechos del consumidor. Propone descentralizacion y defensa de los mas pobres.",
+    bio: "Excongresista por Puno. Abogado defensor de derechos del consumidor. Propone descentralización y defensa de los mas pobres.",
     positions: { economic: 35, social: 55, environment: 60, security: 45, institutional: 70 },
     truthScore: 42,
     promiseCount: 13,
@@ -161,7 +161,7 @@ const CANDIDATES = [
   {
     slug: "flor-pablo",
     name: "Flor Pablo",
-    party: "Juntos por el Peru",
+    party: "Juntos por el Perú",
     photo: "/candidates/florpablo.jpg",
     age: 58,
     bio: "Educadora y excongresista. Exministra de Educacion. Propone reforma educativa integral, igualdad de genero y derechos sociales.",
@@ -172,10 +172,10 @@ const CANDIDATES = [
   {
     slug: "jose-luna",
     name: "Jose Luna",
-    party: "Podemos Peru",
+    party: "Podemos Perú",
     photo: "/candidates/luna.jpg",
     age: 56,
-    bio: "Empresario educativo y excongresista. Fundador de la Universidad Telesup. Propone educacion tecnica y empleo juvenil.",
+    bio: "Empresario educativo y excongresista. Fundador de la Universidad Telesup. Propone educación tecnica y empleo juvenil.",
     positions: { economic: 65, social: 35, environment: 28, security: 55, institutional: 30 },
     truthScore: 32,
     promiseCount: 9,
@@ -186,7 +186,7 @@ const CANDIDATES = [
     party: "Frente Amplio",
     photo: "/candidates/arana.jpg",
     age: 64,
-    bio: "Sacerdote y ambientalista de Cajamarca. Lider en la defensa del agua y contra la mineria contaminante. Propone proteccion ambiental radical.",
+    bio: "Sacerdote y ambientalista de Cajamarca. Lider en la defensa del agua y contra la mineria contaminante. Propone protección ambiental radical.",
     positions: { economic: 20, social: 75, environment: 95, security: 25, institutional: 82 },
     truthScore: 50,
     promiseCount: 12,
@@ -194,10 +194,10 @@ const CANDIDATES = [
   {
     slug: "roberto-sanchez",
     name: "Roberto Sanchez",
-    party: "Juntos por el Peru",
+    party: "Juntos por el Perú",
     photo: "/candidates/sanchez.jpg",
     age: 58,
-    bio: "Empresario turistico y exministro de Comercio Exterior. Propone turismo como motor economico y descentralizacion productiva.",
+    bio: "Empresario turistico y exministro de Comercio Exterior. Propone turismo como motor economico y descentralización productiva.",
     positions: { economic: 45, social: 55, environment: 65, security: 40, institutional: 60 },
     truthScore: 40,
     promiseCount: 10,
@@ -205,7 +205,7 @@ const CANDIDATES = [
   {
     slug: "luis-arce",
     name: "Luis Arce",
-    party: "Peru Patria Segura",
+    party: "Perú Patria Segura",
     photo: "/candidates/arce.jpg",
     age: 58,
     bio: "Militar retirado. Especialista en seguridad y defensa nacional. Propone militarizar la lucha contra el narcotrafico.",
@@ -216,10 +216,10 @@ const CANDIDATES = [
   {
     slug: "alejandro-toledo",
     name: "Alejandro Toledo",
-    party: "Peru Posible",
+    party: "Perú Posible",
     photo: "/candidates/toledo.jpg",
     age: 80,
-    bio: "Expresidente del Peru (2001-2006). Economista formado en Stanford. Propone inversion en infraestructura y educacion.",
+    bio: "Expresidente del Perú (2001-2006). Economista formado en Stanford. Propone inversion en infraestructura y educacion.",
     positions: { economic: 70, social: 58, environment: 48, security: 42, institutional: 55 },
     truthScore: 28,
     promiseCount: 11,
@@ -227,10 +227,10 @@ const CANDIDATES = [
   {
     slug: "ricardo-belmont",
     name: "Ricardo Belmont",
-    party: "Peru en Accion",
+    party: "Perú en Accion",
     photo: "/candidates/belmont.jpg",
     age: 80,
-    bio: "Comunicador y exalcalde de Lima. Figura mediatica. Propone obras publicas, empleo directo y comunicacion con el pueblo.",
+    bio: "Comunicador y exalcalde de Lima. Figura mediatica. Propone obras publicas, empleo directo y comunicación con el pueblo.",
     positions: { economic: 55, social: 30, environment: 32, security: 60, institutional: 40 },
     truthScore: 30,
     promiseCount: 8,
@@ -249,10 +249,10 @@ const CANDIDATES = [
   {
     slug: "jose-vega",
     name: "Jose Vega",
-    party: "Union por el Peru",
+    party: "Union por el Perú",
     photo: "/candidates/vega.jpg",
     age: 62,
-    bio: "Excongresista y lider de UPP. Vinculado al etnocacerismo. Propone nacionalismo y reivindicacion del Peru profundo.",
+    bio: "Excongresista y lider de UPP. Vinculado al etnocacerismo. Propone nacionalismo y reivindicación del Perú profundo.",
     positions: { economic: 22, social: 25, environment: 45, security: 80, institutional: 85 },
     truthScore: 30,
     promiseCount: 7,
@@ -260,10 +260,10 @@ const CANDIDATES = [
   {
     slug: "martin-vizcarra",
     name: "Martin Vizcarra",
-    party: "Peru Primero",
+    party: "Perú Primero",
     photo: "/candidates/vizcarra.jpg",
     age: 63,
-    bio: "Expresidente del Peru (2018-2020). Ingeniero de Moquegua. Propone lucha anticorrupcion, reforma politica y descentralizacion.",
+    bio: "Expresidente del Perú (2018-2020). Ingeniero de Moquegua. Propone lucha anticorrupcion, reforma politica y descentralizacion.",
     positions: { economic: 58, social: 55, environment: 55, security: 50, institutional: 72 },
     truthScore: 45,
     promiseCount: 13,
@@ -305,10 +305,10 @@ export default function CandidatosPage() {
             Quieres saber con quien haces match?
           </h3>
           <p className="text-gray-500 mb-6">
-            Completa el DNA Test para comparar tu perfil con todos los candidatos.
+            Completa el ADN Test para comparar tu perfil con todos los candidatos.
           </p>
           <Link href="/test" className="btn-primary">
-            Hacer el DNA Test
+            Hacer el ADN Test
           </Link>
         </div>
       </section>

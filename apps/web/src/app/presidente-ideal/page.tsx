@@ -65,7 +65,7 @@ const POLICY_ISSUES: PolicyIssue[] = [
   {
     id: "inmigracion",
     name: "Inmigracion",
-    labelLeft: "Restriccion total",
+    labelLeft: "Restricción total",
     labelRight: "Puertas abiertas",
     emoji: "\u{1F30D}",
     category: "social",
@@ -225,7 +225,7 @@ const CANDIDATES: CandidateData[] = [
   {
     slug: "daniel-urresti",
     name: "Daniel Urresti",
-    party: "Podemos Peru",
+    party: "Podemos Perú",
     initials: "DU",
     color: "#7C3AED",
     positions: {
@@ -249,7 +249,7 @@ const CANDIDATES: CandidateData[] = [
   {
     slug: "veronika-mendoza",
     name: "Veronika Mendoza",
-    party: "Juntos por el Peru",
+    party: "Juntos por el Perú",
     initials: "VM",
     color: "#EC4899",
     positions: {
@@ -321,7 +321,7 @@ const CANDIDATES: CandidateData[] = [
   {
     slug: "george-forsyth",
     name: "George Forsyth",
-    party: "Somos Peru",
+    party: "Somos Perú",
     initials: "GF",
     color: "#06B6D4",
     positions: {
@@ -506,7 +506,7 @@ function BuildPhase({
             Construye tu Presidente Ideal
           </h1>
           <p className="text-white/80 text-sm sm:text-base">
-            Elige tu posicion en 15 temas clave y descubre que candidato se
+            Elige tu posición en 15 temas clave y descubre que candidato se
             parece mas a tu ideal.
           </p>
         </div>
@@ -543,13 +543,12 @@ function BuildPhase({
               <button
                 key={iss.id}
                 onClick={() => onCurrentIssueChange(idx)}
-                className={`w-9 h-9 rounded-full text-xs font-bold transition-all duration-200 border-2 ${
-                  isCurrent
-                    ? "border-[#D91023] bg-[#D91023] text-white scale-110 shadow-card"
-                    : isTouched
-                      ? "border-[#D4A017] bg-[#D4A017]/10 text-[#D4A017]"
-                      : "border-gray-300 bg-white text-gray-400 hover:border-gray-400"
-                }`}
+                className={`w-9 h-9 rounded-full text-xs font-bold transition-all duration-200 border-2 ${isCurrent
+                  ? "border-[#D91023] bg-[#D91023] text-white scale-110 shadow-card"
+                  : isTouched
+                    ? "border-[#D4A017] bg-[#D4A017]/10 text-[#D4A017]"
+                    : "border-gray-300 bg-white text-gray-400 hover:border-gray-400"
+                  }`}
                 title={iss.name}
               >
                 {idx + 1}
@@ -723,9 +722,8 @@ function BuildPhase({
                 <button
                   key={iss.id}
                   onClick={() => onCurrentIssueChange(idx)}
-                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-all hover:bg-gray-50 ${
-                    idx === currentIssue ? "bg-red-50 ring-1 ring-[#D91023]/20" : ""
-                  }`}
+                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-all hover:bg-gray-50 ${idx === currentIssue ? "bg-red-50 ring-1 ring-[#D91023]/20" : ""
+                    }`}
                 >
                   <span className="text-xs font-bold text-gray-400 w-5">
                     {idx + 1}
@@ -917,20 +915,18 @@ function ResultsPhase({
           {top3.map((result, idx) => (
             <div
               key={result.candidate.slug}
-              className={`bg-white rounded-2xl shadow-card p-5 text-center relative overflow-hidden animate-slide-up ${
-                idx === 0 ? "ring-2 ring-[#D4A017] sm:scale-105" : ""
-              }`}
+              className={`bg-white rounded-2xl shadow-card p-5 text-center relative overflow-hidden animate-slide-up ${idx === 0 ? "ring-2 ring-[#D4A017] sm:scale-105" : ""
+                }`}
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Rank badge */}
               <div
-                className={`absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold text-white ${
-                  idx === 0
-                    ? "bg-[#D4A017]"
-                    : idx === 1
-                      ? "bg-gray-400"
-                      : "bg-amber-700"
-                }`}
+                className={`absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold text-white ${idx === 0
+                  ? "bg-[#D4A017]"
+                  : idx === 1
+                    ? "bg-gray-400"
+                    : "bg-amber-700"
+                  }`}
               >
                 {idx + 1}
               </div>
@@ -1063,9 +1059,8 @@ function ResultsPhase({
                   </div>
 
                   <svg
-                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0 ${
-                      isExpanded ? "rotate-180" : ""
-                    }`}
+                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0 ${isExpanded ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -1133,7 +1128,7 @@ function ResultsPhase({
                     {/* Per-issue comparison */}
                     <div className="mt-4">
                       <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                        Comparacion tema por tema
+                        Comparación tema por tema
                       </h4>
                       <div className="space-y-2">
                         {POLICY_ISSUES.map((issue) => {
@@ -1169,13 +1164,12 @@ function ResultsPhase({
                                 />
                               </div>
                               <span
-                                className={`text-[11px] font-bold w-8 text-right ${
-                                  diff <= 15
-                                    ? "text-emerald-600"
-                                    : diff <= 35
-                                      ? "text-amber-600"
-                                      : "text-red-600"
-                                }`}
+                                className={`text-[11px] font-bold w-8 text-right ${diff <= 15
+                                  ? "text-emerald-600"
+                                  : diff <= 35
+                                    ? "text-amber-600"
+                                    : "text-red-600"
+                                  }`}
                               >
                                 {diff}
                               </span>
@@ -1352,7 +1346,7 @@ function SharePhase({
               </div>
               <div>
                 <p className="text-white font-bold text-sm">Candidatazo</p>
-                <p className="text-white/70 text-xs">Peru 2026</p>
+                <p className="text-white/70 text-xs">Perú 2026</p>
               </div>
             </div>
           </div>
@@ -1373,11 +1367,10 @@ function SharePhase({
                   className="flex items-center gap-4"
                 >
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 ${
-                      idx === 0
-                        ? "ring-2 ring-[#D4A017] ring-offset-2"
-                        : ""
-                    }`}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 ${idx === 0
+                      ? "ring-2 ring-[#D4A017] ring-offset-2"
+                      : ""
+                      }`}
                     style={{ backgroundColor: result.candidate.color }}
                   >
                     {result.candidate.initials}
@@ -1392,13 +1385,12 @@ function SharePhase({
                   </div>
                   <div className="text-right">
                     <span
-                      className={`text-lg font-extrabold ${
-                        result.compatibility >= 70
-                          ? "text-emerald-600"
-                          : result.compatibility >= 50
-                            ? "text-amber-600"
-                            : "text-red-600"
-                      }`}
+                      className={`text-lg font-extrabold ${result.compatibility >= 70
+                        ? "text-emerald-600"
+                        : result.compatibility >= 50
+                          ? "text-amber-600"
+                          : "text-red-600"
+                        }`}
                     >
                       {result.compatibility}%
                     </span>
@@ -1507,7 +1499,7 @@ function SharePhase({
             Quieres saber mas sobre los candidatos?
           </h3>
           <p className="text-sm text-gray-500 mb-4">
-            Haz el DNA Test completo o explora los perfiles detallados de cada
+            Haz el ADN Test completo o explora los perfiles detallados de cada
             candidato.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -1518,7 +1510,7 @@ function SharePhase({
                 background: "linear-gradient(135deg, #D91023, #D4A017)",
               }}
             >
-              Hacer el DNA Test
+              Hacer el ADN Test
             </Link>
             <Link
               href="/candidatos"

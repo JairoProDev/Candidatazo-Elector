@@ -1,7 +1,7 @@
 import type { DnaScores, DnaAnswer, MatchBreakdown, CandidatePositions } from "@candidatazo/types";
 
 /**
- * Calculate DNA scores from a list of answers.
+ * Calculate ADN scores from a list of answers.
  * Groups answers by dimension and computes weighted averages.
  * Returns scores normalized to 0-100 scale.
  */
@@ -87,7 +87,7 @@ export function calculateMatchScore(
 }
 
 /**
- * Determine the user's political tribe based on their DNA scores.
+ * Determine the user's political tribe based on their ADN scores.
  */
 export function determineTribe(scores: DnaScores): string {
   const { economic, social, environment, security, institutional } = scores;

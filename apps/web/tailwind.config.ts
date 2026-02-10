@@ -6,7 +6,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Patriotic Peru theme
+        // Patriotic Perú theme
         primary: {
           DEFAULT: "#D91023",
           50: "#FEF2F2",

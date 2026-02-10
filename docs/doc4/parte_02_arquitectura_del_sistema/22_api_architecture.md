@@ -7,7 +7,7 @@ Base URL: https://api.gobapp.pe/v1
 Estructura:
 /auth          - Authentication
 /users         - User management
-/dna           - Political DNA tests
+/dna           - Political ADN tests
 /candidates    - Candidate info
 /matches       - Matching algorithm
 /factchecks    - Fact-checking
@@ -21,7 +21,7 @@ Estructura:
 **Endpoint Examples:**
 
 ```typescript
-// DNA Test
+// ADN Test
 POST   /dna/start           // Start new test
 GET    /dna/:id             // Get test progress
 POST   /dna/:id/answer      // Submit answer
