@@ -6,8 +6,9 @@
 
 @layer base {
   :root {
-    --primary: #2D5BFF;
-    --secondary: #7C3AED;
+    --primary: #D91023;
+    --secondary: #1A1A2E;
+    --gold: #D4A017;
     --success: #10B981;
     --warning: #F59E0B;
     --error: #EF4444;
