@@ -1,7 +1,7 @@
 import type { FastifyPluginAsync } from "fastify";
 import { prisma } from "@candidatazo/database";
 import { calculateDnaScores, determineTribe, calculateMatchScore } from "@candidatazo/utils";
-import type { DnaAnswer, CandidatePositions } from "@candidatazo/types";
+import type { DnaAnswer, CandidatePositions, DnaScores } from "@candidatazo/types";
 
 export const dnaRoutes: FastifyPluginAsync = async (app) => {
   // GET /dna/questions - Get all active DNA test questions
@@ -71,7 +71,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
       });
     }
 
-    const currentAnswers = (test.answers as DnaAnswer[]) || [];
+    const currentAnswers = (test.answers as unknown as DnaAnswer[]) || [];
     const existingIndex = currentAnswers.findIndex(
       (a) => a.questionId === questionId
     );
@@ -85,7 +85,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
     const updated = await prisma.dnaTest.update({
       where: { id },
       data: {
-        answers: currentAnswers as unknown as Record<string, unknown>[],
+        answers: JSON.parse(JSON.stringify(currentAnswers)),
         currentStep: currentAnswers.length,
       },
     });
@@ -122,7 +122,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
       });
     }
 
-    const answers = test.answers as DnaAnswer[];
+    const answers = test.answers as unknown as DnaAnswer[];
     if (answers.length < 5) {
       return reply.status(400).send({
         success: false,
@@ -173,7 +173,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
       where: { id },
       data: {
         status: "COMPLETED",
-        scores: scores as unknown as Record<string, unknown>,
+        scores: JSON.parse(JSON.stringify(scores)),
         tribe,
         completedAt: new Date(),
       },
@@ -193,13 +193,13 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
             userId: test.userId,
             candidateId: m.candidateId,
             overallScore: m.overallScore,
-            breakdown: m.breakdown as unknown as Record<string, unknown>,
+            breakdown: JSON.parse(JSON.stringify(m.breakdown)),
             agreements: [],
             disagreements: [],
           },
           update: {
             overallScore: m.overallScore,
-            breakdown: m.breakdown as unknown as Record<string, unknown>,
+            breakdown: JSON.parse(JSON.stringify(m.breakdown)),
           },
         })
       );
@@ -245,12 +245,12 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
       select: { id: true, name: true, photo: true, party: true, positions: true },
     });
 
-    const scores = test.scores as unknown as Record<string, number>;
+    const scores = test.scores as unknown as DnaScores;
     const matches = candidates
       .map((candidate) => {
         const positions = candidate.positions as unknown as CandidatePositions;
         const { overallScore, breakdown } = calculateMatchScore(
-          scores as CandidatePositions,
+          scores,
           positions
         );
         return {

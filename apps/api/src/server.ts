@@ -52,14 +52,14 @@ async function buildServer() {
   });
 
   // Error handler
-  app.setErrorHandler((error, request, reply) => {
+  app.setErrorHandler((error: { statusCode?: number; message?: string }, _request, reply) => {
     app.log.error(error);
 
     const statusCode = error.statusCode || 500;
     const message =
       statusCode === 500
         ? "Error interno del servidor"
-        : error.message;
+        : error.message || "Error desconocido";
 
     reply.status(statusCode).send({
       success: false,
