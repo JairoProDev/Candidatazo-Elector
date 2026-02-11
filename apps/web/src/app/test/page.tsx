@@ -19,7 +19,7 @@ const DNA_QUESTIONS: {
     // ECONOMIC (6 questions)
     {
       id: "eco_1",
-      text: "El Estado deberia controlar los precios de productos basicos como el gas y los alimentos?",
+      text: "El Estado debería controlar los precios de productos basicos como el gas y los alimentos?",
       description: "Control de precios vs libre mercado",
       dimension: "ECONOMIC",
       context: "En Perú, el precio del balon de gas fluctua entre S/40-60 y afecta directamente a familias de bajos recursos.",
@@ -33,7 +33,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "eco_2",
-      text: "Que deberia hacer el Estado con las empresas publicas como Petroperu?",
+      text: "Que debería hacer el Estado con las empresas publicas como Petroperu?",
       description: "Privatización vs empresa estatal",
       dimension: "ECONOMIC",
       context: "Petroperu acumula perdidas por miles de millones y ha requerido rescates estatales, pero provee combustible a zonas alejadas.",
@@ -47,7 +47,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "eco_3",
-      text: "Se deberian aumentar los impuestos a los mas ricos para financiar programas sociales?",
+      text: "Se deberían aumentar los impuestos a los mas ricos para financiar programas sociales?",
       description: "Politica tributaria",
       dimension: "ECONOMIC",
       context: "Perú recauda solo 16.8% del PBI en impuestos, uno de los mas bajos de Latinoamerica. La evasion es alta.",
@@ -61,7 +61,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "eco_4",
-      text: "El salario minimo deberia aumentar significativamente?",
+      text: "El salario minimo debería aumentar significativamente?",
       description: "Politica salarial",
       dimension: "ECONOMIC",
       context: "El salario minimo en Perú es S/1,025. El 70% de trabajadores son informales y no les aplica.",
@@ -89,7 +89,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "eco_6",
-      text: "El Estado deberia dar bonos y transferencias directas a las familias pobres?",
+      text: "El Estado debería dar bonos y transferencias directas a las familias pobres?",
       description: "Programas sociales",
       dimension: "ECONOMIC",
       context: "Programas como Juntos y Pension 65 llegan a millones pero hay criticas por clientelismo y filtraciones.",
@@ -104,7 +104,7 @@ const DNA_QUESTIONS: {
     // SOCIAL (6 questions)
     {
       id: "soc_1",
-      text: "Deberia legalizarse el matrimonio entre personas del mismo sexo en Perú?",
+      text: "Debería legalizarse el matrimonio entre personas del mismo sexo en Perú?",
       description: "Derechos LGBTQ+",
       dimension: "SOCIAL",
       context: "Perú es uno de los pocos paises de Sudamerica sin union civil ni matrimonio igualitario.",
@@ -118,7 +118,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "soc_2",
-      text: "El enfoque de genero deberia incluirse en el curriculo escolar?",
+      text: "El enfoque de genero debería incluirse en el curriculo escolar?",
       description: "Educación y genero",
       dimension: "SOCIAL",
       context: "El curriculo con enfoque de genero busca igualdad y prevenir violencia. Movimientos como 'Con mis hijos no te metas' se oponen.",
@@ -132,7 +132,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "soc_3",
-      text: "Deberia despenalizarse el aborto en caso de violacion?",
+      text: "Debería despenalizarse el aborto en caso de violacion?",
       description: "Derechos reproductivos",
       dimension: "SOCIAL",
       context: "En Perú el aborto es ilegal salvo terapeutico. Se estiman 400,000 abortos clandestinos por año.",
@@ -146,7 +146,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "soc_4",
-      text: "Se deberia regular el consumo de marihuana?",
+      text: "Se debería regular el consumo de marihuana?",
       description: "Politica de drogas",
       dimension: "SOCIAL",
       context: "Perú permite uso medicinal limitado. Uruguay y Colombia han avanzado en regulacion.",
@@ -160,7 +160,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "soc_5",
-      text: "Que rol deberia tener la religion en las decisiones del gobierno?",
+      text: "Que rol debería tener la religion en las decisiones del gobierno?",
       description: "Estado laico",
       dimension: "SOCIAL",
       context: "Perú tiene un concordato con el Vaticano. La Iglesia Catolica tiene influencia en politicas publicas.",
@@ -174,7 +174,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "soc_6",
-      text: "Como deberia manejar Perú la inmigración venezolana?",
+      text: "Como debería manejar Perú la inmigración venezolana?",
       description: "Politica migratoria",
       dimension: "SOCIAL",
       context: "Mas de 1.5 millones de venezolanos viven en Perú. Hay debates sobre su impacto en empleo y seguridad.",
@@ -189,7 +189,7 @@ const DNA_QUESTIONS: {
     // ENVIRONMENT (6 questions)
     {
       id: "env_1",
-      text: "Deberia priorizarse la protección ambiental sobre proyectos mineros?",
+      text: "Debería priorizarse la protección ambiental sobre proyectos mineros?",
       description: "Mineria vs ambiente",
       dimension: "ENVIRONMENT",
       context: "La mineria representa el 10% del PBI peruano pero ha causado conflictos como Conga y Tia Maria.",
@@ -203,7 +203,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "env_2",
-      text: "Perú deberia comprometerse a eliminar la deforestación en la Amazonia?",
+      text: "Perú debería comprometerse a eliminar la deforestación en la Amazonia?",
       description: "Deforestación amazonica",
       dimension: "ENVIRONMENT",
       context: "Perú pierde 150,000+ hectareas de bosque por año. La Amazonia peruana es clave para el clima global.",
@@ -217,7 +217,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "env_3",
-      text: "El gobierno deberia invertir fuertemente en energia renovable?",
+      text: "El gobierno debería invertir fuertemente en energia renovable?",
       description: "Transición energetica",
       dimension: "ENVIRONMENT",
       context: "Perú tiene enorme potencial solar, eolico e hidrico. Actualmente depende mucho de combustibles fosiles.",
@@ -231,7 +231,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "env_4",
-      text: "Las comunidades nativas deberian tener poder de veto sobre proyectos en sus territorios?",
+      text: "Las comunidades nativas deberían tener poder de veto sobre proyectos en sus territorios?",
       description: "Consulta previa",
       dimension: "ENVIRONMENT",
       context: "La consulta previa existe pero no es vinculante. Comunidades nativas han sido desplazadas por proyectos extractivos.",
@@ -245,7 +245,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "env_5",
-      text: "Deberian prohibirse los plasticos de un solo uso en Perú?",
+      text: "Deberían prohibirse los plasticos de un solo uso en Perú?",
       description: "Contaminación por plasticos",
       dimension: "ENVIRONMENT",
       context: "Perú genera 6.8 millones de toneladas de residuos al año. Existe una ley pero con poca implementacion.",
@@ -259,7 +259,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "env_6",
-      text: "El agua deberia ser un derecho constitucional prioritario sobre su uso comercial?",
+      text: "El agua debería ser un derecho constitucional prioritario sobre su uso comercial?",
       description: "Derecho al agua",
       dimension: "ENVIRONMENT",
       context: "Millones de peruanos carecen de agua potable mientras grandes industrias consumen enormes cantidades.",
@@ -274,7 +274,7 @@ const DNA_QUESTIONS: {
     // SECURITY (6 questions)
     {
       id: "sec_1",
-      text: "Deberian endurecerse las penas para delitos violentos?",
+      text: "Deberían endurecerse las penas para delitos violentos?",
       description: "Severidad penal",
       dimension: "SECURITY",
       context: "Perú tiene una tasa de 25 homicidios por 100,000 hab. La percepción de inseguridad supera el 85%.",
@@ -288,7 +288,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "sec_2",
-      text: "Las Fuerzas Armadas deberian salir a las calles para combatir la delincuencia?",
+      text: "Las Fuerzas Armadas deberían salir a las calles para combatir la delincuencia?",
       description: "Militarización de seguridad",
       dimension: "SECURITY",
       context: "Varios candidatos proponen que los militares apoyen a la policia. Criticos advierten riesgos a derechos humanos.",
@@ -302,7 +302,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "sec_3",
-      text: "Deberia existir pena de muerte para violadores de menores?",
+      text: "Debería existir pena de muerte para violadores de menores?",
       description: "Pena de muerte",
       dimension: "SECURITY",
       context: "Perú firmo la Convención Americana que prohibe reinstaurar pena de muerte. Casos de violación generan indignación publica.",
@@ -316,7 +316,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "sec_4",
-      text: "Los ciudadanos deberian poder portar armas de fuego para defensa?",
+      text: "Los ciudadanos deberían poder portar armas de fuego para defensa?",
       description: "Tenencia de armas",
       dimension: "SECURITY",
       context: "La legislación peruana permite armas con licencia estricta. Los asaltos armados han aumentado.",
@@ -330,7 +330,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "sec_5",
-      text: "Deberia implementarse vigilancia masiva con camaras y reconocimiento facial?",
+      text: "Debería implementarse vigilancia masiva con camaras y reconocimiento facial?",
       description: "Vigilancia y privacidad",
       dimension: "SECURITY",
       context: "Ciudades como Lima instalan cada vez mas camaras. China usa reconocimiento facial masivo.",
@@ -344,7 +344,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "sec_6",
-      text: "Se deberia negociar con el narcotrafico o combatirlo militarmente?",
+      text: "Se debería negociar con el narcotrafico o combatirlo militarmente?",
       description: "Politica antidrogas",
       dimension: "SECURITY",
       context: "Perú es el segundo productor de coca del mundo. El VRAEM concentra la mayor produccion.",
@@ -359,7 +359,7 @@ const DNA_QUESTIONS: {
     // INSTITUTIONAL (6 questions)
     {
       id: "ins_1",
-      text: "Deberia convocarse una Asamblea Constituyente para una nueva Constitucion?",
+      text: "Debería convocarse una Asamblea Constituyente para una nueva Constitucion?",
       description: "Cambio constitucional",
       dimension: "INSTITUTIONAL",
       context: "La Constitución de 1993 fue promulgada por Fujimori. Sectores piden cambiarla, otros defenderla.",
@@ -373,7 +373,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "ins_2",
-      text: "El Congreso deberia volver a tener dos camaras (Senado y Diputados)?",
+      text: "El Congreso debería volver a tener dos camaras (Senado y Diputados)?",
       description: "Bicameralidad",
       dimension: "INSTITUTIONAL",
       context: "Perú tiene un Congreso unicameral de 130 miembros. La bicameralidad fue eliminada en 1993.",
@@ -387,7 +387,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "ins_3",
-      text: "Deberia eliminarse la inmunidad parlamentaria?",
+      text: "Debería eliminarse la inmunidad parlamentaria?",
       description: "Inmunidad parlamentaria",
       dimension: "INSTITUTIONAL",
       context: "Congresistas investigados por corrupción usan la inmunidad para evitar procesos judiciales.",
@@ -401,7 +401,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "ins_4",
-      text: "Los partidos politicos deberian recibir financiamiento publico?",
+      text: "Los partidos politicos deberían recibir financiamiento publico?",
       description: "Financiamiento politico",
       dimension: "INSTITUTIONAL",
       context: "Actualmente los partidos dependen de donaciones privadas, muchas veces de fuentes cuestionables.",
@@ -415,7 +415,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "ins_5",
-      text: "Deberia ser obligatorio el voto o deberia ser voluntario?",
+      text: "Debería ser obligatorio el voto o debería ser voluntario?",
       description: "Voto obligatorio",
       dimension: "INSTITUTIONAL",
       context: "Perú tiene voto obligatorio con multa de S/88 por no votar. Algunos paises han pasado a voto voluntario.",
@@ -429,7 +429,7 @@ const DNA_QUESTIONS: {
     },
     {
       id: "ins_6",
-      text: "Deberia descentralizarse mas el poder hacia las regiones?",
+      text: "Debería descentralizarse mas el poder hacia las regiones?",
       description: "Descentralizacion",
       dimension: "INSTITUTIONAL",
       context: "Lima concentra el 52% del PBI. Las regiones reclaman mas recursos y autonomia.",
