@@ -10,7 +10,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export class GeminiService {
   
-  // DNA Test Personalization
+  // ADN Test Personalization
   async generatePersonalizedSummary(scores: DnaScores): Promise<string> {
     const model = genAI.getGenerativeModel({ 
       model: 'gemini-2.0-flash-exp',

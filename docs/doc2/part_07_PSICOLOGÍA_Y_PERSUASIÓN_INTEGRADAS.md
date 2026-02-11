@@ -2,7 +2,7 @@
 7.1 - GAMIFICACIÓN (Addiction Loop)
 Sistema de XP y Niveles:
 ACCIONES QUE DAN XP:
-- Completar DNA Test: +500 XP
+- Completar ADN Test: +500 XP
 - Invitar amigo que se registra: +200 XP
 - Verificar fact-check correcto: +50 XP
 - Participar en debate: +30 XP
@@ -29,13 +29,13 @@ Badges/Achievements:
 DISEÑO DE BADGE:
 ┌──────┐
 │ 🏆  │ ← Icono
-│ DNA  │ ← Nombre corto
+│ ADN  │ ← Nombre corto
 │Master│
 └──────┘
 
 TIPOS:
 🥇 Completitud
-- DNA Complete: Terminar test
+- ADN Complete: Terminar test
 - Fact Finder: 10 fact-checks
 - Debate Master: Asistir a 5 debates
 
@@ -89,7 +89,7 @@ Auténticos (no fake)
 Geo-targetted (Lima ve testimonials de Lima)
 
 "Otros usuarios como tú..."
-Después de DNA Test:
+Después de ADN Test:
 ━━━━━━━━━━━━━━━━━━━━━━
 Usuarios con tu perfil también:
 - ✅ 78% completaron el Match
@@ -107,7 +107,7 @@ Countdown Timers:
 │ ⏰ 12 días 04:23:15        │ ← Live countdown
 │                            │
 │ ¿Ya decidiste tu voto?     │
-│ [Hacer DNA Test →]         │
+│ [Hacer ADN Test →]         │
 └────────────────────────────┘
 
 En debates:

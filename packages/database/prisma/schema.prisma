@@ -1,0 +1,436 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==================== USERS ====================
+
+model User {
+  id             String    @id @default(cuid())
+  clerkId        String?   @unique
+  email          String    @unique
+  phone          String?   @unique
+  name           String?
+  avatar         String?
+  language       String    @default("es")
+  onboardingDone Boolean   @default(false)
+  premium        Boolean   @default(false)
+  premiumUntil   DateTime?
+  ageRange       AgeRange?
+
+  // Gamification
+  xp         Int      @default(0)
+  level      Int      @default(1)
+  streak     Int      @default(0)
+  lastActive DateTime @default(now())
+
+  // Relations
+  location       Location?
+  dnaTests       DnaTest[]
+  matches        Match[]
+  factCheckVotes FactCheckVote[]
+  posts          Post[]
+  comments       Comment[]
+  tribes         TribeMembership[]
+  achievements   UserAchievement[]
+  referralsMade  Referral[]        @relation("ReferrerUser")
+  referralUsed   Referral?         @relation("ReferredUser")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([clerkId])
+  @@index([email])
+  @@index([lastActive])
+}
+
+model Location {
+  id         String  @id @default(cuid())
+  userId     String  @unique
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  department String
+  province   String
+  district   String?
+  lat        Float?
+  lng        Float?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum AgeRange {
+  RANGE_18_25
+  RANGE_26_40
+  RANGE_41_55
+  RANGE_56_PLUS
+}
+
+// ==================== ADN TEST ====================
+
+model DnaQuestion {
+  id          String      @id @default(cuid())
+  text        String
+  description String?     @db.Text
+  dimension   Dimension
+  order       Int
+  options     Json        // Array of {value: number, label: string}
+  context     String?     @db.Text // Contexto peruano real
+  active      Boolean     @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([dimension, order])
+  @@index([active])
+}
+
+model DnaTest {
+  id          String     @id @default(cuid())
+  userId      String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status      TestStatus @default(IN_PROGRESS)
+  currentStep Int        @default(0)
+  totalSteps  Int        @default(30)
+  answers     Json       @default("[]") // [{questionId, value, importance}]
+
+  // Results
+  scores      Json?   // {economic, social, environment, security, institutional}
+  tribe       String?
+  summary     String? @db.Text
+
+  timeSpent   Int?      // seconds
+  completedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+enum TestStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
+}
+
+enum Dimension {
+  ECONOMIC
+  SOCIAL
+  ENVIRONMENT
+  SECURITY
+  INSTITUTIONAL
+}
+
+// ==================== CANDIDATES ====================
+
+model Candidate {
+  id        String  @id @default(cuid())
+  name      String
+  slug      String  @unique
+  party     String
+  partyLogo String?
+  photo     String
+  age       Int
+  bio       String  @db.Text
+
+  // Political positions (normalized 0-100)
+  positions Json // {economic, social, environment, security, institutional}
+
+  // Plan de gobierno
+  planUrl     String?
+  planSummary String? @db.Text
+
+  // Truth metrics
+  truthScore Float @default(50)
+
+  // Social media
+  twitter  String?
+  facebook String?
+  instagram String?
+  tiktok    String?
+  website  String?
+
+  // Status
+  active   Boolean @default(true)
+  featured Boolean @default(false)
+
+  // Relations
+  promises   Promise[]
+  factChecks FactCheck[]
+  matches    Match[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([active])
+  @@index([slug])
+}
+
+model Promise {
+  id          String        @id @default(cuid())
+  candidateId String
+  candidate   Candidate     @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  title       String
+  description String        @db.Text
+  category    Category
+  status      PromiseStatus @default(PENDING)
+  evidence    String?       @db.Text
+  lastChecked DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([candidateId])
+  @@index([category])
+  @@index([status])
+}
+
+enum Category {
+  ECONOMY
+  EDUCATION
+  HEALTH
+  SECURITY
+  ENVIRONMENT
+  SOCIAL
+  INFRASTRUCTURE
+  FOREIGN_POLICY
+  CORRUPTION
+  TECHNOLOGY
+}
+
+enum PromiseStatus {
+  PENDING
+  IN_PROGRESS
+  FULFILLED
+  BROKEN
+  COMPROMISED
+}
+
+// ==================== MATCHING ====================
+
+model Match {
+  id          String @id @default(cuid())
+  userId      String
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  candidateId String
+  candidate   Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+
+  overallScore  Float // 0-100
+  breakdown     Json  // {economic, social, environment, security, institutional}
+  agreements    Json  @default("[]") // position agreements
+  disagreements Json  @default("[]") // position disagreements
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, candidateId])
+  @@index([userId])
+  @@index([overallScore])
+}
+
+// ==================== FACT-CHECKING ====================
+
+model FactCheck {
+  id          String     @id @default(cuid())
+  candidateId String?
+  candidate   Candidate? @relation(fields: [candidateId], references: [id], onDelete: SetNull)
+
+  claim       String  @db.Text
+  context     String? @db.Text
+  claimedAt   DateTime?
+  source      String? // debate, interview, tweet, etc.
+
+  verdict     Verdict
+  explanation String  @db.Text
+  sources     Json    @default("[]") // [{title, url, snippet}]
+
+  confidence  Float?  // 0-1
+  aiGenerated Boolean @default(false)
+
+  // Community
+  votes     FactCheckVote[]
+  upvotes   Int     @default(0)
+  downvotes Int     @default(0)
+  featured  Boolean @default(false)
+
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([verdict])
+  @@index([publishedAt])
+  @@index([featured])
+  @@index([candidateId])
+}
+
+enum Verdict {
+  TRUE
+  MOSTLY_TRUE
+  HALF_TRUE
+  MOSTLY_FALSE
+  FALSE
+  MISLEADING
+  UNVERIFIABLE
+}
+
+model FactCheckVote {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  factCheckId String
+  factCheck   FactCheck @relation(fields: [factCheckId], references: [id], onDelete: Cascade)
+  agrees      Boolean
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, factCheckId])
+}
+
+// ==================== COMMUNITY ====================
+
+model Tribe {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  description String @db.Text
+  icon        String?
+  color       String?
+  criteria    Json   // {economic: [min, max], social: [min, max], ...}
+  memberCount Int    @default(0)
+
+  members TribeMembership[]
+  posts   Post[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([memberCount])
+}
+
+model TribeMembership {
+  id      String    @id @default(cuid())
+  userId  String
+  user    User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tribeId String
+  tribe   Tribe     @relation(fields: [tribeId], references: [id], onDelete: Cascade)
+  role    TribeRole @default(MEMBER)
+
+  joinedAt DateTime @default(now())
+
+  @@unique([userId, tribeId])
+}
+
+enum TribeRole {
+  MEMBER
+  MODERATOR
+  ADMIN
+}
+
+model Post {
+  id      String   @id @default(cuid())
+  userId  String
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tribeId String?
+  tribe   Tribe?   @relation(fields: [tribeId], references: [id], onDelete: SetNull)
+  content String   @db.Text
+  type    PostType @default(TEXT)
+  media   Json?    // [{type, url}]
+
+  likes    Int     @default(0)
+  comments Comment[]
+  flagged  Boolean @default(false)
+  removed  Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([tribeId])
+  @@index([createdAt])
+}
+
+enum PostType {
+  TEXT
+  POLL
+  SHARE_DNA
+  SHARE_MATCH
+  SHARE_FACTCHECK
+}
+
+model Comment {
+  id       String  @id @default(cuid())
+  userId   String
+  user     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  postId   String
+  post     Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  parentId String?
+  content  String  @db.Text
+  likes    Int     @default(0)
+  flagged  Boolean @default(false)
+  removed  Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([postId])
+  @@index([userId])
+}
+
+// ==================== GAMIFICATION ====================
+
+model Achievement {
+  id          String              @id @default(cuid())
+  key         String              @unique
+  name        String
+  description String
+  icon        String
+  rarity      Rarity
+  xp          Int
+  users       UserAchievement[]
+
+  createdAt DateTime @default(now())
+}
+
+enum Rarity {
+  COMMON
+  UNCOMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+model UserAchievement {
+  id            String      @id @default(cuid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievementId String
+  achievement   Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+
+  unlockedAt DateTime @default(now())
+
+  @@unique([userId, achievementId])
+}
+
+model Referral {
+  id         String @id @default(cuid())
+  referrerId String
+  referrer   User   @relation("ReferrerUser", fields: [referrerId], references: [id], onDelete: Cascade)
+
+  referredId String? @unique
+  referred   User?   @relation("ReferredUser", fields: [referredId], references: [id], onDelete: SetNull)
+
+  code        String @unique
+  clicks      Int    @default(0)
+  signups     Int    @default(0)
+  conversions Int    @default(0)
+
+  createdAt DateTime @default(now())
+
+  @@index([referrerId])
+  @@index([code])
+}
