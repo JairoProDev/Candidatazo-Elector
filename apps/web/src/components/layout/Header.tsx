@@ -5,12 +5,11 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/test", label: "ADN Test", description: "Descubre tu perfil politico" },
-  { href: "/candidatos", label: "Candidatos", description: "Conoce a los 36 candidatos" },
-  { href: "/verificador", label: "Verificador", description: "Fact-checking con IA" },
+  { href: "/quiz", label: "Quick Match", description: "Descubre tu match en 60 segundos" },
+  { href: "/candidatos", label: "Candidatos", description: "Conoce a los 24 candidatos" },
+  { href: "/verificador", label: "Verificador", description: "Fact-checking con fuentes reales" },
   { href: "/simulador", label: "Simulador IA", description: "Conversa con candidatos IA" },
-  { href: "/predictor", label: "Predictor", description: "Predicciones electorales" },
-  { href: "/academia", label: "Academia", description: "Aprende sobre politica" },
+  { href: "/test", label: "ADN Completo", description: "Test de 30 preguntas, más preciso" },
 ];
 
 export function Header() {
@@ -62,13 +61,13 @@ export function Header() {
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-3">
               <Link
-                href="/test"
+                href="/quiz"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-600 text-white text-sm font-bold py-2.5 px-5 rounded-lg shadow-card hover:shadow-hover transition-all duration-200"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Hacer el Test
+                Mi Match
               </Link>
             </div>
 
@@ -129,11 +128,11 @@ export function Header() {
               })}
               <div className="pt-3 pb-1">
                 <Link
-                  href="/test"
+                  href="/quiz"
                   onClick={() => setMobileOpen(false)}
                   className="block w-full text-center bg-primary hover:bg-primary-600 text-white font-bold py-3 rounded-lg shadow-card transition-all"
                 >
-                  Hacer el Test
+                  Descubrir mi Match
                 </Link>
               </div>
             </div>

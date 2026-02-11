@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const PRINCIPLES = [
   {
-    title: "Imparcialidad politica",
+    title: "Imparcialidad política",
     description:
-      "Candidatazo no esta afiliado ni financiado por ningun partido politico, candidato o grupo de interes. Todos los candidatos reciben el mismo tratamiento y cobertura.",
+      "Candidatazo no está afiliado ni financiado por ningún partido político, candidato o grupo de interés. Todos los candidatos reciben el mismo tratamiento y cobertura.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
     ),
@@ -12,23 +12,23 @@ const PRINCIPLES = [
   {
     title: "Datos verificables",
     description:
-      "Toda información presentada esta respaldada por fuentes oficiales y verificables. Citamos nuestras fuentes y proporcionamos enlaces para que puedas verificar por tu cuenta.",
+      "Toda información presentada está respaldada por fuentes oficiales y verificables. Citamos nuestras fuentes y proporcionamos enlaces para que puedas verificar por tu cuenta.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
     ),
   },
   {
-    title: "Codigo abierto",
+    title: "Código abierto",
     description:
-      "El codigo fuente de Candidatazo es publico y abierto a revision. Cualquier persona puede inspeccionar nuestros algoritmos, verificar nuestros calculos y proponer mejoras.",
+      "El código fuente de Candidatazo es público y abierto a revisión. Cualquier persona puede inspeccionar nuestros algoritmos, verificar nuestros cálculos y proponer mejoras.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
     ),
   },
   {
-    title: "Sin publicidad politica",
+    title: "Sin publicidad política",
     description:
-      "No aceptamos publicidad de partidos politicos ni de candidatos. Nuestro modelo se basa en la contribución comunitaria y el apoyo de organizaciones civicas.",
+      "No aceptamos publicidad de partidos políticos ni de candidatos. Nuestro modelo se basa en la contribución comunitaria y el apoyo de organizaciones cívicas.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
     ),
@@ -36,7 +36,7 @@ const PRINCIPLES = [
   {
     title: "Protección de datos",
     description:
-      "Los datos de los usuarios se manejan con estricta confidencialidad. No vendemos datos personales ni los compartimos con terceros. Las respuestas del test son anonimas.",
+      "Los datos de los usuarios se manejan con estricta confidencialidad. No vendemos datos personales ni los compartimos con terceros. Las respuestas del test son anónimas.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
     ),
@@ -44,7 +44,7 @@ const PRINCIPLES = [
   {
     title: "Mejora continua",
     description:
-      "Actualizamos constantemente nuestros datos y metodologia. Escuchamos criticas constructivas y realizamos correcciones cuando se identifican errores.",
+      "Actualizamos constantemente nuestros datos y metodología. Escuchamos críticas constructivas y realizamos correcciones cuando se identifican errores.",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
     ),
@@ -53,9 +53,9 @@ const PRINCIPLES = [
 
 const TEAM_ROLES = [
   { role: "Desarrollo", desc: "Ingenieros de software que construyen y mantienen la plataforma" },
-  { role: "Analisis politico", desc: "Politologos que clasifican posiciones de candidatos" },
+  { role: "Análisis político", desc: "Politólogos que clasifican posiciones de candidatos" },
   { role: "Fact-checking", desc: "Periodistas que verifican declaraciones de candidatos" },
-  { role: "Diseno", desc: "Disenadores que crean una experiencia accesible para todos" },
+  { role: "Diseño", desc: "Diseñadores que crean una experiencia accesible para todos" },
   { role: "Datos", desc: "Analistas que recopilan y procesan información electoral" },
 ];
 
@@ -95,7 +95,7 @@ export default function TransparenciaPage() {
           </h1>
           <p className="text-lg text-gray-500 leading-relaxed max-w-3xl">
             Creemos que una plataforma de información electoral debe predicar con
-            el ejemplo. Aquí explicamos quienes somos, como trabajamos y como
+            el ejemplo. Aquí explicamos quiénes somos, cómo trabajamos y cómo
             puedes verificar todo lo que hacemos.
           </p>
         </div>
@@ -136,8 +136,8 @@ export default function TransparenciaPage() {
               Financiamiento
             </h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              Candidatazo es un proyecto civico sin fines de lucro. No recibimos
-              dinero de partidos politicos, candidatos ni grupos de interes. El
+              Candidatazo es un proyecto cívico sin fines de lucro. No recibimos
+              dinero de partidos políticos, candidatos ni grupos de interés. El
               proyecto se financia mediante:
             </p>
             <ul className="space-y-2 text-sm text-gray-600">
@@ -147,7 +147,7 @@ export default function TransparenciaPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
-                Apoyo de organizaciones civicas y educativas
+                Apoyo de organizaciones cívicas y educativas
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
@@ -163,7 +163,7 @@ export default function TransparenciaPage() {
             Equipo
           </h2>
           <p className="text-gray-500 mb-6">
-            Candidatazo esta construido por un equipo multidisciplinario de peruanos
+            Candidatazo está construido por un equipo multidisciplinario de peruanos
             comprometidos con la democracia.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -183,7 +183,7 @@ export default function TransparenciaPage() {
               Tienes preguntas o sugerencias?
             </h3>
             <p className="text-gray-500 mb-6 text-sm">
-              Estamos abiertos al dialogo y la colaboracion. Escribe a nuestro equipo.
+              Estamos abiertos al diálogo y la colaboración. Escribe a nuestro equipo.
             </p>
             <a
               href="mailto:contacto@candidatazo.pe"

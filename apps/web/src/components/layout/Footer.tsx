@@ -40,7 +40,7 @@ export function Footer() {
               </div>
               <p className="text-sm text-gray-400 leading-relaxed max-w-sm mb-6">
                 Plataforma de información electoral imparcial para que votes con
-                conocimiento. Sin afiliación a ningun partido politico.
+                conocimiento. Sin afiliación a ningún partido político.
               </p>
 
               {/* Social media links */}
@@ -124,7 +124,7 @@ export function Footer() {
               Hecho con orgullo en Perú
             </p>
             <p className="text-xs text-gray-500">
-              No afiliado a ningun partido politico.
+              No afiliado a ningún partido político.
             </p>
           </div>
         </div>

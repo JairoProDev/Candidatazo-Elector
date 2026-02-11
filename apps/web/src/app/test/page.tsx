@@ -19,12 +19,12 @@ const DNA_QUESTIONS: {
     // ECONOMIC (6 questions)
     {
       id: "eco_1",
-      text: "El Estado debería controlar los precios de productos basicos como el gas y los alimentos?",
+      text: "El Estado debería controlar los precios de productos básicos como el gas y los alimentos?",
       description: "Control de precios vs libre mercado",
       dimension: "ECONOMIC",
-      context: "En Perú, el precio del balon de gas fluctua entre S/40-60 y afecta directamente a familias de bajos recursos.",
+      context: "En Perú, el precio del balón de gas fluctúa entre S/40-60 y afecta directamente a familias de bajos recursos.",
       options: [
-        { value: -100, label: "Si, el Estado debe fijar precios" },
+        { value: -100, label: "Sí, el Estado debe fijar precios" },
         { value: -50, label: "Solo en productos esenciales" },
         { value: 0, label: "No estoy seguro" },
         { value: 50, label: "Prefiero incentivos al mercado" },
@@ -33,12 +33,12 @@ const DNA_QUESTIONS: {
     },
     {
       id: "eco_2",
-      text: "Que debería hacer el Estado con las empresas publicas como Petroperu?",
+      text: "Qué debería hacer el Estado con las empresas públicas como Petroperú?",
       description: "Privatización vs empresa estatal",
       dimension: "ECONOMIC",
-      context: "Petroperu acumula perdidas por miles de millones y ha requerido rescates estatales, pero provee combustible a zonas alejadas.",
+      context: "Petroperú acumula pérdidas por miles de millones y ha requerido rescates estatales, pero provee combustible a zonas alejadas.",
       options: [
-        { value: -100, label: "Mantenerla publica y fortalecerla" },
+        { value: -100, label: "Mantenerla pública y fortalecerla" },
         { value: -50, label: "Mantenerla pero con reforma profunda" },
         { value: 0, label: "No tengo una posición clara" },
         { value: 50, label: "Privatizar parcialmente" },
@@ -47,44 +47,44 @@ const DNA_QUESTIONS: {
     },
     {
       id: "eco_3",
-      text: "Se deberían aumentar los impuestos a los mas ricos para financiar programas sociales?",
-      description: "Politica tributaria",
+      text: "Se deberían aumentar los impuestos a los más ricos para financiar programas sociales?",
+      description: "Política tributaria",
       dimension: "ECONOMIC",
-      context: "Perú recauda solo 16.8% del PBI en impuestos, uno de los mas bajos de Latinoamerica. La evasion es alta.",
+      context: "Perú recauda solo 16.8% del PBI en impuestos, uno de los más bajos de Latinoamérica. La evasión es alta.",
       options: [
-        { value: -100, label: "Si, impuestos mucho mas altos a ricos" },
-        { value: -50, label: "Aumentar moderadamente y combatir evasion" },
-        { value: 0, label: "Mantener como esta" },
-        { value: 50, label: "Reducir impuestos para fomentar inversion" },
-        { value: 100, label: "Reducir impuestos drasticamente" },
+        { value: -100, label: "Sí, impuestos mucho más altos a ricos" },
+        { value: -50, label: "Aumentar moderadamente y combatir evasión" },
+        { value: 0, label: "Mantener como está" },
+        { value: 50, label: "Reducir impuestos para fomentar inversión" },
+        { value: 100, label: "Reducir impuestos drásticamente" },
       ],
     },
     {
       id: "eco_4",
-      text: "El salario minimo debería aumentar significativamente?",
-      description: "Politica salarial",
+      text: "El salario mínimo debería aumentar significativamente?",
+      description: "Política salarial",
       dimension: "ECONOMIC",
-      context: "El salario minimo en Perú es S/1,025. El 70% de trabajadores son informales y no les aplica.",
+      context: "El salario mínimo en Perú es S/1,025. El 70% de trabajadores son informales y no les aplica.",
       options: [
-        { value: -100, label: "Si, a S/1,500 o mas" },
+        { value: -100, label: "Sí, a S/1,500 o más" },
         { value: -50, label: "Un aumento moderado" },
-        { value: 0, label: "Depende de la economia" },
+        { value: 0, label: "Depende de la economía" },
         { value: 50, label: "Mejor formalizar antes de subir" },
         { value: 100, label: "No, el mercado debe definir salarios" },
       ],
     },
     {
       id: "eco_5",
-      text: "Que opinas del libre comercio y los tratados como el TLC?",
+      text: "Qué opinas del libre comercio y los tratados como el TLC?",
       description: "Apertura comercial",
       dimension: "ECONOMIC",
       context: "Perú tiene TLCs con EE.UU., China, UE y otros. Han impulsado exportaciones pero algunos sectores locales han sufrido.",
       options: [
         { value: -100, label: "Renegociar para proteger industria local" },
-        { value: -50, label: "Mantener pero con mas protecciones" },
-        { value: 0, label: "No tengo opinion formada" },
+        { value: -50, label: "Mantener pero con más protecciones" },
+        { value: 0, label: "No tengo opinión formada" },
         { value: 50, label: "Son positivos en general" },
-        { value: 100, label: "Abrir aun mas la economia" },
+        { value: 100, label: "Abrir aún más la economía" },
       ],
     },
     {
@@ -92,12 +92,12 @@ const DNA_QUESTIONS: {
       text: "El Estado debería dar bonos y transferencias directas a las familias pobres?",
       description: "Programas sociales",
       dimension: "ECONOMIC",
-      context: "Programas como Juntos y Pension 65 llegan a millones pero hay criticas por clientelismo y filtraciones.",
+      context: "Programas como Juntos y Pensión 65 llegan a millones pero hay críticas por clientelismo y filtraciones.",
       options: [
-        { value: -100, label: "Si, ampliar todos los programas" },
-        { value: -50, label: "Mantener pero mejorar focalizacion" },
+        { value: -100, label: "Sí, ampliar todos los programas" },
+        { value: -50, label: "Mantener pero mejorar focalización" },
         { value: 0, label: "Depende del programa" },
-        { value: 50, label: "Reemplazar por empleo y capacitacion" },
+        { value: 50, label: "Reemplazar por empleo y capacitación" },
         { value: 100, label: "Eliminar, generan dependencia" },
       ],
     },
@@ -107,24 +107,24 @@ const DNA_QUESTIONS: {
       text: "Debería legalizarse el matrimonio entre personas del mismo sexo en Perú?",
       description: "Derechos LGBTQ+",
       dimension: "SOCIAL",
-      context: "Perú es uno de los pocos paises de Sudamerica sin union civil ni matrimonio igualitario.",
+      context: "Perú es uno de los pocos países de Sudamérica sin unión civil ni matrimonio igualitario.",
       options: [
-        { value: 100, label: "Si, matrimonio pleno" },
-        { value: 50, label: "Al menos union civil" },
-        { value: 0, label: "No tengo opinion definida" },
+        { value: 100, label: "Sí,matrimonio pleno" },
+        { value: 50, label: "Al menos unión civil" },
+        { value: 0, label: "No tengo opinión definida" },
         { value: -50, label: "Prefiero no cambiar la ley" },
         { value: -100, label: "No, el matrimonio es hombre y mujer" },
       ],
     },
     {
       id: "soc_2",
-      text: "El enfoque de genero debería incluirse en el curriculo escolar?",
-      description: "Educación y genero",
+      text: "El enfoque de género debería incluirse en el currículo escolar?",
+      description: "Educación y género",
       dimension: "SOCIAL",
-      context: "El curriculo con enfoque de genero busca igualdad y prevenir violencia. Movimientos como 'Con mis hijos no te metas' se oponen.",
+      context: "El currículo con enfoque de género busca igualdad y prevenir violencia. Movimientos como 'Con mis hijos no te metas' se oponen.",
       options: [
-        { value: 100, label: "Si, es fundamental para la igualdad" },
-        { value: 50, label: "Con ajustes y dialogo con padres" },
+        { value: 100, label: "Sí,es fundamental para la igualdad" },
+        { value: 50, label: "Con ajustes y diálogo con padres" },
         { value: 0, label: "No estoy seguro" },
         { value: -50, label: "Solo valores tradicionales" },
         { value: -100, label: "No, los padres deciden" },
@@ -132,16 +132,16 @@ const DNA_QUESTIONS: {
     },
     {
       id: "soc_3",
-      text: "Debería despenalizarse el aborto en caso de violacion?",
+      text: "Debería despenalizarse el aborto en caso de violación?",
       description: "Derechos reproductivos",
       dimension: "SOCIAL",
-      context: "En Perú el aborto es ilegal salvo terapeutico. Se estiman 400,000 abortos clandestinos por año.",
+      context: "En Perú el aborto es ilegal salvo terapéutico. Se estiman 400,000 abortos clandestinos por año.",
       options: [
-        { value: 100, label: "Si, y ampliar a mas causales" },
+        { value: 100, label: "Sí,y ampliar a máscausales" },
         { value: 50, label: "Solo violación e inviabilidad fetal" },
         { value: 0, label: "No tengo posición clara" },
-        { value: -50, label: "Solo mantener el terapeutico actual" },
-        { value: -100, label: "No, en ningun caso" },
+        { value: -50, label: "Solo mantener el terapéutico actual" },
+        { value: -100, label: "No, en ningún caso" },
       ],
     },
     {
@@ -152,8 +152,8 @@ const DNA_QUESTIONS: {
       context: "Perú permite uso medicinal limitado. Uruguay y Colombia han avanzado en regulacion.",
       options: [
         { value: 100, label: "Legalizar uso recreativo y medicinal" },
-        { value: 50, label: "Solo medicinal con mas acceso" },
-        { value: 0, label: "No tengo opinion definida" },
+        { value: 50, label: "Solo medicinal con másacceso" },
+        { value: 0, label: "No tengo opinión definida" },
         { value: -50, label: "Mantener como esta" },
         { value: -100, label: "Endurecer penas" },
       ],
@@ -177,9 +177,9 @@ const DNA_QUESTIONS: {
       text: "Como debería manejar Perú la inmigración venezolana?",
       description: "Politica migratoria",
       dimension: "SOCIAL",
-      context: "Mas de 1.5 millones de venezolanos viven en Perú. Hay debates sobre su impacto en empleo y seguridad.",
+      context: "Másde 1.5 millones de venezolanos viven en Perú. Hay debates sobre su impacto en empleo y seguridad.",
       options: [
-        { value: 100, label: "Integrarlos con mas derechos" },
+        { value: 100, label: "Integrarlos con másderechos" },
         { value: 50, label: "Regularizar y dar oportunidades" },
         { value: 0, label: "Depende del caso" },
         { value: -50, label: "Restringir nueva migracion" },
@@ -194,8 +194,8 @@ const DNA_QUESTIONS: {
       dimension: "ENVIRONMENT",
       context: "La mineria representa el 10% del PBI peruano pero ha causado conflictos como Conga y Tia Maria.",
       options: [
-        { value: 100, label: "Si, proteger el medio ambiente primero" },
-        { value: 50, label: "Regulación mas estricta pero permitir mineria" },
+        { value: 100, label: "Sí,proteger el medio ambiente primero" },
+        { value: 50, label: "Regulación másestricta pero permitir mineria" },
         { value: 0, label: "Buscar equilibrio caso por caso" },
         { value: -50, label: "La mineria es clave para el desarrollo" },
         { value: -100, label: "Priorizar la mineria y el empleo" },
@@ -222,7 +222,7 @@ const DNA_QUESTIONS: {
       dimension: "ENVIRONMENT",
       context: "Perú tiene enorme potencial solar, eolico e hidrico. Actualmente depende mucho de combustibles fosiles.",
       options: [
-        { value: 100, label: "Si, transición acelerada" },
+        { value: 100, label: "Sí,transición acelerada" },
         { value: 50, label: "Invertir pero sin abandonar lo actual" },
         { value: 0, label: "Depende del costo" },
         { value: -50, label: "Priorizar lo economico" },
@@ -236,7 +236,7 @@ const DNA_QUESTIONS: {
       dimension: "ENVIRONMENT",
       context: "La consulta previa existe pero no es vinculante. Comunidades nativas han sido desplazadas por proyectos extractivos.",
       options: [
-        { value: 100, label: "Si, veto absoluto" },
+        { value: 100, label: "Sí,veto absoluto" },
         { value: 50, label: "Consulta vinculante con compensacion" },
         { value: 0, label: "Dialogo equilibrado" },
         { value: -50, label: "Consulta pero no veto" },
@@ -252,7 +252,7 @@ const DNA_QUESTIONS: {
       options: [
         { value: 100, label: "Prohibición total e inmediata" },
         { value: 50, label: "Prohibición gradual con alternativas" },
-        { value: 0, label: "No tengo opinion" },
+        { value: 0, label: "No tengo opinión" },
         { value: -50, label: "Solo incentivar reduccion" },
         { value: -100, label: "No prohibir, afecta a negocios" },
       ],
@@ -264,7 +264,7 @@ const DNA_QUESTIONS: {
       dimension: "ENVIRONMENT",
       context: "Millones de peruanos carecen de agua potable mientras grandes industrias consumen enormes cantidades.",
       options: [
-        { value: 100, label: "Si, derecho humano sobre todo" },
+        { value: 100, label: "Sí,derecho humano sobre todo" },
         { value: 50, label: "Priorizar consumo humano pero regular" },
         { value: 0, label: "Balance entre ambos" },
         { value: -50, label: "El mercado puede asignar mejor" },
@@ -279,7 +279,7 @@ const DNA_QUESTIONS: {
       dimension: "SECURITY",
       context: "Perú tiene una tasa de 25 homicidios por 100,000 hab. La percepción de inseguridad supera el 85%.",
       options: [
-        { value: 100, label: "Si, penas mucho mas duras" },
+        { value: 100, label: "Sí,penas mucho másduras" },
         { value: 50, label: "Endurecer para delitos graves" },
         { value: 0, label: "Depende del delito" },
         { value: -50, label: "Mejor prevención que castigo" },
@@ -293,7 +293,7 @@ const DNA_QUESTIONS: {
       dimension: "SECURITY",
       context: "Varios candidatos proponen que los militares apoyen a la policia. Criticos advierten riesgos a derechos humanos.",
       options: [
-        { value: 100, label: "Si, situación lo amerita" },
+        { value: 100, label: "Sí,situación lo amerita" },
         { value: 50, label: "Solo en zonas criticas y temporal" },
         { value: 0, label: "No estoy seguro" },
         { value: -50, label: "Fortalecer policia, no militarizar" },
@@ -307,7 +307,7 @@ const DNA_QUESTIONS: {
       dimension: "SECURITY",
       context: "Perú firmo la Convención Americana que prohibe reinstaurar pena de muerte. Casos de violación generan indignación publica.",
       options: [
-        { value: 100, label: "Si, pena de muerte" },
+        { value: 100, label: "Sí,pena de muerte" },
         { value: 50, label: "Cadena perpetua efectiva" },
         { value: 0, label: "No estoy seguro" },
         { value: -50, label: "Penas duras pero no muerte" },
@@ -321,10 +321,10 @@ const DNA_QUESTIONS: {
       dimension: "SECURITY",
       context: "La legislación peruana permite armas con licencia estricta. Los asaltos armados han aumentado.",
       options: [
-        { value: 100, label: "Si, derecho a defensa propia" },
+        { value: 100, label: "Sí,derecho a defensa propia" },
         { value: 50, label: "Con regulación estricta" },
         { value: 0, label: "No estoy seguro" },
-        { value: -50, label: "Restringir mas el acceso" },
+        { value: -50, label: "Restringir másel acceso" },
         { value: -100, label: "Prohibir completamente" },
       ],
     },
@@ -333,9 +333,9 @@ const DNA_QUESTIONS: {
       text: "Debería implementarse vigilancia masiva con camaras y reconocimiento facial?",
       description: "Vigilancia y privacidad",
       dimension: "SECURITY",
-      context: "Ciudades como Lima instalan cada vez mas camaras. China usa reconocimiento facial masivo.",
+      context: "Ciudades como Lima instalan cada vez máscamaras. China usa reconocimiento facial masivo.",
       options: [
-        { value: 100, label: "Si, mas camaras y tecnologia" },
+        { value: 100, label: "Sí,mas camaras y tecnologia" },
         { value: 50, label: "Camaras si, reconocimiento facial no" },
         { value: 0, label: "No tengo posicion" },
         { value: -50, label: "Limitar vigilancia, proteger privacidad" },
@@ -364,7 +364,7 @@ const DNA_QUESTIONS: {
       dimension: "INSTITUTIONAL",
       context: "La Constitución de 1993 fue promulgada por Fujimori. Sectores piden cambiarla, otros defenderla.",
       options: [
-        { value: 100, label: "Si, nueva Constitucion" },
+        { value: 100, label: "Sí,nueva Constitucion" },
         { value: 50, label: "Reformas profundas pero no nueva" },
         { value: 0, label: "No tengo posición clara" },
         { value: -50, label: "Solo reformas puntuales" },
@@ -378,11 +378,11 @@ const DNA_QUESTIONS: {
       dimension: "INSTITUTIONAL",
       context: "Perú tiene un Congreso unicameral de 130 miembros. La bicameralidad fue eliminada en 1993.",
       options: [
-        { value: 100, label: "Si, dos camaras mejoran las leyes" },
-        { value: 50, label: "Probablemente si, con reformas" },
-        { value: 0, label: "No tengo opinion" },
+        { value: 100, label: "Sí,dos camaras mejoran las leyes" },
+        { value: 50, label: "Probablemente sí, con reformas" },
+        { value: 0, label: "No tengo opinión" },
         { value: -50, label: "No, una camara es suficiente" },
-        { value: -100, label: "No, seria mas burocracia" },
+        { value: -100, label: "No, seria másburocracia" },
       ],
     },
     {
@@ -392,8 +392,8 @@ const DNA_QUESTIONS: {
       dimension: "INSTITUTIONAL",
       context: "Congresistas investigados por corrupción usan la inmunidad para evitar procesos judiciales.",
       options: [
-        { value: 100, label: "Si, eliminarla completamente" },
-        { value: 50, label: "Limitarla mucho mas" },
+        { value: 100, label: "Sí,eliminarla completamente" },
+        { value: 50, label: "Limitarla mucho más" },
         { value: 0, label: "Reformarla" },
         { value: -50, label: "Mantener con ajustes" },
         { value: -100, label: "Mantener como esta, protege la democracia" },
@@ -406,7 +406,7 @@ const DNA_QUESTIONS: {
       dimension: "INSTITUTIONAL",
       context: "Actualmente los partidos dependen de donaciones privadas, muchas veces de fuentes cuestionables.",
       options: [
-        { value: 100, label: "Si, financiamiento publico con fiscalizacion" },
+        { value: 100, label: "Sí,financiamiento publico con fiscalizacion" },
         { value: 50, label: "Mixto: publico y privado regulado" },
         { value: 0, label: "No estoy seguro" },
         { value: -50, label: "Solo privado pero regulado" },
@@ -418,7 +418,7 @@ const DNA_QUESTIONS: {
       text: "Debería ser obligatorio el voto o debería ser voluntario?",
       description: "Voto obligatorio",
       dimension: "INSTITUTIONAL",
-      context: "Perú tiene voto obligatorio con multa de S/88 por no votar. Algunos paises han pasado a voto voluntario.",
+      context: "Perú tiene voto obligatorio con multa de S/88 por no votar. Algunos países han pasado a voto voluntario.",
       options: [
         { value: 100, label: "Mantener obligatorio con sanciones" },
         { value: 50, label: "Obligatorio pero sin multa" },
@@ -429,13 +429,13 @@ const DNA_QUESTIONS: {
     },
     {
       id: "ins_6",
-      text: "Debería descentralizarse mas el poder hacia las regiones?",
+      text: "Debería descentralizarse másel poder hacia las regiones?",
       description: "Descentralizacion",
       dimension: "INSTITUTIONAL",
-      context: "Lima concentra el 52% del PBI. Las regiones reclaman mas recursos y autonomia.",
+      context: "Lima concentra el 52% del PBI. Las regiones reclaman másrecursos y autonomia.",
       options: [
-        { value: 100, label: "Si, mucha mas autonomia regional" },
-        { value: 50, label: "Mas recursos pero con fiscalizacion" },
+        { value: 100, label: "Sí,mucha másautonomia regional" },
+        { value: 50, label: "Másrecursos pero con fiscalizacion" },
         { value: 0, label: "Depende de la capacidad" },
         { value: -50, label: "Primero mejorar gestion regional" },
         { value: -100, label: "Centralizar mas, hay mucha corrupcion" },
@@ -636,7 +636,7 @@ export default function DnaTestPage() {
         {/* Skip note */}
         {!allAnswered && progress >= 20 && currentIndex === totalQuestions - 1 && (
           <p className="text-center text-sm text-gray-400 mt-4">
-            Ya puedes ver tus resultados, pero mas preguntas = resultados mas precisos
+            Ya puedes ver tus resultados, pero máspreguntas = resultados másprecisos
           </p>
         )}
       </div>
@@ -883,7 +883,7 @@ function ResultsPhase({
         <div className="card animate-slide-up text-center" style={{ animationDelay: "0.4s" }}>
           <h3 className="font-bold text-gray-700 mb-2">Siguiente paso</h3>
           <p className="text-gray-500 mb-6 text-sm">
-            Ahora compara tu perfil con los candidatos y ve con quien haces mas match.
+            Ahora compara tu perfil con los candidatos y ve con quien haces másmatch.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/candidatos" className="btn-primary">

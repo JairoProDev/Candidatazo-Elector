@@ -4,18 +4,18 @@ const SECTIONS = [
   {
     title: "1. Información que recopilamos",
     content: [
-      "Respuestas del ADN Test: Tus respuestas a las 30 preguntas del test de perfil politico. Estas se procesan de forma anonima para calcular tu perfil y match con candidatos.",
-      "Datos de uso: Información anonima sobre como navegas la plataforma (paginas visitadas, tiempo en pagina) para mejorar la experiencia.",
+      "Respuestas del ADN Test: Tus respuestas a las 30 preguntas del test de perfil político. Estas se procesan de forma anónima para calcular tu perfil y match con candidatos.",
+      "Datos de uso: Información anónima sobre cómo navegas la plataforma (páginas visitadas, tiempo en página) para mejorar la experiencia.",
       "Preferencias: Si eliges crear una cuenta, almacenamos tu nombre, email y preferencias para personalizar tu experiencia.",
-      "No recopilamos información de pago, ubicación precisa, ni datos biometricos.",
+      "No recopilamos información de pago, ubicación precisa, ni datos biométricos.",
     ],
   },
   {
-    title: "2. Como usamos tu informacion",
+    title: "2. Cómo usamos tu información",
     content: [
-      "Calcular tu perfil ADN politico y tu match con los candidatos.",
-      "Mejorar la calidad y precision de nuestras herramientas.",
-      "Generar estadisticas agregadas y anonimas sobre tendencias politicas (sin identificar individuos).",
+      "Calcular tu perfil ADN político y tu match con los candidatos.",
+      "Mejorar la calidad y precisión de nuestras herramientas.",
+      "Generar estadísticas agregadas y anónimas sobre tendencias políticas (sin identificar individuos).",
       "Enviarte notificaciones sobre nuevas funcionalidades si aceptas recibirlas.",
     ],
   },
@@ -23,41 +23,41 @@ const SECTIONS = [
     title: "3. Lo que NO hacemos",
     content: [
       "NO vendemos tus datos personales a terceros.",
-      "NO compartimos tu perfil politico con partidos, candidatos o campanas.",
-      "NO usamos tus datos para publicidad politica dirigida.",
+      "NO compartimos tu perfil político con partidos, candidatos o campañas.",
+      "NO usamos tus datos para publicidad política dirigida.",
       "NO almacenamos tus respuestas del test si no creas una cuenta - se procesan localmente en tu dispositivo.",
     ],
   },
   {
     title: "4. Almacenamiento y seguridad",
     content: [
-      "Los datos se almacenan en servidores seguros con encriptación en transito (HTTPS/TLS) y en reposo.",
-      "El ADN Test funciona localmente en tu dispositivo - tus respuestas no se envian a ningun servidor a menos que crees una cuenta.",
-      "Implementamos medidas de seguridad estandar de la industria para proteger tus datos.",
-      "Realizamos auditorias de seguridad periodicas.",
+      "Los datos se almacenan en servidores seguros con encriptación en tránsito (HTTPS/TLS) y en reposo.",
+      "El ADN Test funciona localmente en tu dispositivo - tus respuestas no se envían a ningún servidor a menos que crees una cuenta.",
+      "Implementamos medidas de seguridad estándar de la industria para proteger tus datos.",
+      "Realizamos auditorías de seguridad periódicas.",
     ],
   },
   {
     title: "5. Tus derechos",
     content: [
       "Acceso: Puedes solicitar una copia de todos los datos que tenemos sobre ti.",
-      "Rectificacion: Puedes corregir cualquier dato incorrecto.",
-      "Eliminacion: Puedes solicitar que eliminemos todos tus datos en cualquier momento.",
-      "Portabilidad: Puedes exportar tus datos en formato estandar.",
+      "Rectificación: Puedes corregir cualquier dato incorrecto.",
+      "Eliminación: Puedes solicitar que eliminemos todos tus datos en cualquier momento.",
+      "Portabilidad: Puedes exportar tus datos en formato estándar.",
     ],
   },
   {
-    title: "6. Cookies y tecnologias similares",
+    title: "6. Cookies y tecnologías similares",
     content: [
       "Usamos cookies estrictamente necesarias para el funcionamiento de la plataforma.",
       "No usamos cookies de rastreo de terceros ni publicidad.",
-      "Puedes desactivar las cookies en tu navegador sin afectar la funcionalidad basica.",
+      "Puedes desactivar las cookies en tu navegador sin afectar la funcionalidad básica.",
     ],
   },
   {
-    title: "7. Cambios a esta politica",
+    title: "7. Cambios a esta política",
     content: [
-      "Si modificamos esta politica de privacidad, publicaremos los cambios en esta pagina con la fecha de actualizacion.",
+      "Si modificamos esta política de privacidad, publicaremos los cambios en esta página con la fecha de actualización.",
       "Para cambios significativos, notificaremos a los usuarios registrados por email.",
     ],
   },
@@ -85,14 +85,14 @@ export default function PrivacidadPage() {
       <section className="bg-gradient-to-br from-secondary-50 via-white to-primary-50 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-            Politica de{" "}
+            Política de{" "}
             <span className="bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
               Privacidad
             </span>
           </h1>
           <p className="text-lg text-gray-500 leading-relaxed max-w-3xl">
             Tu privacidad es fundamental. Aquí explicamos de forma clara y
-            transparente como manejamos tu información en Candidatazo.
+            transparente cómo manejamos tu información en Candidatazo.
           </p>
           <p className="text-sm text-gray-400 mt-4">
             Última actualización: Febrero 2026
@@ -110,7 +110,7 @@ export default function PrivacidadPage() {
               </svg>
             </div>
             <h3 className="font-bold text-green-800 text-sm">No vendemos datos</h3>
-            <p className="text-xs text-green-600 mt-1">Jamas vendemos información personal</p>
+            <p className="text-xs text-green-600 mt-1">Jamás vendemos información personal</p>
           </div>
           <div className="card p-4 text-center bg-blue-50 border border-blue-200">
             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
@@ -158,7 +158,7 @@ export default function PrivacidadPage() {
               Preguntas sobre privacidad?
             </h3>
             <p className="text-gray-500 mb-6 text-sm">
-              Si tienes preguntas sobre como manejamos tus datos, contáctanos.
+              Si tienes preguntas sobre cómo manejamos tus datos, contáctanos.
             </p>
             <a
               href="mailto:privacidad@candidatazo.pe"

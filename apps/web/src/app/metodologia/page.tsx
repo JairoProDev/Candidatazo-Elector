@@ -2,12 +2,12 @@ import Link from "next/link";
 
 const DIMENSIONS = [
   {
-    name: "Economia",
+    name: "Economía",
     color: "#D4A017",
     description:
-      "Mide la posición en el eje intervencionismo estatal vs libre mercado. Incluye politica fiscal, tributaria, comercial, regulación y rol del Estado en la economia.",
+      "Mide la posición en el eje intervencionismo estatal vs libre mercado. Incluye política fiscal, tributaria, comercial, regulación y rol del Estado en la economía.",
     examples: [
-      "Politica tributaria y fiscal",
+      "Política tributaria y fiscal",
       "Rol del Estado en empresas",
       "Regulación de mercados",
       "Programas sociales vs libre competencia",
@@ -17,35 +17,35 @@ const DIMENSIONS = [
     name: "Social",
     color: "#EC4899",
     description:
-      "Evalua la posición en temas de derechos civiles, diversidad, genero, migración y libertades individuales. Va de conservador a progresista.",
+      "Evalúa la posición en temas de derechos civiles, diversidad, género, migración y libertades individuales. Va de conservador a progresista.",
     examples: [
       "Derechos LGBTQ+",
-      "Igualdad de genero",
-      "Politica migratoria",
-      "Libertad de expresion",
+      "Igualdad de género",
+      "Política migratoria",
+      "Libertad de expresión",
     ],
   },
   {
     name: "Ambiente",
     color: "#10B981",
     description:
-      "Mide la prioridad que se da a la protección ambiental vs desarrollo extractivo. Incluye mineria, energia, recursos naturales y cambio climatico.",
+      "Mide la prioridad que se da a la protección ambiental vs desarrollo extractivo. Incluye minería, energía, recursos naturales y cambio climático.",
     examples: [
-      "Mineria vs medio ambiente",
-      "Energias renovables",
-      "Recursos hidricos",
-      "Areas naturales protegidas",
+      "Minería vs medio ambiente",
+      "Energías renovables",
+      "Recursos hídricos",
+      "Áreas naturales protegidas",
     ],
   },
   {
     name: "Seguridad",
     color: "#D91023",
     description:
-      "Evalua la posición entre garantismo y mano dura. Incluye politica criminal, fuerzas armadas, pena de muerte y derechos de los acusados.",
+      "Evalúa la posición entre garantismo y mano dura. Incluye política criminal, fuerzas armadas, pena de muerte y derechos de los acusados.",
     examples: [
       "Pena de muerte",
       "Fuerzas Armadas en calles",
-      "Politica antidrogas",
+      "Política antidrogas",
       "Derechos del acusado",
     ],
   },
@@ -53,10 +53,10 @@ const DIMENSIONS = [
     name: "Institucional",
     color: "#7C3AED",
     description:
-      "Mide la posición respecto a reformas del Estado, constitucion, descentralización y equilibrio de poderes. Va de status quo a refundacion.",
+      "Mide la posición respecto a reformas del Estado, constitución, descentralización y equilibrio de poderes. Va de status quo a refundación.",
     examples: [
-      "Nueva constitucion",
-      "Descentralizacion",
+      "Nueva constitución",
+      "Descentralización",
       "Reforma del Congreso",
       "Independencia judicial",
     ],
@@ -68,23 +68,23 @@ const METHODOLOGY_STEPS = [
     step: 1,
     title: "Recopilación de posiciones",
     description:
-      "Analizamos planes de gobierno oficiales inscritos ante el JNE, declaraciones publicas verificables, entrevistas en medios de comunicación y votaciones legislativas previas de cada candidato.",
+      "Analizamos planes de gobierno oficiales inscritos ante el JNE, declaraciones públicas verificables, entrevistas en medios de comunicación y votaciones legislativas previas de cada candidato.",
   },
   {
     step: 2,
     title: "Clasificación en 5 dimensiones",
     description:
-      "Cada posición se mapea a una de las 5 dimensiones politicas en una escala de 0 a 100. Dos analistas independientes clasifican cada posición y se promedian los resultados.",
+      "Cada posición se mapea a una de las 5 dimensiones políticas en una escala de 0 a 100. Dos analistas independientes clasifican cada posición y se promedian los resultados.",
   },
   {
     step: 3,
     title: "Construcción de preguntas",
     description:
-      "Las 30 preguntas del ADN Test se disenan para cubrir las 5 dimensiones de forma balanceada (6 preguntas por dimension), con contexto peruano real y opciones no binarias.",
+      "Las 30 preguntas del ADN Test se diseñan para cubrir las 5 dimensiones de forma balanceada (6 preguntas por dimensión), con contexto peruano real y opciones no binarias.",
   },
   {
     step: 4,
-    title: "Calculo del matching",
+    title: "Cálculo del matching",
     description:
       "El matching se calcula usando similitud coseno ponderada entre el perfil del usuario y el de cada candidato. Se normalizan las dimensiones para evitar sesgos y se genera un porcentaje de compatibilidad.",
   },
@@ -92,7 +92,7 @@ const METHODOLOGY_STEPS = [
     step: 5,
     title: "Verificación de datos",
     description:
-      "Las declaraciones se verifican contra fuentes oficiales (INEI, BCR, MEF, JNE) y fuentes periodisticas de primera linea. Se asigna un veredicto con nivel de confianza.",
+      "Las declaraciones se verifican contra fuentes oficiales (INEI, BCR, MEF, JNE) y fuentes periodísticas de primera línea. Se asigna un veredicto con nivel de confianza.",
   },
 ];
 
@@ -109,7 +109,7 @@ export default function MetodologiaPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-gray-700 font-medium">Metodologia</span>
+            <span className="text-gray-700 font-medium">Metodología</span>
           </nav>
         </div>
       </div>
@@ -120,13 +120,13 @@ export default function MetodologiaPage() {
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
             Nuestra{" "}
             <span className="bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
-              Metodologia
+              Metodología
             </span>
           </h1>
           <p className="text-lg text-gray-500 leading-relaxed max-w-3xl">
             Candidatazo utiliza un enfoque riguroso, transparente y basado en datos
-            para analizar a los candidatos, clasificar posiciones politicas y
-            verificar declaraciones. Aquí explicamos como funciona todo.
+            para analizar a los candidatos, clasificar posiciones políticas y
+            verificar declaraciones. Aquí explicamos cómo funciona todo.
           </p>
         </div>
       </section>
@@ -135,11 +135,11 @@ export default function MetodologiaPage() {
         {/* 5 Dimensions */}
         <section className="mb-16">
           <h2 className="text-2xl font-extrabold text-gray-900 mb-2">
-            Las 5 Dimensiones Politicas
+            Las 5 Dimensiones Políticas
           </h2>
           <p className="text-gray-500 mb-8">
-            Todo candidato y todo usuario se evalua en estas 5 dimensiones independientes.
-            No usamos un eje izquierda-derecha simple, porque la realidad politica peruana
+            Todo candidato y todo usuario se evalúa en estas 5 dimensiones independientes.
+            No usamos un eje izquierda-derecha simple, porque la realidad política peruana
             es multidimensional.
           </p>
 
@@ -174,7 +174,7 @@ export default function MetodologiaPage() {
         {/* Process steps */}
         <section className="mb-16">
           <h2 className="text-2xl font-extrabold text-gray-900 mb-2">
-            Proceso Metodologico
+            Proceso Metodológico
           </h2>
           <p className="text-gray-500 mb-8">
             Cada dato que ves en Candidatazo pasa por este proceso de 5 pasos.
@@ -203,17 +203,17 @@ export default function MetodologiaPage() {
         <section className="mb-16">
           <div className="card bg-gradient-to-br from-secondary-50 to-white border border-secondary-100">
             <h2 className="text-xl font-extrabold text-gray-900 mb-4">
-              Formula de Matching
+              Fórmula de Matching
             </h2>
             <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4 font-mono text-sm text-gray-700">
               <p>compatibilidad = 100 - promedio(|usuario[d] - candidato[d]|)</p>
-              <p className="text-gray-400 mt-1">para cada dimension d en [eco, soc, amb, seg, inst]</p>
+              <p className="text-gray-400 mt-1">para cada dimensión d en [eco, soc, amb, seg, inst]</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               El porcentaje de compatibilidad se calcula como la diferencia absoluta
               promedio entre las posiciones del usuario y del candidato en cada
-              dimension, restada de 100. Un match del 90% significa que en promedio
-              solo difieren en 10 puntos por dimension.
+              dimensión, restada de 100. Un match del 90% significa que en promedio
+              solo difieren en 10 puntos por dimensión.
             </p>
           </div>
         </section>
@@ -226,11 +226,11 @@ export default function MetodologiaPage() {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               { name: "JNE", desc: "Planes de gobierno oficiales y hojas de vida" },
-              { name: "INEI", desc: "Estadisticas nacionales y datos de pobreza" },
-              { name: "BCR", desc: "Indicadores economicos y financieros" },
-              { name: "MEF", desc: "Presupuesto publico y datos fiscales" },
-              { name: "ONPE", desc: "Datos electorales y resultados historicos" },
-              { name: "Medios verificados", desc: "RPP, El Comercio, La Republica, Gestion" },
+              { name: "INEI", desc: "Estadísticas nacionales y datos de pobreza" },
+              { name: "BCR", desc: "Indicadores económicos y financieros" },
+              { name: "MEF", desc: "Presupuesto público y datos fiscales" },
+              { name: "ONPE", desc: "Datos electorales y resultados históricos" },
+              { name: "Medios verificados", desc: "RPP, El Comercio, La República, Gestión" },
             ].map((source) => (
               <div key={source.name} className="card p-4">
                 <h4 className="font-bold text-gray-800 text-sm">{source.name}</h4>
@@ -247,7 +247,7 @@ export default function MetodologiaPage() {
               Transparencia ante todo
             </h3>
             <p className="text-gray-500 mb-6 text-sm">
-              Si tienes dudas sobre nuestra metodologia o quieres sugerir mejoras,
+              Si tienes dudas sobre nuestra metodología o quieres sugerir mejoras,
               contáctanos. Creemos en la mejora continua.
             </p>
             <Link href="/transparencia" className="btn-primary">

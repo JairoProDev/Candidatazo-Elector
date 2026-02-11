@@ -3,15 +3,15 @@ import Link from "next/link";
 const COURSES = [
   {
     id: 1,
-    title: "Como funciona el Congreso",
+    title: "Cómo funciona el Congreso",
     description:
-      "Bicameralidad, funciones legislativas, fiscalización y representacion. Entiende el rol del Congreso en la democracia peruana.",
+      "Bicameralidad, funciones legislativas, fiscalización y representación. Entiende el rol del Congreso en la democracia peruana.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
-    difficulty: "Basico",
+    difficulty: "Básico",
     difficultyColor: "bg-green-100 text-green-700",
     time: "15 min",
     topics: ["Unicameralidad vs Bicameralidad", "Comisiones", "Proceso legislativo"],
@@ -20,35 +20,35 @@ const COURSES = [
     id: 2,
     title: "El poder del voto",
     description:
-      "Tu voto cambia el Perú. Conoce como funciona el sistema de votacion, que impacto tiene tu voto y por que cada elección importa.",
+      "Tu voto cambia el Perú. Conoce cómo funciona el sistema de votación, qué impacto tiene tu voto y por qué cada elección importa.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    difficulty: "Basico",
+    difficulty: "Básico",
     difficultyColor: "bg-green-100 text-green-700",
     time: "10 min",
     topics: ["Voto obligatorio", "Cifra repartidora", "Segunda vuelta"],
   },
   {
     id: 3,
-    title: "Que es la Constitucion?",
+    title: "Qué es la Constitución?",
     description:
-      "La carta magna explicada en terminos simples. Derechos, deberes, organización del Estado y como se modifica.",
+      "La carta magna explicada en términos simples. Derechos, deberes, organización del Estado y cómo se modifica.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
       </svg>
     ),
-    difficulty: "Basico",
+    difficulty: "Básico",
     difficultyColor: "bg-green-100 text-green-700",
     time: "20 min",
     topics: ["Derechos fundamentales", "Poderes del Estado", "Reforma constitucional"],
   },
   {
     id: 4,
-    title: "Partidos politicos en Perú",
+    title: "Partidos políticos en Perú",
     description:
       "Historia y actualidad del sistema de partidos. Desde los primeros partidos hasta la fragmentación actual.",
     icon: (
@@ -59,13 +59,13 @@ const COURSES = [
     difficulty: "Intermedio",
     difficultyColor: "bg-yellow-100 text-yellow-700",
     time: "25 min",
-    topics: ["APRA y su legado", "Fragmentacion", "Partidos vientre de alquiler"],
+    topics: ["APRA y su legado", "Fragmentación", "Partidos vientre de alquiler"],
   },
   {
     id: 5,
-    title: "Corrupcion: como combatirla",
+    title: "Corrupción: cómo combatirla",
     description:
-      "Herramientas civicas contra la corrupcion. Mecanismos de fiscalizacion, transparencia y participación ciudadana.",
+      "Herramientas cívicas contra la corrupción. Mecanismos de fiscalización, transparencia y participación ciudadana.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -74,28 +74,28 @@ const COURSES = [
     difficulty: "Intermedio",
     difficultyColor: "bg-yellow-100 text-yellow-700",
     time: "20 min",
-    topics: ["Odebrecht", "Contraloria", "Denuncia ciudadana"],
+    topics: ["Odebrecht", "Contraloría", "Denuncia ciudadana"],
   },
   {
     id: 6,
     title: "Derechos fundamentales",
     description:
-      "Conoce tus derechos como ciudadano peruano. Derechos civiles, politicos, economicos y sociales que la Constitución te garantiza.",
+      "Conoce tus derechos como ciudadano peruano. Derechos civiles, políticos, económicos y sociales que la Constitución te garantiza.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
       </svg>
     ),
-    difficulty: "Basico",
+    difficulty: "Básico",
     difficultyColor: "bg-green-100 text-green-700",
     time: "15 min",
-    topics: ["Habeas corpus", "Libertad de expresion", "Derecho a la salud"],
+    topics: ["Habeas corpus", "Libertad de expresión", "Derecho a la salud"],
   },
   {
     id: 7,
     title: "El sistema electoral peruano",
     description:
-      "JNE, ONPE, RENIEC: las tres instituciones que hacen posible las elecciones. Como se organizan, se cuentan votos y se resuelven disputas.",
+      "JNE, ONPE, RENIEC: las tres instituciones que hacen posible las elecciones. Cómo se organizan, se cuentan votos y se resuelven disputas.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
@@ -108,9 +108,9 @@ const COURSES = [
   },
   {
     id: 8,
-    title: "Economia para ciudadanos",
+    title: "Economía para ciudadanos",
     description:
-      "PBI, inflacion, impuestos y presupuesto explicados sin jerga. Entiende la economia para evaluar las propuestas de los candidatos.",
+      "PBI, inflación, impuestos y presupuesto explicados sin jerga. Entiende la economía para evaluar las propuestas de los candidatos.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -119,7 +119,7 @@ const COURSES = [
     difficulty: "Avanzado",
     difficultyColor: "bg-primary-100 text-primary-700",
     time: "30 min",
-    topics: ["PBI", "Inflacion", "Politica fiscal", "Deuda publica"],
+    topics: ["PBI", "Inflación", "Política fiscal", "Deuda pública"],
   },
 ];
 
@@ -143,7 +143,7 @@ const LEVELS = [
     color: "bg-purple-100 text-purple-700",
   },
   {
-    name: "Lider de Opinion",
+    name: "Líder de Opinión",
     description: "Completa todos + quizzes",
     xp: "600+ XP",
     color: "bg-gold-100 text-gold-700",
@@ -163,7 +163,7 @@ export default function AcademiaPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-gray-700 font-medium">Academia Civica</span>
+            <span className="text-gray-700 font-medium">Academia Cívica</span>
           </nav>
         </div>
       </div>
@@ -181,12 +181,12 @@ export default function AcademiaPage() {
             <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
               Academia{" "}
               <span className="bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
-                Civica
+                Cívica
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto">
-              Aprende, entiende, decide. Cursos cortos y accesibles sobre politica, gobierno y
-              ciudadania para que votes con conocimiento.
+              Aprende, entiende, decide. Cursos cortos y accesibles sobre política, gobierno y
+              ciudadanía para que votes con conocimiento.
             </p>
           </div>
         </div>
@@ -227,10 +227,10 @@ export default function AcademiaPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {COURSES.map((course) => (
               <div key={course.id} className="card group relative overflow-hidden">
-                {/* Proximamente badge */}
+                {/* Próximamente badge */}
                 <div className="absolute top-3 right-3 z-10">
                   <span className="badge bg-gold-100 text-gold-700 text-xs font-semibold">
-                    Proximamente
+                    Próximamente
                   </span>
                 </div>
 
@@ -288,11 +288,11 @@ export default function AcademiaPage() {
               Quiz Diario
             </h3>
             <p className="text-gray-500 mb-4 text-sm max-w-md mx-auto">
-              Cada dia una pregunta sobre politica, gobierno o ciudadania.
+              Cada día una pregunta sobre política, gobierno o ciudadanía.
               Gana puntos y sube de nivel mientras aprendes.
             </p>
             <span className="badge bg-secondary-100 text-secondary-600 text-sm font-semibold">
-              Proximamente
+              Próximamente
             </span>
           </div>
         </section>
@@ -301,10 +301,10 @@ export default function AcademiaPage() {
         <section className="mt-12 text-center">
           <div className="card bg-gradient-to-r from-primary-50 to-gold-50 border border-primary-100 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-gray-800 mb-2">
-              Ya sabes lo basico? Pon a prueba tu perfil
+              Ya sabes lo básico? Pon a prueba tu perfil
             </h3>
             <p className="text-gray-500 mb-6 text-sm">
-              Aplica lo que aprendiste y descubre tu ADN Politico con nuestro test de 30 preguntas.
+              Aplica lo que aprendiste y descubre tu ADN Político con nuestro test de 30 preguntas.
             </p>
             <Link href="/test" className="btn-primary">
               Hacer el ADN Test
