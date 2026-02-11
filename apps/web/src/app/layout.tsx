@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+// Force rebuild test 1
 import { Header } from "@/components/layout/Header";
+
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
