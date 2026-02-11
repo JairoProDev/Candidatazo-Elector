@@ -225,54 +225,84 @@ export default function AcademiaPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-800 mb-6">Cursos Disponibles</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {COURSES.map((course) => (
-              <div key={course.id} className="card group relative overflow-hidden">
-                {/* Próximamente badge */}
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="badge bg-gold-100 text-gold-700 text-xs font-semibold">
-                    Próximamente
-                  </span>
-                </div>
+            {COURSES.map((course) => {
+              const isAvailable = course.id === 1;
+              const courseUrl = course.id === 1 ? "/academia/bicameralidad" : "#";
 
-                {/* Icon */}
-                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
-                  {course.icon}
-                </div>
+              const courseCard = (
+                <div
+                  key={course.id}
+                  className={`card group relative overflow-hidden ${isAvailable ? 'cursor-pointer hover:shadow-lg hover:border-primary-200' : 'opacity-75'} transition-all duration-200`}
+                >
+                  {/* Status badge */}
+                  {!isAvailable && (
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="badge bg-gold-100 text-gold-700 text-xs font-semibold">
+                        Próximamente
+                      </span>
+                    </div>
+                  )}
+                  {isAvailable && (
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="badge bg-green-100 text-green-700 text-xs font-semibold">
+                        ¡Disponible!
+                      </span>
+                    </div>
+                  )}
 
-                {/* Content */}
-                <h3 className="text-lg font-bold text-gray-800 mb-2 pr-20 leading-snug">
-                  {course.title}
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4">
-                  {course.description}
-                </p>
-
-                {/* Topics */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {course.topics.map((topic) => (
-                    <span
-                      key={topic}
-                      className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
-                    >
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                  <span className={`badge text-xs ${course.difficultyColor}`}>
-                    {course.difficulty}
-                  </span>
-                  <div className="flex items-center gap-1 text-xs text-gray-400">
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {course.time}
+                  {/* Icon */}
+                  <div className={`w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-4 text-primary ${isAvailable ? 'group-hover:scale-110' : ''} transition-transform`}>
+                    {course.icon}
                   </div>
+
+                  {/* Content */}
+                  <h3 className="text-lg font-bold text-gray-800 mb-2 pr-20 leading-snug">
+                    {course.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                    {course.description}
+                  </p>
+
+                  {/* Topics */}
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {course.topics.map((topic) => (
+                      <span
+                        key={topic}
+                        className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    <span className={`badge text-xs ${course.difficultyColor}`}>
+                      {course.difficulty}
+                    </span>
+                    <div className="flex items-center gap-1 text-xs text-gray-400">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {course.time}
+                    </div>
+                  </div>
+
+                  {/* Available indicator */}
+                  {isAvailable && (
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+
+              return isAvailable ? (
+                <Link href={courseUrl} key={course.id}>
+                  {courseCard}
+                </Link>
+              ) : (
+                courseCard
+              );
+            })}
           </div>
         </section>
 
