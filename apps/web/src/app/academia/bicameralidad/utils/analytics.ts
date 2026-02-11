@@ -5,16 +5,16 @@
 
 export interface ModuleAnalyticsEvent {
   eventType:
-    | "module_started"
-    | "module_completed"
-    | "content_scrolled"
-    | "audio_played"
-    | "audio_completed"
-    | "game_started"
-    | "game_completed"
-    | "question_answered"
-    | "result_shared"
-    | "badge_earned";
+  | "module_started"
+  | "module_completed"
+  | "content_scrolled"
+  | "audio_played"
+  | "audio_completed"
+  | "game_started"
+  | "game_completed"
+  | "question_answered"
+  | "result_shared"
+  | "badge_earned";
   timestamp: number;
   metadata?: Record<string, any>;
 }
@@ -233,6 +233,7 @@ export function useModuleAnalytics() {
     trackResultShared: analytics.trackResultShared.bind(analytics),
     trackBadgeEarned: analytics.trackBadgeEarned.bind(analytics),
     trackModuleCompleted: analytics.trackModuleCompleted.bind(analytics),
+    trackEvent: analytics.trackEvent.bind(analytics),
     getTimeSpent: analytics.getTimeSpent.bind(analytics),
     getCompletionRate: analytics.getCompletionRate.bind(analytics)
   };
