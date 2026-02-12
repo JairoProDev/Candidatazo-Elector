@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { COURSES } from "../../../../data/courses";
-import LessonQuizRenderer from "@/components/academia/LessonQuizRenderer";
+import ExamQuizWrapper from "@/components/academia/ExamQuizWrapper";
 import { ChevronLeft } from "lucide-react";
 
 interface ExamPageProps {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -14,8 +14,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function ExamPage({ params }: ExamPageProps) {
-    const course = COURSES.find((c) => c.slug === params.slug);
+export default async function ExamPage({ params }: ExamPageProps) {
+    const { slug } = await params;
+    const course = COURSES.find((c) => c.slug === slug);
 
     if (!course || !course.quiz) {
         notFound();
@@ -39,22 +40,11 @@ export default function ExamPage({ params }: ExamPageProps) {
                 </div>
             </div>
 
-            <main className="max-w-2xl mx-auto px-4 py-12">
-                <div className="text-center mb-10">
-                    <h1 className="text-3xl font-extrabold text-gray-900 mb-4">Evaluación Final</h1>
-                    <p className="text-gray-600">
-                        Demuestra lo que has aprendido para ganar tus {course.xp} XP.
-                    </p>
-                </div>
-
-                <LessonQuizRenderer
-                    questions={course.quiz.questions}
-                    onComplete={(score) => {
-                        console.log("Final Exam Completed", score);
-                        // TODO: Save progress, unlock certificate, etc.
-                    }}
-                />
-            </main>
+            <ExamQuizWrapper
+                questions={course.quiz.questions}
+                courseTitle={course.title}
+                xp={course.xp}
+            />
         </div>
     );
 }

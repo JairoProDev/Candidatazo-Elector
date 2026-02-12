@@ -2,14 +2,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { COURSES } from "../../../../data/courses";
 import LessonRenderer from "@/components/academia/LessonRenderer";
-import LessonQuizRenderer from "@/components/academia/LessonQuizRenderer";
-import { ChevronLeft, ChevronRight, Home } from "lucide-react";
+import LessonQuizWrapper from "@/components/academia/LessonQuizWrapper";
+import { ChevronLeft, ChevronRight, CheckCircle } from "lucide-react";
 
 interface LessonPageProps {
-    params: {
+    params: Promise<{
         slug: string;
         lessonId: string;
-    };
+    }>;
 }
 
 export async function generateStaticParams() {
@@ -26,11 +26,12 @@ export async function generateStaticParams() {
     return params;
 }
 
-export default function LessonPage({ params }: LessonPageProps) {
-    const course = COURSES.find((c) => c.slug === params.slug);
+export default async function LessonPage({ params }: LessonPageProps) {
+    const { slug, lessonId } = await params;
+    const course = COURSES.find((c) => c.slug === slug);
     if (!course) notFound();
 
-    const lessonIndex = course.lessons.findIndex((l) => l.id === params.lessonId);
+    const lessonIndex = course.lessons.findIndex((l) => l.id === lessonId);
     if (lessonIndex === -1) notFound();
 
     const lesson = course.lessons[lessonIndex];
@@ -72,25 +73,12 @@ export default function LessonPage({ params }: LessonPageProps) {
                     <LessonRenderer content={lesson.content} />
                 </div>
 
-                {/* Lesson Quiz */}
+                {/* Lesson Quiz - Using Wrapper to avoid passing function props from Server to Client */}
                 {hasQuiz && (
-                    <div className="mb-12">
-                        <div className="flex items-center gap-2 mb-4">
-                            <span className="bg-yellow-100 text-yellow-700 p-2 rounded-lg">
-                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
-                            </span>
-                            <h2 className="text-xl font-bold text-gray-800">Ponte a prueba</h2>
-                        </div>
-                        <LessonQuizRenderer
-                            questions={lesson.quiz!.questions}
-                            onComplete={(score) => {
-                                // In a real app, save progress here
-                                console.log("Quiz completed with score:", score);
-                            }}
-                        />
-                    </div>
+                    <LessonQuizWrapper
+                        questions={lesson.quiz!.questions}
+                        lessonTitle={lesson.title}
+                    />
                 )}
 
                 {/* Bottom Navigation */}
@@ -130,19 +118,11 @@ export default function LessonPage({ params }: LessonPageProps) {
                             href={`/academia/courses/${course.slug}`}
                             className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
                         >
-                            Finalizar Curso <CheckCircleIcon className="w-5 h-5" /> {/* Use icon defined below */}
+                            Finalizar Curso <CheckCircle className="w-5 h-5" />
                         </Link>
                     )}
                 </div>
             </main>
         </div>
     );
-}
-
-function CheckCircleIcon({ className }: { className?: string }) {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className={className}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-        </svg>
-    )
 }

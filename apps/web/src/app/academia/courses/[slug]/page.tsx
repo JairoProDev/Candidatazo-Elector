@@ -13,8 +13,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function CoursePage({ params }: PageProps) {
-    const course = COURSES.find((c) => c.slug === params.slug);
+export default async function CoursePage({ params }: PageProps) {
+    const { slug } = await params;
+    const course = COURSES.find((c) => c.slug === slug);
 
     if (!course) {
         notFound();
@@ -126,6 +127,7 @@ export default function CoursePage({ params }: PageProps) {
                                 </div>
                             </div>
                         </Link>
+                    ))}
                 </div>
 
                 {course.quiz && course.quiz.questions.length > 0 && (
