@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { COURSES } from "../../data/courses";
-import LessonRenderer from "@/components/academia/LessonRenderer";
-import QuizRenderer from "@/components/academia/QuizRenderer";
+import { PlayCircle, CheckCircle, ChevronRight, BookOpen, Clock, Award } from "lucide-react";
 
 interface PageProps {
     params: { slug: string };
@@ -21,136 +20,139 @@ export default function CoursePage({ params }: PageProps) {
         notFound();
     }
 
-    // If it's bicameralidad, we might redirect or handle specially, but here we assume generic renderer
-    // Note: bicameralidad has special URL /academia/bicameralidad handled by its own page.tsx
-    // This dynamic route handles /academia/courses/[slug]
-
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50">
+        <div className="min-h-screen bg-gray-50 pb-20">
             {/* Hero Header */}
-            <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-12">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="bg-white border-b border-gray-200">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                     <Link
                         href="/academia"
-                        className="inline-flex items-center gap-2 text-sm text-blue-200 hover:text-white mb-6 transition-colors"
+                        className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary mb-8 transition-colors"
                     >
                         ← Volver a Academia
                     </Link>
 
-                    <div className="flex items-start justify-between">
-                        <div>
-                            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-semibold mb-4">
-                                <span className={`w-2 h-2 rounded-full ${course.difficulty === 'Básico' ? 'bg-green-400' : 'bg-yellow-400'}`} />
-                                {course.difficulty} • {course.time}
+                    <div className="grid md:grid-cols-3 gap-8 items-start">
+                        <div className="md:col-span-2">
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${course.difficultyColor}`}>
+                                    {course.difficulty}
+                                </span>
+                                <span className="flex items-center gap-1 text-xs font-medium text-gray-500">
+                                    <Clock className="w-3 h-3" /> {course.time}
+                                </span>
                             </div>
 
-                            <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+                            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
                                 {course.title}
                             </h1>
-                            {course.subtitle && (
-                                <p className="text-xl text-blue-100 mb-6 max-w-2xl font-light">
-                                    {course.subtitle}
-                                </p>
-                            )}
+
+                            <p className="text-xl text-gray-600 mb-8 font-light leading-relaxed">
+                                {course.description}
+                                {course.subtitle && <span className="block mt-2 text-gray-500 text-lg">{course.subtitle}</span>}
+                            </p>
+
+                            <div className="flex flex-wrap gap-4">
+                                <Link
+                                    href={`/academia/courses/${course.slug}/lesson/${course.lessons[0]?.id}`}
+                                    className="bg-primary hover:bg-primary-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-2"
+                                >
+                                    <PlayCircle className="w-6 h-6" /> Comenzar Curso
+                                </Link>
+                            </div>
                         </div>
-                        {/* Optional: Course Progress or Icon */}
-                        <div className="hidden md:block opacity-20 transform scale-150">
-                            {/* Could render course icon here if needed */}
+
+                        {/* Sidebar Stats */}
+                        <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hidden md:block">
+                            <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
+                                Detalles del Curso
+                            </h3>
+                            <ul className="space-y-4">
+                                <li className="flex items-center justify-between text-sm">
+                                    <span className="text-gray-600 flex items-center gap-2">
+                                        <BookOpen className="w-4 h-4" /> Lecciones
+                                    </span>
+                                    <span className="font-bold text-gray-900">{course.lessons.length}</span>
+                                </li>
+                                <li className="flex items-center justify-between text-sm">
+                                    <span className="text-gray-600 flex items-center gap-2">
+                                        <Award className="w-4 h-4" /> XP Total
+                                    </span>
+                                    <span className="font-bold text-primary">{course.xp} XP</span>
+                                </li>
+                            </ul>
+
+                            <div className="mt-6 pt-6 border-t border-gray-200">
+                                <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Temas</h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {course.tags.map(tag => (
+                                        <span key={tag} className="text-xs bg-white border border-gray-200 px-2 py-1 rounded-md text-gray-600">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Main Content Layout */}
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                <div className="grid lg:grid-cols-12 gap-8">
+            {/* Syllabus */}
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-8 border-b pb-4">Contenido del Curso</h2>
 
-                    {/* Sidebar (Desktop) / Toc */}
-                    <div className="lg:col-span-3">
-                        <div className="sticky top-24 space-y-4">
-                            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-                                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">
-                                    Contenido
-                                </h3>
-                                <nav className="space-y-1">
-                                    {course.lessons.map((lesson, idx) => (
-                                        <a
-                                            key={lesson.id}
-                                            href={`#lesson-${lesson.id}`}
-                                            className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors group flex items-center gap-2"
-                                        >
-                                            <span className="w-6 h-6 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center text-xs group-hover:bg-primary group-hover:text-white transition-colors">
-                                                {idx + 1}
-                                            </span>
-                                            {lesson.title}
-                                        </a>
-                                    ))}
-                                    <a
-                                        href="#quiz"
-                                        className="block px-3 py-2 text-sm font-bold text-gray-800 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors flex items-center gap-2"
-                                    >
-                                        <span className="w-6 h-6 rounded-full bg-gold text-white flex items-center justify-center text-xs">
-                                            ?
-                                        </span>
-                                        Evaluación
-                                    </a>
-                                </nav>
-                            </div>
-
-                            {/* Stats Card */}
-                            <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-4 border border-primary-100">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <span className="text-2xl">🏆</span>
-                                    <div>
-                                        <p className="text-xs text-gray-500 font-medium">Recompensa</p>
-                                        <p className="font-bold text-primary">{course.xp} XP</p>
-                                    </div>
+                <div className="space-y-4">
+                    {course.lessons.map((lesson, idx) => (
+                        <Link
+                            key={lesson.id}
+                            href={`/academia/courses/${course.slug}/lesson/${lesson.id}`}
+                            className="group block bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary/30 transition-all cursor-pointer"
+                        >
+                            <div className="flex items-center gap-4">
+                                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gray-100 text-gray-500 font-bold flex items-center justify-center text-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                                    {idx + 1}
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Lesson Content */}
-                    <div className="lg:col-span-9 space-y-12">
-                        {course.lessons.map((lesson, idx) => (
-                            <article
-                                key={lesson.id}
-                                id={`lesson-${lesson.id}`}
-                                className="scroll-mt-24 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
-                            >
-                                <div className="border-b border-gray-100 bg-gray-50/50 px-6 py-4 flex items-center justify-between">
-                                    <h2 className="text-xl font-bold text-gray-800 flex items-center gap-3">
-                                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-sm font-bold shadow-sm">
-                                            {idx + 1}
-                                        </span>
+                                <div className="flex-1">
+                                    <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary transition-colors mb-1">
                                         {lesson.title}
-                                    </h2>
+                                    </h3>
+                                    <p className="text-sm text-gray-500 line-clamp-1">
+                                        {/* Preview of content could go here, stripping MD */}
+                                        Clase {idx + 1} - {course.time} aprox.
+                                    </p>
                                 </div>
-                                <div className="p-6 md:p-8">
-                                    <LessonRenderer content={lesson.content} />
+                                <div className="text-gray-300 group-hover:text-primary transition-colors">
+                                    <ChevronRight className="w-6 h-6" />
                                 </div>
-                            </article>
-                        ))}
-
-                        {/* Quiz Section */}
-                        <div id="quiz" className="scroll-mt-24 pt-8 border-t border-gray-200">
-                            <div className="bg-white rounded-2xl shadow-card border border-gray-200 p-6 md:p-8">
-                                <div className="text-center mb-8">
-                                    <span className="inline-block p-3 rounded-full bg-gold-50 text-gold-600 mb-4">
-                                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </span>
-                                    <h2 className="text-2xl font-bold text-gray-900">Evaluación de Conocimientos</h2>
-                                    <p className="text-gray-500">Completa este quiz para ganar tus {course.xp} XP</p>
-                                </div>
-
-                                <QuizRenderer quiz={course.quiz} />
                             </div>
-                        </div>
-
-                    </div>
+                        </Link>
                 </div>
+
+                {course.quiz && course.quiz.questions.length > 0 && (
+                    <div className="mt-8 border-t border-gray-200 pt-8">
+                        <Link
+                            href={`/academia/courses/${course.slug}/exam`}
+                            className="bg-white rounded-xl border border-yellow-200 p-6 flex items-center justify-between hover:shadow-lg hover:border-yellow-400 transition-all cursor-pointer group"
+                        >
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center font-bold text-xl">
+                                    ?
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-yellow-700 transition-colors">
+                                        Evaluación Final
+                                    </h3>
+                                    <p className="text-gray-500 text-sm">
+                                        Pon a prueba tus conocimientos y obtén tu XP.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="text-yellow-500 group-hover:text-yellow-700 transition-colors">
+                                <ChevronRight className="w-6 h-6" />
+                            </div>
+                        </Link>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -15,6 +15,7 @@ export interface Lesson {
     id: string;
     title: string;
     content: string; // Markdown supported
+    quiz?: Quiz;
 }
 
 export interface Course {
