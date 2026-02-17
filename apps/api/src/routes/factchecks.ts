@@ -216,8 +216,8 @@ export const factCheckRoutes: FastifyPluginAsync = async (app) => {
     ]);
 
     // Get candidate names for the stats
-    const candidateIds = byCandidateRaw
-      .map((b) => b.candidateId)
+    const candidateIds: string[] = byCandidateRaw
+      .map((b: { candidateId: string | null }) => b.candidateId)
       .filter((id): id is string => id !== null);
 
     const candidateNames = await prisma.candidate.findMany({
@@ -227,7 +227,7 @@ export const factCheckRoutes: FastifyPluginAsync = async (app) => {
 
     const nameMap = new Map(candidateNames.map((c) => [c.id, c]));
 
-    const byCandidate = byCandidateRaw.map((b) => ({
+    const byCandidate = byCandidateRaw.map((b: { candidateId: string | null; _count: { id: number }; _avg: { confidence: number | null } }) => ({
       candidate: nameMap.get(b.candidateId!) || { name: "Desconocido" },
       count: b._count.id,
       avgConfidence: b._avg.confidence,
@@ -237,7 +237,7 @@ export const factCheckRoutes: FastifyPluginAsync = async (app) => {
       success: true,
       data: {
         total,
-        byVerdict: byVerdict.map((v) => ({
+        byVerdict: byVerdict.map((v: { verdict: string; _count: { id: number } }) => ({
           verdict: v.verdict,
           count: v._count.id,
         })),

@@ -153,7 +153,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
     });
 
     const matches = candidates
-      .map((candidate) => {
+      .map((candidate: { id: string; name: string; photo: string | null; party: string; positions: unknown }) => {
         const positions = candidate.positions as unknown as CandidatePositions;
         const { overallScore, breakdown } = calculateMatchScore(scores, positions);
 
@@ -166,7 +166,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
           breakdown,
         };
       })
-      .sort((a, b) => b.overallScore - a.overallScore);
+      .sort((a: { overallScore: number }, b: { overallScore: number }) => b.overallScore - a.overallScore);
 
     // Save results
     const updated = await prisma.dnaTest.update({
@@ -181,7 +181,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
 
     // Save matches to database if user is registered
     if (test.userId && test.userId !== "anonymous") {
-      const matchOps = matches.map((m) =>
+      const matchOps = matches.map((m: { candidateId: string; overallScore: number; breakdown: unknown }) =>
         prisma.match.upsert({
           where: {
             userId_candidateId: {
@@ -247,7 +247,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
 
     const scores = test.scores as unknown as DnaScores;
     const matches = candidates
-      .map((candidate) => {
+      .map((candidate: { id: string; name: string; photo: string | null; party: string; positions: unknown }) => {
         const positions = candidate.positions as unknown as CandidatePositions;
         const { overallScore, breakdown } = calculateMatchScore(
           scores,
@@ -262,7 +262,7 @@ export const dnaRoutes: FastifyPluginAsync = async (app) => {
           breakdown,
         };
       })
-      .sort((a, b) => b.overallScore - a.overallScore);
+      .sort((a: { overallScore: number }, b: { overallScore: number }) => b.overallScore - a.overallScore);
 
     return reply.send({
       success: true,
