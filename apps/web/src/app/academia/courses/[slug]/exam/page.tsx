@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { COURSES } from "../../../../data/courses";
+import { COURSES } from "../../../data/courses";
 import ExamQuizWrapper from "@/components/academia/ExamQuizWrapper";
 import { ChevronLeft } from "lucide-react";
 

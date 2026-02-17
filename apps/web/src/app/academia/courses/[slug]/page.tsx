@@ -4,7 +4,7 @@ import { COURSES } from "../../data/courses";
 import { PlayCircle, CheckCircle, ChevronRight, BookOpen, Clock, Award } from "lucide-react";
 
 interface PageProps {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
