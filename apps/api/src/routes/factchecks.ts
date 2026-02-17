@@ -218,14 +218,14 @@ export const factCheckRoutes: FastifyPluginAsync = async (app) => {
     // Get candidate names for the stats
     const candidateIds: string[] = byCandidateRaw
       .map((b: { candidateId: string | null }) => b.candidateId)
-      .filter((id): id is string => id !== null);
+      .filter((id: string | null): id is string => id !== null);
 
     const candidateNames = await prisma.candidate.findMany({
       where: { id: { in: candidateIds } },
       select: { id: true, name: true, slug: true },
     });
 
-    const nameMap = new Map(candidateNames.map((c) => [c.id, c]));
+    const nameMap = new Map(candidateNames.map((c: { id: string; name: string; slug: string }) => [c.id, c]));
 
     const byCandidate = byCandidateRaw.map((b: { candidateId: string | null; _count: { id: number }; _avg: { confidence: number | null } }) => ({
       candidate: nameMap.get(b.candidateId!) || { name: "Desconocido" },
