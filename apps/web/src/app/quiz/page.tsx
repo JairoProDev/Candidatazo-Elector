@@ -256,10 +256,10 @@ export default function QuizPage() {
       try {
         await navigator.share({ title: "Mi resultado en Candidatazo", text, url: "https://candidatazo.com/quiz" });
       } catch {
-        await navigator.clipboard.writeText(text);
+        await (navigator as any).clipboard.writeText(text);
       }
     } else {
-      await navigator.clipboard.writeText(text);
+      await (navigator as any).clipboard.writeText(text);
     }
     setShared(true);
     setTimeout(() => setShared(false), 3000);
@@ -353,29 +353,27 @@ export default function QuizPage() {
         <div className="flex-1 flex items-center justify-center px-4 py-8">
           <div className="max-w-lg w-full">
             <div
-              className={`relative bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden transition-all duration-300 ${
-                swipeDirection === "right"
+              className={`relative bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden transition-all duration-300 ${swipeDirection === "right"
                   ? "translate-x-20 rotate-6 opacity-0"
                   : swipeDirection === "left"
                     ? "-translate-x-20 -rotate-6 opacity-0"
                     : ""
-              }`}
+                }`}
             >
               {/* Dimension badge */}
               <div className="px-6 pt-6 pb-0">
                 <div className="flex items-center justify-between">
-                  <span className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full ${
-                    currentProposal.dimension === "economic" ? "bg-gold-100 text-gold-700" :
-                    currentProposal.dimension === "social" ? "bg-pink-100 text-pink-700" :
-                    currentProposal.dimension === "environment" ? "bg-green-100 text-green-700" :
-                    currentProposal.dimension === "security" ? "bg-red-100 text-red-700" :
-                    "bg-purple-100 text-purple-700"
-                  }`}>
+                  <span className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full ${currentProposal.dimension === "economic" ? "bg-gold-100 text-gold-700" :
+                      currentProposal.dimension === "social" ? "bg-pink-100 text-pink-700" :
+                        currentProposal.dimension === "environment" ? "bg-green-100 text-green-700" :
+                          currentProposal.dimension === "security" ? "bg-red-100 text-red-700" :
+                            "bg-purple-100 text-purple-700"
+                    }`}>
                     {currentProposal.dimension === "economic" ? "💰 Economía" :
-                     currentProposal.dimension === "social" ? "🤝 Social" :
-                     currentProposal.dimension === "environment" ? "🌿 Ambiente" :
-                     currentProposal.dimension === "security" ? "🛡️ Seguridad" :
-                     "🏛️ Instituciones"}
+                      currentProposal.dimension === "social" ? "🤝 Social" :
+                        currentProposal.dimension === "environment" ? "🌿 Ambiente" :
+                          currentProposal.dimension === "security" ? "🛡️ Seguridad" :
+                            "🏛️ Instituciones"}
                   </span>
                   <button
                     onClick={() => setShowContext(!showContext)}
@@ -575,16 +573,14 @@ export default function QuizPage() {
             return (
               <div
                 key={item.id}
-                className={`p-4 rounded-xl border ${
-                  match
+                className={`p-4 rounded-xl border ${match
                     ? "bg-green-50 border-green-200"
                     : "bg-red-50 border-red-200"
-                }`}
+                  }`}
               >
                 <div className="flex items-start gap-3">
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                    match ? "bg-green-500" : "bg-red-500"
-                  }`}>
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${match ? "bg-green-500" : "bg-red-500"
+                    }`}>
                     <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       {match ? (
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
