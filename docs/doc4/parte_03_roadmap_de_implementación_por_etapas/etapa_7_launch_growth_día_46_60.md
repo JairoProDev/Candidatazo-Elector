@@ -99,7 +99,7 @@ function ShareButton() {
 
 ## Content
 - [ ] 36 candidates data complete
-- [ ] 30 DNA test questions final
+- [ ] 30 ADN test questions final
 - [ ] Fact-checks seeded
 - [ ] Terms of Service published
 - [ ] Privacy Policy published
@@ -122,7 +122,7 @@ function ShareButton() {
 
 #### **7.4 - Growth Loops**
 
-**Loop 1: Viral DNA Test**
+**Loop 1: Viral ADN Test**
 ```
 User takes test 
 → Gets shareable results 

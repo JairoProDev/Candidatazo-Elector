@@ -38,7 +38,7 @@ Semantic HTML:
       <button>  ← No <div onclick>
 
 ARIA Labels:
-<button aria-label="Compartir tu DNA político en Twitter">
+<button aria-label="Compartir tu ADN político en Twitter">
   <ShareIcon />
 </button>
 

@@ -16,7 +16,7 @@
 - Entretenimiento + información
 
 **NADIE MÁS COMBINA:**
-- Political DNA Test (iSideWith)
+- Political ADN Test (iSideWith)
 - + Fact-checking (OjoPúblico)
 - + Gamification (Duolingo)
 - + Community (Reddit)
@@ -37,7 +37,7 @@
 3. **Brand = "The App" de Elecciones:**
    - Primera mover
    - Media coverage
-   - "Hiciste tu DNA Test?"
+   - "Hiciste tu ADN Test?"
 
 4. **Ecosystem Lock-in:**
    - GobApp → Buscadis → Publicadis → JourNews

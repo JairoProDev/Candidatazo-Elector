@@ -1,0 +1,30 @@
+{
+  "name": "@candidatazo/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "tsc --noEmit",
+    "test": "echo 'No tests yet'"
+  },
+  "dependencies": {
+    "@candidatazo/database": "workspace:*",
+    "@candidatazo/types": "workspace:*",
+    "@candidatazo/utils": "workspace:*",
+    "@fastify/cors": "^10.0.0",
+    "@fastify/helmet": "^13.0.0",
+    "@fastify/rate-limit": "^10.2.0",
+    "@fastify/swagger": "^9.4.0",
+    "@fastify/swagger-ui": "^5.2.0",
+    "fastify": "^5.2.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

@@ -32,7 +32,7 @@
 - Voto por descarte, no por convicción
 
 **OPORTUNIDAD CANDIDATAZO:**
-- Tu DNA político único
+- Tu ADN político único
 - Match personalizado
 - "Descubre quién piensas como tú"
 
@@ -130,7 +130,7 @@ Basado en comportamiento real, no lo que dicen:
 - Me dice quién piensa como yo
 - Confío en el resultado
 
-**CANDIDATAZO SOLVES:** DNA Test + Match
+**CANDIDATAZO SOLVES:** ADN Test + Match
 
 ---
 
@@ -171,7 +171,7 @@ Basado en comportamiento real, no lo que dicen:
 - Familia se enoja
 
 **Gains:**
-- Shareable bonito (DNA results)
+- Shareable bonito (ADN results)
 - Encuentro gente en mi tribu
 - Debate moderado
 

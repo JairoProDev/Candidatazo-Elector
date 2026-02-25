@@ -76,7 +76,7 @@ enum AgeRange {
   RANGE_56_PLUS
 }
 
-// ==================== DNA TEST ====================
+// ==================== ADN TEST ====================
 
 model DnaTest {
   id            String        @id @default(cuid())
@@ -290,7 +290,7 @@ model Tribe {
   icon          String?
   color         String?
   
-  // Criteria (auto-generated based on DNA)
+  // Criteria (auto-generated based on ADN)
   criteria      Json              // {economic: [min, max], ...}
   
   // Stats

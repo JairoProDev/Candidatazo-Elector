@@ -7,9 +7,9 @@ Layout Aprovecha Espacio Horizontal:
 │      │                                              │       │
 │ 🏠   │  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  │ LIVE │ Sidebar
 │Inicio│  ┃                                        ┃  │       │ derecho
-│      │  ┃  🎯 TU DNA POLÍTICO                   ┃  │ 🔴    │
+│      │  ┃  🎯 TU ADN POLÍTICO                   ┃  │ 🔴    │
 │ 🧬   │  ┃  [Visual grande radar chart]          ┃  │Debate │
-│ DNA  │  ┃                                        ┃  │ Presi │
+│ ADN  │  ┃                                        ┃  │ Presi │
 │      │  ┃  87% Match con Centro Progresista     ┃  │       │
 │ 🎯   │  ┃                                        ┃  │ 20.3K │
 │Match │  ┃  [Ver matches] [Compartir] [Retomar]  ┃  │viendo │
@@ -144,7 +144,7 @@ Para Usuarios Premium:
 │ │ 2,340 / 3,000 XP     │ - Cusco: 45% similar           │ │
 │ │                      │ - Nacional: 62% similar        │ │
 │ │ Logros desbloqueados:│                                │ │
-│ │ ✅ DNA Complete      │ [Toggle regiones]              │ │
+│ │ ✅ ADN Complete      │ [Toggle regiones]              │ │
 │ │ ✅ 10 Fact-checks    │                                │ │
 │ │ ✅ Debate Warrior    │                                │ │
 │ │ 🔒 Truth Seeker      │                                │ │

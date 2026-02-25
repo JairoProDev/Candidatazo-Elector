@@ -5,7 +5,7 @@ Encuesta a 100 personas: ¿usarían Candidatazo?
 Test de nombre/branding (Candidatazo vs alternativas)
 Validar top 3 features con potenciales usuarios
 Miércoles-Viernes: MVP Definition
-Priorizar features para v1.0 (DNA Test + Match + Básico)
+Priorizar features para v1.0 (ADN Test + Match + Básico)
 Wireframes de UI/UX críticos
 Definir stack tecnológico
 Contratar developer(s) o formar equipo
@@ -15,7 +15,7 @@ Target: S/100K - S/300K para 8 semanas de burn
 Alternative: Bootstrapping con revenue de Publicadis
 SEMANA -1: CONSTRUCCIÓN SPRINT
 Focus: MVP con 3 features esenciales
-Political DNA Test (30 preguntas, resultados visuales)
+Political ADN Test (30 preguntas, resultados visuales)
 Candidate Match básico (top 5 matches)
 Sistema de invitaciones
 Team:

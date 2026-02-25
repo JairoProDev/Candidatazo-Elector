@@ -1,7 +1,7 @@
 📊 PARTE 4: ESTRATEGIA DE VIRALIDAD - DE 0 A 1 MILLÓN
 Viral Loop #1: Invitación con Incentivo
 Mecánica:
-Completas DNA Test → quieres compararte con amigos
+Completas ADN Test → quieres compararte con amigos
 "Invita 3 amigos y desbloquea comparación grupal"
 Amigos se registran → también invitan a sus amigos
 K-factor: 1 user → 2.5 users en promedio
@@ -11,7 +11,7 @@ Leaderboard de "top recruiters" con premios
 Badge especial "Activista Digital"
 Viral Loop #2: Compartir Resultados Emotivos
 Contenido Auto-Generado: Cada feature genera shareable content:
-Political DNA:
+Political ADN:
 🧬 MI ADN POLÍTICO 🧬
 Económico: 73% Liberal
 Social: 62% Progresista  
@@ -56,7 +56,7 @@ Viral Loop #5: PR Bombs
 Stunts Planeados:
 Semana 1: "Lanzamiento con Influencers"
 20 influencers políticos + entretenimiento
-Cada uno comparte DNA Test results
+Cada uno comparte ADN Test results
 "Incluso [Influencer] no sabía que era X% conservador"
 Semana 3: "El Debate de las IAs"
 Stream en vivo: AIs de los 5 top candidatos debaten

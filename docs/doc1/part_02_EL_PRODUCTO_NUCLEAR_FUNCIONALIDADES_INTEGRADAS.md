@@ -1,6 +1,6 @@
 🚀 PARTE 2: EL PRODUCTO NUCLEAR - FUNCIONALIDADES INTEGRADAS
 CAPA 1: DESCUBRIMIENTO DE IDENTIDAD POLÍTICA (Viral Engine)
-1.1 - Political DNA Test™
+1.1 - Political ADN Test™
 No un simple cuestionario - un análisis multidimensional de tu identidad política:
 Mecánica:
 30 preguntas en 5 dimensiones: Económica, Social, Ambiental, Seguridad, Institucional
@@ -19,7 +19,7 @@ Issues que más importan
 Nivel de conocimiento político
 Red social (quién invitó a quién)
 1.2 - CandidateMatch AI™
-Basado en tu DNA político, la IA te hace match con candidatos:
+Basado en tu ADN político, la IA te hace match con candidatos:
 Innovación Clave:
 No solo % de match - te explica POR QUÉ haces match
 "Coincides 87% con [Candidato] en economía, pero solo 23% en temas sociales"
@@ -82,7 +82,7 @@ CAPA 3: COMUNIDAD Y ACCIÓN (Engagement + Retention)
 3.1 - Political Tribes™
 Red social micro-segmentada:
 Mecánica:
-Auto-agrupación por afinidad política (basado en DNA Test)
+Auto-agrupación por afinidad política (basado en ADN Test)
 Grupos públicos y privados
 Chat en vivo durante debates
 Sistema de reputación (upvotes = credibilidad)

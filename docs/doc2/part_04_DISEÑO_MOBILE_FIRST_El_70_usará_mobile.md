@@ -6,7 +6,7 @@ Layout Mobile:
 ├────────────────────────────┤
 │                            │
 │ ┏━━━━━━━━━━━━━━━━━━━━━━┓ │ ← Hero card
-│ ┃ 🎯 TU DNA POLÍTICO    ┃ │   (gradient bg)
+│ ┃ 🎯 TU ADN POLÍTICO    ┃ │   (gradient bg)
 │ ┃                       ┃ │
 │ ┃ [Progress 70%]        ┃ │
 │ ┃                       ┃ │
@@ -96,7 +96,7 @@ INFINITE SCROLL + SMART LOADING:
 No pagination (friction)
 Lazy load images
 Placeholder cards mientras carga
-4.2 - DNA TEST (Core Feature - Mobile)
+4.2 - ADN TEST (Core Feature - Mobile)
 Diseño de Pregunta Individual:
 ┌────────────────────────────┐
 │ ← Salir    12/30    ⁝ Menú│ ← Progress visible
@@ -145,10 +145,10 @@ Shake phone = deshacer última respuesta (easter egg)
 Vibración sutil al seleccionar (feedback táctil)
 Pantalla de Resultados (El momento shareable):
 ┌────────────────────────────┐
-│ ✨ TU DNA POLÍTICO ✨      │
+│ ✨ TU ADN POLÍTICO ✨      │
 ├────────────────────────────┤
 │                            │
-│   [Animación DNA helix]    │ ← 2 seg animation
+│   [Animación ADN helix]    │ ← 2 seg animation
 │   Generando resultados...  │   mientras calcula
 │                            │
 └────────────────────────────┘
@@ -207,7 +207,7 @@ Formato: 1080x1920px (Instagram Story)
 ┌──────────────────┐
 │  Candidatazo 🏛️       │ ← Logo watermark
 │                  │
-│  MI DNA POLÍTICO │
+│  MI ADN POLÍTICO │
 │                  │
 │ [Radar visual]   │
 │                  │
@@ -231,7 +231,7 @@ Pantalla de Match:
 │ ← Atrás   MATCH 🎯  Filtrar│
 ├────────────────────────────┤
 │                            │
-│ Basado en tu DNA político  │
+│ Basado en tu ADN político  │
 │ estos candidatos piensan   │
 │ más como tú:               │
 │                            │

@@ -22,7 +22,7 @@
 │         │                  │                            │
 │  ┌──────▼──────────────────▼───────┐                   │
 │  │      PostgreSQL 16               │                   │
-│  │  - User data  - DNA results      │                   │
+│  │  - User data  - ADN results      │                   │
 │  │  - Candidates  - Fact-checks     │                   │
 │  └──────────────────────────────────┘                   │
 │                                                          │

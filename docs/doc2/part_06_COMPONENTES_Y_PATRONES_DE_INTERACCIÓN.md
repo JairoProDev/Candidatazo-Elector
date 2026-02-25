@@ -3,7 +3,7 @@
 Jerarquía de CTAs:
 PRIMARY (Acciones principales):
 ┌─────────────────────────┐
-│   Empezar DNA Test →    │ ← Lleno, Primary color
+│   Empezar ADN Test →    │ ← Lleno, Primary color
 └─────────────────────────┘   Bold text, shadow Level 2
 Hover: Elevate + darken 10%
 Pressed: Scale 98%
@@ -125,7 +125,7 @@ ABIERTO:
 └────────────────────────────┘
 Max height: 300px, scroll dentro
 
-Radio Buttons (DNA Test):
+Radio Buttons (ADN Test):
 ○ Totalmente de acuerdo      ← Empty circle
 ● De acuerdo                  ← Filled cuando selected
 ○ Neutral

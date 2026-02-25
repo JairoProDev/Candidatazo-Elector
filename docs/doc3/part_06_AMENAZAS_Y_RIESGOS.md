@@ -59,7 +59,7 @@
 **66 días no es mucho**
 
 **Mitigación:**
-- MVP mínimo (DNA Test + Match + Share)
+- MVP mínimo (ADN Test + Match + Share)
 - Outsource non-core (design)
 - No-code donde posible
 - Ship bugs, fix later

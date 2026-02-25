@@ -23,7 +23,7 @@ Este documento es tu biblia. Cada sección tiene:
 **DÍA 1-3:** ETAPA 0 + ETAPA 1
 - Setup infrastructure
 - Auth working
-- DNA Test functional
+- ADN Test functional
 - Basic matching
 - Share feature
 

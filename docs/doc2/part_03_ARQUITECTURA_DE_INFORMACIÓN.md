@@ -12,7 +12,7 @@ MOBILE NAV (Bottom Tab Bar - 5 items max):
 │                             │
 ├─────┬─────┬─────┬─────┬────┤
 │ 🏠  │ 🧬  │ ➕  │ 👥  │ 👤 │
-│Inicio│DNA │Nuevo│Tribu│ Yo │
+│Inicio│ADN │Nuevo│Tribu│ Yo │
 └─────┴─────┴─────┴─────┴────┘
 
 INICIO:
@@ -21,7 +21,7 @@ INICIO:
 - Debates próximos
 - Quick actions
 
-DNA (Political DNA Test):
+ADN (Political ADN Test):
 - Start/Continue test
 - Ver resultados
 - Comparar con amigos
@@ -52,7 +52,7 @@ DESKTOP NAV (Top + Sidebar):
 │                                          │
 │ ┌────────┬──────────────────────────────┤
 │ │🏠 Inicio│                              │
-│ │🧬 Mi DNA│     MAIN CONTENT             │
+│ │🧬 Mi ADN│     MAIN CONTENT             │
 │ │🎯 Match │     (Wider, más data)        │
 │ │🔍 Verify│                              │
 │ │👥 Tribu │                              │
@@ -253,7 +253,7 @@ STEP 5: AHA MOMENT (Entrega valor INMEDIATO)
 │ │   [Ver quiénes]      │ │
 │ └──────────────────────┘ │
 │                          │
-│    [Empezar DNA Test →] │
+│    [Empezar ADN Test →] │
 │    [Explorar app]        │
 └──────────────────────────┘
 
@@ -264,10 +264,10 @@ Inmediatamente:
 
 STEP 6: GENTLE PUSH AL CORE FEATURE
 ┌──────────────────────────┐
-│ 🧬 Descubre tu DNA       │
+│ 🧬 Descubre tu ADN       │
 │    Político              │
 │                          │
-│ [Animación DNA helix]    │
+│ [Animación ADN helix]    │
 │                          │
 │ 30 preguntas             │
 │ 5 minutos                │
