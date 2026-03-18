@@ -5,13 +5,15 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/quiz", label: "Quick Match", description: "Descubre tu match en 60 segundos" },
-  { href: "/candidatos", label: "Candidatos", description: "Conoce a los 24 candidatos" },
-  { href: "/verificador", label: "Verificador", description: "Fact-checking con fuentes reales" },
-  { href: "/simulador", label: "Simulador IA", description: "Conversa con candidatos IA" },
-  { href: "/test", label: "ADN Completo", description: "Test de 30 preguntas, más preciso" },
-  { href: "/predictor", label: "Predictor", description: "Pronósticos de la comunidad" },
-  { href: "/academia", label: "Guía Cívica", description: "Aprende política con minijuegos" },
+  { href: "/quiz", label: "Quick Match", description: "Descubre tu match en 60 segundos", hot: true },
+  { href: "/cedula", label: "Practica tu Voto", description: "Simulador de cédula oficial", hot: true },
+  { href: "/candidatos", label: "36 Candidatos", description: "Perfiles completos verificados" },
+  { href: "/comparador", label: "Comparador", description: "Compara candidatos lado a lado" },
+  { href: "/encuestas", label: "Encuestas", description: "Datos en tiempo real" },
+  { href: "/planes", label: "Planes", description: "Planes de gobierno oficiales" },
+  { href: "/verificador", label: "Verificador", description: "Fact-checking con fuentes" },
+  { href: "/desafio", label: "Desafío", description: "Quiz diario con XP y racha" },
+  { href: "/academia", label: "Academia", description: "Aprende jugando" },
 ];
 
 export function Header() {
@@ -49,12 +51,15 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
+                    className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
                         ? "bg-primary-50 text-primary border border-primary-100"
                         : "text-secondary-400 hover:bg-primary-50 hover:text-primary"
                       }`}
                   >
                     {link.label}
+                    {('hot' in link && link.hot) && (
+                      <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping" />
+                    )}
                   </Link>
                 );
               })}

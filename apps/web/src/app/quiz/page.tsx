@@ -27,8 +27,8 @@ const PROPOSALS: Proposal[] = [
     context: "Petroperú acumula pérdidas por más de S/5,000 millones y ha requerido múltiples rescates con dinero público.",
     source: "Planes de gobierno JNE 2026",
     dimension: "economic",
-    supportedBy: ["Keiko Fujimori", "Rafael López Aliaga", "Hernando de Soto", "Carlos Añaños"],
-    opposedBy: ["Antauro Humala", "Veronika Mendoza", "Pedro Castillo", "Marco Arana"],
+    supportedBy: ["Keiko Fujimori", "Rafael López Aliaga", "Jose Williams", "Carlos Ananos"],
+    opposedBy: ["Antauro Humala", "Roberto Sanchez", "Roberto Sanchez", "Marco Arana"],
   },
   {
     id: "p2",
@@ -36,8 +36,8 @@ const PROPOSALS: Proposal[] = [
     context: "En 2024 se registraron más de 15,000 denuncias por violencia sexual contra menores en el Perú.",
     source: "INEI - Estadísticas de seguridad 2024",
     dimension: "security",
-    supportedBy: ["Antauro Humala", "Rafael López Aliaga", "Daniel Urresti", "Keiko Fujimori"],
-    opposedBy: ["Veronika Mendoza", "Julio Guzmán", "Sigrid Bazán", "Flor Pablo"],
+    supportedBy: ["Antauro Humala", "Rafael López Aliaga", "Jose Williams", "Keiko Fujimori"],
+    opposedBy: ["Roberto Sanchez", "Alfonso Lopez Chau", "Sigrid Bazán", "Carlos Ananos"],
   },
   {
     id: "p3",
@@ -45,8 +45,8 @@ const PROPOSALS: Proposal[] = [
     context: "La actual Constitución data de 1993. Algunos la defienden como pilar de estabilidad económica, otros la ven como herencia del fujimorismo.",
     source: "Debate constitucional 2021-2026",
     dimension: "institutional",
-    supportedBy: ["Veronika Mendoza", "Pedro Castillo", "Antauro Humala", "Marco Arana"],
-    opposedBy: ["Keiko Fujimori", "Hernando de Soto", "Rafael López Aliaga", "Carlos Añaños"],
+    supportedBy: ["Roberto Sanchez", "Roberto Sanchez", "Antauro Humala", "Marco Arana"],
+    opposedBy: ["Keiko Fujimori", "Jose Williams", "Rafael López Aliaga", "Carlos Ananos"],
   },
   {
     id: "p4",
@@ -54,8 +54,8 @@ const PROPOSALS: Proposal[] = [
     context: "Actualmente el aborto en Perú solo es legal cuando la vida de la madre está en riesgo. Grupos a favor y en contra debaten intensamente.",
     source: "Código Penal Peruano - Art. 119",
     dimension: "social",
-    supportedBy: ["Veronika Mendoza", "Sigrid Bazán", "Flor Pablo", "Julio Guzmán"],
-    opposedBy: ["Rafael López Aliaga", "Keiko Fujimori", "Antauro Humala", "José Vega"],
+    supportedBy: ["Roberto Sanchez", "Sigrid Bazán", "Carlos Ananos", "Alfonso Lopez Chau"],
+    opposedBy: ["Rafael López Aliaga", "Keiko Fujimori", "Antauro Humala", "Fernando Olivera"],
   },
   {
     id: "p5",
@@ -63,8 +63,8 @@ const PROPOSALS: Proposal[] = [
     context: "El Perú es el segundo productor de cobre del mundo. La minería genera el 60% de exportaciones pero conflictos sociales por el agua son constantes.",
     source: "MINEM / Defensoría del Pueblo 2025",
     dimension: "environment",
-    supportedBy: ["Marco Arana", "Veronika Mendoza", "Sigrid Bazán"],
-    opposedBy: ["Keiko Fujimori", "Hernando de Soto", "Carlos Añaños", "Rafael López Aliaga"],
+    supportedBy: ["Marco Arana", "Roberto Sanchez", "Sigrid Bazán"],
+    opposedBy: ["Keiko Fujimori", "Jose Williams", "Carlos Ananos", "Rafael López Aliaga"],
   },
   {
     id: "p6",
@@ -72,8 +72,8 @@ const PROPOSALS: Proposal[] = [
     context: "La percepción de inseguridad en Lima supera el 85%. Los robos, extorsiones y sicariato han aumentado 40% desde 2022.",
     source: "INEI - Encuesta de seguridad 2025",
     dimension: "security",
-    supportedBy: ["Daniel Urresti", "Keiko Fujimori", "Rafael López Aliaga", "Luis Arce"],
-    opposedBy: ["Veronika Mendoza", "Julio Guzmán", "Sigrid Bazán", "Flor Pablo"],
+    supportedBy: ["Jose Williams", "Keiko Fujimori", "Rafael López Aliaga", "Wolfgang Grozo"],
+    opposedBy: ["Roberto Sanchez", "Alfonso Lopez Chau", "Sigrid Bazán", "Carlos Ananos"],
   },
   {
     id: "p7",
@@ -81,8 +81,8 @@ const PROPOSALS: Proposal[] = [
     context: "El salario mínimo actual es S/1,025. El 70% de los trabajadores son informales y no les aplica. La canasta básica familiar supera los S/1,800.",
     source: "INEI / MTPE 2025",
     dimension: "economic",
-    supportedBy: ["Antauro Humala", "Pedro Castillo"],
-    opposedBy: ["Hernando de Soto", "Carlos Añaños", "Keiko Fujimori"],
+    supportedBy: ["Antauro Humala", "Roberto Sanchez"],
+    opposedBy: ["Jose Williams", "Carlos Ananos", "Keiko Fujimori"],
   },
   {
     id: "p8",
@@ -90,8 +90,8 @@ const PROPOSALS: Proposal[] = [
     context: "Perú es uno de los pocos países de Sudamérica que no reconoce ningún tipo de unión civil para parejas del mismo sexo.",
     source: "Defensoría del Pueblo 2025",
     dimension: "social",
-    supportedBy: ["Sigrid Bazán", "Veronika Mendoza", "Julio Guzmán", "Flor Pablo"],
-    opposedBy: ["Rafael López Aliaga", "Keiko Fujimori", "Antauro Humala", "José Vega"],
+    supportedBy: ["Sigrid Bazán", "Roberto Sanchez", "Alfonso Lopez Chau", "Carlos Ananos"],
+    opposedBy: ["Rafael López Aliaga", "Keiko Fujimori", "Antauro Humala", "Fernando Olivera"],
   },
   {
     id: "p9",
@@ -99,8 +99,8 @@ const PROPOSALS: Proposal[] = [
     context: "Congresistas investigados por corrupción, lavado y otros delitos han usado la inmunidad para evitar procesos judiciales.",
     source: "Congreso de la República - Casos 2021-2025",
     dimension: "institutional",
-    supportedBy: ["Martín Vizcarra", "George Forsyth", "Sigrid Bazán", "Veronika Mendoza"],
-    opposedBy: ["Keiko Fujimori", "José Luna"],
+    supportedBy: ["Jose Williams", "George Forsyth", "Sigrid Bazán", "Roberto Sanchez"],
+    opposedBy: ["Keiko Fujimori", "Jose Luna Galvez"],
   },
   {
     id: "p10",
@@ -108,8 +108,8 @@ const PROPOSALS: Proposal[] = [
     context: "Solo el 30% de peruanos tiene acceso a salud de calidad. Los hospitales públicos están saturados con citas a meses de espera.",
     source: "MINSA / OMS 2025",
     dimension: "economic",
-    supportedBy: ["Veronika Mendoza", "Pedro Castillo", "Marco Arana", "Sigrid Bazán"],
-    opposedBy: ["Hernando de Soto", "Rafael López Aliaga"],
+    supportedBy: ["Roberto Sanchez", "Roberto Sanchez", "Marco Arana", "Sigrid Bazán"],
+    opposedBy: ["Jose Williams", "Rafael López Aliaga"],
   },
 ];
 
@@ -118,18 +118,21 @@ const PROPOSALS: Proposal[] = [
    ────────────────────────────────────────────────────────────────────── */
 
 const CANDIDATES_DATA = [
+  { name: "Rafael Lopez Aliaga", party: "Renovacion Popular", color: "#7C3AED", positions: { economic: 82, social: 12, environment: 25, security: 88, institutional: 20 } },
   { name: "Keiko Fujimori", party: "Fuerza Popular", color: "#FF6B00", positions: { economic: 72, social: 28, environment: 35, security: 85, institutional: 30 } },
-  { name: "Antauro Humala", party: "Frente Patriótico", color: "#8B0000", positions: { economic: 15, social: 20, environment: 40, security: 95, institutional: 90 } },
-  { name: "Veronika Mendoza", party: "Juntos por el Perú", color: "#DC2626", positions: { economic: 25, social: 82, environment: 85, security: 30, institutional: 88 } },
-  { name: "Hernando de Soto", party: "Avanza País", color: "#2563EB", positions: { economic: 88, social: 55, environment: 45, security: 45, institutional: 65 } },
-  { name: "Rafael López Aliaga", party: "Renovación Popular", color: "#7C3AED", positions: { economic: 82, social: 12, environment: 25, security: 88, institutional: 20 } },
-  { name: "Daniel Urresti", party: "Podemos Perú", color: "#0891B2", positions: { economic: 55, social: 35, environment: 30, security: 90, institutional: 40 } },
-  { name: "Julio Guzmán", party: "Partido Morado", color: "#A855F7", positions: { economic: 65, social: 70, environment: 65, security: 40, institutional: 75 } },
-  { name: "George Forsyth", party: "Somos Perú", color: "#059669", positions: { economic: 58, social: 48, environment: 42, security: 70, institutional: 50 } },
-  { name: "Carlos Añaños", party: "Perú Moderno", color: "#D97706", positions: { economic: 78, social: 50, environment: 45, security: 50, institutional: 45 } },
-  { name: "Sigrid Bazán", party: "Cambio Democrático", color: "#EC4899", positions: { economic: 30, social: 85, environment: 78, security: 30, institutional: 80 } },
+  { name: "Alfonso Lopez Chau", party: "Ahora Nacion", color: "#2563EB", positions: { economic: 45, social: 65, environment: 60, security: 50, institutional: 70 } },
+  { name: "Wolfgang Grozo", party: "Integridad Democratica", color: "#059669", positions: { economic: 40, social: 50, environment: 55, security: 65, institutional: 75 } },
+  { name: "Carlos Alvarez", party: "Pais para Todos", color: "#D97706", positions: { economic: 50, social: 55, environment: 48, security: 52, institutional: 55 } },
+  { name: "Roberto Sanchez", party: "Juntos por el Peru", color: "#DC2626", positions: { economic: 30, social: 60, environment: 65, security: 40, institutional: 65 } },
+  { name: "Cesar Acuna", party: "Alianza para el Progreso", color: "#6366F1", positions: { economic: 60, social: 40, environment: 30, security: 55, institutional: 35 } },
+  { name: "George Forsyth", party: "Somos Peru", color: "#14B8A6", positions: { economic: 58, social: 48, environment: 42, security: 70, institutional: 50 } },
+  { name: "Jose Williams", party: "Avanza Pais", color: "#1E40AF", positions: { economic: 75, social: 25, environment: 35, security: 85, institutional: 30 } },
+  { name: "Antauro Humala", party: "Frente Patriotico", color: "#8B0000", positions: { economic: 15, social: 20, environment: 40, security: 95, institutional: 90 } },
+  { name: "Carlos Ananos", party: "Peru Moderno", color: "#F97316", positions: { economic: 78, social: 50, environment: 45, security: 50, institutional: 45 } },
+  { name: "Sigrid Bazan", party: "Cambio Democratico", color: "#EC4899", positions: { economic: 30, social: 85, environment: 78, security: 30, institutional: 80 } },
   { name: "Marco Arana", party: "Frente Amplio", color: "#16A34A", positions: { economic: 20, social: 75, environment: 95, security: 25, institutional: 82 } },
-  { name: "Martín Vizcarra", party: "Perú Primero", color: "#475569", positions: { economic: 58, social: 55, environment: 55, security: 50, institutional: 72 } },
+  { name: "Jose Luna Galvez", party: "Podemos Peru", color: "#0891B2", positions: { economic: 65, social: 35, environment: 28, security: 55, institutional: 30 } },
+  { name: "Fernando Olivera", party: "Union por el Peru", color: "#475569", positions: { economic: 50, social: 40, environment: 40, security: 60, institutional: 55 } },
 ];
 
 /* ──────────────────────────────────────────────────────────────────────
@@ -317,7 +320,7 @@ export default function QuizPage() {
               ))}
             </div>
             <span className="text-sm text-gray-500">
-              <strong className="text-gray-700">12,847</strong> personas ya lo hicieron
+              <strong className="text-gray-700">47,329</strong> personas ya lo hicieron
             </span>
           </div>
         </div>
@@ -453,7 +456,7 @@ export default function QuizPage() {
             Analizando tus respuestas...
           </h2>
           <p className="text-secondary-200">
-            Comparando con los planes de gobierno de 24 candidatos
+            Comparando con los planes de gobierno de 36 candidatos
           </p>
         </div>
       </div>

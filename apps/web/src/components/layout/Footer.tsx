@@ -75,12 +75,16 @@ export function Footer() {
                 Herramientas
               </h3>
               <ul className="space-y-2.5">
-                <FooterLink href="/test" label="ADN Test" />
-                <FooterLink href="/candidatos" label="Candidatos" />
+                <FooterLink href="/quiz" label="Quick Match" />
+                <FooterLink href="/cedula" label="Practica tu Voto" />
+                <FooterLink href="/candidatos" label="36 Candidatos" />
+                <FooterLink href="/comparador" label="Comparador" />
+                <FooterLink href="/encuestas" label="Encuestas en Vivo" />
+                <FooterLink href="/planes" label="Planes de Gobierno" />
                 <FooterLink href="/verificador" label="Verificador" />
-                <FooterLink href="/simulador" label="Simulador IA" />
-                <FooterLink href="/predictor" label="Predictor" />
-                <FooterLink href="/academia" label="Academia" />
+                <FooterLink href="/desafio" label="Desafío Diario" />
+                <FooterLink href="/test" label="ADN Completo" />
+                <FooterLink href="/academia" label="Academia Cívica" />
               </ul>
             </div>
 

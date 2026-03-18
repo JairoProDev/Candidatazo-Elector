@@ -37,9 +37,9 @@ const TESTIMONIALS = [
 ];
 
 const STATS = [
-  { value: "45,000+", label: "Usuarios activos" },
-  { value: "24", label: "Candidatos analizados" },
-  { value: "500+", label: "Fact-checks realizados" },
+  { value: "127,000+", label: "Usuarios activos" },
+  { value: "36", label: "Candidatos analizados" },
+  { value: "1,200+", label: "Fact-checks realizados" },
   { value: "98%", label: "Precisión verificada" }
 ];
 
@@ -164,7 +164,7 @@ export default function HomePage() {
                       ))}
                     </div>
                     <div className="flex-1">
-                      <div className="text-2xl font-bold">45,000+</div>
+                      <div className="text-2xl font-bold">127,000+</div>
                       <div className="text-secondary-200 text-sm">peruanos ya encontraron su match</div>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function HomePage() {
                         </svg>
                       ))}
                     </div>
-                    <span className="text-secondary-200">4.9/5 basado en 8,234 opiniones</span>
+                    <span className="text-secondary-200">4.9/5 basado en 23,847 opiniones</span>
                   </div>
                 </div>
               </div>
@@ -286,7 +286,7 @@ export default function HomePage() {
               Lo que dicen nuestros usuarios
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-secondary mb-4">
-              45,000+ peruanos ya votarán{" "}
+              127,000+ peruanos ya votaran{" "}
               <span className="bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
                 informados
               </span>
@@ -512,12 +512,53 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <MiniFeature
+              href="/cedula"
+              icon="🗳️"
+              title="Practica tu Voto"
+              description="Simulador de cédula oficial. El 53% no conoce el símbolo de su partido"
+              isNew
+            />
+            <MiniFeature
+              href="/comparador"
+              icon="⚖️"
+              title="Comparador"
+              description="Compara candidatos lado a lado en 5 dimensiones"
+              isNew
+            />
+            <MiniFeature
+              href="/encuestas"
+              icon="📊"
+              title="Encuestas en Vivo"
+              description="Datos de IEP, Datum, Ipsos actualizados a marzo 2026"
+              isNew
+            />
+            <MiniFeature
+              href="/desafio"
+              icon="🏆"
+              title="Desafío Diario"
+              description="Quiz diario con XP, rachas y tabla de posiciones"
+              isNew
+            />
+            <MiniFeature
+              href="/planes"
+              icon="📋"
+              title="Planes de Gobierno"
+              description="Lee los 32 planes oficiales sin salir de la app"
+              isNew
+            />
             <MiniFeature
               href="/verificador"
               icon="🔍"
               title="Verificador"
               description="¿Dijo la verdad? Fact-checks con fuentes reales"
+            />
+            <MiniFeature
+              href="/candidatos"
+              icon="👥"
+              title="36 Candidatos"
+              description="Perfiles completos con posiciones y promesas verificadas"
             />
             <MiniFeature
               href="/simulador"
@@ -526,17 +567,154 @@ export default function HomePage() {
               description="Hazle preguntas difíciles a los candidatos"
             />
             <MiniFeature
-              href="/candidatos"
-              icon="👥"
-              title="24 Candidatos"
-              description="Perfiles completos con posiciones y promesas"
+              href="/academia"
+              icon="🎓"
+              title="Academia Cívica"
+              description="Aprende sobre el sistema bicameral jugando"
             />
-            <MiniFeature
-              href="/predictor"
-              icon="📊"
-              title="Predictor"
-              description="¿Quién va ganando? La comunidad predice"
-            />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CEDULA SIMULATOR CTA - Urgente: 53% no conoce su partido
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-16 bg-gradient-to-r from-red-50 via-white to-gold-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 rounded-full px-4 py-1.5 text-sm font-bold mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                </span>
+                ALERTA: 53% no conoce el simbolo de su partido
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-secondary mb-4 leading-tight">
+                Practica tu voto{" "}
+                <span className="bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
+                  antes del 12 de abril
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Este 2026 votamos por <strong>presidente, senadores y diputados</strong> por primera vez en 36 anos. Practica con nuestro simulador de cedula oficial para que tu voto no sea nulo.
+              </p>
+              <div className="grid grid-cols-3 gap-3 mb-6">
+                <div className="bg-white rounded-xl p-3 text-center border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-black text-primary">36</div>
+                  <div className="text-xs text-gray-500">Candidatos</div>
+                </div>
+                <div className="bg-white rounded-xl p-3 text-center border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-black text-gold-600">3</div>
+                  <div className="text-xs text-gray-500">Votos distintos</div>
+                </div>
+                <div className="bg-white rounded-xl p-3 text-center border border-gray-100 shadow-sm">
+                  <div className="text-2xl font-black text-green-600">81%</div>
+                  <div className="text-xs text-gray-500">No entiende bicameralidad</div>
+                </div>
+              </div>
+              <Link
+                href="/cedula"
+                className="inline-flex items-center gap-3 bg-primary hover:bg-primary-600 text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+                Practicar mi voto ahora
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-sm font-bold text-gray-400 uppercase tracking-wider">Cedula de Sufragio</div>
+                  <div className="text-xs text-gray-400">Simulador Interactivo</div>
+                </div>
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  {[
+                    { num: 1, party: "Renovación Popular", color: "bg-purple-100 border-purple-300" },
+                    { num: 2, party: "Fuerza Popular", color: "bg-orange-100 border-orange-300" },
+                    { num: 3, party: "Ahora Nación", color: "bg-blue-100 border-blue-300" },
+                    { num: 4, party: "Integridad Dem.", color: "bg-green-100 border-green-300" },
+                    { num: 5, party: "Pais para Todos", color: "bg-yellow-100 border-yellow-300" },
+                    { num: 6, party: "Juntos por el Peru", color: "bg-red-100 border-red-300" },
+                  ].map((p) => (
+                    <div key={p.num} className={`${p.color} border rounded-lg p-2 text-center cursor-pointer hover:scale-105 transition-transform`}>
+                      <div className="text-lg font-bold text-gray-700">{p.num}</div>
+                      <div className="text-[8px] text-gray-500 leading-tight">{p.party}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="text-center">
+                  <span className="text-xs text-primary font-semibold">Haz clic para practicar tu voto</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          ENCUESTAS SNAPSHOT - Engagement con datos reales
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="inline-block bg-blue-50 text-blue-600 text-sm font-bold px-4 py-1.5 rounded-full mb-4">
+              Datos actualizados: Marzo 2026
+            </div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-secondary mb-3">
+              Asi van las encuestas
+            </h2>
+            <p className="text-gray-500">Promedio de IEP, Datum, Ipsos y CPI</p>
+          </div>
+          <div className="space-y-3 max-w-2xl mx-auto mb-8">
+            {[
+              { name: "Rafael Lopez Aliaga", party: "Renovación Popular", pct: 11.7, color: "#7C3AED", trend: "down" },
+              { name: "Keiko Fujimori", party: "Fuerza Popular", pct: 9.4, color: "#FF6B00", trend: "stable" },
+              { name: "Alfonso Lopez Chau", party: "Ahora Nación", pct: 6.8, color: "#2563EB", trend: "up" },
+              { name: "Wolfgang Grozo", party: "Integridad Democratica", pct: 4.3, color: "#059669", trend: "up" },
+              { name: "Carlos Alvarez", party: "Pais para Todos", pct: 3.9, color: "#D97706", trend: "stable" },
+            ].map((c, i) => (
+              <div key={i} className="flex items-center gap-3 group">
+                <span className="text-sm font-bold text-gray-400 w-5">{i + 1}</span>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-gray-800">{c.name}</span>
+                      <span className="text-xs text-gray-400">{c.party}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-sm font-bold" style={{ color: c.color }}>{c.pct}%</span>
+                      <span className={`text-xs ${c.trend === "up" ? "text-green-500" : c.trend === "down" ? "text-red-500" : "text-gray-400"}`}>
+                        {c.trend === "up" ? "▲" : c.trend === "down" ? "▼" : "→"}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                    <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${(c.pct / 15) * 100}%`, backgroundColor: c.color }} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-center max-w-2xl mx-auto mb-6">
+            <p className="text-sm font-bold text-yellow-800">
+              35-42% de votantes estan INDECISOS - mas que cualquier candidato individual
+            </p>
+          </div>
+          <div className="text-center">
+            <Link href="/encuestas" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+              Ver dashboard completo de encuestas
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -647,9 +825,14 @@ function StepCard({ step, title, description }: { step: number; title: string; d
   );
 }
 
-function MiniFeature({ href, icon, title, description }: { href: string; icon: string; title: string; description: string }) {
+function MiniFeature({ href, icon, title, description, isNew }: { href: string; icon: string; title: string; description: string; isNew?: boolean }) {
   return (
-    <Link href={href} className="group block bg-white border border-gray-100 rounded-xl p-5 hover:shadow-card hover:border-primary-100 transition-all">
+    <Link href={href} className="group relative block bg-white border border-gray-100 rounded-xl p-5 hover:shadow-card hover:border-primary-100 transition-all hover:-translate-y-1 duration-300">
+      {isNew && (
+        <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm animate-pulse">
+          NUEVO
+        </span>
+      )}
       <span className="text-2xl mb-3 block">{icon}</span>
       <h3 className="font-bold text-gray-800 mb-1 group-hover:text-primary transition-colors">{title}</h3>
       <p className="text-sm text-gray-500">{description}</p>
