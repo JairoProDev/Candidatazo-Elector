@@ -4,10 +4,15 @@ import Image from "next/image";
 function daysUntilElection(): number {
   const election = new Date("2026-04-12T00:00:00-05:00");
   const now = new Date();
-  const diff = Math.ceil(
-    (election.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
-  );
-  return diff > 0 ? diff : 0;
+  
+  // Normalize both dates to midnight to count full days remaining
+  const electionDate = new Date(election.getFullYear(), election.getMonth(), election.getDate());
+  const nowDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  
+  const diffTime = electionDate.getTime() - nowDate.getTime();
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  
+  return diffDays > 0 ? diffDays : 0;
 }
 
 const TESTIMONIALS = [

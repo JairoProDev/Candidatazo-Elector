@@ -10,6 +10,8 @@ const navLinks = [
   { href: "/verificador", label: "Verificador", description: "Fact-checking con fuentes reales" },
   { href: "/simulador", label: "Simulador IA", description: "Conversa con candidatos IA" },
   { href: "/test", label: "ADN Completo", description: "Test de 30 preguntas, más preciso" },
+  { href: "/predictor", label: "Predictor", description: "Pronósticos de la comunidad" },
+  { href: "/academia", label: "Guía Cívica", description: "Aprende política con minijuegos" },
 ];
 
 export function Header() {
