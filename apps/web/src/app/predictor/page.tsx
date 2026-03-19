@@ -11,23 +11,23 @@ interface Candidate {
 }
 
 const INITIAL_CANDIDATES: Candidate[] = [
-  { name: "Keiko Fujimori", party: "Fuerza Popular", percentage: 22, color: "#FF6B00" },
-  { name: "Antauro Humala", party: "Frente Patriotico", percentage: 15, color: "#8B0000" },
-  { name: "Veronika Mendoza", party: "Juntos por el Perú", percentage: 12, color: "#DC2626" },
-  { name: "Hernando de Soto", party: "Avanza Pais", percentage: 10, color: "#2563EB" },
-  { name: "Cesar Acuna", party: "Alianza para el Progreso", percentage: 8, color: "#7C3AED" },
-  { name: "Daniel Urresti", party: "Podemos Perú", percentage: 8, color: "#0891B2" },
-  { name: "Julio Guzman", party: "Partido Morado", percentage: 7, color: "#A855F7" },
-  { name: "George Forsyth", party: "Somos Perú", percentage: 6, color: "#059669" },
+  { name: "Rafael Lopez Aliaga", party: "Renovacion Popular", percentage: 22, color: "#7C3AED" },
+  { name: "Keiko Fujimori", party: "Fuerza Popular", percentage: 18, color: "#FF6B00" },
+  { name: "Alfonso Lopez Chau", party: "Ahora Nacion", percentage: 14, color: "#2563EB" },
+  { name: "Wolfgang Grozo", party: "Integridad Democratica", percentage: 10, color: "#059669" },
+  { name: "Carlos Alvarez", party: "Pais para Todos", percentage: 9, color: "#D97706" },
+  { name: "Roberto Sanchez", party: "Juntos por el Peru", percentage: 8, color: "#DC2626" },
+  { name: "Cesar Acuna", party: "Alianza para el Progreso", percentage: 7, color: "#6366F1" },
+  { name: "George Forsyth", party: "Somos Peru", percentage: 5, color: "#14B8A6" },
 ];
 
 const REGIONAL_PREDICTIONS = [
-  { region: "Lima", leader: "Keiko Fujimori", percentage: 26 },
-  { region: "Cusco", leader: "Veronika Mendoza", percentage: 28 },
-  { region: "Arequipa", leader: "Hernando de Soto", percentage: 22 },
-  { region: "La Libertad", leader: "Cesar Acuna", percentage: 35 },
-  { region: "Puno", leader: "Antauro Humala", percentage: 30 },
-  { region: "Junin", leader: "Antauro Humala", percentage: 24 },
+  { region: "Lima/Callao", leader: "Rafael Lopez Aliaga", percentage: 18 },
+  { region: "Norte", leader: "Cesar Acuna", percentage: 15 },
+  { region: "Sur", leader: "Alfonso Lopez Chau", percentage: 14 },
+  { region: "Centro", leader: "Wolfgang Grozo", percentage: 12 },
+  { region: "Oriente", leader: "Roberto Sanchez", percentage: 16 },
+  { region: "La Libertad", leader: "Cesar Acuna", percentage: 28 },
 ];
 
 export default function PredictorPage() {

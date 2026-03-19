@@ -8,8 +8,6 @@ header {
   border-top: 4px solid #D91023 !important;
 }
 
-
-
 @layer base {
   :root {
     --primary: #D91023;
@@ -133,4 +131,333 @@ header {
 
 .score-circle {
   animation: scoreReveal 1.5s ease-out forwards;
+}
+
+/* ============================================
+   DOPAMINE DESIGN SYSTEM - Animations
+   ============================================ */
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(217, 16, 35, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(217, 16, 35, 0.4);
+  }
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes xpGain {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes streakFire {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes ribbonReveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes numberCount {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   Animation Utility Classes
+   ============================================ */
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-confetti {
+  animation: confetti 1s ease-out forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 200% 100%;
+}
+
+.animate-count-up {
+  animation: countUp 0.5s ease-out;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-xp-gain {
+  animation: xpGain 1s ease-out forwards;
+}
+
+.animate-streak-fire {
+  animation: streakFire 0.5s ease-in-out;
+}
+
+.animate-ribbon {
+  animation: ribbonReveal 1s ease-out forwards;
+}
+
+.animate-number {
+  animation: numberCount 0.5s ease-out;
+}
+
+/* ============================================
+   Stagger Animation Delays
+   ============================================ */
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.stagger-6 {
+  animation-delay: 0.6s;
+}
+
+.stagger-7 {
+  animation-delay: 0.7s;
+}
+
+.stagger-8 {
+  animation-delay: 0.8s;
+}
+
+.stagger-9 {
+  animation-delay: 0.9s;
+}
+
+.stagger-10 {
+  animation-delay: 1.0s;
+}
+
+/* ============================================
+   Interactive Feedback Classes
+   ============================================ */
+
+.tap-feedback {
+  @apply active:scale-95 transition-transform duration-100;
+}
+
+.hover-lift {
+  @apply hover:-translate-y-1 hover:shadow-lg transition-all duration-200;
+}
+
+.hover-glow {
+  @apply hover:shadow-[0_0_15px_rgba(217,16,35,0.3)] transition-shadow duration-300;
+}
+
+/* ============================================
+   Gradient Text Utilities
+   ============================================ */
+
+.text-gradient-primary {
+  @apply bg-gradient-to-r from-primary via-primary-600 to-gold bg-clip-text text-transparent;
+}
+
+.text-gradient-gold {
+  @apply bg-gradient-to-r from-gold to-gold-300 bg-clip-text text-transparent;
+}
+
+/* ============================================
+   Timer Circle Animation (Desafio)
+   ============================================ */
+
+@keyframes timerCountdown {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 283;
+  }
+}
+
+.timer-circle {
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Confetti particle styles */
+.confetti-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confetti 1s ease-out forwards;
+  pointer-events: none;
 }
