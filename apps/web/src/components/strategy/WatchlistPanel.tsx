@@ -1,12 +1,29 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { OFFICIAL_CANDIDATES_2026, type Candidate2026ListItem } from "@/lib/data/candidates2026";
 import { useLocalStorageState } from "@/components/hooks/useLocalStorageState";
 import Link from "next/link";
 import type { CandidateDimension } from "@/lib/data/candidates2026";
 
 const STORAGE_KEY = "candidatos2026:watchlist";
+const STORAGE_KEY_SNAPSHOT = "candidatos2026:watchlist:snapshot";
+
+type MetricSnapshot = {
+  legalRisk: Candidate2026ListItem["legalRisk"];
+  candidacyStatus: Candidate2026ListItem["candidacyStatus"];
+  digitalAgendaScore: number;
+  antiVote: number;
+};
+
+type AlertEvent = {
+  slug: string;
+  name: string;
+  party: string;
+  metric: string;
+  from: string;
+  to: string;
+};
 
 function formatRisk(risk: Candidate2026ListItem["legalRisk"]) {
   if (risk === "alto") return "Alto";
@@ -18,6 +35,7 @@ export default function WatchlistPanel() {
   const [watchSlugs, setWatchSlugs] = useLocalStorageState<string[]>(STORAGE_KEY, []);
   const [addSlug, setAddSlug] = useState<string>("");
   const [copyStatus, setCopyStatus] = useState<"idle" | "copied">("idle");
+  const [alertEvents, setAlertEvents] = useState<AlertEvent[]>([]);
 
   const watchCandidates = useMemo(() => {
     const set = new Set(watchSlugs);
@@ -67,6 +85,80 @@ export default function WatchlistPanel() {
     const set = new Set(watchSlugs);
     return OFFICIAL_CANDIDATES_2026.filter((c) => !set.has(c.slug));
   }, [watchSlugs]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    try {
+      const prevRaw = window.localStorage.getItem(STORAGE_KEY_SNAPSHOT);
+      const prev = prevRaw ? (JSON.parse(prevRaw) as Record<string, MetricSnapshot>) : {};
+
+      const next: Record<string, MetricSnapshot> = {};
+      watchCandidates.forEach((c) => {
+        next[c.slug] = {
+          legalRisk: c.legalRisk,
+          candidacyStatus: c.candidacyStatus,
+          digitalAgendaScore: c.digitalAgendaScore,
+          antiVote: c.antiVote,
+        };
+      });
+
+      const events: AlertEvent[] = [];
+      watchCandidates.forEach((c) => {
+        const p = prev[c.slug];
+        if (!p) return;
+
+        if (p.legalRisk !== c.legalRisk) {
+          events.push({
+            slug: c.slug,
+            name: c.name,
+            party: c.party,
+            metric: "riesgo legal",
+            from: p.legalRisk,
+            to: c.legalRisk,
+          });
+        }
+
+        if (p.candidacyStatus !== c.candidacyStatus) {
+          events.push({
+            slug: c.slug,
+            name: c.name,
+            party: c.party,
+            metric: "estado de candidatura",
+            from: p.candidacyStatus,
+            to: c.candidacyStatus,
+          });
+        }
+
+        if (p.digitalAgendaScore !== c.digitalAgendaScore) {
+          events.push({
+            slug: c.slug,
+            name: c.name,
+            party: c.party,
+            metric: "agenda digital",
+            from: String(p.digitalAgendaScore),
+            to: String(c.digitalAgendaScore),
+          });
+        }
+
+        if (p.antiVote !== c.antiVote) {
+          events.push({
+            slug: c.slug,
+            name: c.name,
+            party: c.party,
+            metric: "antivoto",
+            from: String(p.antiVote),
+            to: String(c.antiVote),
+          });
+        }
+      });
+
+      setAlertEvents(events);
+      window.localStorage.setItem(STORAGE_KEY_SNAPSHOT, JSON.stringify(next));
+    } catch {
+      // ignore
+    }
+  }, [watchSlugs]); // trigger cuando cambie watchlist
 
   return (
     <div className="space-y-6">
@@ -119,6 +211,34 @@ export default function WatchlistPanel() {
             </div>
           </div>
         )}
+
+        <div className="mt-4">
+          <div className="text-sm font-extrabold text-gray-900">Alertas (cambios detectados)</div>
+          {!watchCandidates.length ? (
+            <div className="mt-2 text-sm text-gray-600">
+              Agrega candidatos para habilitar el monitoreo.
+            </div>
+          ) : alertEvents.length ? (
+            <div className="mt-2 space-y-2 text-sm text-gray-700">
+              {alertEvents.map((e, idx) => (
+                <div key={`${e.slug}-${e.metric}-${idx}`} className="rounded-xl bg-white border border-gray-100 p-3">
+                  <div className="font-extrabold text-gray-900">
+                    {e.name}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">{e.party}</div>
+                  <div className="mt-2">
+                    {e.metric}: <span className="font-extrabold">{e.from}</span> →{" "}
+                    <span className="font-extrabold text-primary">{e.to}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-2 text-sm text-gray-600">
+              Sin cambios detectados en tus candidatos vigilados (snapshot actualizado).
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5">

@@ -220,3 +220,90 @@ export function scoreCandidateStrategic(
   };
 }
 
+function clamp(n: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, n));
+}
+
+function avgAbsDiff01(
+  a: Record<string, number>,
+  b: Record<string, number>,
+  keys: string[],
+) {
+  if (!keys.length) return 0;
+  const sum = keys.reduce((acc, k) => acc + Math.abs((a[k] ?? 0) - (b[k] ?? 0)), 0);
+  return sum / keys.length / 100; // as 0..1 when values are 0..100
+}
+
+export function transferIdeologicalAffinity(
+  pivot: Candidate2026ListItem,
+  rival: Candidate2026ListItem,
+) {
+  // Afinidad 0..1: proximidad en posiciones + continuidad + agenda digital.
+  const dims = ["economic", "social", "environment", "security", "institutional"];
+
+  const distance = avgAbsDiff01(
+    {
+      economic: pivot.positions.economic,
+      social: pivot.positions.social,
+      environment: pivot.positions.environment,
+      security: pivot.positions.security,
+      institutional: pivot.positions.institutional,
+    },
+    {
+      economic: rival.positions.economic,
+      social: rival.positions.social,
+      environment: rival.positions.environment,
+      security: rival.positions.security,
+      institutional: rival.positions.institutional,
+    },
+    dims,
+  );
+
+  const ideologicalAffinity = clamp01(1 - distance);
+
+  const continuityPivot = pivot.continuityBlock === "continuidad" ? 1 : pivot.continuityBlock === "mixto" ? 0 : -1;
+  const continuityRival = rival.continuityBlock === "continuidad" ? 1 : rival.continuityBlock === "mixto" ? 0 : -1;
+  const continuityDistance = Math.abs(continuityPivot - continuityRival) / 2; // 0..1
+  const continuityAffinity = clamp01(1 - continuityDistance);
+
+  const digitalDistance = Math.abs(pivot.digitalAgendaScore - rival.digitalAgendaScore) / 100; // 0..1
+  const digitalAffinity = clamp01(1 - digitalDistance);
+
+  const overallAffinity = clamp01(
+    ideologicalAffinity * 0.45 +
+      continuityAffinity * 0.3 +
+      digitalAffinity * 0.25,
+  );
+
+  return {
+    ideologicalAffinity,
+    continuityAffinity,
+    digitalAffinity,
+    overallAffinity,
+  };
+}
+
+export function transferCompatibilityScore(
+  pivot: Candidate2026ListItem,
+  rival: Candidate2026ListItem,
+  opts: {
+    continuityPreference: ContinuityPreference;
+    weights: SecondRoundWeights;
+  },
+) {
+  const affinity = transferIdeologicalAffinity(pivot, rival);
+  const pred = predictSecondRound(pivot, rival, {
+    continuityPreference: opts.continuityPreference,
+    weights: opts.weights,
+  });
+
+  const pPivotWins = pred.winnerSlug === pivot.slug ? pred.winnerProbability : 100 - pred.winnerProbability;
+  const overall = clamp01((pPivotWins / 100) * affinity.overallAffinity);
+
+  return {
+    affinity,
+    pPivotWins,
+    overallScore: overall, // 0..1
+  };
+}
+
