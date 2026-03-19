@@ -9,12 +9,16 @@ const navLinks = [
   { href: "/cedula", label: "Practica tu Voto", description: "Simulador de cédula oficial", hot: true },
   { href: "/candidatos", label: "36 Candidatos", description: "Perfiles completos verificados" },
   { href: "/comparador", label: "Comparador", description: "Compara candidatos lado a lado" },
+  { href: "/comparador-estrategico", label: "Comparador Estrategico", description: "Ranking por pesos (antivoto/tech)" },
   { href: "/encuestas", label: "Encuestas", description: "Datos en tiempo real" },
   { href: "/planes", label: "Planes", description: "Planes de gobierno oficiales" },
   { href: "/verificador", label: "Verificador", description: "Fact-checking con fuentes" },
   { href: "/desafio", label: "Desafío", description: "Quiz diario con XP y racha" },
   { href: "/academia", label: "Academia", description: "Aprende jugando" },
   { href: "/analisis-2026", label: "Análisis 2026", description: "Guía estratégica con datos" },
+  { href: "/segunda-vuelta", label: "Segunda Vuelta", description: "Simula balotaje con modelo" },
+  { href: "/radar-oportunidad", label: "Radar Tech", description: "Oportunidad de agenda digital" },
+  { href: "/watchlist", label: "Watchlist", description: "Guarda tus candidatos" },
 ];
 
 export function Header() {

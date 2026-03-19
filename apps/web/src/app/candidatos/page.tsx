@@ -9,6 +9,7 @@ import {
   INSIDER_INSIGHTS_2026,
   OFFICIAL_CANDIDATES_2026,
 } from "@/lib/data/candidates2026";
+import { ELECTION_CHESS_2026 } from "@/lib/data/electionChess2026";
 import { LiveSearchInput } from "@/components/ui/LiveSearchInput";
 
 type SortOption =
@@ -147,6 +148,43 @@ export default function CandidatosPage() {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5">
+          <h2 className="text-sm font-extrabold text-gray-900 mb-2">Tablero de Ajedrez 2026</h2>
+          <div className="text-sm text-gray-600 leading-relaxed mb-4">
+            Usa este bloque como mapa mental para interpretar decisiones bajo alta fragmentación.
+          </div>
+
+          <div className="space-y-3">
+            {ELECTION_CHESS_2026.map((sec) => (
+              <details
+                key={sec.title}
+                className="rounded-2xl border border-gray-100 bg-gray-50 p-4 group"
+              >
+                <summary className="cursor-pointer list-none">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-sm font-extrabold text-gray-900">{sec.title}</span>
+                    <span className="text-xs font-bold text-primary group-open:rotate-180 transition-transform">
+                      +/-
+                    </span>
+                  </div>
+                  {sec.summary && (
+                    <div className="text-sm text-gray-600 mt-2">{sec.summary}</div>
+                  )}
+                </summary>
+
+                {sec.body && <p className="mt-3 text-sm text-gray-700 leading-relaxed">{sec.body}</p>}
+                {sec.bullets && (
+                  <ul className="mt-3 space-y-1.5 text-sm text-gray-700 list-disc pl-5">
+                    {sec.bullets.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                )}
+              </details>
+            ))}
+          </div>
         </div>
 
         <div className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5">
@@ -298,6 +336,52 @@ export default function CandidatosPage() {
               showEnumeration={showEnumeration}
             />
           ))}
+        </div>
+      </section>
+
+      {/* Tooling quick access */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+        <div className="bg-gradient-to-r from-primary-50 via-white to-gold-50 border border-primary-100 rounded-2xl p-5 md:p-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <h2 className="text-lg font-extrabold text-gray-900">
+                Herramientas de decisión 2026
+              </h2>
+              <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                Transforma tu lectura del tablero en decisiones: simula segunda vuelta, compara por pesos, explora oportunidad tech y arma tu watchlist.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/segunda-vuelta"
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-600 text-white text-sm font-bold py-2.5 px-4 rounded-xl transition-colors"
+              >
+                Segunda vuelta
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                href="/comparador-estrategico"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:border-primary-200 hover:text-primary text-gray-900 text-sm font-bold py-2.5 px-4 rounded-xl transition-colors"
+              >
+                Comparador por pesos
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                href="/radar-oportunidad"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:border-primary-200 hover:text-primary text-gray-900 text-sm font-bold py-2.5 px-4 rounded-xl transition-colors"
+              >
+                Radar Tech
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                href="/watchlist"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 hover:border-primary-200 hover:text-primary text-gray-900 text-sm font-bold py-2.5 px-4 rounded-xl transition-colors"
+              >
+                Watchlist
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

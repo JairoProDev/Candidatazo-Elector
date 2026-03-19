@@ -79,12 +79,16 @@ export function Footer() {
                 <FooterLink href="/cedula" label="Practica tu Voto" />
                 <FooterLink href="/candidatos" label="36 Candidatos" />
                 <FooterLink href="/comparador" label="Comparador" />
+                <FooterLink href="/comparador-estrategico" label="Comparador Estrategico" />
                 <FooterLink href="/encuestas" label="Encuestas en Vivo" />
                 <FooterLink href="/planes" label="Planes de Gobierno" />
+                <FooterLink href="/segunda-vuelta" label="Segunda Vuelta" />
+                <FooterLink href="/radar-oportunidad" label="Radar Tech" />
                 <FooterLink href="/verificador" label="Verificador" />
                 <FooterLink href="/desafio" label="Desafío Diario" />
                 <FooterLink href="/test" label="ADN Completo" />
                 <FooterLink href="/academia" label="Academia Cívica" />
+                <FooterLink href="/watchlist" label="Watchlist" />
               </ul>
             </div>
 
