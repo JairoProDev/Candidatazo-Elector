@@ -1,276 +1,102 @@
+"use client";
+
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import { DIMENSION_CONFIG } from "@candidatazo/types";
 import type { Dimension } from "@candidatazo/types";
+import {
+  ELECTION_2026_CONTEXT,
+  INSIDER_INSIGHTS_2026,
+  OFFICIAL_CANDIDATES_2026,
+} from "@/lib/data/candidates2026";
+import { LiveSearchInput } from "@/components/ui/LiveSearchInput";
 
-// Candidate data - 24 candidates for Perú 2026 elections
-const CANDIDATES = [
-  {
-    slug: "keiko-fujimori",
-    name: "Keiko Fujimori",
-    party: "Fuerza Popular",
-    photo: "/candidates/keiko.jpg",
-    age: 50,
-    bio: "Lideresa de Fuerza Popular, hija de Alberto Fujimori. Tres veces candidata presidencial. Propone seguridad ciudadana, libre mercado y mano dura contra la delincuencia.",
-    positions: { economic: 72, social: 28, environment: 35, security: 85, institutional: 30 },
-    truthScore: 45,
-    promiseCount: 12,
-  },
-  {
-    slug: "antauro-humala",
-    name: "Antauro Humala",
-    party: "Frente Patriotico",
-    photo: "/candidates/antauro.jpg",
-    age: 61,
-    bio: "Exmilitar y lider etnocacerista. Estuvo preso por el Andahuaylazo. Propone nacionalización de recursos, pena de muerte y refundación del Estado.",
-    positions: { economic: 15, social: 20, environment: 40, security: 95, institutional: 90 },
-    truthScore: 30,
-    promiseCount: 8,
-  },
-  {
-    slug: "cesar-acuna",
-    name: "Cesar Acuna",
-    party: "Alianza para el Progreso",
-    photo: "/candidates/acuna.jpg",
-    age: 72,
-    bio: "Empresario y fundador de la Universidad Cesar Vallejo. Exgobernador de La Libertad. Propone educacion, empleo y obras publicas.",
-    positions: { economic: 60, social: 40, environment: 30, security: 55, institutional: 35 },
-    truthScore: 38,
-    promiseCount: 15,
-  },
-  {
-    slug: "daniel-urresti",
-    name: "Daniel Urresti",
-    party: "Podemos Perú",
-    photo: "/candidates/urresti.jpg",
-    age: 67,
-    bio: "General retirado del Ejercito. Enfocado en seguridad ciudadana y lucha contra el crimen. Propone mano dura y militarizacion.",
-    positions: { economic: 55, social: 35, environment: 30, security: 90, institutional: 40 },
-    truthScore: 42,
-    promiseCount: 10,
-  },
-  {
-    slug: "veronika-mendoza",
-    name: "Veronika Mendoza",
-    party: "Juntos por el Perú",
-    photo: "/candidates/mendoza.jpg",
-    age: 41,
-    bio: "Excongresista y politologa. Lideresa de la izquierda democratica. Propone nueva Constitucion, derechos sociales y protección ambiental.",
-    positions: { economic: 25, social: 82, environment: 85, security: 30, institutional: 88 },
-    truthScore: 55,
-    promiseCount: 18,
-  },
-  {
-    slug: "hernando-de-soto",
-    name: "Hernando de Soto",
-    party: "Avanza Pais",
-    photo: "/candidates/desoto.jpg",
-    age: 84,
-    bio: "Economista reconocido internacionalmente. Autor de 'El Misterio del Capital'. Propone formalizacion, derechos de propiedad y libre mercado.",
-    positions: { economic: 88, social: 55, environment: 45, security: 45, institutional: 65 },
-    truthScore: 52,
-    promiseCount: 9,
-  },
-  {
-    slug: "julio-guzman",
-    name: "Julio Guzman",
-    party: "Partido Morado",
-    photo: "/candidates/guzman.jpg",
-    age: 51,
-    bio: "Exfuncionario publico y tecnocrata. Lider del centro-liberal. Propone modernización del Estado, educación y tecnologia.",
-    positions: { economic: 65, social: 70, environment: 65, security: 40, institutional: 75 },
-    truthScore: 50,
-    promiseCount: 14,
-  },
-  {
-    slug: "george-forsyth",
-    name: "George Forsyth",
-    party: "Somos Perú",
-    photo: "/candidates/forsyth.jpg",
-    age: 43,
-    bio: "Exfutbolista y exalcalde de La Victoria. Enfocado en seguridad y gestion municipal. Propone orden, tecnologia y trabajo.",
-    positions: { economic: 58, social: 48, environment: 42, security: 70, institutional: 50 },
-    truthScore: 43,
-    promiseCount: 11,
-  },
-  {
-    slug: "rafael-lopez-aliaga",
-    name: "Rafael Lopez Aliaga",
-    party: "Renovación Popular",
-    photo: "/candidates/rla.jpg",
-    age: 62,
-    bio: "Empresario y actual alcalde de Lima. Conservador y religioso. Propone libre mercado, valores tradicionales y mano dura contra la delincuencia.",
-    positions: { economic: 82, social: 12, environment: 25, security: 88, institutional: 20 },
-    truthScore: 35,
-    promiseCount: 14,
-  },
-  {
-    slug: "carlos-ananos",
-    name: "Carlos Ananos",
-    party: "Perú Moderno",
-    photo: "/candidates/ananos.jpg",
-    age: 56,
-    bio: "Empresario fundador de Kola Real / AJE Group. Propone emprendimiento, innovación y apoyo a mypes con experiencia empresarial.",
-    positions: { economic: 78, social: 50, environment: 45, security: 50, institutional: 45 },
-    truthScore: 44,
-    promiseCount: 10,
-  },
-  {
-    slug: "pedro-castillo",
-    name: "Pedro Castillo",
-    party: "Perú Libre",
-    photo: "/candidates/castillo.jpg",
-    age: 55,
-    bio: "Expresidente del Perú (2021-2022). Maestro rural de Cajamarca. Propone nueva constitucion, asamblea constituyente y apoyo al agro.",
-    positions: { economic: 18, social: 35, environment: 55, security: 50, institutional: 95 },
-    truthScore: 25,
-    promiseCount: 8,
-  },
-  {
-    slug: "alberto-otarola",
-    name: "Alberto Otarola",
-    party: "Perú Primero",
-    photo: "/candidates/otarola.jpg",
-    age: 56,
-    bio: "Abogado y exprimer ministro. Enfocado en seguridad nacional, defensa y estabilidad institucional.",
-    positions: { economic: 62, social: 38, environment: 35, security: 78, institutional: 35 },
-    truthScore: 40,
-    promiseCount: 9,
-  },
-  {
-    slug: "yonhy-lescano",
-    name: "Yonhy Lescano",
-    party: "Acción Popular",
-    photo: "/candidates/lescano.jpg",
-    age: 64,
-    bio: "Excongresista por Puno. Abogado defensor de derechos del consumidor. Propone descentralización y defensa de los mas pobres.",
-    positions: { economic: 35, social: 55, environment: 60, security: 45, institutional: 70 },
-    truthScore: 42,
-    promiseCount: 13,
-  },
-  {
-    slug: "patricia-chirinos",
-    name: "Patricia Chirinos",
-    party: "Avanza Pais",
-    photo: "/candidates/chirinos.jpg",
-    age: 58,
-    bio: "Excongresista y exgobernadora del Callao. Enfocada en lucha anticorrupcion, seguridad y derechos de la mujer.",
-    positions: { economic: 68, social: 55, environment: 40, security: 72, institutional: 55 },
-    truthScore: 44,
-    promiseCount: 11,
-  },
-  {
-    slug: "flor-pablo",
-    name: "Flor Pablo",
-    party: "Juntos por el Perú",
-    photo: "/candidates/florpablo.jpg",
-    age: 58,
-    bio: "Educadora y excongresista. Exministra de Educacion. Propone reforma educativa integral, igualdad de genero y derechos sociales.",
-    positions: { economic: 35, social: 78, environment: 72, security: 28, institutional: 75 },
-    truthScore: 52,
-    promiseCount: 16,
-  },
-  {
-    slug: "jose-luna",
-    name: "Jose Luna",
-    party: "Podemos Perú",
-    photo: "/candidates/luna.jpg",
-    age: 56,
-    bio: "Empresario educativo y excongresista. Fundador de la Universidad Telesup. Propone educación tecnica y empleo juvenil.",
-    positions: { economic: 65, social: 35, environment: 28, security: 55, institutional: 30 },
-    truthScore: 32,
-    promiseCount: 9,
-  },
-  {
-    slug: "marco-arana",
-    name: "Marco Arana",
-    party: "Frente Amplio",
-    photo: "/candidates/arana.jpg",
-    age: 64,
-    bio: "Sacerdote y ambientalista de Cajamarca. Lider en la defensa del agua y contra la mineria contaminante. Propone protección ambiental radical.",
-    positions: { economic: 20, social: 75, environment: 95, security: 25, institutional: 82 },
-    truthScore: 50,
-    promiseCount: 12,
-  },
-  {
-    slug: "roberto-sanchez",
-    name: "Roberto Sanchez",
-    party: "Juntos por el Perú",
-    photo: "/candidates/sanchez.jpg",
-    age: 58,
-    bio: "Empresario turistico y exministro de Comercio Exterior. Propone turismo como motor economico y descentralización productiva.",
-    positions: { economic: 45, social: 55, environment: 65, security: 40, institutional: 60 },
-    truthScore: 40,
-    promiseCount: 10,
-  },
-  {
-    slug: "luis-arce",
-    name: "Luis Arce",
-    party: "Perú Patria Segura",
-    photo: "/candidates/arce.jpg",
-    age: 58,
-    bio: "Militar retirado. Especialista en seguridad y defensa nacional. Propone militarizar la lucha contra el narcotrafico.",
-    positions: { economic: 50, social: 25, environment: 30, security: 92, institutional: 35 },
-    truthScore: 38,
-    promiseCount: 7,
-  },
-  {
-    slug: "alejandro-toledo",
-    name: "Alejandro Toledo",
-    party: "Perú Posible",
-    photo: "/candidates/toledo.jpg",
-    age: 80,
-    bio: "Expresidente del Perú (2001-2006). Economista formado en Stanford. Propone inversion en infraestructura y educacion.",
-    positions: { economic: 70, social: 58, environment: 48, security: 42, institutional: 55 },
-    truthScore: 28,
-    promiseCount: 11,
-  },
-  {
-    slug: "ricardo-belmont",
-    name: "Ricardo Belmont",
-    party: "Perú en Accion",
-    photo: "/candidates/belmont.jpg",
-    age: 80,
-    bio: "Comunicador y exalcalde de Lima. Figura mediatica. Propone obras publicas, empleo directo y comunicación con el pueblo.",
-    positions: { economic: 55, social: 30, environment: 32, security: 60, institutional: 40 },
-    truthScore: 30,
-    promiseCount: 8,
-  },
-  {
-    slug: "sigrid-bazan",
-    name: "Sigrid Bazan",
-    party: "Cambio Democratico",
-    photo: "/candidates/bazan.jpg",
-    age: 31,
-    bio: "Excongresista y periodista. La candidata mas joven. Propone derechos laborales, igualdad de genero y reforma politica.",
-    positions: { economic: 30, social: 85, environment: 78, security: 30, institutional: 80 },
-    truthScore: 48,
-    promiseCount: 15,
-  },
-  {
-    slug: "jose-vega",
-    name: "Jose Vega",
-    party: "Union por el Perú",
-    photo: "/candidates/vega.jpg",
-    age: 62,
-    bio: "Excongresista y lider de UPP. Vinculado al etnocacerismo. Propone nacionalismo y reivindicación del Perú profundo.",
-    positions: { economic: 22, social: 25, environment: 45, security: 80, institutional: 85 },
-    truthScore: 30,
-    promiseCount: 7,
-  },
-  {
-    slug: "martin-vizcarra",
-    name: "Martin Vizcarra",
-    party: "Perú Primero",
-    photo: "/candidates/vizcarra.jpg",
-    age: 63,
-    bio: "Expresidente del Perú (2018-2020). Ingeniero de Moquegua. Propone lucha anticorrupcion, reforma politica y descentralizacion.",
-    positions: { economic: 58, social: 55, environment: 55, security: 50, institutional: 72 },
-    truthScore: 45,
-    promiseCount: 13,
-  },
-];
+type SortOption =
+  | "rank"
+  | "name-asc"
+  | "name-desc"
+  | "party-asc"
+  | "truth-desc"
+  | "antivote-asc"
+  | "digital-desc";
+
+type ContinuityFilter = "all" | "continuidad" | "disrupcion" | "mixto";
+type LegalRiskFilter = "all" | "bajo" | "medio" | "alto";
+type StatusFilter = "all" | "estable" | "incierta";
 
 export default function CandidatosPage() {
+  const [query, setQuery] = useState("");
+  const [sortBy, setSortBy] = useState<SortOption>("rank");
+  const [showEnumeration, setShowEnumeration] = useState(true);
+  const [continuityFilter, setContinuityFilter] = useState<ContinuityFilter>("all");
+  const [legalRiskFilter, setLegalRiskFilter] = useState<LegalRiskFilter>("all");
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
+  const [maxAntiVote, setMaxAntiVote] = useState(100);
+  const [minDigitalScore, setMinDigitalScore] = useState(0);
+
+  const filtered = useMemo(
+    () =>
+      OFFICIAL_CANDIDATES_2026.filter((candidate) => {
+        const q = query.trim().toLowerCase();
+        const matchesQuery =
+          !q ||
+          candidate.name.toLowerCase().includes(q) ||
+          candidate.party.toLowerCase().includes(q);
+
+        const matchesContinuity =
+          continuityFilter === "all" || candidate.continuityBlock === continuityFilter;
+        const matchesRisk = legalRiskFilter === "all" || candidate.legalRisk === legalRiskFilter;
+        const matchesStatus =
+          statusFilter === "all" || candidate.candidacyStatus === statusFilter;
+        const matchesAntiVote = candidate.antiVote <= maxAntiVote;
+        const matchesDigital = candidate.digitalAgendaScore >= minDigitalScore;
+
+        return (
+          matchesQuery &&
+          matchesContinuity &&
+          matchesRisk &&
+          matchesStatus &&
+          matchesAntiVote &&
+          matchesDigital
+        );
+      }),
+    [
+      continuityFilter,
+      legalRiskFilter,
+      maxAntiVote,
+      minDigitalScore,
+      query,
+      statusFilter,
+    ],
+  );
+
+  const sorted = useMemo(
+    () =>
+      [...filtered].sort((a, b) => {
+        if (sortBy === "rank") return a.rank - b.rank;
+        if (sortBy === "name-asc") return a.name.localeCompare(b.name);
+        if (sortBy === "name-desc") return b.name.localeCompare(a.name);
+        if (sortBy === "party-asc") return a.party.localeCompare(b.party);
+        if (sortBy === "antivote-asc") return a.antiVote - b.antiVote;
+        if (sortBy === "digital-desc") return b.digitalAgendaScore - a.digitalAgendaScore;
+        return b.truthScore - a.truthScore;
+      }),
+    [filtered, sortBy],
+  );
+
+  const strategicStats = useMemo(() => {
+    const unstable = OFFICIAL_CANDIDATES_2026.filter((c) => c.candidacyStatus === "incierta").length;
+    const continuity = OFFICIAL_CANDIDATES_2026.filter((c) => c.continuityBlock === "continuidad").length;
+    const disruption = OFFICIAL_CANDIDATES_2026.filter((c) => c.continuityBlock === "disrupcion").length;
+    const avgDigital =
+      Math.round(
+        (OFFICIAL_CANDIDATES_2026.reduce((acc, c) => acc + c.digitalAgendaScore, 0) /
+          OFFICIAL_CANDIDATES_2026.length) *
+          10,
+      ) / 10;
+    return { unstable, continuity, disruption, avgDigital };
+  }, []);
+
   return (
     <div className="min-h-[calc(100vh-64px)] bg-gray-50">
       {/* Header */}
@@ -281,19 +107,196 @@ export default function CandidatosPage() {
               Candidatos Presidenciales 2026
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed">
-              Conoce las posiciones politicas de cada candidato en 5
-              dimensiones. Compara sus propuestas, verifica sus datos y
-              encuentra tu match.
+              Oferta oficial consolidada al {ELECTION_2026_CONTEXT.dateLabel}. Analiza la
+              fragmentacion, filtra por riesgo y detecta oportunidades de segunda vuelta.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-4">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <ContextCard
+            title="Fragmentacion Historica"
+            value={`${ELECTION_2026_CONTEXT.totalCandidates} candidaturas`}
+            note={ELECTION_2026_CONTEXT.fragmentationNote}
+          />
+          <ContextCard
+            title="Bicameralidad"
+            value={`${ELECTION_2026_CONTEXT.bicameralSeats.senate} Senado + ${ELECTION_2026_CONTEXT.bicameralSeats.deputies} Diputados`}
+            note="La estrategia presidencial y congresal se desacopla por primera vez en tres decadas."
+          />
+          <ContextCard
+            title="Valla Electoral"
+            value={`${ELECTION_2026_CONTEXT.electoralThreshold.votePercent}% o ${ELECTION_2026_CONTEXT.electoralThreshold.congressionalSeats} escanos`}
+            note="Se anticipa una masacre de partidos tras la primera vuelta."
+          />
+          <ContextCard
+            title="Cisne Negro"
+            value="Ultima semana decisiva"
+            note={ELECTION_2026_CONTEXT.blackSwanNote}
+          />
+        </div>
+
+        <div className="bg-gradient-to-r from-primary-50 to-white border border-primary-100 rounded-2xl p-4 md:p-5">
+          <h2 className="text-sm font-extrabold text-gray-900 mb-2">Lectura avanzada (Insider)</h2>
+          <ul className="grid gap-2 md:grid-cols-2 text-sm text-gray-700">
+            {INSIDER_INSIGHTS_2026.map((insight) => (
+              <li key={insight} className="bg-white border border-gray-100 rounded-xl px-3 py-2">
+                {insight}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-4 md:p-5">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <LiveSearchInput
+              id="candidate-search"
+              label="Buscar candidato o partido"
+              placeholder="Ej: Keiko, APP, Renovacion Popular..."
+              value={query}
+              onChange={setQuery}
+              onClear={() => setQuery("")}
+            />
+
+            <div>
+              <label className="text-sm font-bold text-gray-900" htmlFor="candidate-sort">
+                Ordenar por
+              </label>
+              <select
+                id="candidate-sort"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as SortOption)}
+                className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-primary-200"
+              >
+                <option value="rank">Orden oficial (#)</option>
+                <option value="name-asc">Nombre (A-Z)</option>
+                <option value="name-desc">Nombre (Z-A)</option>
+                <option value="party-asc">Partido (A-Z)</option>
+                <option value="truth-desc">Veracidad (mayor a menor)</option>
+                <option value="antivote-asc">Antivoto (menor a mayor)</option>
+                <option value="digital-desc">Agenda digital (mayor a menor)</option>
+              </select>
+            </div>
+
+            <SelectFilter
+              id="continuity-filter"
+              label="Continuidad vs Disrupcion"
+              value={continuityFilter}
+              onChange={(value) => setContinuityFilter(value as ContinuityFilter)}
+              options={[
+                { value: "all", label: "Todos" },
+                { value: "continuidad", label: "Continuidad" },
+                { value: "disrupcion", label: "Disrupcion" },
+                { value: "mixto", label: "Mixto" },
+              ]}
+            />
+
+            <SelectFilter
+              id="risk-filter"
+              label="Riesgo legal"
+              value={legalRiskFilter}
+              onChange={(value) => setLegalRiskFilter(value as LegalRiskFilter)}
+              options={[
+                { value: "all", label: "Todos" },
+                { value: "bajo", label: "Bajo" },
+                { value: "medio", label: "Medio" },
+                { value: "alto", label: "Alto" },
+              ]}
+            />
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3 mt-4">
+            <SelectFilter
+              id="status-filter"
+              label="Estado de candidatura"
+              value={statusFilter}
+              onChange={(value) => setStatusFilter(value as StatusFilter)}
+              options={[
+                { value: "all", label: "Todos" },
+                { value: "estable", label: "Estable" },
+                { value: "incierta", label: "Incierta" },
+              ]}
+            />
+
+            <RangeFilter
+              id="antivote-filter"
+              label={`Antivoto maximo: ${maxAntiVote}%`}
+              value={maxAntiVote}
+              min={0}
+              max={100}
+              onChange={setMaxAntiVote}
+            />
+
+            <RangeFilter
+              id="digital-filter"
+              label={`Agenda digital minima: ${minDigitalScore}`}
+              value={minDigitalScore}
+              min={0}
+              max={100}
+              onChange={setMinDigitalScore}
+            />
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <label className="inline-flex items-center gap-2 text-sm text-gray-700 select-none">
+              <input
+                type="checkbox"
+                checked={showEnumeration}
+                onChange={(e) => setShowEnumeration(e.target.checked)}
+              />
+              Mostrar numeracion
+            </label>
+            <button
+              type="button"
+              onClick={() => {
+                setQuery("");
+                setSortBy("rank");
+                setShowEnumeration(true);
+                setContinuityFilter("all");
+                setLegalRiskFilter("all");
+                setStatusFilter("all");
+                setMaxAntiVote(100);
+                setMinDigitalScore(0);
+              }}
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              Limpiar todos los filtros
+            </button>
+          </div>
+
+          <p className="mt-3 text-sm text-gray-600">
+            Mostrando <span className="font-bold text-gray-900">{sorted.length}</span> de{" "}
+            <span className="font-bold text-gray-900">{OFFICIAL_CANDIDATES_2026.length}</span> candidatos.
+          </p>
+
+          <div className="mt-3 text-xs text-gray-500">
+            Continuidad: <span className="font-semibold">{strategicStats.continuity}</span> | Disrupcion:{" "}
+            <span className="font-semibold">{strategicStats.disruption}</span> | Candidaturas inciertas:{" "}
+            <span className="font-semibold">{strategicStats.unstable}</span> | Promedio agenda digital:{" "}
+            <span className="font-semibold">{strategicStats.avgDigital}</span>
           </div>
         </div>
       </section>
 
       {/* Candidates grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {sorted.length === 0 && (
+          <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center mb-6">
+            <h3 className="text-lg font-extrabold text-gray-900">Sin resultados con esos filtros</h3>
+            <p className="text-sm text-gray-600 mt-2">
+              Prueba bajar el antivoto maximo, reducir la agenda digital minima o limpiar filtros.
+            </p>
+          </div>
+        )}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {CANDIDATES.map((candidate) => (
-            <CandidateCard key={candidate.slug} candidate={candidate} />
+          {sorted.map((candidate) => (
+            <CandidateCard
+              key={candidate.slug}
+              candidate={candidate}
+              showEnumeration={showEnumeration}
+            />
           ))}
         </div>
       </section>
@@ -307,19 +310,107 @@ export default function CandidatosPage() {
           <p className="text-gray-500 mb-6">
             Completa el ADN Test para comparar tu perfil con todos los candidatos.
           </p>
-          <Link href="/test" className="btn-primary">
-            Hacer el ADN Test
-          </Link>
+          <div className="flex flex-wrap justify-center gap-2">
+            <Link href="/test" className="btn-primary">
+              Hacer el ADN Test
+            </Link>
+            <Link
+              href="/analisis-2026"
+              className="inline-flex items-center justify-center gap-2 bg-white border border-primary-200 hover:border-primary-300 text-gray-900 text-sm font-bold py-2.5 px-4 rounded-xl transition-colors"
+            >
+              Ver radar estrategico 2026
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
   );
 }
 
+function ContextCard({ title, value, note }: { title: string; value: string; note: string }) {
+  return (
+    <div className="bg-white border border-gray-100 rounded-2xl p-4">
+      <div className="text-xs font-extrabold uppercase tracking-wide text-primary">{title}</div>
+      <div className="mt-1 text-lg font-extrabold text-gray-900">{value}</div>
+      <div className="mt-1 text-sm text-gray-600 leading-relaxed">{note}</div>
+    </div>
+  );
+}
+
+function SelectFilter({
+  id,
+  label,
+  value,
+  onChange,
+  options,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: { value: string; label: string }[];
+}) {
+  return (
+    <div>
+      <label className="text-sm font-bold text-gray-900" htmlFor={id}>
+        {label}
+      </label>
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="mt-2 w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-primary-200"
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+function RangeFilter({
+  id,
+  label,
+  value,
+  min,
+  max,
+  onChange,
+}: {
+  id: string;
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  onChange: (value: number) => void;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="text-sm font-bold text-gray-900">
+        {label}
+      </label>
+      <input
+        id={id}
+        type="range"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="mt-3 w-full accent-primary"
+      />
+    </div>
+  );
+}
+
 function CandidateCard({
   candidate,
+  showEnumeration,
 }: {
-  candidate: (typeof CANDIDATES)[0];
+  candidate: (typeof OFFICIAL_CANDIDATES_2026)[0];
+  showEnumeration: boolean;
 }) {
   const dimensions: { key: string; dimension: Dimension }[] = [
     { key: "economic", dimension: "ECONOMIC" },
@@ -334,6 +425,14 @@ function CandidateCard({
       href={`/candidatos/${candidate.slug}`}
       className="card group p-5 cursor-pointer"
     >
+      {showEnumeration && (
+        <div className="mb-3">
+          <span className="inline-flex items-center rounded-full bg-primary-50 border border-primary-100 text-primary text-xs font-extrabold px-2.5 py-1">
+            #{candidate.rank}
+          </span>
+        </div>
+      )}
+
       {/* Photo + Name */}
       <div className="flex items-center gap-4 mb-4">
         <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
@@ -346,6 +445,23 @@ function CandidateCard({
             {candidate.name}
           </h3>
           <p className="text-sm text-gray-500 truncate">{candidate.party}</p>
+          <div className="mt-1 flex flex-wrap gap-1.5">
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-700">
+              {candidate.continuityBlock}
+            </span>
+            <span
+              className={[
+                "text-[10px] px-2 py-0.5 rounded-full",
+                candidate.legalRisk === "alto"
+                  ? "bg-red-50 text-red-700"
+                  : candidate.legalRisk === "medio"
+                    ? "bg-amber-50 text-amber-700"
+                    : "bg-emerald-50 text-emerald-700",
+              ].join(" ")}
+            >
+              riesgo {candidate.legalRisk}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -400,9 +516,11 @@ function CandidateCard({
 
       {/* Footer */}
       <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
-        <span className="text-xs text-gray-400">
-          {candidate.promiseCount} propuestas
-        </span>
+        <div className="text-xs text-gray-400">
+          <div>{candidate.promiseCount} propuestas</div>
+          <div>antivoto: {candidate.antiVote}%</div>
+          <div>agenda digital: {candidate.digitalAgendaScore}/100</div>
+        </div>
         <span className="text-xs font-medium text-primary group-hover:underline">
           Ver perfil
         </span>

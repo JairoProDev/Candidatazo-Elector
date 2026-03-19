@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type React from "react";
 import type { AnalisisSection } from "@/lib/analisis-2026/parseDoc";
 import { trackAnalysis2026EventDev } from "@/lib/analytics/analysis2026";
+import { LiveSearchInput } from "@/components/ui/LiveSearchInput";
 
 const STORAGE_KEY_LAST_SECTION = "analisis2026:lastSectionId";
 const STORAGE_KEY_LAST_PROGRESS = "analisis2026:lastProgress";
@@ -655,31 +656,17 @@ export default function Analisis2026Client({ sections }: { sections: AnalisisSec
             <section className="mb-8 bg-white border border-gray-100 rounded-2xl p-4">
               <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
                 <div className="flex-1">
-                  <label className="text-sm font-bold text-gray-900" htmlFor="analysis-search">
-                    Buscar en esta guía
-                  </label>
-                  <div className="mt-2 flex items-center gap-2">
-                    <input
-                      id="analysis-search"
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      placeholder="Ej: seguridad, minería, pobreza, verificador..."
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 text-sm outline-none focus:ring-2 focus:ring-primary-200"
-                    />
-                    {query.trim() && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setQuery("");
-                          setOnlyMatches(true);
-                        }}
-                        className="px-3 py-2 rounded-xl bg-white border border-gray-200 hover:border-primary-200 hover:text-primary transition-colors"
-                        aria-label="Limpiar búsqueda"
-                      >
-                        Limpiar
-                      </button>
-                    )}
-                  </div>
+                  <LiveSearchInput
+                    id="analysis-search"
+                    label="Buscar en esta guia"
+                    placeholder="Ej: seguridad, mineria, pobreza, verificador..."
+                    value={query}
+                    onChange={setQuery}
+                    onClear={() => {
+                      setQuery("");
+                      setOnlyMatches(true);
+                    }}
+                  />
                 </div>
 
                 <div className="flex items-center gap-4">

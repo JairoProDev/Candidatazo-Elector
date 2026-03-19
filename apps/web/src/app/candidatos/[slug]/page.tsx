@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { DIMENSION_CONFIG, VERDICT_CONFIG } from "@candidatazo/types";
 import type { Dimension, VerdictType } from "@candidatazo/types";
+import { OFFICIAL_CANDIDATES_2026 } from "@/lib/data/candidates2026";
 
 // Full candidate data
 const CANDIDATES_DETAIL: Record<string, {
@@ -170,13 +171,64 @@ const BASIC_CANDIDATES: Record<string, { name: string; party: string; age: numbe
 
 const ALL_CANDIDATES = { ...CANDIDATES_DETAIL, ...BASIC_CANDIDATES };
 
+const OFFICIAL_FALLBACK = Object.fromEntries(
+  OFFICIAL_CANDIDATES_2026.map((candidate) => [
+    candidate.slug,
+    {
+      name: candidate.name,
+      party: candidate.party,
+      age: candidate.age,
+      bio: `${candidate.name} es candidato(a) presidencial 2026 por ${candidate.party}. Este perfil se encuentra en modo resumen mientras se publica la ficha completa editorial.`,
+      positions: candidate.positions,
+      truthScore: candidate.truthScore,
+      planSummary: `Resumen ejecutivo del plan de gobierno de ${candidate.name}. Enfasis en economia (${candidate.positions.economic}/100), seguridad (${candidate.positions.security}/100) e institucionalidad (${candidate.positions.institutional}/100).`,
+      promises: [
+        {
+          title: "Publicar plan detallado y cronograma",
+          description: "Se incorporara el plan completo con hitos y fuentes oficiales verificables.",
+          category: "INSTITUTIONAL",
+          status: "PENDING",
+        },
+        {
+          title: "Metas en seguridad y economia",
+          description: "Se detallaran metas anuales con indicadores para seguimiento ciudadano.",
+          category: "GOVERNANCE",
+          status: "PENDING",
+        },
+      ],
+      factChecks: [
+        {
+          claim: "Perfil en construccion con fuentes oficiales",
+          verdict: "MISLEADING" as VerdictType,
+          explanation: "Este perfil ya figura en el listado oficial de candidatos y se ira enriqueciendo progresivamente con verificaciones.",
+        },
+      ],
+    },
+  ]),
+) as Record<
+  string,
+  {
+    name: string;
+    party: string;
+    age: number;
+    bio: string;
+    positions: Record<string, number>;
+    truthScore: number;
+    planSummary: string;
+    promises: { title: string; description: string; category: string; status: string }[];
+    factChecks: { claim: string; verdict: VerdictType; explanation: string }[];
+  }
+>;
+
+const CANDIDATE_REGISTRY = { ...OFFICIAL_FALLBACK, ...ALL_CANDIDATES };
+
 interface CandidatePageProps {
   params: Promise<{ slug: string }>;
 }
 
 export default async function CandidatePage({ params }: CandidatePageProps) {
   const { slug } = await params;
-  const candidate = ALL_CANDIDATES[slug];
+  const candidate = CANDIDATE_REGISTRY[slug];
 
   if (!candidate) {
     notFound();
