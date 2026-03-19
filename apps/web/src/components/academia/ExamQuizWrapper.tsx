@@ -2,6 +2,8 @@
 
 import { Question } from "@/app/academia/types";
 import LessonQuizRenderer from "./LessonQuizRenderer";
+import { useGamificationStore } from "@/lib/gamification";
+import { useMemo } from "react";
 
 interface ExamQuizWrapperProps {
     questions: Question[];
@@ -10,6 +12,19 @@ interface ExamQuizWrapperProps {
 }
 
 export default function ExamQuizWrapper({ questions, courseTitle, xp }: ExamQuizWrapperProps) {
+    const addXP = useGamificationStore((s) => s.addXP);
+    const incrementStat = useGamificationStore((s) => s.incrementStat);
+
+    const totalQuestions = useMemo(() => questions.length, [questions.length]);
+    const completionKey = useMemo(
+        () => `candidatazo-academia:completed-exams:${encodeURIComponent(courseTitle)}`,
+        [courseTitle],
+    );
+    const awardedKey = useMemo(
+        () => `candidatazo-academia:awarded-exam-xp:${encodeURIComponent(courseTitle)}`,
+        [courseTitle],
+    );
+
     return (
         <main className="max-w-2xl mx-auto px-4 py-12">
             <div className="text-center mb-10">
@@ -22,8 +37,30 @@ export default function ExamQuizWrapper({ questions, courseTitle, xp }: ExamQuiz
             <LessonQuizRenderer
                 questions={questions}
                 onComplete={(score) => {
-                    console.log(`Final Exam for ${courseTitle} Completed with score:`, score);
-                    // TODO: call API to save progress / awarded XP
+                    // Save progress locally & award XP once per exam completion.
+                    if (typeof window === "undefined") return;
+
+                    try {
+                        const alreadyAwarded = window.localStorage.getItem(awardedKey) === "1";
+
+                        const completedAt = new Date().toISOString();
+                        const percentage =
+                            totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
+
+                        window.localStorage.setItem(
+                            completionKey,
+                            JSON.stringify({ completedAt, score, percentage }),
+                        );
+
+                        if (!alreadyAwarded) {
+                            addXP(xp, `Academia: examen final - ${courseTitle}`);
+                            // We reuse the "academiaLessonsCompleted" stat to unlock academia-related achievements.
+                            incrementStat("academiaLessonsCompleted");
+                            window.localStorage.setItem(awardedKey, "1");
+                        }
+                    } catch {
+                        // If localStorage is blocked, we still want the UX to complete; XP notification might fail silently.
+                    }
                 }}
             />
         </main>

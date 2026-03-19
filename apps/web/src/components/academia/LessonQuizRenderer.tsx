@@ -26,18 +26,11 @@ export default function LessonQuizRenderer({ questions, onComplete }: LessonQuiz
     const handleCheck = () => {
         if (selectedOption === null) return;
         setIsChecked(true);
-        if (selectedOption === currentQuestion.correctAnswer) {
-            setScore(score + 1);
-        }
+        if (selectedOption === currentQuestion.correctAnswer) setScore((s) => s + 1);
     };
 
     const handleNext = () => {
         if (isLastQuestion) {
-            onComplete(score + (selectedOption === currentQuestion.correctAnswer ? 0 : 0)); // Score already updated? No, wait.
-            // If I just checked and it was correct, score is already updated.
-            // However, onComplete should probably receive the final score.
-            // My score update logic is: click Check -> update score state.
-            // So 'score' is current.
             onComplete(score);
         } else {
             setCurrentQuestionIndex(currentQuestionIndex + 1);

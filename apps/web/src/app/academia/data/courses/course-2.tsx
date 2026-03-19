@@ -108,7 +108,79 @@ Para obtener representación en el Congreso, los partidos deben:
 O alternativamente:
 - **Senado:** Mínimo 3 senadores electos
 - **Diputados:** Mínimo 7 diputados electos`,
-            // TODO: Generate quiz questions for this lesson
+            quiz: {
+                title: "Quiz: ¿Cómo se cuentan los votos?",
+                questions: [
+                    {
+                        id: 1,
+                        question: "¿Qué sistema usa Perú para asignar escaños parlamentarios?",
+                        options: [
+                            "Mayoría simple",
+                            "Cifra repartidora (método D'Hondt)",
+                            "Votación por sorteo",
+                            "Reparto proporcional por intuición",
+                        ],
+                        correctAnswer: 1,
+                        explanation: "El contenido del curso explica que el reparto se hace con la cifra repartidora (D'Hondt).",
+                    },
+                    {
+                        id: 2,
+                        question: "En D'Hondt, ¿cómo se generan los cocientes?",
+                        options: [
+                            "Dividiendo los votos entre 1, 2, 3, 4... hasta cubrir los escaños",
+                            "Dividiendo los votos solo entre 2",
+                            "Multiplicando los votos por 1, 2, 3...",
+                            "Sumando votos hasta llegar a 100%",
+                        ],
+                        correctAnswer: 0,
+                        explanation: "El proceso indicado es: dividir entre 1, 2, 3, 4... hasta el número de escaños disponibles.",
+                    },
+                    {
+                        id: 3,
+                        question: "Según el curso, ¿cómo se ordenan los cocientes?",
+                        options: [
+                            "De menor a mayor",
+                            "De mayor a menor",
+                            "No se ordenan",
+                            "Se ordenan solo por el partido más grande",
+                        ],
+                        correctAnswer: 1,
+                        explanation: "Se ordenan de mayor a menor para decidir qué partidos obtienen escaños.",
+                    },
+                    {
+                        id: 4,
+                        question: "Para partidos solos, ¿qué umbral de votos válidos se exige?",
+                        options: ["4%", "5%", "6%", "7%"],
+                        correctAnswer: 1,
+                        explanation: "El curso indica que los partidos solos requieren 5% de votos válidos nacionales.",
+                    },
+                    {
+                        id: 5,
+                        question: "Para alianzas, ¿qué umbral y ajuste aplica?",
+                        options: [
+                            "5% sin ajustes",
+                            "6% + 1% por cada partido adicional de la alianza",
+                            "7% fijo para todas las alianzas",
+                            "No hay umbral para alianzas",
+                        ],
+                        correctAnswer: 1,
+                        explanation: "El curso indica 6% para alianzas y, además, +1% por cada partido adicional en la alianza.",
+                    },
+                    {
+                        id: 6,
+                        question: "¿Cuál es el criterio alternativo para obtener representación según el curso?",
+                        options: [
+                            "Senado mínimo 2 senadores o Diputados mínimo 3",
+                            "Senado mínimo 3 senadores o Diputados mínimo 7",
+                            "Senado mínimo 5 senadores y Diputados mínimo 5",
+                            "Ninguna: solo aplica el 5% y 6%",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "El curso menciona explícitamente como alternativa: Senado mínimo 3 senadores electos o Diputados mínimo 7 diputados electos.",
+                    },
+                ],
+            },
         },
         {
             id: "l3",
