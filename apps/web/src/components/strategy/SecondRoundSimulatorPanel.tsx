@@ -14,6 +14,11 @@ import { useLocalStorageState } from "@/components/hooks/useLocalStorageState";
 
 const WATCHLIST_KEY = "candidatos2026:watchlist";
 
+type SecondRoundSimulatorPanelProps = {
+  initialASlug?: string;
+  initialBSlug?: string;
+};
+
 function Select({
   id,
   label,
@@ -128,9 +133,19 @@ function ProgressBar({ value, label }: { value: number; label: string }) {
   );
 }
 
-export default function SecondRoundSimulatorPanel() {
-  const [aSlug, setASlug] = useState(OFFICIAL_CANDIDATES_2026[0]?.slug ?? "");
-  const [bSlug, setBSlug] = useState(OFFICIAL_CANDIDATES_2026[1]?.slug ?? "");
+export default function SecondRoundSimulatorPanel({
+  initialASlug,
+  initialBSlug,
+}: SecondRoundSimulatorPanelProps) {
+  const defaultASlug = OFFICIAL_CANDIDATES_2026[0]?.slug ?? "";
+  const defaultBSlug = OFFICIAL_CANDIDATES_2026[1]?.slug ?? "";
+
+  const [aSlug, setASlug] = useState(
+    initialASlug ?? defaultASlug,
+  );
+  const [bSlug, setBSlug] = useState(
+    initialBSlug ?? defaultBSlug,
+  );
 
   const [watchSlugs] = useLocalStorageState<string[]>(WATCHLIST_KEY, []);
 
@@ -198,7 +213,17 @@ export default function SecondRoundSimulatorPanel() {
   ];
 
   useEffect(() => {
+    if (typeof initialASlug === "string") {
+      setASlug(initialASlug);
+    }
+    if (typeof initialBSlug === "string") {
+      setBSlug(initialBSlug);
+    }
+  }, [initialASlug, initialBSlug]);
+
+  useEffect(() => {
     // Si el usuario ya tiene watchlist y el simulador está en un estado inicial, sugerimos autocompletar.
+    if (typeof initialASlug === "string" || typeof initialBSlug === "string") return;
     if (watchSlugs.length < 2) return;
 
     // Si el usuario no tocó todavía, usamos los dos primeros guardados.
@@ -209,7 +234,7 @@ export default function SecondRoundSimulatorPanel() {
       setBSlug(watchSlugs[1]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [watchSlugs, aSlug, bSlug, initialASlug, initialBSlug]);
 
   return (
     <div className="space-y-6">
