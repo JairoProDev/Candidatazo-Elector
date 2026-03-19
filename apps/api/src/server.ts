@@ -10,7 +10,9 @@ import { matchRoutes } from "./routes/matches.js";
 import { userRoutes } from "./routes/users.js";
 import { healthRoutes } from "./routes/health.js";
 
-const PORT = parseInt(process.env.PORT || "3001", 10);
+// Default API port is kept away from Next's common dev ports to avoid races when
+// turborepo starts both apps concurrently. Override with PORT=... if desired.
+const PORT = parseInt(process.env.PORT || "4000", 10);
 const HOST = process.env.HOST || "0.0.0.0";
 
 async function buildServer() {
@@ -68,6 +70,19 @@ async function buildServer() {
     });
   });
 
+  // Base routes (avoid noisy 404s when someone hits API port in a browser)
+  app.get("/", async () => {
+    return {
+      success: true,
+      service: "candidatazo-api",
+      version: "v1",
+    };
+  });
+
+  app.get("/favicon.ico", async (_request, reply) => {
+    reply.status(204).send();
+  });
+
   // Register routes
   await app.register(healthRoutes, { prefix: "/api/v1" });
   await app.register(userRoutes, { prefix: "/api/v1/users" });
@@ -82,8 +97,26 @@ async function buildServer() {
 async function start() {
   try {
     const app = await buildServer();
-    await app.listen({ port: PORT, host: HOST });
-    app.log.info(`Candidatazo API running on http://${HOST}:${PORT}`);
+    const maxAttempts = parseInt(process.env.PORT_SCAN_ATTEMPTS || "25", 10);
+    let port = PORT;
+
+    for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+      try {
+        // eslint-disable-next-line no-await-in-loop
+        await app.listen({ port, host: HOST });
+        app.log.info(`Candidatazo API running on http://${HOST}:${port}`);
+        return;
+      } catch (err) {
+        const e = err as { code?: string };
+        if (e?.code === "EADDRINUSE") {
+          port += 1;
+          continue;
+        }
+        throw err;
+      }
+    }
+
+    throw new Error(`No available port found starting at ${PORT} after ${maxAttempts} attempts`);
   } catch (err) {
     console.error("Failed to start server:", err);
     process.exit(1);
