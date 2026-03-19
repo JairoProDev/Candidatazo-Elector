@@ -95,6 +95,7 @@ export function Footer() {
               </h3>
               <ul className="space-y-2.5">
                 <FooterLink href="/metodologia" label="Metodologia" />
+                <FooterLink href="/analisis-2026" label="Análisis 2026" />
                 <FooterLink href="/transparencia" label="Transparencia" />
                 <FooterLink href="/privacidad" label="Privacidad" />
               </ul>

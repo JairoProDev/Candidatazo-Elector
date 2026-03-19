@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/verificador", label: "Verificador", description: "Fact-checking con fuentes" },
   { href: "/desafio", label: "Desafío", description: "Quiz diario con XP y racha" },
   { href: "/academia", label: "Academia", description: "Aprende jugando" },
+  { href: "/analisis-2026", label: "Análisis 2026", description: "Guía estratégica con datos" },
 ];
 
 export function Header() {
