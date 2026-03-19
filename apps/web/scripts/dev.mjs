@@ -1,5 +1,7 @@
 import net from "node:net";
 import { spawn } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
 
 function isPortFree(port, host = "0.0.0.0") {
   return new Promise((resolve) => {
@@ -23,6 +25,30 @@ async function findFreePort(startPort, { host = "0.0.0.0", maxAttempts = 50 } = 
 }
 
 async function main() {
+  const nextDir = path.join(process.cwd(), ".next");
+  const serverDir = path.join(nextDir, "server");
+  const routesManifest = path.join(nextDir, "routes-manifest.json");
+  const pagesManifest = path.join(nextDir, "server", "pages-manifest.json");
+
+  // Next sometimes leaves a partially written `.next` state when dev runs
+  // were interrupted. When manifests/chunks are missing, runtime crashes can
+  // happen and force manual restarts. We proactively reset the cache.
+  try {
+    if (fs.existsSync(serverDir)) {
+      const manifestOk =
+        fs.existsSync(routesManifest) && fs.existsSync(pagesManifest);
+
+      if (!manifestOk) {
+        fs.rmSync(nextDir, { recursive: true, force: true });
+        process.stdout.write(
+          "[web] cleaned corrupted .next cache (missing manifests)\n",
+        );
+      }
+    }
+  } catch (err) {
+    console.warn("[web] .next auto-clean failed:", err);
+  }
+
   const desiredRaw = process.env.PORT;
   const desired = Number.parseInt(desiredRaw ?? "3000", 10);
   const basePort = Number.isFinite(desired) ? desired : 3000;

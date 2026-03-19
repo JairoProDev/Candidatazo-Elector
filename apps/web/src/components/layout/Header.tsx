@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
@@ -23,7 +23,30 @@ const navLinks = [
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const primaryLinks = navLinks.filter((l) =>
+    ["/cedula", "/candidatos", "/comparador", "/planes", "/academia"].includes(
+      l.href,
+    ),
+  );
+
+  const toolLinks = navLinks.filter((l) =>
+    [
+      "/encuestas",
+      "/comparador-estrategico",
+      "/verificador",
+      "/analisis-2026",
+      "/segunda-vuelta",
+      "/radar-oportunidad",
+      "/watchlist",
+      "/desafio",
+    ].includes(l.href),
+  );
+
+  const activeToolHref =
+    toolLinks.find((l) => pathname.startsWith(l.href))?.href ?? "";
 
   return (
     <>
@@ -50,24 +73,46 @@ export function Header() {
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-0.5">
-              {navLinks.map((link) => {
+              {primaryLinks.map((link) => {
                 const isActive = pathname.startsWith(link.href);
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
                     className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
-                        ? "bg-primary-50 text-primary border border-primary-100"
-                        : "text-secondary-400 hover:bg-primary-50 hover:text-primary"
-                      }`}
+                      ? "bg-primary-50 text-primary border border-primary-100"
+                      : "text-secondary-400 hover:bg-primary-50 hover:text-primary"
+                    }`}
                   >
                     {link.label}
-                    {('hot' in link && link.hot) && (
-                      <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping" />
-                    )}
                   </Link>
                 );
               })}
+
+              {/* Group tools into a compact selector to avoid header overflow */}
+              <div className="ml-2">
+                <label className="sr-only" htmlFor="tools-select">
+                  Herramientas
+                </label>
+                <select
+                  id="tools-select"
+                  aria-label="Herramientas"
+                  value={activeToolHref}
+                  onChange={(e) => {
+                    const href = e.target.value;
+                    if (!href) return;
+                    router.push(href);
+                  }}
+                  className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm font-medium text-secondary-400 outline-none focus:ring-2 focus:ring-primary-200"
+                >
+                  <option value="">Herramientas</option>
+                  {toolLinks.map((link) => (
+                    <option key={link.href} value={link.href}>
+                      {link.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </nav>
 
             {/* CTA Button */}

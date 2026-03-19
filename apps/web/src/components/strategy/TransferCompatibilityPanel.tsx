@@ -414,7 +414,14 @@ export default function TransferCompatibilityPanel({
           </div>
 
           <div className="mt-3 space-y-2">
-            {top.map(({ rival, score }) => (
+            {top.map(({ rival, score, pPivotWins }) => {
+              const signals = getSignals({
+                rival,
+                score01: score.overallScore,
+                pPivotWinsPercent: pPivotWins,
+              });
+
+              return (
               <div
                 key={rival.slug}
                 className="rounded-2xl border border-gray-100 bg-gray-50 p-4 flex items-start justify-between gap-3"
@@ -425,6 +432,18 @@ export default function TransferCompatibilityPanel({
                   </div>
                   <div className="text-xs text-gray-500 mt-1 truncate">{rival.party}</div>
                   <div className="mt-2 flex flex-wrap gap-2">
+                    {signals.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {signals.map((s) => (
+                          <span
+                            key={s.key}
+                            className={`text-[10px] font-extrabold border px-2 py-1 rounded-full ${s.className}`}
+                          >
+                            {s.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                     <span className={`text-[10px] font-extrabold border px-2 py-1 rounded-full ${riskBadgeClass(rival.legalRisk)}`}>
                       riesgo {rival.legalRisk}
                     </span>
@@ -455,7 +474,8 @@ export default function TransferCompatibilityPanel({
                   </button>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -468,7 +488,14 @@ export default function TransferCompatibilityPanel({
           </div>
 
           <div className="mt-3 space-y-2">
-            {bottom.map(({ rival, score }) => (
+            {bottom.map(({ rival, score, pPivotWins }) => {
+              const signals = getSignals({
+                rival,
+                score01: score.overallScore,
+                pPivotWinsPercent: pPivotWins,
+              });
+
+              return (
               <div
                 key={rival.slug}
                 className="rounded-2xl border border-gray-100 bg-gray-50 p-4 flex items-start justify-between gap-3"
@@ -479,6 +506,18 @@ export default function TransferCompatibilityPanel({
                   </div>
                   <div className="text-xs text-gray-500 mt-1 truncate">{rival.party}</div>
                   <div className="mt-2 flex flex-wrap gap-2">
+                    {signals.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {signals.map((s) => (
+                          <span
+                            key={s.key}
+                            className={`text-[10px] font-extrabold border px-2 py-1 rounded-full ${s.className}`}
+                          >
+                            {s.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                     <span className={`text-[10px] font-extrabold border px-2 py-1 rounded-full ${riskBadgeClass(rival.legalRisk)}`}>
                       riesgo {rival.legalRisk}
                     </span>
@@ -502,7 +541,8 @@ export default function TransferCompatibilityPanel({
                   </button>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
