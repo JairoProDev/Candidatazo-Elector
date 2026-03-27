@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
+import { useFeedStore } from "@/lib/feed/feedStore";
 
 /* ──────────────────────────────────────────────────────────────────────
    DATOS: 10 propuestas REALES de candidatos (anónimas para evitar sesgo)
@@ -243,6 +244,29 @@ export default function QuizPage() {
       return { ...c, compatibility };
     }).sort((a, b) => b.compatibility - a.compatibility);
   }, [calculateScores]);
+
+  const setTopMatch = useFeedStore((s) => s.setTopMatch);
+
+  // Persistir tu match para que `/feed` pueda personalizar orden y mensajes.
+  useEffect(() => {
+    if (phase !== "results") return;
+    const matches = calculateMatches();
+    const top = matches[0];
+    if (!top) return;
+
+    const slug = top.name
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    setTopMatch({
+      slug,
+      name: top.name,
+      party: top.party,
+      compatibility: top.compatibility,
+    });
+  }, [calculateMatches, phase, setTopMatch]);
 
   const handleShare = async () => {
     const scores = calculateScores();

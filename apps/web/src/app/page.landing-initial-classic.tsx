@@ -481,7 +481,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Floating badges */}
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-gold rounded-full shadow-xl flex items-center justify-center text-2xl animate-bounce">
                   🏆
                 </div>
@@ -626,6 +625,121 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          EXPERIENCIAS DESTACADAS - resto de herramientas estilo premium
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-secondary mb-3">
+              Más herramientas con experiencia interactiva
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Como te gustó en Cédula y Academia: cada herramienta con preview llamativo, explicación clara y CTA directo.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <FeatureExperienceCard
+              title="Verificador"
+              subtitle="Detecta promesas falsas con evidencia verificable."
+              href="/verificador"
+              cta="Verificar ahora"
+              chips={["Fact-check", "Fuentes", "Contexto"]}
+              metricA="1,200+"
+              metricALabel="Claims revisados"
+              metricB="92%"
+              metricBLabel="Con evidencia trazable"
+              tone="red"
+            />
+            <FeatureExperienceCard
+              title="Comparador"
+              subtitle="Compara candidatos en dimensiones clave para decidir."
+              href="/comparador"
+              cta="Comparar perfiles"
+              chips={["5 dimensiones", "Lado a lado", "Sin sesgo"]}
+              metricA="36"
+              metricALabel="Perfiles comparables"
+              metricB="5"
+              metricBLabel="Ejes de decisión"
+              tone="blue"
+            />
+            <FeatureExperienceCard
+              title="Planes de Gobierno"
+              subtitle="Lee propuestas concretas sin perderte en PDFs."
+              href="/planes"
+              cta="Revisar planes"
+              chips={["Propuestas", "Temas", "Resumen rápido"]}
+              metricA="32"
+              metricALabel="Planes reunidos"
+              metricB="14"
+              metricBLabel="Temas rastreables"
+              tone="gold"
+            />
+            <FeatureExperienceCard
+              title="Encuestas en Vivo"
+              subtitle="Sigue tendencias y momentum en un vistazo."
+              href="/encuestas"
+              cta="Ver dashboard"
+              chips={["IEP", "Datum", "Ipsos"]}
+              metricA="Mar 2026"
+              metricALabel="Última actualización"
+              metricB="5"
+              metricBLabel="Candidatos top"
+              tone="violet"
+            />
+            <FeatureExperienceCard
+              title="Desafío Diario"
+              subtitle="Aprende política con ritmo, XP y rachas."
+              href="/desafio"
+              cta="Jugar desafío"
+              chips={["Quiz", "XP", "Rachas"]}
+              metricA="+200"
+              metricALabel="XP por sesión"
+              metricB="1"
+              metricBLabel="Reto diario"
+              tone="emerald"
+            />
+            <FeatureExperienceCard
+              title="36 Candidatos"
+              subtitle="Explora perfiles con señales de riesgo y oportunidad."
+              href="/candidatos"
+              cta="Abrir candidatos"
+              chips={["Filtros", "Riesgo", "Agenda digital"]}
+              metricA="36"
+              metricALabel="Perfiles completos"
+              metricB="8"
+              metricBLabel="Señales por perfil"
+              tone="slate"
+            />
+            <FeatureExperienceCard
+              title="Radar Tech"
+              subtitle="Mide ejecución digital y oportunidad real."
+              href="/radar-oportunidad"
+              cta="Abrir radar"
+              chips={["Radar", "Benchmark", "Oportunidad"]}
+              metricA="0-100"
+              metricALabel="Score digital"
+              metricB="5"
+              metricBLabel="Ejes comparados"
+              tone="cyan"
+            />
+            <FeatureExperienceCard
+              title="Segunda Vuelta"
+              subtitle="Simula escenarios para no decidir a ciegas."
+              href="/segunda-vuelta"
+              cta="Simular balotaje"
+              chips={["Escenarios", "Transferencias", "Probabilidades"]}
+              metricA="N x N"
+              metricALabel="Cruces posibles"
+              metricB="2da"
+              metricBLabel="Etapa simulada"
+              tone="pink"
+            />
           </div>
         </div>
       </section>
@@ -792,6 +906,103 @@ function StepCard({ step, title, description }: { step: number; title: string; d
       </div>
       <h3 className="text-lg font-bold text-secondary mb-2">{title}</h3>
       <p className="text-secondary-300 text-sm leading-relaxed">{description}</p>
+    </div>
+  );
+}
+
+function FeatureExperienceCard({
+  title,
+  subtitle,
+  href,
+  cta,
+  chips,
+  metricA,
+  metricALabel,
+  metricB,
+  metricBLabel,
+  tone = "blue",
+}: {
+  title: string;
+  subtitle: string;
+  href: string;
+  cta: string;
+  chips: string[];
+  metricA: string;
+  metricALabel: string;
+  metricB: string;
+  metricBLabel: string;
+  tone?: "blue" | "red" | "gold" | "violet" | "emerald" | "slate" | "cyan" | "pink";
+}) {
+  const toneClasses: Record<NonNullable<typeof tone>, { bg: string; bar: string; chip: string }> = {
+    blue: { bg: "from-blue-50 to-indigo-50", bar: "bg-blue-500", chip: "bg-blue-100 text-blue-700" },
+    red: { bg: "from-red-50 to-rose-50", bar: "bg-red-500", chip: "bg-red-100 text-red-700" },
+    gold: { bg: "from-amber-50 to-yellow-50", bar: "bg-amber-500", chip: "bg-amber-100 text-amber-700" },
+    violet: { bg: "from-violet-50 to-purple-50", bar: "bg-violet-500", chip: "bg-violet-100 text-violet-700" },
+    emerald: { bg: "from-emerald-50 to-green-50", bar: "bg-emerald-500", chip: "bg-emerald-100 text-emerald-700" },
+    slate: { bg: "from-slate-50 to-gray-50", bar: "bg-slate-600", chip: "bg-slate-100 text-slate-700" },
+    cyan: { bg: "from-cyan-50 to-sky-50", bar: "bg-cyan-500", chip: "bg-cyan-100 text-cyan-700" },
+    pink: { bg: "from-pink-50 to-fuchsia-50", bar: "bg-pink-500", chip: "bg-pink-100 text-pink-700" },
+  };
+  const toneStyle = toneClasses[tone];
+
+  return (
+    <div className={`bg-gradient-to-r ${toneStyle.bg} border border-gray-100 rounded-2xl shadow-card p-5 md:p-6`}>
+      <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-5 items-center">
+        <div>
+          <h3 className="text-2xl font-black text-secondary leading-tight">{title}</h3>
+          <p className="text-base text-gray-600 mt-2 leading-relaxed">{subtitle}</p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {chips.map((chip) => (
+              <span key={chip} className={`text-[11px] font-extrabold px-2.5 py-1 rounded-full ${toneStyle.chip}`}>
+                {chip}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="bg-white rounded-xl border border-gray-100 p-3 text-center">
+              <div className="text-xl font-black text-secondary">{metricA}</div>
+              <div className="text-[11px] text-gray-500">{metricALabel}</div>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-100 p-3 text-center">
+              <div className="text-xl font-black text-secondary">{metricB}</div>
+              <div className="text-[11px] text-gray-500">{metricBLabel}</div>
+            </div>
+          </div>
+
+          <Link
+            href={href}
+            className="mt-4 inline-flex items-center gap-2 bg-primary hover:bg-primary-600 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors"
+          >
+            {cta}
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+
+        <div className="bg-white rounded-2xl border border-gray-100 p-4">
+          <div className="text-[11px] uppercase tracking-wide text-gray-500 font-extrabold mb-3">
+            Vista rápida
+          </div>
+          <div className="space-y-2">
+            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
+              <div className={`h-full w-[78%] ${toneStyle.bar}`} />
+            </div>
+            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
+              <div className={`h-full w-[62%] ${toneStyle.bar}`} />
+            </div>
+            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
+              <div className={`h-full w-[85%] ${toneStyle.bar}`} />
+            </div>
+            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
+              <div className={`h-full w-[49%] ${toneStyle.bar}`} />
+            </div>
+          </div>
+          <div className="mt-3 text-[11px] text-gray-500">
+            Gráfico referencial para previsualizar la herramienta.
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

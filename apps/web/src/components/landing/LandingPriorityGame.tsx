@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Candidate2026ListItem } from "@/lib/data/candidates2026";
 import { OFFICIAL_CANDIDATES_2026 } from "@/lib/data/candidates2026";
 import {
@@ -8,6 +8,7 @@ import {
   scoreCandidateStrategic,
 } from "@/lib/strategy/election2026";
 import Link from "next/link";
+import { useFeedStore } from "@/lib/feed/feedStore";
 
 function clamp(n: number, min: number, max: number) {
   return Math.max(min, Math.min(max, n));
@@ -55,6 +56,14 @@ export function LandingPriorityGame() {
     antiVote: DEFAULTS.antiVote,
     legalRisk: DEFAULTS.legalRisk,
   });
+
+  const setMatchWeights = useFeedStore((s) => s.setMatchWeights);
+
+  // Persist user's “Match” sliders so `/feed` can personalize ordering.
+  useEffect(() => {
+    const t = window.setTimeout(() => setMatchWeights(weights), 250);
+    return () => window.clearTimeout(t);
+  }, [setMatchWeights, weights]);
 
   const top = useMemo(() => {
     let best: Candidate2026ListItem | null = null;
