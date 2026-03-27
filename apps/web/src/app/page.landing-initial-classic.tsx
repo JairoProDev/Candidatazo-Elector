@@ -645,6 +645,32 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <FeatureExperienceCard
+              title="Mi Match"
+              subtitle="Descubre afinidad política en 60 segundos con 10 propuestas."
+              href="/quiz"
+              cta="Hacer Mi Match"
+              chips={["Personalización", "10 propuestas", "Resultado compartible"]}
+              metricA="60s"
+              metricALabel="Tiempo estimado"
+              metricB="#1"
+              metricBLabel="Match principal"
+              tone="blue"
+              chartBars={[82, 48, 71, 64, 90]}
+            />
+            <FeatureExperienceCard
+              title="Practica tu Voto"
+              subtitle="Evita voto nulo con una simulación clara de cédula."
+              href="/cedula"
+              cta="Practicar voto"
+              chips={["Cédula", "Reglas claras", "Bicameralidad"]}
+              metricA="53%"
+              metricALabel="No conoce su símbolo"
+              metricB="3"
+              metricBLabel="Votos por marcar"
+              tone="red"
+              chartBars={[30, 90, 45, 28, 72, 54]}
+            />
+            <FeatureExperienceCard
               title="Verificador"
               subtitle="Detecta promesas falsas con evidencia verificable."
               href="/verificador"
@@ -655,6 +681,7 @@ export default function HomePage() {
               metricB="92%"
               metricBLabel="Con evidencia trazable"
               tone="red"
+              chartBars={[68, 72, 93, 52]}
             />
             <FeatureExperienceCard
               title="Comparador"
@@ -667,6 +694,7 @@ export default function HomePage() {
               metricB="5"
               metricBLabel="Ejes de decisión"
               tone="blue"
+              chartBars={[40, 76, 58, 84, 62]}
             />
             <FeatureExperienceCard
               title="Planes de Gobierno"
@@ -679,6 +707,7 @@ export default function HomePage() {
               metricB="14"
               metricBLabel="Temas rastreables"
               tone="gold"
+              chartBars={[88, 55, 46, 73]}
             />
             <FeatureExperienceCard
               title="Encuestas en Vivo"
@@ -691,6 +720,7 @@ export default function HomePage() {
               metricB="5"
               metricBLabel="Candidatos top"
               tone="violet"
+              chartBars={[78, 63, 52, 39, 31]}
             />
             <FeatureExperienceCard
               title="Desafío Diario"
@@ -703,6 +733,7 @@ export default function HomePage() {
               metricB="1"
               metricBLabel="Reto diario"
               tone="emerald"
+              chartBars={[36, 62, 84, 74, 58]}
             />
             <FeatureExperienceCard
               title="36 Candidatos"
@@ -715,6 +746,20 @@ export default function HomePage() {
               metricB="8"
               metricBLabel="Señales por perfil"
               tone="slate"
+              chartBars={[55, 44, 81, 67, 39, 72]}
+            />
+            <FeatureExperienceCard
+              title="Academia Cívica"
+              subtitle="Aprende sistema político con módulos cortos y accionables."
+              href="/academia"
+              cta="Ir a Academia"
+              chips={["Mini-cursos", "XP", "Rutas"]}
+              metricA="15 min"
+              metricALabel="Ruta sugerida"
+              metricB="3"
+              metricBLabel="Mini-juegos clave"
+              tone="gold"
+              chartBars={[26, 42, 65, 89]}
             />
             <FeatureExperienceCard
               title="Radar Tech"
@@ -727,6 +772,20 @@ export default function HomePage() {
               metricB="5"
               metricBLabel="Ejes comparados"
               tone="cyan"
+              chartBars={[61, 87, 72, 58, 41]}
+            />
+            <FeatureExperienceCard
+              title="Comparador Estratégico"
+              subtitle="Asigna pesos y prioriza con tu criterio político."
+              href="/comparador-estrategico"
+              cta="Calibrar estrategia"
+              chips={["Pesos", "Ranking", "Escenarios"]}
+              metricA="8"
+              metricALabel="Variables"
+              metricB="Top 5"
+              metricBLabel="Salida priorizada"
+              tone="violet"
+              chartBars={[49, 63, 77, 91, 56]}
             />
             <FeatureExperienceCard
               title="Segunda Vuelta"
@@ -739,6 +798,46 @@ export default function HomePage() {
               metricB="2da"
               metricBLabel="Etapa simulada"
               tone="pink"
+              chartBars={[58, 81, 69, 47]}
+            />
+            <FeatureExperienceCard
+              title="Watchlist"
+              subtitle="Guarda candidatos y sigue cambios importantes."
+              href="/watchlist"
+              cta="Crear watchlist"
+              chips={["Seguimiento", "Alertas", "Comparación"]}
+              metricA="Local"
+              metricALabel="Persistencia privada"
+              metricB="24/7"
+              metricBLabel="Monitoreo continuo"
+              tone="slate"
+              chartBars={[35, 52, 67, 74, 83]}
+            />
+            <FeatureExperienceCard
+              title="Análisis 2026"
+              subtitle="Contexto macro para leer riesgos y oportunidades."
+              href="/analisis-2026"
+              cta="Ver análisis"
+              chips={["Contexto", "Riesgo", "Oportunidad"]}
+              metricA="2026"
+              metricALabel="Horizonte electoral"
+              metricB="Multi"
+              metricBLabel="Tableros conectados"
+              tone="emerald"
+              chartBars={[72, 61, 55, 84, 43]}
+            />
+            <FeatureExperienceCard
+              title="Simulador IA"
+              subtitle="Haz preguntas difíciles y contrasta respuestas políticas."
+              href="/simulador"
+              cta="Probar IA"
+              chips={["Preguntas", "Contraste", "Asistencia"]}
+              metricA="IA"
+              metricALabel="Asistente conversacional"
+              metricB="1-click"
+              metricBLabel="Inicio inmediato"
+              tone="cyan"
+              chartBars={[46, 59, 78, 66, 52, 88]}
             />
           </div>
         </div>
@@ -921,6 +1020,7 @@ function FeatureExperienceCard({
   metricB,
   metricBLabel,
   tone = "blue",
+  chartBars = [78, 62, 85, 49],
 }: {
   title: string;
   subtitle: string;
@@ -932,6 +1032,7 @@ function FeatureExperienceCard({
   metricB: string;
   metricBLabel: string;
   tone?: "blue" | "red" | "gold" | "violet" | "emerald" | "slate" | "cyan" | "pink";
+  chartBars?: number[];
 }) {
   const toneClasses: Record<NonNullable<typeof tone>, { bg: string; bar: string; chip: string }> = {
     blue: { bg: "from-blue-50 to-indigo-50", bar: "bg-blue-500", chip: "bg-blue-100 text-blue-700" },
@@ -985,18 +1086,17 @@ function FeatureExperienceCard({
             Vista rápida
           </div>
           <div className="space-y-2">
-            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
-              <div className={`h-full w-[78%] ${toneStyle.bar}`} />
-            </div>
-            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
-              <div className={`h-full w-[62%] ${toneStyle.bar}`} />
-            </div>
-            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
-              <div className={`h-full w-[85%] ${toneStyle.bar}`} />
-            </div>
-            <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
-              <div className={`h-full w-[49%] ${toneStyle.bar}`} />
-            </div>
+            {chartBars.map((bar, idx) => (
+              <div key={idx} className="h-3 rounded-full bg-gray-100 overflow-hidden">
+                <div
+                  className={`h-full ${toneStyle.bar}`}
+                  style={{
+                    width: `${Math.max(14, Math.min(100, bar))}%`,
+                    opacity: 0.92 - idx * 0.09,
+                  }}
+                />
+              </div>
+            ))}
           </div>
           <div className="mt-3 text-[11px] text-gray-500">
             Gráfico referencial para previsualizar la herramienta.
